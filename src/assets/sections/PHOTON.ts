@@ -3,7 +3,7 @@ import { ISection } from ".";
 export const PHOTON: ISection = {
   title: "UnityとPhotonでオンライン対戦ゲーム",
   description:
-    "Photon EngineとはUnityでrealtimeオンライン対戦を可能にするためのサービスです。。\n" +
+    "Photon EngineとはUnityでrealtimeオンライン対戦を可能にするためのサービスです。\n" +
     "本レッスンではPhotonを利用して、「犬猫将棋」という対戦型ボードゲームを作成します",
   contentsList: [
     {

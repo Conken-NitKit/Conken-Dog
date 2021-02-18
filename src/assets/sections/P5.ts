@@ -1,7 +1,7 @@
 import { ISection } from ".";
 
 export const P5: ISection = {
-  title: "Node.js",
+  title: "JavaScriptでゲーム開発",
   description:
     "ビジュアルコーディングツールであるProcessingをJavaScriptに移植したp5.jsについて学んでいきます。\n" +
     "本レッスンでは簡単なゲーム風Webサイトの作成とゲームに開発に必要な数学的知識について学習します。",

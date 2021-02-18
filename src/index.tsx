@@ -1,14 +1,24 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { WEB_CREATE } from "./assets/cources/WebCreate";
+import { WEB_CREATE_COURSE } from "./assets/courses/WebCreate";
 import Section from "./pages/Section";
 import { Route, BrowserRouter } from "react-router-dom";
-import { GAME_CREATE } from "./assets/cources/GameCreate";
+import { GAME_CREATE_COURSE } from "./assets/courses/GameCreate";
+import { courceList } from "./assets/courses";
+import Course from "./pages/Course";
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      {WEB_CREATE.map((section, i) => (
+      {courceList.map((cource, i) => (
+        <Route
+          exact
+          path={`/${cource.metaName}`}
+          component={() => <Course value={cource} />}
+        />
+      ))}
+
+      {WEB_CREATE_COURSE.sections.map((section, i) => (
         <Route
           exact
           path={`/web-create/${i + 1}`}
@@ -16,7 +26,7 @@ ReactDOM.render(
         />
       ))}
 
-      {GAME_CREATE.map((section, i) => (
+      {GAME_CREATE_COURSE.sections.map((section, i) => (
         <Route
           exact
           path={`/game-create/${i + 1}`}
