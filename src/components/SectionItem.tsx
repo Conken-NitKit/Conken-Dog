@@ -23,7 +23,6 @@ const ContentItem = styled.li`
 
 const ContentsLink = styled.a`
   color: rgb(88, 118, 163);
-  padding-left: 8px;
   text-decoration: none;
 `;
 
@@ -36,7 +35,7 @@ const CheckBox = styled.label<{ isChecked: boolean }>`
   cursor: pointer;
   display: inline-block;
   margin-top: 16px;
-  padding: 14px 14px;
+  padding: 14px 20px;
   position: relative;
   width: auto;
 
@@ -80,11 +79,18 @@ export const SectionItem = ({ content }: Props) => {
   const [isChecked, setIsChecked] = useState<boolean>(false);
   return (
     <ContentItem>
-      <DefaultCheckBox type="checkbox" id={content.title} onClick={() => setIsChecked(!isChecked)}/>
-      <CheckBox htmlFor={content.title} isChecked={isChecked}/>
+      <DefaultCheckBox
+        type="checkbox"
+        id={content.title}
+        onClick={() => setIsChecked(!isChecked)}
+      />
+      <CheckBox htmlFor={content.title} isChecked={isChecked} />
       <Description>
-        <ContentsLink href={content.link}>
-          {content.title} |
+        <ContentsLink href={content.link} target={"_blank"}>
+          {content.title}
+        </ContentsLink>
+        <br />
+        <ContentsLink href={content.link} target={"_blank"}>
           {content.requiredTime >= 60 &&
             `  ${Math.floor(content.requiredTime / 60)}時間`}
           {content.requiredTime % 60 !== 0 &&
