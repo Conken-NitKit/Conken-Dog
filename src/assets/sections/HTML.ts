@@ -9,7 +9,7 @@ export const HTML: ISection = {
     {
       title: "非エンジニアでもわかる！Webサービス・アプリが動く仕組み",
       link: "https://youtu.be/zq50JwOU_ls",
-      mediaType: ["READ_ONLY", "USE_SOUND"],
+      mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 20,
     },
     {
@@ -147,19 +147,19 @@ export const HTML: ISection = {
     {
       title: "メディアクエリの「メディアタイプ」を理解しよう(前編) ",
       link: "https://youtu.be/79Dr3RGm0SI",
-      mediaType: ["READ_ONLY", "USE_SOUND"],
+      mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 10,
     }, 
     {
       title: "メディアクエリの「メディアタイプ」を理解しよう(後編) ",
       link: "https://youtu.be/B8LnpwiiOzE",
-      mediaType: ["READ_ONLY", "USE_SOUND"],
+      mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 20,
     }, 
     {
       title: "最強に便利なCSSの比較関数 min, max, clamp を紹介！",
       link: "https://youtu.be/oXHmEK_z-lo",
-      mediaType: ["READ_ONLY", "USE_SOUND"],
+      mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 15,
     }, 
     {
@@ -273,7 +273,7 @@ export const HTML: ISection = {
     {
       title: "基礎からちゃんと学ぶ CSS 入門！フレックスボックス (flexbox) の使い方をゲームで学ぼう！基礎からちゃんと学ぶ CSS 入門！フレックスボックス (flexbox) の使い方をゲームで学ぼう！",
       link: "https://youtu.be/FU4RocY_Y1k",
-      mediaType: ["READ_ONLY", "USE_SOUND"],
+      mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime:30,
     },
     {
@@ -285,43 +285,43 @@ export const HTML: ISection = {
     {
       title: "flexbox の flex プロパティの使い方を徹底解説",
       link: "https://youtu.be/TXwY_SWO07U",
-      mediaType: ["READ_ONLY", "USE_SOUND"],
+      mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 15,
     },
     {
       title: "聖杯レイアウトのコーディング実践、デザイン解説",
       link: "https://youtu.be/XrFD_0Pr6Nc",
-      mediaType: ["READ_ONLY", "USE_SOUND"],
+      mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 25,
     },
     {
       title: "Gridを使うとFlexboxより簡単に複雑なレイアウトを組めます",
       link: "https://youtu.be/cwkkD0ejX8Q",
-      mediaType: ["READ_ONLY", "USE_SOUND"],
+      mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 25,
     },
     {
       title: "よく使われるサイドバーデザインを一緒にコーディングしていきましょう",
       link: "https://youtu.be/UUPSC8ooDOk",
-      mediaType: ["READ_ONLY", "USE_SOUND"],
+      mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 20,
     },
     {
       title: "ハンバーガーメニューの作り方講座",
       link: "https://youtu.be/9XVuUr4DbNU",
-      mediaType: ["READ_ONLY", "USE_SOUND"],
+      mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 35,
     },
     {
       title: "ハンバーガーメニューは実は悪いデザイン？代わりになるWebデザインを紹介します",
       link: "https://youtu.be/OOIz2nl5524",
-      mediaType: ["READ_ONLY", "USE_SOUND"],
+      mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 30,
     },
     {
       title: "下タブ（Bottom Navigation）のコーディング実践",
       link: "https://youtu.be/NDj9awgjEu0",
-      mediaType: ["READ_ONLY", "USE_SOUND"],
+      mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 15,
     },
     {
@@ -351,13 +351,13 @@ export const HTML: ISection = {
     {
       title: "ITエンジニアの就活準備編2: ポートフォリオ制作",
       link: "https://paiza.jp/works/career/primer/career2",
-      mediaType: ["USE_SOUND"],
+      mediaType: ["VIDEO"],
       requiredTime: 60
     },
     {
       title: "Chrome DevToolsの使い方を徹底解説！Chrome Developer Toolsを使いこなすと開発効率が上がる！",
       link: "https://youtu.be/awRkFcv51r4",
-      mediaType: ["READ_ONLY", "USE_SOUND"],
+      mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 30,
     },
 ]};

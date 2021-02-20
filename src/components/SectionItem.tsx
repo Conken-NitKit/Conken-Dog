@@ -71,6 +71,16 @@ const CheckBox = styled.label<{ isChecked: boolean }>`
   }
 `;
 
+const MediaTypeTag = styled.span`
+  line-height: 28px;
+  font-size: 14px;
+  padding: 5px 6px;
+  margin: 0 0 0 11px;
+  color: white;
+  background-color: #999;
+  border-radius: 4px;
+`;
+
 interface Props {
   content: IContent;
 }
@@ -90,12 +100,24 @@ export const SectionItem = ({ content }: Props) => {
           {content.title}
         </ContentsLink>
         <br />
-        <ContentsLink href={content.link} target={"_blank"}>
-          {content.requiredTime >= 60 &&
-            `  ${Math.floor(content.requiredTime / 60)}時間`}
-          {content.requiredTime % 60 !== 0 &&
-            `  ${Math.floor(content.requiredTime % 60)}分`}
-        </ContentsLink>
+        {content.requiredTime >= 60 &&
+          `  ${Math.floor(content.requiredTime / 60)}時間`}
+        {content.requiredTime % 60 !== 0 &&
+          `  ${Math.floor(content.requiredTime % 60)}分`}
+        {content.mediaType.includes("VIDEO") ? (
+          <MediaTypeTag>動画</MediaTypeTag>
+        ) : (
+          <MediaTypeTag>テキスト</MediaTypeTag>
+        )}
+        {!content.mediaType.includes("READ_ONLY") && (
+          <MediaTypeTag>実践</MediaTypeTag>
+        )}
+        {content.mediaType.includes("USE_MY_PC") && (
+          <MediaTypeTag>PC必須</MediaTypeTag>
+        )}
+        {content.mediaType.includes("USE_GIT") && (
+          <MediaTypeTag>Gitで管理してみよう</MediaTypeTag>
+        )}
       </Description>
     </ContentItem>
   );
