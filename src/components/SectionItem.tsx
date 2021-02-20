@@ -3,14 +3,6 @@ import styled from "styled-components";
 
 import { IContent } from "../assets/sections";
 import { Description } from "../styles/fonts/Description";
-import { Heading1 } from "../styles/fonts/Heading1";
-
-const ContentsList = styled.ul`
-  background: #fff;
-  border: solid 2px #f3eded;
-  padding: 30px;
-  border-radius: 6px;
-`;
 
 const ContentItem = styled.li`
   list-style: none;

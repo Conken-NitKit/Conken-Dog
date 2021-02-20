@@ -6,10 +6,12 @@ import { Route, BrowserRouter } from "react-router-dom";
 import { GAME_CREATE_COURSE } from "./assets/courses/GameCreate";
 import { courceList } from "./assets/courses";
 import Course from "./pages/Course";
+import Home from "./pages/Home";
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
+      <Route exact path="/" component={Home} />
       {courceList.map((cource, i) => (
         <Route
           exact
