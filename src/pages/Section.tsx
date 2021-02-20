@@ -30,7 +30,7 @@ export default function Section({ value }: Props) {
       <Small>
         合計修了時間 |
         {generateMinute() >= 60 && ` ${Math.floor(generateMinute() / 60)}時間`}
-        {generateMinute() % 60 === 0 && ` ${generateMinute() % 60}分`}
+        {generateMinute() % 60 !== 0 && ` ${generateMinute() % 60}分`}
       </Small>
       <ContentsList>
         {value.contentsList.map((content, i) => (
