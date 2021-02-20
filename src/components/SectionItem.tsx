@@ -38,6 +38,7 @@ const CheckBox = styled.label<{ isChecked: boolean }>`
   padding: 14px 20px;
   position: relative;
   width: auto;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
   &::before {
     background: #fff;
@@ -54,8 +55,8 @@ const CheckBox = styled.label<{ isChecked: boolean }>`
     ${(props) => props.isChecked && "border-color: #666;"}
   }
   &::after {
-    border-right: 6px solid #fedd1e;
-    border-bottom: 3px solid #fedd1e;
+    border-right: 6px solid red;
+    border-bottom: 3px solid red;
     content: "";
     display: block;
     height: 20px;
