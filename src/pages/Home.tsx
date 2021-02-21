@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import LessonCard from "../layouts/LessonCard";
+import FeedCard from "../components/FeedCard";
+import LessonCard from "../components/LessonCard";
 import { Heading2 } from "../styles/fonts/Heading2";
 import { Small } from "../styles/fonts/Small";
 
@@ -158,6 +159,10 @@ export default function Home() {
         </ContentsContainer>
         <ContentsContainer>
           <Heading2>フィード</Heading2>
+          <FeedCard />
+          <FeedCard />
+          <FeedCard />
+          <FeedCard />
         </ContentsContainer>
       </ContentsWrapper>
     </div>

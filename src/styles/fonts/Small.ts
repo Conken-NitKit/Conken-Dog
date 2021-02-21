@@ -6,4 +6,5 @@ export const Small = styled.p`
   font-size: 0.75rem;
   letter-spacing: 0.06em;
   color: #5876a3;
+  margin: 0;
 `;
