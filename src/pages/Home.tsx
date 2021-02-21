@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import FeedCard from "../components/FeedCard";
 import LessonCard from "../components/LessonCard";
+import Slider from "../components/Slider";
 import { Heading2 } from "../styles/fonts/Heading2";
 import { Small } from "../styles/fonts/Small";
 
@@ -70,7 +71,7 @@ const ContentsWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   width: 990px;
-  margin: 44px auto 0;
+  margin: 72px auto 0;
 `;
 
 const ContentsContainer = styled.div`
@@ -127,7 +128,9 @@ export default function Home() {
           <MenuListLink>AI</MenuListLink>
           <MenuListLink>イラスト</MenuListLink>
         </MenuList>
-        <HeadContents></HeadContents>
+        <HeadContents>
+          <Slider />
+        </HeadContents>
       </HeadContainer>
       <ContentsWrapper>
         <ContentsContainer>
