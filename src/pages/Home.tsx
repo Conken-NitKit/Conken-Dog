@@ -5,6 +5,7 @@ import LessonContainer from "../components/LessonContainer";
 import Slider from "../components/Slider";
 import { Heading2 } from "../styles/fonts/Heading2";
 import { Small } from "../styles/fonts/Small";
+import { mockFeeds } from "../mocks/feed";
 
 const TopContainer = styled.div`
   display: flex;
@@ -117,10 +118,9 @@ export default function Home() {
         </ContentsContainer>
         <ContentsContainer>
           <Heading2>フィード</Heading2>
-          <FeedCard />
-          <FeedCard />
-          <FeedCard />
-          <FeedCard />
+          {mockFeeds.map((feed) => (
+            <FeedCard feed={feed}/>
+          ))}
         </ContentsContainer>
       </ContentsWrapper>
     </div>

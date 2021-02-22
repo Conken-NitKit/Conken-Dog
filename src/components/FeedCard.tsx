@@ -4,6 +4,7 @@ import Tagslogo from "../assets/img/Tags.svg";
 import Eyelogo from "../assets/img/Eye.svg";
 import Favlogo from "../assets/img/Fav.svg";
 import BookMarklogo from "../assets/img/BookMark.svg";
+import { IFeed } from "../interfaces/Feed";
 
 const FeedContainer = styled.div`
   padding: 16px 24px;
@@ -36,14 +37,15 @@ const FeedInfo = styled.p`
   }
 `;
 
-const FeedTitle = styled.h2`
+const FeedTitle = styled.a`
   font-size: 18px;
   font-weight: 700;
+  text-decoration: none;
   color: rgba(0, 0, 0, 0.87);
-  line-height: 1.5;
+  line-height: 2;
   letter-spacing: -0.4px;
   word-break: break-all;
-  margin: 6px 0 0;
+  margin: 16px 0 0;
 `;
 
 const Container = styled.div`
@@ -84,30 +86,40 @@ const StatusContainer = styled.div`
   align-items: center;
 `;
 
-export default function FeedCard() {
+interface Props {
+  feed: IFeed;
+}
+
+export default function FeedCard({ feed }: Props) {
   return (
     <FeedContainer>
-      <FeedInfo>"窪田秀哉" が 2019年9月3日 に投稿</FeedInfo>
-      <FeedTitle>こんなコードはいやだ、クソコードを駆逐したい</FeedTitle>
+      <FeedInfo>
+        "{feed.contributorName}" が {new Date().getFullYear()}年
+        {new Date().getMonth() + 1}月{new Date().getDate()}日 に投稿
+      </FeedInfo>
+      <FeedTitle href={feed.link} target={"_blank"}>
+        {feed.title}
+      </FeedTitle>
       <Container>
         <Icon src={Tagslogo} />
         <Small>
-          <Tag>Golang</Tag>
-          <Tag>TypeScript</Tag>
+          {feed.tags.map((tag) => (
+            <Tag>{tag}</Tag>
+          ))}
         </Small>
       </Container>
       <StatusContainer>
         <Container>
           <Icon src={Eyelogo} />
-          <Small>28read</Small>
+          <Small>{feed.visitors.length}read</Small>
         </Container>
         <Container>
           <Icon src={Favlogo} />
-          <Small>3いいね</Small>
+          <Small>{feed.fans.length}いいね</Small>
         </Container>
         <Container>
           <Icon src={BookMarklogo} />
-          <Small>1ブックマーク</Small>
+          <Small>{feed.collectors.length}ブックマーク</Small>
         </Container>
       </StatusContainer>
     </FeedContainer>
