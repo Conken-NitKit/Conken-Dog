@@ -1,6 +1,7 @@
+import { useState } from "react";
 import styled from "styled-components";
 import FeedCard from "../components/FeedCard";
-import LessonCard from "../components/LessonCard";
+import LessonContainer from "../components/LessonContainer";
 import Slider from "../components/Slider";
 import { Heading2 } from "../styles/fonts/Heading2";
 import { Small } from "../styles/fonts/Small";
@@ -79,39 +80,11 @@ const ContentsContainer = styled.div`
   width: 462px;
 `;
 
-const CategoryList = styled.ul`
-  display: flex;
-  justify-content: flex-start;
-  padding-inline-start: 0;
-  overflow-x: scroll;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  &::-webkit-scrollbar {
-    display: none;
-  }
-`;
-
-const CategoryTag = styled.li<{ isSelected: boolean }>`
-  font-family: Lato, "Hiragino Maru Gothic Pro", "Meiryo UI", Meiryo,
-    "MS PGothic", sans-serif;
-  font-weight: bold;
-  list-style: none;
-  white-space: nowrap;
-  font-size: 0.75rem;
-  letter-spacing: 0.06em;
-  color: ${(props) => (props.isSelected ? "white" : "#AAA")};
-  margin: 0 4px 0;
-  padding: 4px ${(props) => (props.isSelected ? 10 : 8)}px;
-  background-color: ${(props) =>
-    props.isSelected ? "#30c8d6" : "rgba(0, 0, 0, 0)"};
-  border-radius: 13px;
-  cursor: pointer;
-  &::selection {
-    background: none;
-  }
-`;
-
 export default function Home() {
+  const [watchedCourse, setWatchedCourse] = useState<string>("others");
+  const [watchedFinishedCourse, setWatchedFinishedCourse] = useState<string>(
+    "others"
+  );
   return (
     <div>
       <TopContainer>
@@ -136,29 +109,11 @@ export default function Home() {
         <ContentsContainer>
           <Heading2>レッスン</Heading2>
           <Small>今後、あなたに取り組んで欲しいレッスン</Small>
-          <CategoryList>
-            <CategoryTag isSelected={false}>特集</CategoryTag>
-            <CategoryTag isSelected={true}>Web開発</CategoryTag>
-            <CategoryTag isSelected={false}>Webデザイン</CategoryTag>
-            <CategoryTag isSelected={false}>ゲーム開発</CategoryTag>
-            <CategoryTag isSelected={false}>ゲームデザイン</CategoryTag>
-            <CategoryTag isSelected={false}>AI</CategoryTag>
-            <CategoryTag isSelected={false}>イラスト</CategoryTag>
-          </CategoryList>
-
-          <LessonCard />
+          <LessonContainer />
 
           <Heading2>修了レッスン</Heading2>
           <Small>あなたがこれまでに取り組んできたレッスン</Small>
-          <CategoryList>
-            <CategoryTag isSelected={false}>特集</CategoryTag>
-            <CategoryTag isSelected={false}>Web開発</CategoryTag>
-            <CategoryTag isSelected={false}>Webデザイン</CategoryTag>
-            <CategoryTag isSelected={false}>ゲーム開発</CategoryTag>
-            <CategoryTag isSelected={true}>ゲームデザイン</CategoryTag>
-            <CategoryTag isSelected={false}>AI</CategoryTag>
-            <CategoryTag isSelected={false}>イラスト</CategoryTag>
-          </CategoryList>
+          <LessonContainer />
         </ContentsContainer>
         <ContentsContainer>
           <Heading2>フィード</Heading2>

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ISection } from "../assets/sections";
 
 const LessonCardContainer = styled.div`
   width: 100%;
@@ -68,12 +69,16 @@ const LessonLink = styled.div`
   margin: 0 32px 0 16px;
 `;
 
-export default function LessonCard() {
+interface Props {
+  section: ISection;
+}
+
+export default function LessonCard({ section }: Props) {
   return (
     <LessonCardContainer>
       <LessonImg />
       <LessonContents>
-        <LessonTitle>{"HTML && CSS"}</LessonTitle>
+        <LessonTitle>{section.title}</LessonTitle>
         <Progress>
           <ProgressBar />
           2/23ページ
