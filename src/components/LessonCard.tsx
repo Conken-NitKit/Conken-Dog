@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { ISection } from "../assets/sections";
 
@@ -11,6 +12,7 @@ const LessonCardContainer = styled.div`
   border-radius: 6px;
   box-shadow: 0 3px 6px -3px rgba(0, 0, 0, 0.3);
   transition: 0.2s ease-in-out;
+  cursor: pointer;
   &:hover {
     box-shadow: 0 4px 8px -4px rgba(0, 0, 0, 0.4);
   }
@@ -71,20 +73,27 @@ const LessonLink = styled.div`
 
 interface Props {
   section: ISection;
+  metaName: string;
+  index: number;
 }
 
-export default function LessonCard({ section }: Props) {
+export default function LessonCard({ section, metaName, index }: Props) {
   return (
-    <LessonCardContainer>
-      <LessonImg />
-      <LessonContents>
-        <LessonTitle>{section.title}</LessonTitle>
-        <Progress>
-          <ProgressBar />
-          2/23ページ
-        </Progress>
-      </LessonContents>
-      <LessonLink>{"レッスン詳細へ >"}</LessonLink>
-    </LessonCardContainer>
+    <Link
+      to={`/${metaName}/${index + 1}`}
+      style={{ textDecoration: "none", color: "rgb(88, 118, 163)" }}
+    >
+      <LessonCardContainer>
+        <LessonImg />
+        <LessonContents>
+          <LessonTitle>{section.title}</LessonTitle>
+          <Progress>
+            <ProgressBar />
+            2/23ページ
+          </Progress>
+        </LessonContents>
+        <LessonLink>{"レッスン詳細へ >"}</LessonLink>
+      </LessonCardContainer>
+    </Link>
   );
 }

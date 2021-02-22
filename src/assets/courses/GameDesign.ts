@@ -5,7 +5,7 @@ import { P5 } from "../sections/P5";
 import { UNITY } from "../sections/UNITY";
 
 export const GAME_DESIGN_COURSE: ICourses = {
-  name: "ゲーム開発",
+  name: "ゲームデザイン",
   metaName: "game-design",
   logoSVG: "???",
   description:

@@ -78,13 +78,17 @@ export default function LessonContainer() {
       </CategoryList>
 
       <Slick
-        ref={slider => watchedCourseRef.current = slider}
+        ref={(slider) => (watchedCourseRef.current = slider)}
         {...settings}
       >
         {courceList.map((course) => (
           <SectionContainer>
-            {course.sections.map((section) => (
-              <LessonCard section={section} />
+            {course.sections.map((section, i) => (
+              <LessonCard
+                section={section}
+                metaName={course.metaName}
+                index={i}
+              />
             ))}
           </SectionContainer>
         ))}
