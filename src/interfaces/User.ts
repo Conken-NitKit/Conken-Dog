@@ -11,7 +11,7 @@ export interface IUser {
   completionList: string[];
   displayName: string;
   email: string;
-  role: "ADMIN" | "MEMBER" | "WAITING_AUTHENTICATION";
+  role: "ADMIN" | "MEMBER" | "WAITING_AUTHENTICATION" | "DENINED";
   team:
     | "WEB_CREATE"
     | "WEB_DESIGN"
