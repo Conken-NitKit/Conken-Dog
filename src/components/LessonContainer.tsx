@@ -5,7 +5,7 @@ import styled from "styled-components";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import { courceList } from "../assets/courses";
+import { courseList } from "../assets/courses";
 import { threadId } from "worker_threads";
 import Slider from "./Slider";
 
@@ -67,7 +67,7 @@ export default function LessonContainer() {
   return (
     <>
       <CategoryList>
-        {courceList.map((course, i) => (
+        {courseList.map((course, i) => (
           <CategoryTag
             isSelected={watchedCourseIndex === i}
             onClick={() => watchedCourseRef.current!.slickGoTo(i)}
@@ -81,7 +81,7 @@ export default function LessonContainer() {
         ref={(slider) => (watchedCourseRef.current = slider)}
         {...settings}
       >
-        {courceList.map((course) => (
+        {courseList.map((course) => (
           <SectionContainer>
             {course.sections.map((section, i) => (
               <LessonCard

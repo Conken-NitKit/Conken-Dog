@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import { Route, BrowserRouter } from "react-router-dom";
-import { courceList } from "./assets/courses";
+import { courseList } from "./assets/courses";
 import Home from "./pages/Home";
 import Course from "./pages/Course";
 import Section from "./pages/Section";
@@ -16,19 +16,19 @@ const Root = () => {
       <BrowserRouter>
         <Route exact path="/" component={Home} />
 
-        {courceList.map((cource) => (
+        {courseList.map((course) => (
           <Route
             exact
-            path={`/${cource.metaName}`}
-            component={() => <Course value={cource} />}
+            path={`/${course.metaName}`}
+            component={() => <Course value={course} />}
           />
         ))}
 
-        {courceList.map((cource) =>
-          cource.sections.map((section, i) => (
+        {courseList.map((course) =>
+          course.sections.map((section, i) => (
             <Route
               exact
-              path={`/${cource.metaName}/${i + 1}`}
+              path={`/${course.metaName}/${i + 1}`}
               component={() => <Section value={section} />}
             />
           ))

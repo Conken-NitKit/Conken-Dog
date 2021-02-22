@@ -6,6 +6,7 @@ import Slider from "../components/Slider";
 import { Heading2 } from "../styles/fonts/Heading2";
 import { Small } from "../styles/fonts/Small";
 import { mockFeeds } from "../mocks/feed";
+import { courseList } from "../assets/courses";
 
 const TopContainer = styled.div`
   display: flex;
@@ -94,13 +95,9 @@ export default function Home() {
       </TopContainer>
       <HeadContainer>
         <MenuList>
-          <MenuListLink>特集</MenuListLink>
-          <MenuListLink>Web開発</MenuListLink>
-          <MenuListLink>Webデザイン</MenuListLink>
-          <MenuListLink>ゲーム開発</MenuListLink>
-          <MenuListLink>ゲームデザイン</MenuListLink>
-          <MenuListLink>AI</MenuListLink>
-          <MenuListLink>イラスト</MenuListLink>
+          {courseList.map((course) => (
+            <MenuListLink>{course.name}</MenuListLink>
+          ))}
         </MenuList>
         <HeadContents>
           <Slider />
@@ -119,7 +116,7 @@ export default function Home() {
         <ContentsContainer>
           <Heading2>フィード</Heading2>
           {mockFeeds.map((feed) => (
-            <FeedCard feed={feed}/>
+            <FeedCard feed={feed} />
           ))}
         </ContentsContainer>
       </ContentsWrapper>

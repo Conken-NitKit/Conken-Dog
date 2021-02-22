@@ -15,12 +15,12 @@ export interface ICourses {
   sections: ISection[];
 }
 
-export const courceList: ICourses[] = [
+export const courseList: ICourses[] = [
   OTHERS,
   WEB_CREATE_COURSE,
   WEB_DESIGN_COURSE,
   GAME_CREATE_COURSE,
   GAME_DESIGN_COURSE,
   AI_COURSE,
-  ILLUST_COURSE
+  ILLUST_COURSE,
 ];
