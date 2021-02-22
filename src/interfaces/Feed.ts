@@ -1,9 +1,9 @@
 export interface IFeed {
   title: string;
   link: string;
-  tags: string[];
   contributorName: string;
   timestamp: string;
+  tags: string[];
   visitors: string[];
   fans: string[];
   collectors: string[];

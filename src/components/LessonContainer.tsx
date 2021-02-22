@@ -52,7 +52,6 @@ const SectionContainer = styled.div`
 
 export default function LessonContainer() {
   const [watchedCourseIndex, setWatchedCourseIndex] = useState<number>(0);
-  const [watchedCourseNav, setwatchedCourseNav] = useState<Slick | null>();
   const watchedCourseRef = useRef<Slick | null>();
 
   const settings = {

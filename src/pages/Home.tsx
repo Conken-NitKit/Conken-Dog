@@ -7,6 +7,7 @@ import { Heading2 } from "../styles/fonts/Heading2";
 import { Small } from "../styles/fonts/Small";
 import { mockFeeds } from "../mocks/feed";
 import { courseList } from "../assets/courses";
+import FeedContainer from "../components/FeedContainer";
 
 const TopContainer = styled.div`
   display: flex;
@@ -83,10 +84,6 @@ const ContentsContainer = styled.div`
 `;
 
 export default function Home() {
-  const [watchedCourse, setWatchedCourse] = useState<string>("others");
-  const [watchedFinishedCourse, setWatchedFinishedCourse] = useState<string>(
-    "others"
-  );
   return (
     <div>
       <TopContainer>
@@ -114,10 +111,7 @@ export default function Home() {
           <LessonContainer />
         </ContentsContainer>
         <ContentsContainer>
-          <Heading2>フィード</Heading2>
-          {mockFeeds.map((feed) => (
-            <FeedCard feed={feed} />
-          ))}
+          <FeedContainer />
         </ContentsContainer>
       </ContentsWrapper>
     </div>
