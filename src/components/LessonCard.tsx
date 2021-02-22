@@ -1,5 +1,7 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { userContext } from "../contexts/userContext";
 import { ISection } from "../assets/sections";
 
 const LessonCardContainer = styled.div`
@@ -51,13 +53,19 @@ const Progress = styled.div`
   margin-bottom: 16px;
 `;
 
-const ProgressBar = styled.div`
+const ProgressBar = styled.div<{ progress: number }>`
   position: relative;
   top: 50%;
   width: 86px;
   height: 6px;
   background-color: rgba(212, 224, 232, 0.5);
-  background: linear-gradient(90deg, #30c8d6 0, #30c8d6 40%, #eee 0, #eee);
+  background: linear-gradient(
+    90deg,
+    #30c8d6 0,
+    #30c8d6 ${(props) => props.progress}%,
+    #eee 0,
+    #eee
+  );
   border: 0;
   box-shadow: none;
   border-radius: 3px;
@@ -78,6 +86,13 @@ interface Props {
 }
 
 export default function LessonCard({ section, metaName, index }: Props) {
+  const { user } = useContext(userContext);
+
+  const countComplete = () =>
+    section.contentsList.reduce((cnt, cur): number => {
+      return cnt + (user.completionList.includes(cur.link) ? 1 : 0);
+    }, 0);
+
   return (
     <Link
       to={`/${metaName}/${index + 1}`}
@@ -88,8 +103,10 @@ export default function LessonCard({ section, metaName, index }: Props) {
         <LessonContents>
           <LessonTitle>{section.title}</LessonTitle>
           <Progress>
-            <ProgressBar />
-            2/23ページ
+            <ProgressBar
+              progress={(countComplete() / section.contentsList.length) * 100}
+            />
+            {countComplete()}/{section.contentsList.length}ページ
           </Progress>
         </LessonContents>
         <LessonLink>{"レッスン詳細へ >"}</LessonLink>

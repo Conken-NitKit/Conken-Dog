@@ -12,14 +12,15 @@ export interface IUser {
   displayName: string;
   email: string;
   role: "ADMIN" | "MEMBER" | "WAITING_AUTHENTICATION" | "DENINED";
-  team:
+  team: (
     | "WEB_CREATE"
     | "WEB_DESIGN"
     | "GAME_CREATE"
     | "GAME_DESIGN"
     | "SECURITY"
     | "AI"
-    | "UNDECIDED";
+    | "ILLUST"
+  )[];
 }
 
 export const instanceOfUser = (arg: any): arg is IUser =>
