@@ -103,12 +103,6 @@ export const MIND_CONTROL: ISection = {
       requiredTime: 20,
     },
     {
-      title: "知らないと100%損する最強の心理学効果３選",
-      link: "https://youtu.be/vSC59q6_dbA",
-      mediaType: ["READ_ONLY", "VIDEO"],
-      requiredTime: 20,
-    },
-    {
       title: "たった２文字で契約率を上げる怖い営業テクニック",
       link: "https://youtu.be/Z9bXyfMHSpU",
       mediaType: ["READ_ONLY", "VIDEO"],
