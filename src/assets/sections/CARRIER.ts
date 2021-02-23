@@ -26,20 +26,14 @@ export const CARRIER: ISection = {
       requiredTime: 14,
     },
     {
-      title:
-        "いつから就活を始めるべきか？インターンには行くべきか？就活はどう動くべきか？",
-      link: "https://youtu.be/t2dqLpilZ8E",
-      mediaType: ["READ_ONLY", "VIDEO"],
-      requiredTime: 14,
-    },
-    {
       title: "最強の情報収集力を手に入れる方法は「Feedly」を使うこと！",
       link: "https://youtu.be/pDb3Q19hVno",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 17,
     },
     {
-      title: "ブラック企業とホワイト企業の違いをビジネスモデルと収益構造から分析しよう！",
+      title:
+        "ブラック企業とホワイト企業の違いをビジネスモデルと収益構造から分析しよう！",
       link: "https://youtu.be/d_hP9U4xmEs",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 21,
@@ -49,6 +43,12 @@ export const CARRIER: ISection = {
       link: "https://youtu.be/xlmG9RUmH_Y",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 13,
+    },
+    {
+      title: "科学的な適職｜幸せホルモン分泌しまくりハッピー職業の正体とは？",
+      link: "https://youtu.be/KcUyFrb5cf4",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 20,
     },
     {
       title: "好きな仕事を見つける方法",
@@ -80,6 +80,12 @@ export const CARRIER: ISection = {
       link: "https://youtu.be/hLlot_iJU-I",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 17,
+    },
+    {
+      title: "転職と副業のかけ算 ～生涯年収を最大化する生き方～",
+      link: "https://youtu.be/5-iG9sS-l3A",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 9,
     },
     {
       title: "目標を達成するためのメンタルの作り方",
@@ -213,12 +219,6 @@ export const CARRIER: ISection = {
       link: "https://youtu.be/5NFHH6oW0qQ",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 9,
-    },
-    {
-      title: "夢が叶わない理由は○○です",
-      link: "https://youtu.be/R0Jo8J2wOog",
-      mediaType: ["READ_ONLY", "VIDEO"],
-      requiredTime: 6,
     },
     {
       title: "夢が叶わない理由は○○です",
