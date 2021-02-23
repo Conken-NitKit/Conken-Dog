@@ -19,16 +19,18 @@ const Root = () => {
         {courseList.map((course) => (
           <Route
             exact
+            key={course.metaName}
             path={`/${course.metaName}`}
             component={() => <Course value={course} />}
           />
         ))}
 
         {courseList.map((course) =>
-          course.sections.map((section, i) => (
+          course.sections.map((section, index) => (
             <Route
               exact
-              path={`/${course.metaName}/${i + 1}`}
+              key={`${course.metaName}/${index}`}
+              path={`/${course.metaName}/${index + 1}`}
               component={() => <Section value={section} />}
             />
           ))

@@ -151,8 +151,8 @@ export default function FeedCard({
       <Container>
         <Icon src={Tagslogo} />
         <Small>
-          {feed.tags.map((tag) => (
-            <Tag>{tag}</Tag>
+          {feed.tags.map((tag, index) => (
+            <Tag key={`feed/tag/${index}`}>{tag}</Tag>
           ))}
         </Small>
       </Container>

@@ -72,8 +72,9 @@ export default function FeedContainer() {
     <>
       <Heading2>フィード</Heading2>
       <ScrollContainer>
-        {feeds.map((feed) => (
+        {feeds.map((feed, index) => (
           <FeedCard
+            key={`feeds/${index}`}
             feed={feed}
             addVisitor={addVisitor}
             tapFav={TapFav}

@@ -3,7 +3,6 @@ import styled from "styled-components";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-
 const SlideContainer = styled.div`
   background-color: gray;
   height: 296px;
@@ -23,13 +22,11 @@ export default function Slider() {
   };
   return (
     <Slick {...settings}>
-      {
-        [...Array(10)].map((_, i) => (
-          <SlideContainer>
-            <h1>{i}</h1>
-          </SlideContainer>
-        ))
-      }
+      {[...Array(10)].map((_, index) => (
+        <SlideContainer key={`slider/${index}`}>
+          <h1>{index}</h1>
+        </SlideContainer>
+      ))}
     </Slick>
   );
 }

@@ -73,10 +73,11 @@ export default function LessonContainer({ useFinishedFilter }: Props) {
   return (
     <>
       <CategoryList>
-        {courseList.map((course, i) => (
+        {courseList.map((course, index) => (
           <CategoryTag
-            isSelected={watchedCourseIndex === i}
-            onClick={() => watchedCourseRef.current!.slickGoTo(i)}
+            key={`course/tag/${index}`}
+            isSelected={watchedCourseIndex === index}
+            onClick={() => watchedCourseRef.current!.slickGoTo(index)}
           >
             {course.name}
           </CategoryTag>
@@ -87,13 +88,14 @@ export default function LessonContainer({ useFinishedFilter }: Props) {
         ref={(slider) => (watchedCourseRef.current = slider)}
         {...settings}
       >
-        {courseList.map((course) => (
-          <SectionContainer useFinishedFilter={useFinishedFilter}>
-            {course.sections.map((section, i) => (
+        {courseList.map((course, index) => (
+          <SectionContainer key={index} useFinishedFilter={useFinishedFilter}>
+            {course.sections.map((section, index) => (
               <LessonCard
+                key={`course/section/${index}`}
                 section={section}
                 metaName={course.metaName}
-                index={i}
+                index={index}
               />
             ))}
           </SectionContainer>

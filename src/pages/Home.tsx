@@ -117,7 +117,9 @@ export default function Home() {
       <HeadContainer>
         <MenuList>
           {courseList.map((course) => (
-            <MenuListLink>{course.name}</MenuListLink>
+            <MenuListLink key={`menu/${course.metaName}`}>
+              {course.name}
+            </MenuListLink>
           ))}
         </MenuList>
         <HeadContents>
@@ -128,11 +130,11 @@ export default function Home() {
         <ContentsContainer>
           <Heading2>レッスン</Heading2>
           <Small>今後、あなたに取り組んで欲しいレッスン</Small>
-          <LessonContainer useFinishedFilter={false}/>
+          <LessonContainer useFinishedFilter={false} />
 
           <Heading2>修了レッスン</Heading2>
           <Small>あなたがこれまでに取り組んできたレッスン</Small>
-          <LessonContainer useFinishedFilter={true}/>
+          <LessonContainer useFinishedFilter={true} />
         </ContentsContainer>
         <ContentsContainer>
           <FeedContainer />
