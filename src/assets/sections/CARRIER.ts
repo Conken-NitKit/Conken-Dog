@@ -155,6 +155,12 @@ export const CARRIER: ISection = {
       requiredTime: 18,
     },
     {
+      title: "サラリーマンが20％OFFで自己投資する方法【教育訓練給付金】",
+      link: "https://youtu.be/n5W2OCg2urM",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 10,
+    },
+    {
       title: "これからのお金の教科書",
       link: "https://youtu.be/DITX9pov_v0",
       mediaType: ["READ_ONLY", "VIDEO"],

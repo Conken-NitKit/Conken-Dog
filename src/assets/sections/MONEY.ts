@@ -2,10 +2,14 @@ import { ISection } from ".";
 
 export const MONEY: ISection = {
   title: "超大切なお金のお話",
-  description:
-    "ハッカソンやアプリコンテスト、高専祭などでの企画出しの際や定期的な定例会議の際に" +
-    "効率よく議論を進めていくためのテクニックをまとめました。",
+  description: "参考文献:",
   contentsList: [
+    {
+      title: "その保険、不要やで！！！～保険解約のススメとその理由～",
+      link: "https://youtu.be/A66-j0z-gfA",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 6,
+    },
     {
       title:
         "賃貸の部屋に傷をつけてしまった時に無料で直す方法〜火災保険の補償を使って直そう！",
@@ -81,6 +85,12 @@ export const MONEY: ISection = {
       requiredTime: 21,
     },
     {
+      title: "サラリーマンの9割が豊かな老後を迎えられない理由と解決策",
+      link: "https://youtu.be/W5sANNsnoVU",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 12,
+    },
+    {
       title: "【EXIT戦略①】お金持ちになる唯一の方法",
       link: "https://youtu.be/WAC0UFn02FA",
       mediaType: ["READ_ONLY", "VIDEO"],
@@ -130,12 +140,6 @@ export const MONEY: ISection = {
       requiredTime: 28,
     },
     {
-      title: "【お金の授業②】〜素人でもできる投資の鉄則を教えます〜",
-      link: "https://youtu.be/t66nXm6CHPo",
-      mediaType: ["READ_ONLY", "VIDEO"],
-      requiredTime: 28,
-    },
-    {
       title: "【預金か投資か①】大人も子供も知っておくべきお金の増やし方入門",
       link: "https://youtu.be/hq7EtERjXX8",
       mediaType: ["READ_ONLY", "VIDEO"],
@@ -173,10 +177,16 @@ export const MONEY: ISection = {
       requiredTime: 22,
     },
     {
-      title: "【お金の守り方②】支出の把握と貯金をしたら複利でお金持ちになろう",
-      link: "https://youtu.be/H0pS2-t4pzA",
+      title: "金利のパワーについて詳しく解説",
+      link: "https://youtu.be/4iwE02CTFVg",
       mediaType: ["READ_ONLY", "VIDEO"],
-      requiredTime: 22,
+      requiredTime: 10,
+    },
+    {
+      title: "リボ払い失敗談！ 〜たった1万円のリボ返済から6年半の借金地獄に落ちるまで〜",
+      link: "https://youtu.be/LxipEVGwZsA",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 8,
     },
     {
       title: "【お金の授業総まとめ①】",
@@ -228,6 +238,36 @@ export const MONEY: ISection = {
       requiredTime: 41,
     },
     {
+      title: "インデックスファンド選びの4つのポイント【株式投資編】",
+      link: "https://youtu.be/Sf5v91X6zfE",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 14,
+    },
+    {
+      title: "両学長が楽天証券を使っている3つの理由【評判GOOD】",
+      link: "https://youtu.be/o-RwO6r-xEM",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 24,
+    },
+    {
+      title: "楽天経済圏に移行して400万円分の資産所得を得る方法",
+      link: "https://youtu.be/8rV9hiNxxXc",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 10,
+    },
+    {
+      title: "ふるさと納税で生活費をトコトン節約する具体的な方法",
+      link: "https://youtu.be/vn8RdqwepN0",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 11,
+    },
+    {
+      title: "《NISA》と《つみたてNISA》とは？",
+      link: "https://youtu.be/cBcFF1fw5OY",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 9,
+    },
+    {
       title: "【FIRE①】最速で経済的自立を実現する方法",
       link: "https://youtu.be/qDDc1pIsCFY",
       mediaType: ["READ_ONLY", "VIDEO"],
@@ -238,6 +278,55 @@ export const MONEY: ISection = {
       link: "https://youtu.be/bnCHUWvHC-g",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 28,
+    },
+    {
+      title: "資産運用を始めると実感する「2つの真実」",
+      link: "https://youtu.be/WcV0pCIjnzY",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 13,
+    },
+    {
+      title: "生活費を上げずにミニマムに暮らすメリット7選",
+      link: "https://youtu.be/GfKoSuJvOCQ",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 22,
+    },
+    {
+      title: "30歳で1000万貯まる『貯金を増やすコツ5選』",
+      link: "https://youtu.be/vn8RdqwepN0",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 17,
+    },
+    {
+      title: "賢い人だけが知っている　自分の「本当の年収」",
+      link: "https://youtu.be/F29DTP8Aulg",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 15,
+    },
+    {
+      title:
+        "21世紀の資本 byトマ・ピケティ【なぜ金持ちは金持ちなのか？→世襲資本主義】",
+      link: "https://youtu.be/nxrLeco0ACg",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 11,
+    },
+    {
+      title: "日本人のためのお金の増やし方大全",
+      link: "https://youtu.be/PJdCr1Fop4c",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 30,
+    },
+    {
+      title: "お金が増える 米国株超楽ちん投資術",
+      link: "https://youtu.be/G4-LB-yeUb0",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 21,
+    },
+    {
+      title: "素人でも株でお金持ちになる方法",
+      link: "https://youtu.be/h9-n7aphXRI",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 26,
     },
   ],
 };
