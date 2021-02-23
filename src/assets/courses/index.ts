@@ -1,6 +1,11 @@
 import { ISection } from "../sections";
+import { AI_COURSE } from "./AI";
 import { GAME_CREATE_COURSE } from "./GameCreate";
+import { GAME_DESIGN_COURSE } from "./GameDesign";
+import { ILLUST_COURSE } from "./Illust";
+import { OTHERS } from "./Others";
 import { WEB_CREATE_COURSE } from "./WebCreate";
+import { WEB_DESIGN_COURSE } from "./WebDesign";
 
 export interface ICourses {
   name: string;
@@ -10,4 +15,12 @@ export interface ICourses {
   sections: ISection[];
 }
 
-export const courceList: ICourses[] = [WEB_CREATE_COURSE, GAME_CREATE_COURSE];
+export const courseList: ICourses[] = [
+  OTHERS,
+  WEB_CREATE_COURSE,
+  WEB_DESIGN_COURSE,
+  GAME_CREATE_COURSE,
+  GAME_DESIGN_COURSE,
+  AI_COURSE,
+  ILLUST_COURSE,
+];

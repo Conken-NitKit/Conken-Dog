@@ -6,5 +6,5 @@ export const Heading2 = styled.h2`
   color: rgb(43, 84, 106);
   line-height: 1.5;
   letter-spacing: .04em;
-  margin: 0;
+  margin: 0 0 8px 0;
 `

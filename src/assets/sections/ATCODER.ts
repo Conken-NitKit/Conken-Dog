@@ -1,7 +1,7 @@
 import { ISection } from ".";
 
 export const ATCODER: ISection = {
-  title: "C++入門 AtCoder Programming Guide for beginners (APG4b)",
+  title: "APG4b",
   description:
     "多くの入門書とは異なり、APG4bは汎用的な「プログラミングの基礎」を学ぶことを目的としているため、プログラミングそのものに興味がある人から、アプリやゲームを作りたいと思っている人まで、最初のプログラミング教材としてオススメできます。\n" +
     "APG4bでは説明を読んだあと、練習問題を自分で考えてプログラムを書き、その正しさを採点システムで確認することで、着実にプログラムを書けるようになっていきます。\n",

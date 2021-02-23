@@ -11,15 +11,16 @@ export interface IUser {
   completionList: string[];
   displayName: string;
   email: string;
-  role: "ADMIN" | "MEMBER" | "WAITING_AUTHENTICATION";
-  team:
+  role: "ADMIN" | "MEMBER" | "WAITING_AUTHENTICATION" | "DENINED";
+  team: (
     | "WEB_CREATE"
     | "WEB_DESIGN"
     | "GAME_CREATE"
     | "GAME_DESIGN"
     | "SECURITY"
     | "AI"
-    | "UNDECIDED";
+    | "ILLUST"
+  )[];
 }
 
 export const instanceOfUser = (arg: any): arg is IUser =>
