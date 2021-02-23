@@ -157,6 +157,12 @@ export const COMMUNICATION: ISection = {
       requiredTime: 6,
     },
     {
+      title: "超影響力",
+      link: "https://youtu.be/rR5Mt_xYPWw",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 32,
+    },
+    {
       title: "NLP式｜ラポールを形成する４つの心理テクニック",
       link: "https://youtu.be/PJcJXvDoKI0",
       mediaType: ["READ_ONLY", "VIDEO"],
