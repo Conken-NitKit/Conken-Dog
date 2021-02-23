@@ -183,7 +183,8 @@ export const MONEY: ISection = {
       requiredTime: 10,
     },
     {
-      title: "リボ払い失敗談！ 〜たった1万円のリボ返済から6年半の借金地獄に落ちるまで〜",
+      title:
+        "リボ払い失敗談！ 〜たった1万円のリボ返済から6年半の借金地獄に落ちるまで〜",
       link: "https://youtu.be/LxipEVGwZsA",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 8,
@@ -296,6 +297,12 @@ export const MONEY: ISection = {
       link: "https://youtu.be/vn8RdqwepN0",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 17,
+    },
+    {
+      title: "ユダヤ人大富豪に教わった人生の幸福度が上がる銀行口座の使い分け方法",
+      link: "https://youtu.be/hReGDOiTNAU",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 14,
     },
     {
       title: "賢い人だけが知っている　自分の「本当の年収」",
