@@ -152,8 +152,18 @@ export const mockFeeds: IFeed[] = [
     collectors: []
   },
   {
+    title: "アプリのアップデート500本ノックから学ぶUI改善のヒント",
+    link: "https://note.com/akira_miyazaki/n/nab9a1252ac4e",
+    contributorName: "高専太郎",
+    timestamp: (new Date()).toISOString(),
+    tags: ["npm", "react", "styled-components"],
+    visitors: [],
+    fans: [],
+    collectors: []
+  },
+  {
     title: "新規登録 UI まとめてみた",
-    link: "https://note.com/akira_miyazaki/n/n04086df6a583",
+    link: "https://note.com/telq/n/n04086df6a583",
     contributorName: "高専太郎",
     timestamp: (new Date()).toISOString(),
     tags: ["npm", "react", "styled-components"],
@@ -163,7 +173,7 @@ export const mockFeeds: IFeed[] = [
   },
   {
     title: "課金 UI まとめてみた",
-    link: "https://note.com/akira_miyazaki/n/n836e139e0a6b",
+    link: "https://note.com/telq/n/n836e139e0a6b",
     contributorName: "高専太郎",
     timestamp: (new Date()).toISOString(),
     tags: ["npm", "react", "styled-components"],
@@ -173,7 +183,7 @@ export const mockFeeds: IFeed[] = [
   },
   {
     title: "UIのお作法。28個の「〇〇できそう感」をまとめました。",
-    link: "https://note.com/akira_miyazaki/n/n6bba0b892778",
+    link: "https://note.com/okamotomai/n/n6bba0b892778",
     contributorName: "高専太郎",
     timestamp: (new Date()).toISOString(),
     tags: ["npm", "react", "styled-components"],
