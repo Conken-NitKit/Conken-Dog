@@ -157,5 +157,11 @@ export const LOGICAL_THINKING: ISection = {
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 14,
     },
+    {
+      title: "ハートドリブン～目に見えないものを大切にする力 ～",
+      link: "https://youtu.be/U6JE6MExyvc",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 9,
+    },
   ],
 };

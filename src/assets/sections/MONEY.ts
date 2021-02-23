@@ -127,6 +127,24 @@ export const MONEY: ISection = {
       requiredTime: 22,
     },
     {
+      title: "オープンイノベーション促進税制でスタートアップの時代到来！",
+      link: "https://youtu.be/oSfdqOyLQ8U",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 5,
+    },
+    {
+      title: "エンジニアが最も起業に向いているという話。IT企業においてエンジニア出身社長は最強",
+      link: "https://youtu.be/eIiyFPPVGxM",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 12,
+    },
+    {
+      title: "起業するためにしてきたことをまとめました！",
+      link: "https://youtu.be/Xmbfx6qZQTI",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 20,
+    },
+    {
       title:
         "【お金の授業①】〜学校では教えてくれない「資産運用の鉄則」素人が必ずハマる罠編〜",
       link: "https://youtu.be/R_kzxTCcwbc",
@@ -299,7 +317,8 @@ export const MONEY: ISection = {
       requiredTime: 17,
     },
     {
-      title: "ユダヤ人大富豪に教わった人生の幸福度が上がる銀行口座の使い分け方法",
+      title:
+        "ユダヤ人大富豪に教わった人生の幸福度が上がる銀行口座の使い分け方法",
       link: "https://youtu.be/hReGDOiTNAU",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 14,
