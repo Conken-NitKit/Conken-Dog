@@ -39,6 +39,12 @@ export const CARRIER: ISection = {
       requiredTime: 17,
     },
     {
+      title: "ブラック企業とホワイト企業の違いをビジネスモデルと収益構造から分析しよう！",
+      link: "https://youtu.be/d_hP9U4xmEs",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 21,
+    },
+    {
       title: "企業の選び方！就職活動・転職活動で後悔しない会社選びをしよう！",
       link: "https://youtu.be/xlmG9RUmH_Y",
       mediaType: ["READ_ONLY", "VIDEO"],
