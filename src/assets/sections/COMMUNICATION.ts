@@ -115,6 +115,12 @@ export const COMMUNICATION: ISection = {
       requiredTime: 5,
     },
     {
+      title: "100%話術の達人になれる話し方の上達法",
+      link: "https://youtu.be/V7xWH2jsEAY",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 14,
+    },
+    {
       title: "組織が広がり続ける仕組み【ABCで人生楽勝】",
       link: "https://youtu.be/QJv-1z68tok",
       mediaType: ["READ_ONLY", "VIDEO"],
