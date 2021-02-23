@@ -40,5 +40,145 @@ export const mockFeeds: IFeed[] = [
     visitors: [],
     fans: [],
     collectors: []
-  }
+  },
+  {
+    title: "Ionicons: The premium icon pack for Ionic Framework",
+    link: "https://ionicons.com/",
+    contributorName: "高専太郎",
+    timestamp: (new Date()).toISOString(),
+    tags: ["npm", "react", "styled-components"],
+    visitors: [],
+    fans: [],
+    collectors: []
+  },
+  {
+    title: "React Slick Documentation",
+    link: "https://react-slick.neostack.com/docs/example/simple-slider",
+    contributorName: "高専太郎",
+    timestamp: (new Date()).toISOString(),
+    tags: ["npm", "react", "styled-components"],
+    visitors: [],
+    fans: [],
+    collectors: []
+  },
+  {
+    title: "Array.prototype.includes()",
+    link: "https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/includes",
+    contributorName: "高専太郎",
+    timestamp: (new Date()).toISOString(),
+    tags: ["npm", "react", "styled-components"],
+    visitors: [],
+    fans: [],
+    collectors: []
+  },
+  {
+    title: "Array.prototype.reduce()",
+    link: "https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce",
+    contributorName: "高専太郎",
+    timestamp: (new Date()).toISOString(),
+    tags: ["npm", "react", "styled-components"],
+    visitors: [],
+    fans: [],
+    collectors: []
+  },
+  {
+    title: "Array.prototype.splice()",
+    link: "https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/splice",
+    contributorName: "高専太郎",
+    timestamp: (new Date()).toISOString(),
+    tags: ["npm", "react", "styled-components"],
+    visitors: [],
+    fans: [],
+    collectors: []
+  },
+  {
+    title: "配列の重複をはじく、もしくは重複を取り出す",
+    link: "https://qiita.com/cocottejs/items/7afe6d5f27ee7c36c61f",
+    contributorName: "高専太郎",
+    timestamp: (new Date()).toISOString(),
+    tags: ["npm", "react", "styled-components"],
+    visitors: [],
+    fans: [],
+    collectors: []
+  },
+  {
+    title: "ダッシュボード | プログラミングの入門なら基礎から学べるProgate[プロゲート]",
+    link: "https://prog-8.com/dashboard",
+    contributorName: "高専太郎",
+    timestamp: (new Date()).toISOString(),
+    tags: ["npm", "react", "styled-components"],
+    visitors: [],
+    fans: [],
+    collectors: []
+  },
+  {
+    title: "新R25 - シゴトも人生も、もっと楽しもう。",
+    link: "https://r25.jp/",
+    contributorName: "高専太郎",
+    timestamp: (new Date()).toISOString(),
+    tags: ["npm", "react", "styled-components"],
+    visitors: [],
+    fans: [],
+    collectors: []
+  },
+  {
+    title: "アプリのアップデート100本ノックから学ぶUI改善のヒント",
+    link: "https://note.com/akira_miyazaki/n/n2a1c4ef230c3",
+    contributorName: "高専太郎",
+    timestamp: (new Date()).toISOString(),
+    tags: ["npm", "react", "styled-components"],
+    visitors: [],
+    fans: [],
+    collectors: []
+  },
+  {
+    title: "アプリのアップデート200本ノックから学ぶUI改善のヒント",
+    link: "https://note.com/akira_miyazaki/n/n256e671457b7",
+    contributorName: "高専太郎",
+    timestamp: (new Date()).toISOString(),
+    tags: ["npm", "react", "styled-components"],
+    visitors: [],
+    fans: [],
+    collectors: []
+  },
+  {
+    title: "アプリのアップデート300本ノックから学ぶUI改善のヒント",
+    link: "https://note.com/akira_miyazaki/n/nb32211b94102",
+    contributorName: "高専太郎",
+    timestamp: (new Date()).toISOString(),
+    tags: ["npm", "react", "styled-components"],
+    visitors: [],
+    fans: [],
+    collectors: []
+  },
+  {
+    title: "新規登録 UI まとめてみた",
+    link: "https://note.com/akira_miyazaki/n/n04086df6a583",
+    contributorName: "高専太郎",
+    timestamp: (new Date()).toISOString(),
+    tags: ["npm", "react", "styled-components"],
+    visitors: [],
+    fans: [],
+    collectors: []
+  },
+  {
+    title: "課金 UI まとめてみた",
+    link: "https://note.com/akira_miyazaki/n/n836e139e0a6b",
+    contributorName: "高専太郎",
+    timestamp: (new Date()).toISOString(),
+    tags: ["npm", "react", "styled-components"],
+    visitors: [],
+    fans: [],
+    collectors: []
+  },
+  {
+    title: "UIのお作法。28個の「〇〇できそう感」をまとめました。",
+    link: "https://note.com/akira_miyazaki/n/n6bba0b892778",
+    contributorName: "高専太郎",
+    timestamp: (new Date()).toISOString(),
+    tags: ["npm", "react", "styled-components"],
+    visitors: [],
+    fans: [],
+    collectors: []
+  },
 ]

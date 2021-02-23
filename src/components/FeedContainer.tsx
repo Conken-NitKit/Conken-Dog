@@ -1,9 +1,26 @@
 import { useContext, useState } from "react";
+import styled from "styled-components";
+import media from "styled-media-query";
 import FeedCard from "../components/FeedCard";
 import { Heading2 } from "../styles/fonts/Heading2";
 import { mockFeeds } from "../mocks/feed";
 import { IFeed } from "../interfaces/Feed";
 import { userContext } from "../contexts/userContext";
+
+const ScrollContainer = styled.div`
+  max-height: 1256px;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+`;
+
+const EndPadding = styled.div`
+  height: 0;
+  ${media.lessThan("medium")`
+    height: 80px;
+  `}
+`;
 
 export default function FeedContainer() {
   const { user } = useContext(userContext);
@@ -54,9 +71,17 @@ export default function FeedContainer() {
   return (
     <>
       <Heading2>フィード</Heading2>
-      {feeds.map((feed) => (
-        <FeedCard feed={feed} addVisitor={addVisitor} tapFav={TapFav} tapBookMark={tapBookMark} />
-      ))}
+      <ScrollContainer>
+        {feeds.map((feed) => (
+          <FeedCard
+            feed={feed}
+            addVisitor={addVisitor}
+            tapFav={TapFav}
+            tapBookMark={tapBookMark}
+          />
+        ))}
+        <EndPadding />
+      </ScrollContainer>
     </>
   );
 }
