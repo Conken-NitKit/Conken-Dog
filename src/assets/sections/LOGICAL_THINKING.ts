@@ -1,6 +1,6 @@
 import { ISection } from ".";
 
-export const HTML: ISection = {
+export const LOGICAL_THINKING: ISection = {
   title: "ロジカルシンキング",
   description:
     "ハッカソンやアプリコンテスト、高専祭などでの企画出しはもちろん、" +

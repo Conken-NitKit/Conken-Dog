@@ -1,6 +1,6 @@
 import { ISection } from ".";
 
-export const HTML: ISection = {
+export const INDUSTRY: ISection = {
   title: "業界情報",
   description: "IT業界に興味ある人向けの情報です。会社選びは慎重に...👍",
   contentsList: [
@@ -17,8 +17,7 @@ export const HTML: ISection = {
       requiredTime: 19,
     },
     {
-      title:
-        "SIer業界がブラックな理由を解説する。エンジニアは自社開発をしているWeb業界がオススメ！",
+      title: "SIer業界がブラックな理由を解説",
       link: "https://youtu.be/iy4nnAI9og4",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 20,
