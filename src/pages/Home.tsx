@@ -1,7 +1,6 @@
-import { useState } from "react";
 import styled from "styled-components";
 import media from "styled-media-query";
-import FeedCard from "../components/FeedCard";
+
 import LessonContainer from "../components/LessonContainer";
 import Slider from "../components/Slider";
 import { Heading2 } from "../styles/fonts/Heading2";

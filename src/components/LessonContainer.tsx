@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useState, useRef } from "react";
 import Slick from "react-slick";
 import LessonCard from "../components/LessonCard";
 import styled from "styled-components";
