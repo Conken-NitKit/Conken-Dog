@@ -1,15 +1,16 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
+import media from "styled-media-query";
+import { Link } from "react-router-dom";
 import { userContext } from "../contexts/userContext";
 import { ISection } from "../assets/sections";
 
 const LessonCardContainer = styled.div`
-  width: 100%;
+  width: 96%;
   height: 110px;
   display: inline-flex;
   align-items: center;
-  margin-bottom: 24px;
+  margin: 0 2% 24px;
   overflow: hidden;
   border-radius: 6px;
   box-shadow: 0 3px 6px -3px rgba(0, 0, 0, 0.3);
@@ -18,6 +19,9 @@ const LessonCardContainer = styled.div`
   &:hover {
     box-shadow: 0 4px 8px -4px rgba(0, 0, 0, 0.4);
   }
+  ${media.lessThan("medium")`
+    height: 72px;
+  `}
 `;
 
 const LessonImg = styled.div`
@@ -27,6 +31,10 @@ const LessonImg = styled.div`
   float: left;
   margin-right: 32px;
   flex-shrink: 0;
+  ${media.lessThan("medium")`
+    width: 72px;
+    margin-right: 16px;
+  `}
 `;
 
 const LessonContents = styled.div`
@@ -42,6 +50,12 @@ const LessonTitle = styled.h3`
   color: #2b5461;
   font-size: 1.1rem;
   font-weight: bold;
+  ${media.lessThan("medium")`
+    margin-bottom: 8px;
+  `}
+  ${media.lessThan("small")`
+    font-size: 0.75rem;
+  `}
 `;
 
 const Progress = styled.div`
@@ -51,6 +65,9 @@ const Progress = styled.div`
   letter-spacing: 0;
   color: rgba(43, 84, 106, 0.8);
   margin-bottom: 16px;
+  ${media.lessThan("small")`
+    font-size: 0.6rem;
+  `}
 `;
 
 const ProgressBar = styled.div<{ progress: number }>`
@@ -70,13 +87,26 @@ const ProgressBar = styled.div<{ progress: number }>`
   box-shadow: none;
   border-radius: 3px;
   margin: 0 12px 0 0;
+  ${media.lessThan("medium")`
+    width: 78px;
+    margin: 0 6px 0 0;
+    margin-right: 16px;
+  `}
 `;
 
 const LessonLink = styled.div`
   color: #2b546a;
   font-size: 0.75rem;
   white-space: nowrap;
-  margin: 0 32px 0 16px;
+  margin: 0 16px;
+  &::before {
+    content: "レッスン詳細へ"
+  }
+  ${media.lessThan("small")`
+    &::before {
+      content: ""
+    }
+  `}
 `;
 
 interface Props {
@@ -109,7 +139,7 @@ export default function LessonCard({ section, metaName, index }: Props) {
             {countComplete()}/{section.contentsList.length}ページ
           </Progress>
         </LessonContents>
-        <LessonLink>{"レッスン詳細へ >"}</LessonLink>
+        <LessonLink>{" >"}</LessonLink>
       </LessonCardContainer>
     </Link>
   );

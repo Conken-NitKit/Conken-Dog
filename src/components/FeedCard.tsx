@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import styled from "styled-components";
+import media from "styled-media-query";
 import { Small } from "../styles/fonts/Small";
 import Tagslogo from "../assets/img/Tags.svg";
 import Eyelogo from "../assets/img/Eye.svg";
@@ -18,6 +19,10 @@ const FeedContainer = styled.div`
   &:hover {
     background-color: #fafafa;
   }
+  ${media.lessThan("medium")`
+    width: 100%;
+    padding: 16px 0;
+  `}
 `;
 
 const FeedInfo = styled.p<{ isVisited: boolean }>`
@@ -27,11 +32,13 @@ const FeedInfo = styled.p<{ isVisited: boolean }>`
   letter-spacing: 0.06em;
   color: #5876a3;
   margin: 0;
+  ${media.lessThan("small")`
+    font-size: 0.65rem
+  `}
   &::after {
     content: "${(props) => (props.isVisited ? "" : "未読")}";
     font-family: "MS PGothic", sans-serif;
     color: white;
-    font-size: 0.8rem;
     font-weight: bold;
     padding: 4px 9px;
     height: 18px;
@@ -65,6 +72,9 @@ const Container = styled.div`
   justify-content: flex-start;
   align-items: center;
   padding-right: 32px;
+  ${media.lessThan("small")`
+    padding-right: 16px;
+  `}
 `;
 
 const CanClickContainer = styled(Container)`
@@ -105,6 +115,9 @@ const StatusContainer = styled.div`
 const ColorSpan = styled.span<{ color: string }>`
   color: ${(props) => props.color};
   font-weight: ${(props) => (props.color === "#5876a3" ? "normal" : "bold")};
+  ${media.lessThan("small")`
+    font-size: 0.5rem
+  `}
 `;
 
 interface Props {

@@ -2,12 +2,11 @@ import { useEffect, useState, useRef } from "react";
 import Slick from "react-slick";
 import LessonCard from "../components/LessonCard";
 import styled from "styled-components";
+import media from "styled-media-query";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import { courseList } from "../assets/courses";
-import { threadId } from "worker_threads";
-import Slider from "./Slider";
 
 const CategoryList = styled.ul`
   display: flex;
@@ -30,10 +29,11 @@ const CategoryTag = styled.li<{ isSelected: boolean }>`
   font-size: 0.75rem;
   letter-spacing: 0.06em;
   color: ${(props) => (props.isSelected ? "white" : "#AAA")};
-  margin: 0 4px 0;
+  margin: 0 4px 4px;
   padding: 4px ${(props) => (props.isSelected ? 10 : 8)}px;
   background-color: ${(props) =>
     props.isSelected ? "#30c8d6" : "rgba(0, 0, 0, 0)"};
+  box-shadow: 0 1px 8px -2px rgba(0, 0, 0, ${(props) => (props.isSelected ? 0.4 : 0)});
   border-radius: 13px;
   cursor: pointer;
   &::selection {
@@ -41,8 +41,11 @@ const CategoryTag = styled.li<{ isSelected: boolean }>`
   }
 `;
 
-const SectionContainer = styled.div`
-  height: 540px;
+const SectionContainer = styled.div<{useFinishedFilter: boolean}>`
+  height: ${props => props.useFinishedFilter ? 270 : 532}px;
+  ${media.greaterThan("medium")`
+    height: 532px;
+  `}
   overflow-y: scroll;
   outline: none;
   &::-webkit-scrollbar {
@@ -50,7 +53,11 @@ const SectionContainer = styled.div`
   }
 `;
 
-export default function LessonContainer() {
+interface Props {
+  useFinishedFilter: boolean;
+}
+
+export default function LessonContainer({ useFinishedFilter }: Props) {
   const [watchedCourseIndex, setWatchedCourseIndex] = useState<number>(0);
   const watchedCourseRef = useRef<Slick | null>();
 
@@ -81,7 +88,7 @@ export default function LessonContainer() {
         {...settings}
       >
         {courseList.map((course) => (
-          <SectionContainer>
+          <SectionContainer useFinishedFilter={useFinishedFilter}>
             {course.sections.map((section, i) => (
               <LessonCard
                 section={section}

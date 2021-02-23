@@ -1,11 +1,11 @@
 import { useState } from "react";
 import styled from "styled-components";
+import media from "styled-media-query";
 import FeedCard from "../components/FeedCard";
 import LessonContainer from "../components/LessonContainer";
 import Slider from "../components/Slider";
 import { Heading2 } from "../styles/fonts/Heading2";
 import { Small } from "../styles/fonts/Small";
-import { mockFeeds } from "../mocks/feed";
 import { courseList } from "../assets/courses";
 import FeedContainer from "../components/FeedContainer";
 
@@ -45,10 +45,16 @@ const HeadContainer = styled.div`
   flex-direction: column;
   align-items: center;
   background: linear-gradient(180deg, #30c8d6 0, #30c8d6 288px, #fff 0, #fff);
+  ${media.lessThan("large")`
+    background: #30c8d6;
+  `}
 `;
 
 const MenuList = styled.ul`
   display: flex;
+  ${media.lessThan("large")`
+    display: none;
+  `}
 `;
 
 const MenuListLink = styled.li`
@@ -69,18 +75,36 @@ const HeadContents = styled.div`
   height: 296px;
   background-color: white;
   box-shadow: 0 4px 8px -4px rgba(0, 0, 0, 0.3);
+  ${media.lessThan("large")`
+    width: 100%;
+  `}
 `;
 
 const ContentsWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   width: 990px;
-  margin: 72px auto 0;
+  margin: 0 auto 64px;
+  ${media.between("medium", "large")`
+    width: 462px;
+    flex-direction: column;
+    justify-content: center;
+  `}
+  ${media.lessThan("medium")`
+    width: 92%;
+    flex-direction: column;
+    justify-content: center;
+  `}
 `;
 
 const ContentsContainer = styled.div`
   padding: 0 8px;
   width: 462px;
+  margin-top: 64px;
+  ${media.lessThan("medium")`
+    padding: 0;
+    width: 100%;
+  `}
 `;
 
 export default function Home() {
@@ -104,11 +128,11 @@ export default function Home() {
         <ContentsContainer>
           <Heading2>レッスン</Heading2>
           <Small>今後、あなたに取り組んで欲しいレッスン</Small>
-          <LessonContainer />
+          <LessonContainer useFinishedFilter={false}/>
 
           <Heading2>修了レッスン</Heading2>
           <Small>あなたがこれまでに取り組んできたレッスン</Small>
-          <LessonContainer />
+          <LessonContainer useFinishedFilter={true}/>
         </ContentsContainer>
         <ContentsContainer>
           <FeedContainer />
