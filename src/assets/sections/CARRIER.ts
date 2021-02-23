@@ -39,6 +39,12 @@ export const CARRIER: ISection = {
       requiredTime: 21,
     },
     {
+      title: "好きな仕事を見つける方法",
+      link: "https://youtu.be/wVM1GFz9DVs",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 21,
+    },
+    {
       title: "企業の選び方！就職活動・転職活動で後悔しない会社選びをしよう！",
       link: "https://youtu.be/xlmG9RUmH_Y",
       mediaType: ["READ_ONLY", "VIDEO"],
@@ -49,12 +55,6 @@ export const CARRIER: ISection = {
       link: "https://youtu.be/KcUyFrb5cf4",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 20,
-    },
-    {
-      title: "好きな仕事を見つける方法",
-      link: "https://youtu.be/wVM1GFz9DVs",
-      mediaType: ["READ_ONLY", "VIDEO"],
-      requiredTime: 21,
     },
     {
       title:
