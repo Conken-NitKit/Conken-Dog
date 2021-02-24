@@ -7,6 +7,8 @@ import { Description } from "../styles/fonts/Description";
 import { Heading1 } from "../styles/fonts/Heading1";
 import Eyelogo from "../assets/img/Eye2.svg";
 import EyeOfflogo from "../assets/img/EyeOff.svg";
+import { createUser } from "../utils/users/createUser";
+import { IUser, defaultUserInfo } from "../interfaces/User";
 
 const HeaderContainer = styled.div`
   display: flex;
@@ -213,12 +215,37 @@ const SubmitBtn = styled.div`
 `;
 
 export default function SignUp() {
-  const [isRevealPassword, setIsRevealPassword] = useState(false);
-  const [isRevealCheckPassword, setIsRevealCheckPassword] = useState(false);
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [checkPassword, setCheckPassword] = useState<string>("");
+  const [userName, setUserName] = useState<string>("");
+  const [birthDate, setBirthDate] = useState<string>("");
+  const [isRevealPassword, setIsRevealPassword] = useState<boolean>(false);
+  const [isRevealCheckPassword, setIsRevealCheckPassword] = useState<boolean>(
+    false
+  );
   const formRef = useRef<Slick | null>();
 
   const goNext = () => {
     formRef.current!.slickNext();
+  };
+
+  const signUp = () => {
+    if (
+      email !== "" &&
+      password !== "" &&
+      checkPassword !== "" &&
+      userName !== "" &&
+      birthDate !== ""
+    ) {
+      const userInfo: IUser = {
+        ...defaultUserInfo,
+        displayName: userName,
+        email: email,
+        birthDate: birthDate,
+      };
+      createUser(userInfo, password);
+    }
   };
 
   const settings = {
@@ -268,6 +295,8 @@ export default function SignUp() {
                   </InputDescription>
                   <FormInput
                     name={"email"}
+                    value={email}
+                    onChange={(e) => setEmail(e.currentTarget.value)}
                     placeholder={"mail@conken.com"}
                     ng-model={"email"}
                     type={"email"}
@@ -280,6 +309,8 @@ export default function SignUp() {
                   <PasswordForm>
                     <PassInput
                       name={"password"}
+                      value={password}
+                      onChange={(e) => setPassword(e.currentTarget.value)}
                       ng-model={"password"}
                       type={isRevealPassword ? "text" : "password"}
                     />
@@ -295,6 +326,8 @@ export default function SignUp() {
                   <PasswordForm>
                     <PassInput
                       name={"password"}
+                      value={checkPassword}
+                      onChange={(e) => setCheckPassword(e.currentTarget.value)}
                       ng-model={"password"}
                       type={isRevealCheckPassword ? "text" : "password"}
                     />
@@ -314,6 +347,8 @@ export default function SignUp() {
                   <InputDescription>原則実名。例: 高専太郎</InputDescription>
                   <FormInput
                     name={"name"}
+                    value={userName}
+                    onChange={(e) => setUserName(e.currentTarget.value)}
                     placeholder={"高専太郎"}
                     type={"text"}
                   />
@@ -322,10 +357,15 @@ export default function SignUp() {
                 <InputContainer>
                   <InputTitle>生年月日</InputTitle>
                   <PasswordForm>
-                    <FormInput name={"barth-day"} type={"date"} />
+                    <FormInput
+                      name={"barth-day"}
+                      value={birthDate}
+                      onChange={(e) => setBirthDate(e.currentTarget.value)}
+                      type={"date"}
+                    />
                   </PasswordForm>
                 </InputContainer>
-                <SubmitBtn>入部する</SubmitBtn>
+                <SubmitBtn onClick={signUp}>入部する</SubmitBtn>
               </Swiper>
             </Slick>
           </FormContainer>
