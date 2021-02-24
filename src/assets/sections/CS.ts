@@ -1,7 +1,7 @@
 import { ISection } from ".";
 
 export const CS: ISection = {
-  title: "C#入門編 (全10レッスン)",
+  title: "C#入門編",
   description:
     "C#でプログラミングの初歩を学ぶレッスンです。\n" +
     "標準出力や変数、配列、演算子、条件分岐、ループ といったプログラミングの基本を手順を追って学びます。",

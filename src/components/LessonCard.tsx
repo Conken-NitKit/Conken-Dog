@@ -48,7 +48,7 @@ const LessonTitle = styled.h3`
   font-family: Lato, "Hiragino Maru Gothic Pro", "Meiryo UI", Meiryo,
     "MS PGothic", sans-serif;
   color: #2b5461;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: bold;
   ${media.lessThan("medium")`
     margin-bottom: 8px;

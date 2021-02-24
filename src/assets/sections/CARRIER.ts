@@ -1,7 +1,7 @@
 import { ISection } from ".";
 
 export const CARRIER: ISection = {
-  title: "キャリア形成",
+  title: "【重要】キャリア形成",
   description:
     "ハッカソンやアプリコンテスト、高専祭などでの企画出しの際や定期的な定例会議の際に" +
     "効率よく議論を進めていくためのテクニックをまとめました。",
