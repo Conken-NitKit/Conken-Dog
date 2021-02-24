@@ -100,7 +100,7 @@ const LessonLink = styled.div`
   white-space: nowrap;
   margin: 0 16px;
   &::before {
-    content: "レッスン詳細へ"
+    content: "レッスン詳細へ";
   }
   ${media.lessThan("small")`
     &::before {
@@ -111,11 +111,17 @@ const LessonLink = styled.div`
 
 interface Props {
   section: ISection;
+  useFinishedFilter: boolean;
   metaName: string;
   index: number;
 }
 
-export default function LessonCard({ section, metaName, index }: Props) {
+export default function LessonCard({
+  section,
+  useFinishedFilter,
+  metaName,
+  index,
+}: Props) {
   const { user } = useContext(userContext);
 
   const countComplete = () =>
@@ -123,7 +129,12 @@ export default function LessonCard({ section, metaName, index }: Props) {
       return cnt + (user.completionList.includes(cur.link) ? 1 : 0);
     }, 0);
 
-  return (
+  const completeFilter = () =>
+    useFinishedFilter
+      ? countComplete() === section.contentsList.length
+      : countComplete() !== section.contentsList.length;
+
+  return completeFilter() ? (
     <Link
       to={`/${metaName}/${index + 1}`}
       style={{ textDecoration: "none", color: "rgb(88, 118, 163)" }}
@@ -142,5 +153,7 @@ export default function LessonCard({ section, metaName, index }: Props) {
         <LessonLink>{" >"}</LessonLink>
       </LessonCardContainer>
     </Link>
+  ) : (
+    <></>
   );
 }

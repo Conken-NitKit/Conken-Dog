@@ -94,6 +94,7 @@ export default function LessonContainer({ useFinishedFilter }: Props) {
               <LessonCard
                 key={`course/section/${index}`}
                 section={section}
+                useFinishedFilter={useFinishedFilter}
                 metaName={course.metaName}
                 index={index}
               />
