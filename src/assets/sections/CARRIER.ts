@@ -149,6 +149,12 @@ export const CARRIER: ISection = {
       requiredTime: 13,
     },
     {
+      title: "一生貧乏な人の特徴&解決策５選",
+      link: "https://youtu.be/jlNBUE2vKiY",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 16,
+    },
+    {
       title: "自己投資を「成功に結びつける人」と「時間のムダにする人」の違い",
       link: "https://youtu.be/3baYoUB-vIQ",
       mediaType: ["READ_ONLY", "VIDEO"],
@@ -261,6 +267,30 @@ export const CARRIER: ISection = {
       link: "https://youtu.be/46Mo1Emcs80",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 10,
+    },
+    {
+      title: "【名著解説】あなたの不安を確実に消す思考法３選",
+      link: "https://youtu.be/0YBWkn5Cesg",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 20,
+    },
+    {
+      title: "仕事ができない人の特徴TOP5",
+      link: "https://youtu.be/A8gHtvh8OKo",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 15,
+    },
+    {
+      title: "凡人で終わる人の悪い習慣TOP５",
+      link: "https://youtu.be/xGkMV0jAjZE",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 15,
+    },
+    {
+      title: "【習慣術】時間を増やすために絶対やるべき習慣10選",
+      link: "https://youtu.be/-t8Sef5wFGs",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 22,
     },
     {
       title: "捨てられない人は伸びません",

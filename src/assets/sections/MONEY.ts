@@ -85,6 +85,12 @@ export const MONEY: ISection = {
       requiredTime: 21,
     },
     {
+      title: "【バビロン大富豪の教え】100年間、成功し続けてる資産の作り方",
+      link: "https://youtu.be/ONQe6GeyOzI",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 20,
+    },
+    {
       title: "サラリーマンの9割が豊かな老後を迎えられない理由と解決策",
       link: "https://youtu.be/W5sANNsnoVU",
       mediaType: ["READ_ONLY", "VIDEO"],
