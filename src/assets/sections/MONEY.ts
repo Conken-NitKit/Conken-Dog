@@ -1,7 +1,7 @@
 import { ISection } from ".";
 
 export const MONEY: ISection = {
-  title: "超大切なお金のお話",
+  title: "【重要】お金のお話",
   description: "参考文献:",
   contentsList: [
     {
@@ -49,6 +49,18 @@ export const MONEY: ISection = {
       requiredTime: 11,
     },
     {
+      title: "金持ち父さん貧乏父さん【家と車が貧乏を量産】",
+      link: "https://youtu.be/uWHH8PpnJtU",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 12,
+    },
+    {
+      title: "金持ち父さん貧乏父さん【家と車が貧乏を量産】",
+      link: "https://youtu.be/uWHH8PpnJtU",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 12,
+    },
+    {
       title: "【金持ち父さん①】お金持ちになる手順",
       link: "https://youtu.be/57zybaVxc2o",
       mediaType: ["READ_ONLY", "VIDEO"],
@@ -65,6 +77,12 @@ export const MONEY: ISection = {
       link: "https://youtu.be/0BEq6SJZDpA",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 20,
+    },
+    {
+      title: "日本人の99%が知らない金持ち父さんの裏側",
+      link: "https://youtu.be/2fbJTzPGffQ",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 23,
     },
     {
       title: "【バビロン大富豪の教え①】",
