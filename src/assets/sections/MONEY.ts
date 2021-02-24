@@ -55,12 +55,6 @@ export const MONEY: ISection = {
       requiredTime: 12,
     },
     {
-      title: "金持ち父さん貧乏父さん【家と車が貧乏を量産】",
-      link: "https://youtu.be/uWHH8PpnJtU",
-      mediaType: ["READ_ONLY", "VIDEO"],
-      requiredTime: 12,
-    },
-    {
       title: "【金持ち父さん①】お金持ちになる手順",
       link: "https://youtu.be/57zybaVxc2o",
       mediaType: ["READ_ONLY", "VIDEO"],
