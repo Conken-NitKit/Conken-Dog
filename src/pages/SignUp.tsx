@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
+import Slick from "react-slick";
 
 import styled from "styled-components";
 import media from "styled-media-query";
@@ -70,6 +71,9 @@ const BodyContainer = styled.div`
   width: 100%;
   max-width: 1100px;
   margin: auto;
+  ${media.lessThan("medium")`
+    justify-content: center;
+  `}
 `;
 
 const Introduction = styled.div`
@@ -92,7 +96,8 @@ const FormContainer = styled.div`
   background-color: white;
   border-radius: 4px;
   ${media.lessThan("medium")`
-    margin: 0 8px;
+    width: 240px;
+    margin: 0 8px 40px;
   `}
 `;
 
@@ -112,6 +117,10 @@ const FormTitle = styled.h2`
     font-size: 1.5rem;
     padding: 25px 0 0;
   `}
+`;
+
+const Swiper = styled.div`
+  outline: none;
 `;
 
 const InputContainer = styled.div`
@@ -155,7 +164,8 @@ const FormInput = styled.input`
   -moz-appearance: none;
   appearance: none;
   ${media.lessThan("medium")`
-    max-width: 233px;
+    width: 88%;
+    max-width: 224px;
   `}
 `;
 
@@ -169,7 +179,7 @@ const PassInput = styled(FormInput)`
   width: 300px;
   padding-right: 30px;
   ${media.lessThan("medium")`
-    max-width: 213px;
+    max-width: 190px;
     margin-bottom: 0;
   `}
 `;
@@ -178,7 +188,7 @@ const Icon = styled.img<{ src: string }>`
   content: "";
   position: relative;
   top: -35px;
-  left: 216px;
+  left: 196px;
   width: 26px;
   height: 26px;
   color: #999;
@@ -188,9 +198,38 @@ const Icon = styled.img<{ src: string }>`
   `}
 `;
 
+const SubmitBtn = styled.div`
+  text-align: center;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 48px;
+  width: 216px;
+  margin: 16px auto;
+  color: white;
+  border: 1px solid #2cb696;
+  border-radius: 4px;
+  background-color: #2cb696;
+`;
+
 export default function SignUp() {
   const [isRevealPassword, setIsRevealPassword] = useState(false);
   const [isRevealCheckPassword, setIsRevealCheckPassword] = useState(false);
+  const formRef = useRef<Slick | null>();
+
+  const goNext = () => {
+    formRef.current!.slickNext();
+  };
+
+  const settings = {
+    dots: false,
+    arrows: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    swipe: false,
+  };
 
   return (
     <div>
@@ -220,51 +259,57 @@ export default function SignUp() {
           <FormContainer>
             <FormTitle>コンピュータ研究部に入部する</FormTitle>
 
-            <InputContainer>
-              <InputTitle>メールアドレス</InputTitle>
-              <InputDescription>
-                学校のメールアドレスは非推奨。
-              </InputDescription>
-              <FormInput
-                name={"email"}
-                placeholder={"mail@conken.com"}
-                ng-model={"email"}
-                type={"email"}
-              />
-            </InputContainer>
+            <Slick ref={(slider) => (formRef.current = slider)} {...settings}>
+              <Swiper>
+                <InputContainer>
+                  <InputTitle>メールアドレス</InputTitle>
+                  <InputDescription>
+                    学校のメールアドレスは非推奨。
+                  </InputDescription>
+                  <FormInput
+                    name={"email"}
+                    placeholder={"mail@conken.com"}
+                    ng-model={"email"}
+                    type={"email"}
+                  />
+                </InputContainer>
 
-            <InputContainer>
-              <InputTitle>パスワード</InputTitle>
-              <InputDescription>8文字以上の半角英数記号</InputDescription>
-              <PasswordForm>
-                <PassInput
-                  name={"password"}
-                  ng-model={"password"}
-                  type={isRevealPassword ? "text" : "password"}
-                />
-                <Icon
-                  src={isRevealPassword ? Eyelogo : EyeOfflogo}
-                  onClick={() => setIsRevealPassword(!isRevealPassword)}
-                />
-              </PasswordForm>
-            </InputContainer>
+                <InputContainer>
+                  <InputTitle>パスワード</InputTitle>
+                  <InputDescription>8文字以上の半角英数記号</InputDescription>
+                  <PasswordForm>
+                    <PassInput
+                      name={"password"}
+                      ng-model={"password"}
+                      type={isRevealPassword ? "text" : "password"}
+                    />
+                    <Icon
+                      src={isRevealPassword ? Eyelogo : EyeOfflogo}
+                      onClick={() => setIsRevealPassword(!isRevealPassword)}
+                    />
+                  </PasswordForm>
+                </InputContainer>
 
-            <InputContainer>
-              <InputTitle>確認用パスワード</InputTitle>
-              <PasswordForm>
-                <PassInput
-                  name={"password"}
-                  ng-model={"password"}
-                  type={isRevealCheckPassword ? "text" : "password"}
-                />
-                <Icon
-                  src={isRevealCheckPassword ? Eyelogo : EyeOfflogo}
-                  onClick={() =>
-                    setIsRevealCheckPassword(!isRevealCheckPassword)
-                  }
-                />
-              </PasswordForm>
-            </InputContainer>
+                <InputContainer>
+                  <InputTitle>確認用パスワード</InputTitle>
+                  <PasswordForm>
+                    <PassInput
+                      name={"password"}
+                      ng-model={"password"}
+                      type={isRevealCheckPassword ? "text" : "password"}
+                    />
+                    <Icon
+                      src={isRevealCheckPassword ? Eyelogo : EyeOfflogo}
+                      onClick={() =>
+                        setIsRevealCheckPassword(!isRevealCheckPassword)
+                      }
+                    />
+                  </PasswordForm>
+                </InputContainer>
+                <SubmitBtn onClick={() => goNext()}>次のフォームへ</SubmitBtn>
+              </Swiper>
+              <Swiper />
+            </Slick>
           </FormContainer>
         </div>
       </BodyContainer>
