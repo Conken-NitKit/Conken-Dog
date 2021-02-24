@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import styled from "styled-components";
 
 import { IContent } from "../assets/sections";
+import { userContext } from "../contexts/userContext";
 import { Description } from "../styles/fonts/Description";
 
 const ContentItem = styled.li`
@@ -79,13 +80,26 @@ interface Props {
 }
 
 export const SectionItem = ({ content }: Props) => {
-  const [isChecked, setIsChecked] = useState<boolean>(false);
+  const { user, setUser } = useContext(userContext);
+  const [isChecked, setIsChecked] = useState<boolean>(
+    user.completionList.includes(content.link)
+  );
+
+  const clickCheckBox = () => {
+    const newUser = user;
+    newUser.completionList = isChecked
+      ? user.completionList.filter((link) => link !== content.link)
+      : [...user.completionList, content.link];
+    setUser(newUser);
+    setIsChecked(!isChecked);
+  };
+
   return (
     <ContentItem>
       <DefaultCheckBox
         type="checkbox"
         id={content.title}
-        onClick={() => setIsChecked(!isChecked)}
+        onClick={clickCheckBox}
       />
       <CheckBox htmlFor={content.title} isChecked={isChecked} />
       <Description>
