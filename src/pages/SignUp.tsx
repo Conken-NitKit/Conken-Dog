@@ -207,9 +207,9 @@ const SubmitBtn = styled.div`
   width: 216px;
   margin: 16px auto;
   color: white;
-  border: 1px solid #2cb696;
+  border: 1px solid #30c8d6;
   border-radius: 4px;
-  background-color: #2cb696;
+  background-color: #30c8d6;
 `;
 
 export default function SignUp() {
@@ -308,7 +308,25 @@ export default function SignUp() {
                 </InputContainer>
                 <SubmitBtn onClick={() => goNext()}>次のフォームへ</SubmitBtn>
               </Swiper>
-              <Swiper />
+              <Swiper>
+                <InputContainer>
+                  <InputTitle>お名前</InputTitle>
+                  <InputDescription>原則実名。例: 高専太郎</InputDescription>
+                  <FormInput
+                    name={"name"}
+                    placeholder={"高専太郎"}
+                    type={"text"}
+                  />
+                </InputContainer>
+
+                <InputContainer>
+                  <InputTitle>生年月日</InputTitle>
+                  <PasswordForm>
+                    <FormInput name={"barth-day"} type={"date"} />
+                  </PasswordForm>
+                </InputContainer>
+                <SubmitBtn>入部する</SubmitBtn>
+              </Swiper>
             </Slick>
           </FormContainer>
         </div>
