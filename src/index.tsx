@@ -5,6 +5,7 @@ import { courseList } from "./assets/courses";
 import Home from "./pages/Home";
 import Course from "./pages/Course";
 import Section from "./pages/Section";
+import SignUp from "./pages/SignUp";
 import { userContext } from "./contexts/userContext";
 import { IUser } from "./interfaces/User";
 import { mockUser } from "./mocks/user";
@@ -15,6 +16,7 @@ const Root = () => {
     <userContext.Provider value={{ user: user, setUser: setUser }}>
       <BrowserRouter>
         <Route exact path="/" component={Home} />
+        <Route exact path="/signup" component={SignUp} />
 
         {courseList.map((course) => (
           <Route
