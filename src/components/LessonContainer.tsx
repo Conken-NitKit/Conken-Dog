@@ -41,8 +41,8 @@ const CategoryTag = styled.li<{ isSelected: boolean }>`
   }
 `;
 
-const SectionContainer = styled.div<{useFinishedFilter: boolean}>`
-  height: ${props => props.useFinishedFilter ? 270 : 532}px;
+const SectionContainer = styled.div<{ useFinishedFilter: boolean }>`
+  height: ${(props) => (props.useFinishedFilter ? 270 : 532)}px;
   ${media.greaterThan("medium")`
     height: 532px;
   `}
