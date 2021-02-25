@@ -97,6 +97,7 @@ const MenuListLink = styled.li`
   color: white;
   list-style: none;
   margin: 4px 16px;
+  cursor: pointer;
   &::selection {
     background: none;
   }
@@ -141,7 +142,7 @@ const ContentsContainer = styled.div`
   `}
 `;
 
-export default function Home({history}: RouteComponentProps) {
+export default function Home({ history }: RouteComponentProps) {
   const { user, setUser } = useContext(userContext);
 
   useEffect(() => {
@@ -177,7 +178,10 @@ export default function Home({history}: RouteComponentProps) {
       <HeadContainer>
         <MenuList>
           {courseList.map((course) => (
-            <MenuListLink key={`menu/${course.metaName}`}>
+            <MenuListLink
+              key={`menu/${course.metaName}`}
+              onClick={() => history.push(course.metaName)}
+            >
               {course.name}
             </MenuListLink>
           ))}
