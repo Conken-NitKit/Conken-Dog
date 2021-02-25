@@ -260,7 +260,7 @@ export default function SignUp({ history }: RouteComponentProps) {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    afterChange: setSlideIndex
+    afterChange: setSlideIndex,
   };
 
   return (
@@ -270,7 +270,9 @@ export default function SignUp({ history }: RouteComponentProps) {
           <Title>ConDog</Title>
           <SubTitle>遊ぶように、学ぼう、どこよりも</SubTitle>
         </TopContainer>
-        <LoginLink>ログインはこちら</LoginLink>
+        <LoginLink onClick={() => history.push("/signin")}>
+          ログインはこちら
+        </LoginLink>
       </HeaderContainer>
       <BodyContainer>
         <Introduction>
@@ -291,7 +293,11 @@ export default function SignUp({ history }: RouteComponentProps) {
           <FormContainer>
             <FormTitle>コンピュータ研究部に入部する</FormTitle>
 
-            <Slick ref={(slider) => (formRef.current = slider)} swipe={slideIndex === 1} {...settings}>
+            <Slick
+              ref={(slider) => (formRef.current = slider)}
+              swipe={slideIndex === 1}
+              {...settings}
+            >
               <Swiper>
                 <InputContainer>
                   <InputTitle>メールアドレス</InputTitle>

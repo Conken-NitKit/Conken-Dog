@@ -62,6 +62,7 @@ const SubTitle = styled.p`
 const LoginLink = styled.a`
   color: #787878;
   font-size: 1rem;
+  cursor: pointer;
   ${media.lessThan("medium")`
     font-size: 0.75rem;
   `}
@@ -118,10 +119,6 @@ const FormTitle = styled.h2`
     font-size: 1.5rem;
     padding: 25px 0 0;
   `}
-`;
-
-const Swiper = styled.div`
-  outline: none;
 `;
 
 const InputContainer = styled.div`
@@ -213,7 +210,7 @@ const SubmitBtn = styled.div`
   background-color: #30c8d6;
 `;
 
-export default function SignIn({history}: RouteComponentProps) {
+export default function SignIn({ history }: RouteComponentProps) {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [isRevealPassword, setIsRevealPassword] = useState<boolean>(false);
@@ -225,7 +222,9 @@ export default function SignIn({history}: RouteComponentProps) {
           <Title>ConDog</Title>
           <SubTitle>遊ぶように、学ぼう、どこよりも</SubTitle>
         </TopContainer>
-        <LoginLink>新規登録はこちら</LoginLink>
+        <LoginLink onClick={() => history.push("/signup")}>
+          新規登録はこちら
+        </LoginLink>
       </HeaderContainer>
       <BodyContainer>
         <Introduction>
@@ -274,7 +273,9 @@ export default function SignIn({history}: RouteComponentProps) {
                 />
               </PasswordForm>
             </InputContainer>
-            <SubmitBtn onClick={() => signIn(email, password, history)}>ログイン</SubmitBtn>
+            <SubmitBtn onClick={() => signIn(email, password, history)}>
+              ログイン
+            </SubmitBtn>
           </FormContainer>
         </div>
       </BodyContainer>
