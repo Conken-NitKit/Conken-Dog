@@ -11,13 +11,26 @@ import FeedContainer from "../components/FeedContainer";
 import { auth, db } from "../utils/firebase";
 import { userContext } from "../contexts/userContext";
 import { defaultUserInfo, instanceOfUser } from "../interfaces/User";
+import { signOut } from "../utils/users/signOut";
+import { RouteComponentProps } from "react-router-dom";
+
+const HeaderContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 16px 48px 16px;
+  ${media.lessThan("medium")`
+    margin-bottom: 12px;
+    padding: 8px 16px 0;
+    justify-content: space-between;
+  `}
+`;
 
 const TopContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  height: 136px;
 `;
 
 const Title = styled.h1`
@@ -29,18 +42,35 @@ const Title = styled.h1`
   &::selection {
     background: none;
   }
+  ${media.lessThan("medium")`
+    font-size: 1.6rem;
+  `}
 `;
 
 const SubTitle = styled.p`
   font-family: Lato, "Hiragino Maru Gothic Pro", "Meiryo UI", Meiryo,
     "MS PGothic", sans-serif;
   margin: 0;
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: bold;
   letter-spacing: -0.4px;
+  margin-bottom: 8px;
   &::selection {
     background: none;
   }
+  ${media.lessThan("medium")`
+    font-size: 0.6rem;
+    margin-bottom: 0;
+  `}
+`;
+
+const LoginLink = styled.a`
+  color: #787878;
+  font-size: 1rem;
+  cursor: pointer;
+  ${media.lessThan("medium")`
+    font-size: 0.75rem;
+  `}
 `;
 
 const HeadContainer = styled.div`
@@ -111,16 +141,15 @@ const ContentsContainer = styled.div`
   `}
 `;
 
-export default function Home() {
+export default function Home({history}: RouteComponentProps) {
   const { user, setUser } = useContext(userContext);
 
   useEffect(() => {
     const unSub = auth.onAuthStateChanged(async (fetchedUser) => {
       if (
         fetchedUser &&
-        JSON.stringify(user) == JSON.stringify(defaultUserInfo)
+        JSON.stringify(user) === JSON.stringify(defaultUserInfo)
       ) {
-        console.log("test");
         const userRef = db.collection("user").doc(fetchedUser.uid);
         await userRef
           .get()
@@ -138,10 +167,13 @@ export default function Home() {
 
   return (
     <div>
-      <TopContainer>
-        <Title>ConDog</Title>
-        <SubTitle>遊ぶように、学ぼう、どこよりも</SubTitle>
-      </TopContainer>
+      <HeaderContainer>
+        <TopContainer>
+          <Title>ConDog</Title>
+          <SubTitle>遊ぶように、学ぼう、どこよりも</SubTitle>
+        </TopContainer>
+        <LoginLink onClick={() => signOut(history)}>ログアウト</LoginLink>
+      </HeaderContainer>
       <HeadContainer>
         <MenuList>
           {courseList.map((course) => (

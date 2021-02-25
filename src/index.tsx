@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Course from "./pages/Course";
 import Section from "./pages/Section";
 import SignUp from "./pages/SignUp";
+import SignIn from "./pages/SignIn";
 import { userContext } from "./contexts/userContext";
 import { defaultUserInfo, IUser } from "./interfaces/User";
 
@@ -16,6 +17,7 @@ const Root = () => {
       <BrowserRouter>
         <Route exact path="/" component={Home} />
         <Route exact path="/signup" component={SignUp} />
+        <Route exact path="/signin" component={SignIn} />
 
         {courseList.map((course) => (
           <Route
