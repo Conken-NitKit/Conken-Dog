@@ -7,11 +7,10 @@ import Course from "./pages/Course";
 import Section from "./pages/Section";
 import SignUp from "./pages/SignUp";
 import { userContext } from "./contexts/userContext";
-import { IUser } from "./interfaces/User";
-import { mockUser } from "./mocks/user";
+import { defaultUserInfo, IUser } from "./interfaces/User";
 
 const Root = () => {
-  const [user, setUser] = useState<IUser>(mockUser);
+  const [user, setUser] = useState<IUser>(defaultUserInfo);
   return (
     <userContext.Provider value={{ user: user, setUser: setUser }}>
       <BrowserRouter>

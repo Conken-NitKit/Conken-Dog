@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { IContent } from "../assets/sections";
 import { userContext } from "../contexts/userContext";
 import { Description } from "../styles/fonts/Description";
+import { postUserInfo } from "../utils/users/postUserInfo"
 
 const ContentItem = styled.li`
   list-style: none;
@@ -91,6 +92,7 @@ export const SectionItem = ({ content }: Props) => {
       ? user.completionList.filter((link) => link !== content.link)
       : [...user.completionList, content.link];
     setUser(newUser);
+    postUserInfo(newUser);
     setIsChecked(!isChecked);
   };
 

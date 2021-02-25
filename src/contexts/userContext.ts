@@ -1,7 +1,10 @@
-import { createContext } from 'react';
-import { IUser } from '../interfaces/User';
-import { mockUser } from '../mocks/user';
-export const userContext = createContext({
-  user: mockUser,
-  setUser: (currentUser: IUser) => {}
-})
+import { createContext } from "react";
+import { defaultUserInfo, IUser } from "../interfaces/User";
+
+export const userContext = createContext<{
+  user: IUser;
+  setUser: (currentUser: IUser) => void;
+}>({
+  user: defaultUserInfo,
+  setUser: (currentUser: IUser) => {},
+});

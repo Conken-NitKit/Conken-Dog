@@ -1,3 +1,4 @@
+import { useContext, useEffect } from "react";
 import styled from "styled-components";
 import media from "styled-media-query";
 
@@ -7,6 +8,9 @@ import { Heading2 } from "../styles/fonts/Heading2";
 import { Small } from "../styles/fonts/Small";
 import { courseList } from "../assets/courses";
 import FeedContainer from "../components/FeedContainer";
+import { auth, db } from "../utils/firebase";
+import { userContext } from "../contexts/userContext";
+import { defaultUserInfo, instanceOfUser } from "../interfaces/User";
 
 const TopContainer = styled.div`
   display: flex;
@@ -108,6 +112,30 @@ const ContentsContainer = styled.div`
 `;
 
 export default function Home() {
+  const { user, setUser } = useContext(userContext);
+
+  useEffect(() => {
+    const unSub = auth.onAuthStateChanged(async (fetchedUser) => {
+      if (
+        fetchedUser &&
+        JSON.stringify(user) == JSON.stringify(defaultUserInfo)
+      ) {
+        console.log("test");
+        const userRef = db.collection("user").doc(fetchedUser.uid);
+        await userRef
+          .get()
+          .then((doc) => {
+            const fetchedUser = doc.data();
+            instanceOfUser(fetchedUser) && setUser(fetchedUser);
+          })
+          .catch((err) => console.log("Error getting documents", err));
+      }
+    });
+    return () => {
+      unSub();
+    };
+  });
+
   return (
     <div>
       <TopContainer>

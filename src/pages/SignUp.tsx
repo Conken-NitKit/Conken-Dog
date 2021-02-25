@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useContext, useEffect, useState, useRef } from "react";
 import Slick from "react-slick";
 
 import styled from "styled-components";
@@ -9,6 +9,7 @@ import Eyelogo from "../assets/img/Eye2.svg";
 import EyeOfflogo from "../assets/img/EyeOff.svg";
 import { createUser } from "../utils/users/createUser";
 import { IUser, defaultUserInfo } from "../interfaces/User";
+import { userContext } from "../contexts/userContext";
 
 const HeaderContainer = styled.div`
   display: flex;
@@ -224,6 +225,7 @@ export default function SignUp() {
   const [isRevealCheckPassword, setIsRevealCheckPassword] = useState<boolean>(
     false
   );
+  const { setUser } = useContext(userContext);
   const formRef = useRef<Slick | null>();
 
   const goNext = () => {
@@ -244,6 +246,7 @@ export default function SignUp() {
         email: email,
         birthDate: birthDate,
       };
+      setUser(userInfo);
       createUser(userInfo, password);
     }
   };
