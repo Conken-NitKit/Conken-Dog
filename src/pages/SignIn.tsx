@@ -137,16 +137,6 @@ const InputTitle = styled.h3`
   margin: 4px 0;
 `;
 
-const InputDescription = styled.h4`
-  font-family: Lato, "Hiragino Maru Gothic Pro", "Meiryo UI", Meiryo,
-    "MS PGothic", sans-serif;
-  font-size: 0.8rem;
-  color: rgb(88, 118, 163);
-  line-height: 1.8;
-  letter-spacing: 0.04em;
-  margin: 0 0 4px;
-`;
-
 const FormInput = styled.input`
   width: 100%;
   max-width: 280px;
@@ -184,7 +174,6 @@ const PassInput = styled(FormInput)`
 `;
 
 const Icon = styled.img<{ src: string }>`
-  content: "";
   position: relative;
   top: -35px;
   left: 196px;

@@ -70,7 +70,7 @@ export default function FeedContainer() {
 
   return (
     <>
-      <Heading2>フィード</Heading2>
+      <Heading2>ナレッジ</Heading2>
       <ScrollContainer>
         {feeds.map((feed, index) => (
           <FeedCard

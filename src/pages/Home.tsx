@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { RouteComponentProps } from "react-router-dom";
 import styled from "styled-components";
 import media from "styled-media-query";
@@ -17,6 +17,7 @@ import { Small } from "../styles/fonts/Small";
 import { auth, db } from "../utils/firebase";
 import { signOut } from "../utils/users/signOut";
 import { redirectNonLogin } from "../utils/users/redirectNonLogin";
+import { FeedModal } from "../components/FeedModal";
 
 const HeaderContainer = styled.div`
   display: flex;
@@ -167,6 +168,7 @@ const ContentsContainer = styled.div`
 `;
 
 export default function Home({ history }: RouteComponentProps) {
+  const [isOpenFeedModal, setIsOpenFeedModal] = useState(false);
   const { user, setUser } = useContext(userContext);
 
   useEffect(() => {
@@ -200,8 +202,10 @@ export default function Home({ history }: RouteComponentProps) {
         </TopContainer>
         <NavBar>
           <Icon src={NotificationLogo} />
-          <Icon src={UserLogo} onClick={() => signOut(history)}/>
-          <LoginLink >フィードを投稿</LoginLink>
+          <Icon src={UserLogo} onClick={() => signOut(history)} />
+          <LoginLink onClick={() => setIsOpenFeedModal(true)}>
+            ナレッジを投稿
+          </LoginLink>
         </NavBar>
       </HeaderContainer>
       <HeadContainer>
@@ -233,6 +237,7 @@ export default function Home({ history }: RouteComponentProps) {
           <FeedContainer />
         </ContentsContainer>
       </ContentsWrapper>
+      {isOpenFeedModal && <FeedModal close={() => setIsOpenFeedModal(false)}/>}
     </div>
   );
 }
