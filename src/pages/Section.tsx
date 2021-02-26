@@ -6,6 +6,7 @@ import { Description } from "../styles/fonts/Description";
 import { Heading1 } from "../styles/fonts/Heading1";
 import { SectionItem } from "../components/SectionItem";
 import { Small } from "../styles/fonts/Small";
+import { useEffect } from "react";
 
 const ContentsList = styled.ul`
   background: #fff;
@@ -22,6 +23,10 @@ interface Props {
 export default function Section({ value }: Props) {
   const generateMinute = () =>
     value.contentsList.reduce((sum, cur): number => sum + cur.requiredTime, 0);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <Container>

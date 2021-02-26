@@ -8,6 +8,7 @@ import { Description } from "../styles/fonts/Description";
 import { Heading1 } from "../styles/fonts/Heading1";
 import { Heading2 } from "../styles/fonts/Heading2";
 import { Small } from "../styles/fonts/Small";
+import { useEffect } from "react";
 
 const CourseCard = styled.div`
   background-color: #fff;
@@ -72,6 +73,10 @@ export default function Course({ value }: Props) {
         ),
       0
     );
+
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
 
   return (
     <Container>
