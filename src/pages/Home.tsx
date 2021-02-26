@@ -3,6 +3,9 @@ import { RouteComponentProps } from "react-router-dom";
 import styled from "styled-components";
 import media from "styled-media-query";
 
+import NotificationLogo from "../assets/img/Notification.svg";
+import UserLogo from "../assets/img/UserCircle.svg";
+
 import { courseList } from "../assets/courses";
 import FeedContainer from "../components/FeedContainer";
 import LessonContainer from "../components/LessonContainer";
@@ -19,11 +22,9 @@ const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 16px 48px 16px;
+  padding: 16px 48px;
   ${media.lessThan("medium")`
-    margin-bottom: 12px;
-    padding: 8px 16px 0;
-    justify-content: space-between;
+    margin: 16px 0 8px;
   `}
 `;
 
@@ -32,6 +33,9 @@ const TopContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  ${media.lessThan("large")`
+    align-items: center;
+  `}
 `;
 
 const Title = styled.h1`
@@ -44,7 +48,7 @@ const Title = styled.h1`
     background: none;
   }
   ${media.lessThan("medium")`
-    font-size: 1.6rem;
+    font-size: 2.4rem;
   `}
 `;
 
@@ -60,18 +64,37 @@ const SubTitle = styled.p`
     background: none;
   }
   ${media.lessThan("medium")`
-    font-size: 0.6rem;
+    font-size: 0.9rem;
     margin-bottom: 0;
   `}
 `;
 
-const LoginLink = styled.a`
-  color: #787878;
-  font-size: 1rem;
-  cursor: pointer;
-  ${media.lessThan("medium")`
-    font-size: 0.75rem;
+const NavBar = styled.div`
+  display: flex;
+  align-items: center;
+  height: 100%;
+  ${media.lessThan("large")`
+    display: none;
   `}
+`;
+
+const Icon = styled.img`
+  height: 36px;
+  width: 36px;
+  cursor: pointer;
+  margin-right: 28px;
+`;
+
+const LoginLink = styled.a`
+  font-family: Lato, "Hiragino Maru Gothic Pro", "Meiryo UI", Meiryo,
+    "MS PGothic", sans-serif;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  background: #30c8d6;
+  border-radius: 4px;
+  padding: 16px 20px;
 `;
 
 const HeadContainer = styled.div`
@@ -175,7 +198,11 @@ export default function Home({ history }: RouteComponentProps) {
           <Title>ConDog</Title>
           <SubTitle>遊ぶように、学ぼう、どこよりも</SubTitle>
         </TopContainer>
-        <LoginLink onClick={() => signOut(history)}>ログアウト</LoginLink>
+        <NavBar>
+          <Icon src={NotificationLogo} />
+          <Icon src={UserLogo} onClick={() => signOut(history)}/>
+          <LoginLink >フィードを投稿</LoginLink>
+        </NavBar>
       </HeaderContainer>
       <HeadContainer>
         <MenuList>
