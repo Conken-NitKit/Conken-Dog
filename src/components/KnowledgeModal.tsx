@@ -112,11 +112,12 @@ interface Props {
 export const KnowledgeModal = ({ close }: Props) => {
   const [title, setTitle] = useState("");
   const [link, setLink] = useState("");
+  const [tags, setTags] = useState("");
   const { user } = useContext(userContext);
 
   const submit = () => {
     if (title === "" || link === "") return;
-    postKnowledge(title, link, user.uid, user.displayName);
+    postKnowledge(title, link, tags.split(" "), user.uid, user.displayName);
     close();
   };
 
@@ -138,6 +139,13 @@ export const KnowledgeModal = ({ close }: Props) => {
           <FormInput
             value={link}
             onChange={(e) => setLink(e.currentTarget.value)}
+          />
+        </InputContainer>
+        <InputContainer>
+          <InputTitle>タグ: </InputTitle>
+          <FormInput
+            value={tags}
+            onChange={(e) => setTags(e.currentTarget.value)}
           />
         </InputContainer>
         <FormFooter>
