@@ -1,16 +1,13 @@
-import { useContext, useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { RouteComponentProps } from "react-router-dom";
-import Slick from "react-slick";
+
 import styled from "styled-components";
 import media from "styled-media-query";
-
 import Eyelogo from "../assets/img/Eye2.svg";
 import EyeOfflogo from "../assets/img/EyeOff.svg";
-import { userContext } from "../contexts/userContext";
-import { IUser, defaultUserInfo } from "../interfaces/User";
 import { Description } from "../styles/fonts/Description";
 import { Heading1 } from "../styles/fonts/Heading1";
-import { createUser } from "../utils/users/createUser";
+import { signIn } from "../utils/users/signIn";
 import { redirectAlreadyLogin } from "../utils/users/redirectAlreadyLogin";
 
 const HeaderContainer = styled.div`
@@ -125,10 +122,6 @@ const FormTitle = styled.h2`
   `}
 `;
 
-const Swiper = styled.div`
-  outline: none;
-`;
-
 const InputContainer = styled.div`
   ${media.greaterThan("medium")`
     margin-left: 32px;
@@ -218,56 +211,14 @@ const SubmitBtn = styled.div`
   background-color: #30c8d6;
 `;
 
-export default function SignUp({ history }: RouteComponentProps) {
+export default function SignIn({ history }: RouteComponentProps) {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const [checkPassword, setCheckPassword] = useState<string>("");
-  const [userName, setUserName] = useState<string>("");
-  const [birthDate, setBirthDate] = useState<string>("");
   const [isRevealPassword, setIsRevealPassword] = useState<boolean>(false);
-  const [slideIndex, setSlideIndex] = useState<number>(0);
-  const [isRevealCheckPassword, setIsRevealCheckPassword] = useState<boolean>(
-    false
-  );
-  const { setUser } = useContext(userContext);
-  const formRef = useRef<Slick | null>();
 
   useEffect(() => {
     redirectAlreadyLogin(history);
   }, []);
-
-  const goNext = () => {
-    if (email !== "" && password !== "" && password === checkPassword)
-      formRef.current!.slickNext();
-  };
-
-  const signUp = () => {
-    if (
-      email !== "" &&
-      password !== "" &&
-      userName !== "" &&
-      birthDate !== ""
-    ) {
-      const userInfo: IUser = {
-        ...defaultUserInfo,
-        displayName: userName,
-        email: email,
-        birthDate: birthDate,
-      };
-      setUser(userInfo);
-      createUser(userInfo, password, history);
-    }
-  };
-
-  const settings = {
-    dots: false,
-    arrows: false,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    afterChange: setSlideIndex,
-  };
 
   return (
     <div>
@@ -276,8 +227,8 @@ export default function SignUp({ history }: RouteComponentProps) {
           <Title>ConDog</Title>
           <SubTitle>遊ぶように、学ぼう、どこよりも</SubTitle>
         </TopContainer>
-        <LoginLink onClick={() => history.push("/signin")}>
-          ログインはこちら
+        <LoginLink onClick={() => history.push("/signup")}>
+          新規登録はこちら
         </LoginLink>
       </HeaderContainer>
       <BodyContainer>
@@ -297,94 +248,39 @@ export default function SignUp({ history }: RouteComponentProps) {
         </Introduction>
         <div>
           <FormContainer>
-            <FormTitle>コンピュータ研究部に入部する</FormTitle>
+            <FormTitle>ログインする</FormTitle>
 
-            <Slick
-              ref={(slider) => (formRef.current = slider)}
-              swipe={slideIndex === 1}
-              {...settings}
-            >
-              <Swiper>
-                <InputContainer>
-                  <InputTitle>メールアドレス</InputTitle>
-                  <InputDescription>
-                    学校のメールアドレスは非推奨。
-                  </InputDescription>
-                  <FormInput
-                    name={"email"}
-                    value={email}
-                    onChange={(e) => setEmail(e.currentTarget.value)}
-                    placeholder={"mail@conken.com"}
-                    ng-model={"email"}
-                    type={"email"}
-                  />
-                </InputContainer>
+            <InputContainer>
+              <InputTitle>メールアドレス</InputTitle>
+              <FormInput
+                name={"email"}
+                value={email}
+                onChange={(e) => setEmail(e.currentTarget.value)}
+                placeholder={"mail@conken.com"}
+                ng-model={"email"}
+                type={"email"}
+              />
+            </InputContainer>
 
-                <InputContainer>
-                  <InputTitle>パスワード</InputTitle>
-                  <InputDescription>8文字以上の半角英数記号</InputDescription>
-                  <PasswordForm>
-                    <PassInput
-                      name={"password"}
-                      value={password}
-                      onChange={(e) => setPassword(e.currentTarget.value)}
-                      ng-model={"password"}
-                      type={isRevealPassword ? "text" : "password"}
-                    />
-                    <Icon
-                      src={isRevealPassword ? Eyelogo : EyeOfflogo}
-                      onClick={() => setIsRevealPassword(!isRevealPassword)}
-                    />
-                  </PasswordForm>
-                </InputContainer>
-
-                <InputContainer>
-                  <InputTitle>確認用パスワード</InputTitle>
-                  <PasswordForm>
-                    <PassInput
-                      name={"password"}
-                      value={checkPassword}
-                      onChange={(e) => setCheckPassword(e.currentTarget.value)}
-                      ng-model={"password"}
-                      type={isRevealCheckPassword ? "text" : "password"}
-                    />
-                    <Icon
-                      src={isRevealCheckPassword ? Eyelogo : EyeOfflogo}
-                      onClick={() =>
-                        setIsRevealCheckPassword(!isRevealCheckPassword)
-                      }
-                    />
-                  </PasswordForm>
-                </InputContainer>
-                <SubmitBtn onClick={() => goNext()}>次のフォームへ</SubmitBtn>
-              </Swiper>
-              <Swiper>
-                <InputContainer>
-                  <InputTitle>お名前</InputTitle>
-                  <InputDescription>原則実名。例: 高専太郎</InputDescription>
-                  <FormInput
-                    name={"name"}
-                    value={userName}
-                    onChange={(e) => setUserName(e.currentTarget.value)}
-                    placeholder={"高専太郎"}
-                    type={"text"}
-                  />
-                </InputContainer>
-
-                <InputContainer>
-                  <InputTitle>生年月日</InputTitle>
-                  <PasswordForm>
-                    <FormInput
-                      name={"barth-day"}
-                      value={birthDate}
-                      onChange={(e) => setBirthDate(e.currentTarget.value)}
-                      type={"date"}
-                    />
-                  </PasswordForm>
-                </InputContainer>
-                <SubmitBtn onClick={signUp}>入部する</SubmitBtn>
-              </Swiper>
-            </Slick>
+            <InputContainer>
+              <InputTitle>パスワード</InputTitle>
+              <PasswordForm>
+                <PassInput
+                  name={"password"}
+                  value={password}
+                  onChange={(e) => setPassword(e.currentTarget.value)}
+                  ng-model={"password"}
+                  type={isRevealPassword ? "text" : "password"}
+                />
+                <Icon
+                  src={isRevealPassword ? Eyelogo : EyeOfflogo}
+                  onClick={() => setIsRevealPassword(!isRevealPassword)}
+                />
+              </PasswordForm>
+            </InputContainer>
+            <SubmitBtn onClick={() => signIn(email, password, history)}>
+              ログイン
+            </SubmitBtn>
           </FormContainer>
         </div>
       </BodyContainer>

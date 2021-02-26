@@ -3,7 +3,7 @@ import { IUser } from "../interfaces/User";
 export const mockUser:IUser = {
   uid: "hoge",
   activityLog: [],
-  birthData: "",
+  birthDate: "",
   completionList: [
     "https://youtu.be/zq50JwOU_ls",
     "https://prog-8.com/html/study/1/1",

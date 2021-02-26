@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import Slick from "react-slick";
 import LessonCard from "../components/LessonCard";
 import styled from "styled-components";
@@ -58,17 +58,45 @@ interface Props {
 }
 
 export default function LessonContainer({ useFinishedFilter }: Props) {
-  const [watchedCourseIndex, setWatchedCourseIndex] = useState<number>(0);
-  const watchedCourseRef = useRef<Slick | null>();
+  const [courseIndex, setCourseIndex] = useState<number>(
+    Number(
+      localStorage.getItem(
+        useFinishedFilter ? "FinishedCourseIndex" : "courseIndex"
+      )
+    ) ?? 0
+  );
+  const courseRef = useRef<Slick | null>();
+
+  const slideChangeHandle = (_: number, next: number) => {
+    localStorage.setItem(
+      useFinishedFilter ? "FinishedCourseIndex" : "courseIndex",
+      String(next)
+    );
+    setCourseIndex(next);
+  };
+
+  useEffect(() => {
+    setTimeout(
+      () =>
+        courseRef.current!.slickGoTo(
+          Number(
+            localStorage.getItem(
+              useFinishedFilter ? "FinishedCourseIndex" : "courseIndex"
+            ) ?? 0
+          )
+        ),
+      100
+    );
+  }, []);
 
   const settings = {
     dots: false,
     arrows: false,
     infinite: true,
-    speed: 500,
+    speed: 650,
     slidesToShow: 1,
     slidesToScroll: 1,
-    beforeChange: (_: number, next: number) => setWatchedCourseIndex(next),
+    beforeChange: slideChangeHandle,
   };
   return (
     <>
@@ -76,18 +104,15 @@ export default function LessonContainer({ useFinishedFilter }: Props) {
         {courseList.map((course, index) => (
           <CategoryTag
             key={`course/tag/${index}`}
-            isSelected={watchedCourseIndex === index}
-            onClick={() => watchedCourseRef.current!.slickGoTo(index)}
+            isSelected={courseIndex === index}
+            onClick={() => courseRef.current!.slickGoTo(index)}
           >
             {course.name}
           </CategoryTag>
         ))}
       </CategoryList>
 
-      <Slick
-        ref={(slider) => (watchedCourseRef.current = slider)}
-        {...settings}
-      >
+      <Slick ref={(slider) => (courseRef.current = slider)} {...settings}>
         {courseList.map((course, index) => (
           <SectionContainer key={index} useFinishedFilter={useFinishedFilter}>
             {course.sections.map((section, index) => (
