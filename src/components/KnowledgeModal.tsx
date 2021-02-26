@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import ReactDOM from "react-dom";
 import styled from "styled-components";
+import { userContext } from "../contexts/userContext";
+import { postKnowledge } from "../utils/knowkedge/postKnowledge";
 
 const modalRoot = document.getElementById("modal-root")!;
 
@@ -110,9 +112,12 @@ interface Props {
 export const KnowledgeModal = ({ close }: Props) => {
   const [title, setTitle] = useState("");
   const [link, setLink] = useState("");
+  const { user } = useContext(userContext);
 
   const submit = () => {
-    if (title !== "" && link !== "") close();
+    if (title === "" || link === "") return;
+    postKnowledge(title, link, user.uid, user.displayName);
+    close();
   };
 
   return ReactDOM.createPortal(

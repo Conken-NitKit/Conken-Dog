@@ -8,6 +8,9 @@ export const fetchKnowledges = async (): Promise<IKnowledge[]> => {
   const knowledges: IKnowledge[] = [];
   const knowledgeRef = db.collection("knowledge");
   const snapShot = await knowledgeRef.get();
-  snapShot.forEach((doc) => instanceOfKnowledge(doc) && knowledges.push(doc));
+  snapShot.forEach((doc) => {
+    const knowledge = doc.data()
+    instanceOfKnowledge(knowledge) && knowledges.push(knowledge)
+  });
   return knowledges;
 };
