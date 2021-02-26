@@ -1,18 +1,19 @@
 import { useContext, useEffect } from "react";
+import { RouteComponentProps } from "react-router-dom";
 import styled from "styled-components";
 import media from "styled-media-query";
 
-import LessonContainer from "../components/LessonContainer";
-import Slider from "../components/Slider";
-import { Heading2 } from "../styles/fonts/Heading2";
-import { Small } from "../styles/fonts/Small";
 import { courseList } from "../assets/courses";
 import FeedContainer from "../components/FeedContainer";
-import { auth, db } from "../utils/firebase";
+import LessonContainer from "../components/LessonContainer";
+import Slider from "../components/Slider";
 import { userContext } from "../contexts/userContext";
 import { defaultUserInfo, instanceOfUser } from "../interfaces/User";
+import { Heading2 } from "../styles/fonts/Heading2";
+import { Small } from "../styles/fonts/Small";
+import { auth, db } from "../utils/firebase";
 import { signOut } from "../utils/users/signOut";
-import { RouteComponentProps } from "react-router-dom";
+import { redirectNonLogin } from "../utils/users/redirectNonLogin";
 
 const HeaderContainer = styled.div`
   display: flex;
@@ -146,6 +147,7 @@ export default function Home({ history }: RouteComponentProps) {
   const { user, setUser } = useContext(userContext);
 
   useEffect(() => {
+    redirectNonLogin(history);
     const unSub = auth.onAuthStateChanged(async (fetchedUser) => {
       if (
         fetchedUser &&

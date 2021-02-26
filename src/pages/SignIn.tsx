@@ -1,13 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { RouteComponentProps } from "react-router-dom";
 
 import styled from "styled-components";
 import media from "styled-media-query";
+import Eyelogo from "../assets/img/Eye2.svg";
+import EyeOfflogo from "../assets/img/EyeOff.svg";
 import { Description } from "../styles/fonts/Description";
 import { Heading1 } from "../styles/fonts/Heading1";
 import { signIn } from "../utils/users/signIn";
-import Eyelogo from "../assets/img/Eye2.svg";
-import EyeOfflogo from "../assets/img/EyeOff.svg";
+import { redirectAlreadyLogin } from "../utils/users/redirectAlreadyLogin";
 
 const HeaderContainer = styled.div`
   display: flex;
@@ -214,6 +215,10 @@ export default function SignIn({ history }: RouteComponentProps) {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [isRevealPassword, setIsRevealPassword] = useState<boolean>(false);
+
+  useEffect(() => {
+    redirectAlreadyLogin(history);
+  }, []);
 
   return (
     <div>

@@ -1,16 +1,17 @@
-import { useContext, useState, useRef } from "react";
+import { useContext, useEffect, useState, useRef } from "react";
 import { RouteComponentProps } from "react-router-dom";
 import Slick from "react-slick";
-
 import styled from "styled-components";
 import media from "styled-media-query";
-import { Description } from "../styles/fonts/Description";
-import { Heading1 } from "../styles/fonts/Heading1";
+
 import Eyelogo from "../assets/img/Eye2.svg";
 import EyeOfflogo from "../assets/img/EyeOff.svg";
-import { createUser } from "../utils/users/createUser";
-import { IUser, defaultUserInfo } from "../interfaces/User";
 import { userContext } from "../contexts/userContext";
+import { IUser, defaultUserInfo } from "../interfaces/User";
+import { Description } from "../styles/fonts/Description";
+import { Heading1 } from "../styles/fonts/Heading1";
+import { createUser } from "../utils/users/createUser";
+import { redirectAlreadyLogin } from "../utils/users/redirectAlreadyLogin";
 
 const HeaderContainer = styled.div`
   display: flex;
@@ -65,6 +66,7 @@ const SubTitle = styled.p`
 const LoginLink = styled.a`
   color: #787878;
   font-size: 1rem;
+  cursor: pointer;
   ${media.lessThan("medium")`
     font-size: 0.75rem;
   `}
@@ -229,6 +231,10 @@ export default function SignUp({ history }: RouteComponentProps) {
   );
   const { setUser } = useContext(userContext);
   const formRef = useRef<Slick | null>();
+
+  useEffect(() => {
+    redirectAlreadyLogin(history);
+  }, []);
 
   const goNext = () => {
     if (email !== "" && password !== "" && password === checkPassword)

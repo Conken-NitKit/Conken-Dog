@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
-import { Route, BrowserRouter } from "react-router-dom";
+import { Route, BrowserRouter, RouteComponentProps } from "react-router-dom";
 import { courseList } from "./assets/courses";
 import Home from "./pages/Home";
 import Course from "./pages/Course";
@@ -24,7 +24,9 @@ const Root = () => {
             exact
             key={course.metaName}
             path={`/${course.metaName}`}
-            component={() => <Course value={course} />}
+            component={(routeComponentProps: RouteComponentProps) => (
+              <Course value={course} {...routeComponentProps} />
+            )}
           />
         ))}
 
@@ -34,7 +36,9 @@ const Root = () => {
               exact
               key={`${course.metaName}/${index}`}
               path={`/${course.metaName}/${index + 1}`}
-              component={() => <Section value={section} />}
+              component={(routeComponentProps: RouteComponentProps) => (
+                <Section value={section} {...routeComponentProps} />
+              )}
             />
           ))
         )}
