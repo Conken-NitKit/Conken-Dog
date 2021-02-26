@@ -9,10 +9,10 @@ import Favlogo from "../assets/img/Fav.svg";
 import Favlogo2 from "../assets/img/Fav2.svg";
 import BookMarklogo from "../assets/img/BookMark.svg";
 import BookMarklogo2 from "../assets/img/BookMark2.svg";
-import { IFeed } from "../interfaces/Feed";
+import { IKnowledge } from "../interfaces/Knowledge";
 import { userContext } from "../contexts/userContext";
 
-const FeedContainer = styled.div`
+const KnowledgeContainer = styled.div`
   padding: 16px 24px;
   border-bottom: 1px solid #ddd;
   border-radius: 8px;
@@ -25,7 +25,7 @@ const FeedContainer = styled.div`
   `}
 `;
 
-const FeedInfo = styled.p<{ isVisited: boolean }>`
+const KnowledgeInfo = styled.p<{ isVisited: boolean }>`
   font: 100%/1.5 "Lato", "Hiragino Maru Gothic Pro", "Meiryo UI", Meiryo,
     "MS PGothic", sans-serif;
   font-size: 0.75rem;
@@ -49,7 +49,7 @@ const FeedInfo = styled.p<{ isVisited: boolean }>`
   }
 `;
 
-const FeedTitle = styled.a<{ isVisited: boolean }>`
+const KnowledgeTitle = styled.a<{ isVisited: boolean }>`
   font-size: 18px;
   font-weight: 700;
   text-decoration: none;
@@ -121,74 +121,80 @@ const ColorSpan = styled.span<{ color: string }>`
 `;
 
 interface Props {
-  feed: IFeed;
+  knowledge: IKnowledge;
   addVisitor: (link: string) => void;
   tapFav: (link: string) => void;
   tapBookMark: (link: string) => void;
 }
 
-export default function FeedCard({
-  feed,
+export default function KnowledgeCard({
+  knowledge,
   addVisitor,
   tapFav,
   tapBookMark,
 }: Props) {
   const { user } = useContext(userContext);
   return (
-    <FeedContainer>
-      <FeedInfo isVisited={feed.visitors.includes(user.displayName)}>
-        "{feed.contributorName}" が {new Date().getFullYear()}年
+    <KnowledgeContainer>
+      <KnowledgeInfo isVisited={knowledge.visitors.includes(user.displayName)}>
+        "{knowledge.contributorName}" が {new Date().getFullYear()}年
         {new Date().getMonth() + 1}月{new Date().getDate()}日 に投稿
-      </FeedInfo>
-      <FeedTitle
-        href={feed.link}
+      </KnowledgeInfo>
+      <KnowledgeTitle
+        href={knowledge.link}
         target={"_blank"}
-        onClick={() => addVisitor(feed.link)}
-        isVisited={feed.visitors.includes(user.displayName)}
+        onClick={() => addVisitor(knowledge.link)}
+        isVisited={knowledge.visitors.includes(user.displayName)}
       >
-        {feed.title}
-      </FeedTitle>
+        {knowledge.title}
+      </KnowledgeTitle>
       <Container>
         <Icon src={Tagslogo} />
         <Small>
-          {feed.tags.map((tag, index) => (
-            <Tag key={`feed/tag/${index}`}>{tag}</Tag>
+          {knowledge.tags.map((tag, index) => (
+            <Tag key={`knowledge/tag/${index}`}>{tag}</Tag>
           ))}
         </Small>
       </Container>
       <StatusContainer>
         <Container>
           <Icon
-            src={feed.visitors.includes(user.displayName) ? Eyelogo2 : Eyelogo}
+            src={
+              knowledge.visitors.includes(user.displayName) ? Eyelogo2 : Eyelogo
+            }
           />
           <Small>
             <ColorSpan
               color={
-                feed.visitors.includes(user.displayName) ? "#1DA1F2" : "#5876a3"
+                knowledge.visitors.includes(user.displayName)
+                  ? "#1DA1F2"
+                  : "#5876a3"
               }
             >
-              {feed.visitors.length}read
+              {knowledge.visitors.length}read
             </ColorSpan>
           </Small>
         </Container>
-        <CanClickContainer onClick={() => tapFav(feed.link)}>
+        <CanClickContainer onClick={() => tapFav(knowledge.link)}>
           <Icon
-            src={feed.fans.includes(user.displayName) ? Favlogo2 : Favlogo}
+            src={knowledge.fans.includes(user.displayName) ? Favlogo2 : Favlogo}
           />
           <Small>
             <ColorSpan
               color={
-                feed.fans.includes(user.displayName) ? "#e0245e" : "#5876a3"
+                knowledge.fans.includes(user.displayName)
+                  ? "#e0245e"
+                  : "#5876a3"
               }
             >
-              {feed.fans.length}いいね
+              {knowledge.fans.length}いいね
             </ColorSpan>
           </Small>
         </CanClickContainer>
-        <CanClickContainer onClick={() => tapBookMark(feed.link)}>
+        <CanClickContainer onClick={() => tapBookMark(knowledge.link)}>
           <Icon
             src={
-              feed.collectors.includes(user.displayName)
+              knowledge.collectors.includes(user.displayName)
                 ? BookMarklogo2
                 : BookMarklogo
             }
@@ -196,16 +202,16 @@ export default function FeedCard({
           <Small>
             <ColorSpan
               color={
-                feed.collectors.includes(user.displayName)
+                knowledge.collectors.includes(user.displayName)
                   ? "#27bf63"
                   : "#5876a3"
               }
             >
-              {feed.collectors.length}ブックマーク
+              {knowledge.collectors.length}ブックマーク
             </ColorSpan>
           </Small>
         </CanClickContainer>
       </StatusContainer>
-    </FeedContainer>
+    </KnowledgeContainer>
   );
 }

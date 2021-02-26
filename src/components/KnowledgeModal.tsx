@@ -105,7 +105,7 @@ interface Props {
   close: () => void;
 }
 
-export const FeedModal = ({ close }: Props) => {
+export const KnowledgeModal = ({ close }: Props) => {
   const [title, setTitle] = useState("");
   const [link, setLink] = useState("");
 

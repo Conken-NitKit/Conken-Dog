@@ -7,7 +7,7 @@ import NotificationLogo from "../assets/img/Notification.svg";
 import UserLogo from "../assets/img/UserCircle.svg";
 
 import { courseList } from "../assets/courses";
-import FeedContainer from "../components/FeedContainer";
+import KnowledgeContainer from "../components/KnowledgeContainer";
 import LessonContainer from "../components/LessonContainer";
 import Slider from "../components/Slider";
 import { userContext } from "../contexts/userContext";
@@ -17,7 +17,7 @@ import { Small } from "../styles/fonts/Small";
 import { auth, db } from "../utils/firebase";
 import { signOut } from "../utils/users/signOut";
 import { redirectNonLogin } from "../utils/users/redirectNonLogin";
-import { FeedModal } from "../components/FeedModal";
+import { KnowledgeModal } from "../components/KnowledgeModal";
 
 const HeaderContainer = styled.div`
   display: flex;
@@ -168,7 +168,7 @@ const ContentsContainer = styled.div`
 `;
 
 export default function Home({ history }: RouteComponentProps) {
-  const [isOpenFeedModal, setIsOpenFeedModal] = useState(false);
+  const [isOpenKnowledgeModal, setIsOpenKnowledgeModal] = useState(false);
   const { user, setUser } = useContext(userContext);
 
   useEffect(() => {
@@ -203,7 +203,7 @@ export default function Home({ history }: RouteComponentProps) {
         <NavBar>
           <Icon src={NotificationLogo} />
           <Icon src={UserLogo} onClick={() => signOut(history)} />
-          <LoginLink onClick={() => setIsOpenFeedModal(true)}>
+          <LoginLink onClick={() => setIsOpenKnowledgeModal(true)}>
             ナレッジを投稿
           </LoginLink>
         </NavBar>
@@ -234,10 +234,12 @@ export default function Home({ history }: RouteComponentProps) {
           <LessonContainer useFinishedFilter={true} />
         </ContentsContainer>
         <ContentsContainer>
-          <FeedContainer />
+          <KnowledgeContainer />
         </ContentsContainer>
       </ContentsWrapper>
-      {isOpenFeedModal && <FeedModal close={() => setIsOpenFeedModal(false)}/>}
+      {isOpenKnowledgeModal && (
+        <KnowledgeModal close={() => setIsOpenKnowledgeModal(false)} />
+      )}
     </div>
   );
 }

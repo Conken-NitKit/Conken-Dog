@@ -1,4 +1,4 @@
-export interface IFeed {
+export interface IKnowledge {
   title: string;
   link: string;
   contributorName: string;

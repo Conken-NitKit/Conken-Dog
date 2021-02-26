@@ -1,6 +1,6 @@
-import { IFeed } from "../interfaces/Feed";
+import { IKnowledge } from "../interfaces/Knowledge";
 
-export const mockFeeds: IFeed[] = [
+export const mockKnowledges: IKnowledge[] = [
   {
     title: "Firebase Cloud Firestoreの使い方",
     link: "https://qiita.com/subaru44k/items/a88e638333b8d5cc29f2",
