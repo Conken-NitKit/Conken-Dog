@@ -64,6 +64,7 @@ const FormInput = styled.input`
   vertical-align: middle;
   font-family: Lato, "Hiragino Maru Gothic Pro", "Meiryo UI", Meiryo,
     "MS PGothic", sans-serif;
+  color: rgb(43, 84, 106);
   font-size: 0.85rem;
   border-radius: 4px;
   outline: none;
@@ -86,6 +87,7 @@ const FormFooter = styled.footer`
 const CanncellBtn = styled.div`
   background-color: white;
   border: 1px solid #f2f2f2;
+  color: rgb(43, 84, 106);
   cursor: pointer;
   border-radius: 4px;
   padding: 8px 16px;
