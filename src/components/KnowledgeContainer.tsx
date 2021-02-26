@@ -7,6 +7,7 @@ import { mockKnowledges } from "../mocks/knowledges";
 import { IKnowledge } from "../interfaces/Knowledge";
 import { userContext } from "../contexts/userContext";
 import { fetchKnowledges } from "../utils/knowkedge/fetchknowledge";
+import { knowledgesContext } from "../contexts/knowledgesContext";
 
 const ScrollContainer = styled.div`
   max-height: 1256px;
@@ -25,7 +26,7 @@ const EndPadding = styled.div`
 
 export default function KnowledgeContainer() {
   const { user } = useContext(userContext);
-  const [knowledges, setKnowledges] = useState<IKnowledge[]>(mockKnowledges);
+  const { knowledges, setKnowledges } = useContext(knowledgesContext);
 
   useEffect(() => {
     const f = async () => {

@@ -1,7 +1,9 @@
 import { useContext, useState } from "react";
 import ReactDOM from "react-dom";
 import styled from "styled-components";
+import { knowledgesContext } from "../contexts/knowledgesContext";
 import { userContext } from "../contexts/userContext";
+import { fetchKnowledges } from "../utils/knowkedge/fetchknowledge";
 import { postKnowledge } from "../utils/knowkedge/postKnowledge";
 
 const modalRoot = document.getElementById("modal-root")!;
@@ -114,10 +116,12 @@ export const KnowledgeModal = ({ close }: Props) => {
   const [link, setLink] = useState("");
   const [tags, setTags] = useState("");
   const { user } = useContext(userContext);
+  const { setKnowledges } = useContext(knowledgesContext);
 
-  const submit = () => {
+  const submit = async () => {
     if (title === "" || link === "") return;
     postKnowledge(title, link, tags.split(" "), user.uid, user.displayName);
+    setKnowledges(await fetchKnowledges());
     close();
   };
 
