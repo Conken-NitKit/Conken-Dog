@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 import media from "styled-media-query";
 import KnowledgeCard from "./KnowledgeCard";
@@ -6,6 +6,7 @@ import { Heading2 } from "../styles/fonts/Heading2";
 import { mockKnowledges } from "../mocks/knowledges";
 import { IKnowledge } from "../interfaces/Knowledge";
 import { userContext } from "../contexts/userContext";
+import { fetchKnowledges } from "../utils/knowkedge/fetchknowledge";
 
 const ScrollContainer = styled.div`
   max-height: 1256px;
@@ -25,6 +26,14 @@ const EndPadding = styled.div`
 export default function KnowledgeContainer() {
   const { user } = useContext(userContext);
   const [knowledges, setKnowledges] = useState<IKnowledge[]>(mockKnowledges);
+
+  useEffect(() => {
+    const f = async () => {
+      const fetchedKnowledges = await fetchKnowledges();
+      setKnowledges(fetchedKnowledges);
+    };
+    f();
+  }, []);
 
   const addVisitor = (link: string) => {
     const newKnowledges = knowledges;
