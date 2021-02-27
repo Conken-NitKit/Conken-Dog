@@ -1,4 +1,3 @@
-import { RouteComponentProps } from "react-router-dom";
 import { defaultUserInfo } from "../../interfaces/User";
 import { auth, db } from "../firebase";
 import * as H from "history";

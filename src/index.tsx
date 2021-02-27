@@ -9,40 +9,47 @@ import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
 import { userContext } from "./contexts/userContext";
 import { defaultUserInfo, IUser } from "./interfaces/User";
+import { IKnowledge } from "./interfaces/Knowledge";
+import { knowledgesContext } from "./contexts/knowledgesContext";
 
 const Root = () => {
   const [user, setUser] = useState<IUser>(defaultUserInfo);
+  const [knowledges, setKnowledges] = useState<IKnowledge[]>([]);
   return (
     <userContext.Provider value={{ user: user, setUser: setUser }}>
-      <BrowserRouter>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/signup" component={SignUp} />
-        <Route exact path="/signin" component={SignIn} />
+      <knowledgesContext.Provider
+        value={{ knowledges: knowledges, setKnowledges: setKnowledges }}
+      >
+        <BrowserRouter>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/signup" component={SignUp} />
+          <Route exact path="/signin" component={SignIn} />
 
-        {courseList.map((course) => (
-          <Route
-            exact
-            key={course.metaName}
-            path={`/${course.metaName}`}
-            component={(routeComponentProps: RouteComponentProps) => (
-              <Course value={course} {...routeComponentProps} />
-            )}
-          />
-        ))}
-
-        {courseList.map((course) =>
-          course.sections.map((section, index) => (
+          {courseList.map((course) => (
             <Route
               exact
-              key={`${course.metaName}/${index}`}
-              path={`/${course.metaName}/${index + 1}`}
+              key={course.metaName}
+              path={`/${course.metaName}`}
               component={(routeComponentProps: RouteComponentProps) => (
-                <Section value={section} {...routeComponentProps} />
+                <Course value={course} {...routeComponentProps} />
               )}
             />
-          ))
-        )}
-      </BrowserRouter>
+          ))}
+
+          {courseList.map((course) =>
+            course.sections.map((section, index) => (
+              <Route
+                exact
+                key={`${course.metaName}/${index}`}
+                path={`/${course.metaName}/${index + 1}`}
+                component={(routeComponentProps: RouteComponentProps) => (
+                  <Section value={section} {...routeComponentProps} />
+                )}
+              />
+            ))
+          )}
+        </BrowserRouter>
+      </knowledgesContext.Provider>
     </userContext.Provider>
   );
 };
