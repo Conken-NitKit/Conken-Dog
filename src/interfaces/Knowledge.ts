@@ -1,4 +1,5 @@
 export interface IKnowledge {
+  uid: string;
   title: string;
   link: string;
   contributorId: string;
@@ -11,6 +12,7 @@ export interface IKnowledge {
 }
 
 export const instanceOfKnowledge = (arg: any): arg is IKnowledge =>
+  "uid" in arg &&
   "title" in arg &&
   "link" in arg &&
   "contributorId" in arg &&
@@ -22,6 +24,7 @@ export const instanceOfKnowledge = (arg: any): arg is IKnowledge =>
   "collectors" in arg;
 
 export const defaultKnowledge: IKnowledge = {
+  uid: "",
   title: "",
   link: "",
   contributorId: "",

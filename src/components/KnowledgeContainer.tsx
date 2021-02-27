@@ -8,6 +8,8 @@ import { IKnowledge } from "../interfaces/Knowledge";
 import { userContext } from "../contexts/userContext";
 import { fetchKnowledges } from "../utils/knowkedge/fetchknowledge";
 import { knowledgesContext } from "../contexts/knowledgesContext";
+import { postKnowledge } from "../utils/knowkedge/postKnowledge";
+import { db } from "../utils/firebase";
 
 const ScrollContainer = styled.div`
   max-height: 1256px;
@@ -36,27 +38,35 @@ export default function KnowledgeContainer() {
     f();
   }, []);
 
-  const addVisitor = (link: string) => {
-    const newKnowledges = knowledges;
-    const updateIndex = newKnowledges.findIndex(
-      (knowledge) => knowledge.link === link
+  const addVisitor = async (uid: string) => {
+    const fetchedKnowledges = await fetchKnowledges();
+    const updateIndex = fetchedKnowledges.findIndex(
+      (knowledge) => knowledge.uid === uid
     );
-    newKnowledges.splice(updateIndex, 1, {
-      ...newKnowledges[updateIndex],
+
+    const postedKnowledge = {
+      ...fetchedKnowledges[updateIndex],
       visitors: [
-        ...newKnowledges[updateIndex].visitors,
+        ...fetchedKnowledges[updateIndex].visitors,
         user.displayName,
       ].filter((x, i, self) => self.indexOf(x) === i),
-    });
-    setKnowledges([...newKnowledges]);
+    };
+
+    await db
+      .collection("knowledge")
+      .doc(postedKnowledge.uid)
+      .set(postedKnowledge)
+      .then(async () => {
+        setKnowledges(await fetchKnowledges());
+      });
   };
 
-  const TapFav = (link: string) => {
-    const newKnowledges = knowledges;
+  const TapFav = async (uid: string) => {
+    const newKnowledges = await fetchKnowledges();
     const updateIndex = newKnowledges.findIndex(
-      (knowledge) => knowledge.link === link
+      (knowledge) => knowledge.uid === uid
     );
-    newKnowledges.splice(updateIndex, 1, {
+    const postedKnowledge = {
       ...newKnowledges[updateIndex],
       fans:
         newKnowledges[updateIndex].fans.indexOf(user.displayName) === -1
@@ -64,25 +74,40 @@ export default function KnowledgeContainer() {
           : newKnowledges[updateIndex].fans.filter(
               (fan) => fan !== user.displayName
             ),
-    });
-    setKnowledges([...newKnowledges]);
+    };
+
+    await db
+      .collection("knowledge")
+      .doc(postedKnowledge.uid)
+      .set(postedKnowledge)
+      .then(async () => {
+        setKnowledges(await fetchKnowledges());
+      });
   };
 
-  const tapBookMark = (link: string) => {
-    const newKnowledgess = knowledges;
-    const updateIndex = newKnowledgess.findIndex(
-      (knowledge) => knowledge.link === link
+  const tapBookMark = async (uid: string) => {
+    const fetchedKnowledges = await fetchKnowledges();
+    const updateIndex = fetchedKnowledges.findIndex(
+      (knowledge) => knowledge.uid === uid
     );
-    newKnowledgess.splice(updateIndex, 1, {
-      ...newKnowledgess[updateIndex],
+    const postedKnowledge = {
+      ...fetchedKnowledges[updateIndex],
       collectors:
-        newKnowledgess[updateIndex].collectors.indexOf(user.displayName) === -1
-          ? [...newKnowledgess[updateIndex].collectors, user.displayName]
-          : newKnowledgess[updateIndex].collectors.filter(
+        fetchedKnowledges[updateIndex].collectors.indexOf(user.displayName) ===
+        -1
+          ? [...fetchedKnowledges[updateIndex].collectors, user.displayName]
+          : fetchedKnowledges[updateIndex].collectors.filter(
               (collector) => collector !== user.displayName
             ),
-    });
-    setKnowledges([...newKnowledgess]);
+    };
+
+    await db
+      .collection("knowledge")
+      .doc(postedKnowledge.uid)
+      .set(postedKnowledge)
+      .then(async () => {
+        setKnowledges(await fetchKnowledges());
+      });
   };
 
   return (

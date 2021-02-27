@@ -2,6 +2,7 @@ import { IKnowledge } from "../interfaces/Knowledge";
 
 export const mockKnowledges: IKnowledge[] = [
   {
+    uid: "hogehoge",
     title: "Firebase Cloud Firestoreの使い方",
     link: "https://qiita.com/subaru44k/items/a88e638333b8d5cc29f2",
     contributorId: "hoge",
@@ -13,6 +14,7 @@ export const mockKnowledges: IKnowledge[] = [
     collectors: [],
   },
   {
+    uid: "hogehoge",
     title: "もう迷わない！CSS Flexboxの使い方を徹底解説",
     link: "https://webdesign-trends.net/entry/8148",
     contributorId: "hoge",
@@ -24,6 +26,7 @@ export const mockKnowledges: IKnowledge[] = [
     collectors: ["高専太郎", "高専花子"],
   },
   {
+    uid: "hogehoge",
     title: "styled-media-query",
     link: "https://www.npmjs.com/package/styled-media-query",
     contributorId: "hoge",
@@ -35,6 +38,7 @@ export const mockKnowledges: IKnowledge[] = [
     collectors: ["高専太郎"],
   },
   {
+    uid: "hogehoge",
     title: "アイソメトリックイラストのフリー素材ダウンロードサイト【12選】",
     link: "https://rico-notes.com/news/isometric/",
     contributorId: "hoge",
@@ -46,6 +50,7 @@ export const mockKnowledges: IKnowledge[] = [
     collectors: [],
   },
   {
+    uid: "hogehoge",
     title: "Ionicons: The premium icon pack for Ionic Framework",
     link: "https://ionicons.com/",
     contributorId: "hoge",
@@ -57,6 +62,7 @@ export const mockKnowledges: IKnowledge[] = [
     collectors: [],
   },
   {
+    uid: "hogehoge",
     title: "React Slick Documentation",
     link: "https://react-slick.neostack.com/docs/example/simple-slider",
     contributorId: "hoge",
@@ -68,6 +74,7 @@ export const mockKnowledges: IKnowledge[] = [
     collectors: [],
   },
   {
+    uid: "hogehoge",
     title: "Array.prototype.includes()",
     link:
       "https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/includes",
@@ -80,6 +87,7 @@ export const mockKnowledges: IKnowledge[] = [
     collectors: [],
   },
   {
+    uid: "hogehoge",
     title: "Array.prototype.reduce()",
     link:
       "https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce",
@@ -92,6 +100,7 @@ export const mockKnowledges: IKnowledge[] = [
     collectors: [],
   },
   {
+    uid: "hogehoge",
     title: "Array.prototype.splice()",
     link:
       "https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/splice",
@@ -104,6 +113,7 @@ export const mockKnowledges: IKnowledge[] = [
     collectors: [],
   },
   {
+    uid: "hogehoge",
     title: "配列の重複をはじく、もしくは重複を取り出す",
     link: "https://qiita.com/cocottejs/items/7afe6d5f27ee7c36c61f",
     contributorId: "hoge",
@@ -115,6 +125,7 @@ export const mockKnowledges: IKnowledge[] = [
     collectors: [],
   },
   {
+    uid: "hogehoge",
     title:
       "ダッシュボード | プログラミングの入門なら基礎から学べるProgate[プロゲート]",
     link: "https://prog-8.com/dashboard",
@@ -127,6 +138,7 @@ export const mockKnowledges: IKnowledge[] = [
     collectors: [],
   },
   {
+    uid: "hogehoge",
     title: "新R25 - シゴトも人生も、もっと楽しもう。",
     link: "https://r25.jp/",
     contributorId: "hoge",
@@ -138,6 +150,7 @@ export const mockKnowledges: IKnowledge[] = [
     collectors: [],
   },
   {
+    uid: "hogehoge",
     title: "アプリのアップデート100本ノックから学ぶUI改善のヒント",
     link: "https://note.com/akira_miyazaki/n/n2a1c4ef230c3",
     contributorId: "hoge",
@@ -149,6 +162,7 @@ export const mockKnowledges: IKnowledge[] = [
     collectors: [],
   },
   {
+    uid: "hogehoge",
     title: "アプリのアップデート200本ノックから学ぶUI改善のヒント",
     link: "https://note.com/akira_miyazaki/n/n256e671457b7",
     contributorId: "hoge",
@@ -160,6 +174,7 @@ export const mockKnowledges: IKnowledge[] = [
     collectors: [],
   },
   {
+    uid: "hogehoge",
     title: "アプリのアップデート300本ノックから学ぶUI改善のヒント",
     link: "https://note.com/akira_miyazaki/n/nb32211b94102",
     contributorId: "hoge",
@@ -171,6 +186,7 @@ export const mockKnowledges: IKnowledge[] = [
     collectors: [],
   },
   {
+    uid: "hogehoge",
     title: "アプリのアップデート500本ノックから学ぶUI改善のヒント",
     link: "https://note.com/akira_miyazaki/n/nab9a1252ac4e",
     contributorId: "hoge",
@@ -182,6 +198,7 @@ export const mockKnowledges: IKnowledge[] = [
     collectors: [],
   },
   {
+    uid: "hogehoge",
     title: "新規登録 UI まとめてみた",
     link: "https://note.com/telq/n/n04086df6a583",
     contributorId: "hoge",
@@ -193,6 +210,7 @@ export const mockKnowledges: IKnowledge[] = [
     collectors: [],
   },
   {
+    uid: "hogehoge",
     title: "課金 UI まとめてみた",
     link: "https://note.com/telq/n/n836e139e0a6b",
     contributorId: "hoge",
@@ -204,6 +222,7 @@ export const mockKnowledges: IKnowledge[] = [
     collectors: [],
   },
   {
+    uid: "hogehoge",
     title: "UIのお作法。28個の「〇〇できそう感」をまとめました。",
     link: "https://note.com/okamotomai/n/n6bba0b892778",
     contributorId: "hoge",

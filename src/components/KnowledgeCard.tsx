@@ -143,7 +143,7 @@ export default function KnowledgeCard({
       <KnowledgeTitle
         href={knowledge.link}
         target={"_blank"}
-        onClick={() => addVisitor(knowledge.link)}
+        onClick={() => addVisitor(knowledge.uid)}
         isVisited={knowledge.visitors.includes(user.displayName)}
       >
         {knowledge.title}
@@ -175,7 +175,7 @@ export default function KnowledgeCard({
             </ColorSpan>
           </Small>
         </Container>
-        <CanClickContainer onClick={() => tapFav(knowledge.link)}>
+        <CanClickContainer onClick={() => tapFav(knowledge.uid)}>
           <Icon
             src={knowledge.fans.includes(user.displayName) ? Favlogo2 : Favlogo}
           />
@@ -191,7 +191,7 @@ export default function KnowledgeCard({
             </ColorSpan>
           </Small>
         </CanClickContainer>
-        <CanClickContainer onClick={() => tapBookMark(knowledge.link)}>
+        <CanClickContainer onClick={() => tapBookMark(knowledge.uid)}>
           <Icon
             src={
               knowledge.collectors.includes(user.displayName)
