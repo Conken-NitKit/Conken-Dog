@@ -15,9 +15,9 @@ import { defaultUserInfo, instanceOfUser } from "../interfaces/User";
 import { Heading2 } from "../styles/fonts/Heading2";
 import { Small } from "../styles/fonts/Small";
 import { auth, db } from "../utils/firebase";
-import { signOut } from "../utils/users/signOut";
 import { redirectNonLogin } from "../utils/users/redirectNonLogin";
 import { KnowledgeModal } from "../components/KnowledgeModal";
+import Ballooon from "../components/Balloon";
 
 const HeaderContainer = styled.div`
   display: flex;
@@ -83,7 +83,7 @@ const Icon = styled.img`
   height: 36px;
   width: 36px;
   cursor: pointer;
-  margin-right: 28px;
+  margin-right: 16px;
 `;
 
 const LoginLink = styled.a`
@@ -169,6 +169,7 @@ const ContentsContainer = styled.div`
 
 export default function Home({ history }: RouteComponentProps) {
   const [isOpenKnowledgeModal, setIsOpenKnowledgeModal] = useState(false);
+  const [isOpenBalloon, setIsOpenBalloon] = useState(false);
   const { user, setUser } = useContext(userContext);
 
   useEffect(() => {
@@ -202,7 +203,15 @@ export default function Home({ history }: RouteComponentProps) {
         </TopContainer>
         <NavBar>
           <Icon src={NotificationLogo} />
-          <Icon src={UserLogo} onClick={() => signOut(history)} />
+          <div>
+            <Icon src={UserLogo} onClick={() => setIsOpenBalloon(true)} />
+            {isOpenBalloon && (
+              <Ballooon
+                close={() => setIsOpenBalloon(false)}
+                history={history}
+              />
+            )}
+          </div>
           <LoginLink onClick={() => setIsOpenKnowledgeModal(true)}>
             ナレッジを投稿
           </LoginLink>

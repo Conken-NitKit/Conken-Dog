@@ -3,12 +3,9 @@ import styled from "styled-components";
 import media from "styled-media-query";
 import KnowledgeCard from "./KnowledgeCard";
 import { Heading2 } from "../styles/fonts/Heading2";
-import { mockKnowledges } from "../mocks/knowledges";
-import { IKnowledge } from "../interfaces/Knowledge";
 import { userContext } from "../contexts/userContext";
 import { fetchKnowledges } from "../utils/knowkedge/fetchknowledge";
 import { knowledgesContext } from "../contexts/knowledgesContext";
-import { postKnowledge } from "../utils/knowkedge/postKnowledge";
 import { db } from "../utils/firebase";
 
 const ScrollContainer = styled.div`
