@@ -50,7 +50,7 @@ const NavImage = styled.img`
 const NavText = styled.p<{ selected: boolean }>`
   position: relative;
   text-align: center;
-  color: ${({ selected }) => (selected ? "#1DA1F2" : "#888")};
+  color: ${({ selected }) => (selected ? "#30c8d6" : "#888")};
   font-size: 9px;
   font-weight: ${({ selected }) => (selected ? "bolder" : "normal")};
   margin: 0;
