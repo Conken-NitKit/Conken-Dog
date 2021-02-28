@@ -3,8 +3,14 @@ import { ISection } from ".";
 export const CARRIER: ISection = {
   title: "【重要】キャリア形成",
   description:
-    "ハッカソンやアプリコンテスト、高専祭などでの企画出しの際や定期的な定例会議の際に" +
-    "効率よく議論を進めていくためのテクニックをまとめました。",
+    "実際の業務の場では能力が高い場合であっても思うように成果が出せない人も少なくありません。\n" +
+    "その場合、問題になっているケースが多いのは「マインドセット」と呼ばれる心の持ちようです。\n" +
+    "どれだけたくさんの水が入ったペットボトルであっても、注ぎ口が小さいと多くの水を一気に排出できないように、\n" +
+    "どれだけ能力があっても、マインドセットがしっかりできていないと、自分の能力を存分にはっきすることができません。\n" +
+    "本レッスンでは、前半に「就職活動で自分にあった会社を選び、入社するために必要なマインド」を、\n" +
+    "後半には「会社で出世、または経済的に大きな成功を収めるために必要なマインド」を身につけることができます。\n" +
+    "特にこれから就職活動する人は「マインドセット」が自身の能力以上に重要視されるので、\n" +
+    "大きな失敗に繋がり、悔やんでも悔やみきれない結果になりますので、しっかりチェックするようにしましょう！",
   contentsList: [
     {
       title: "Yahoo! JAPAN 内定者が教える就活講座",
@@ -293,6 +299,12 @@ export const CARRIER: ISection = {
       requiredTime: 22,
     },
     {
+      title: "あなたが挑戦すべきことTOP5",
+      link: "https://youtu.be/eNunOPOYdes",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 23,
+    },
+    {
       title: "捨てられない人は伸びません",
       link: "https://youtu.be/9CUJr0YbgqU",
       mediaType: ["READ_ONLY", "VIDEO"],
@@ -303,6 +315,12 @@ export const CARRIER: ISection = {
       link: "https://youtu.be/Z_fru_1rBqs",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 8,
+    },
+    {
+      title: "1440分の使い方──成功者たちの時間管理15の秘訣",
+      link: "https://youtu.be/OStLPiRjTv4",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 15,
     },
     {
       title: "エッセンシャル思考①【8割捨てろ】",

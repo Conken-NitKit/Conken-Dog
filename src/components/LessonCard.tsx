@@ -29,7 +29,7 @@ const LessonImg = styled.div`
   height: 100%;
   width: 110px;
   float: left;
-  margin-right: 32px;
+  margin-right: 28px;
   flex-shrink: 0;
   ${media.lessThan("medium")`
     width: 72px;

@@ -24,6 +24,9 @@ const CourseCard = styled.div`
   &:hover {
     box-shadow: 0 2px 16px rgba(0, 0, 0, 14%);
   }
+  ${media.lessThan("medium")`
+    padding: 56px 28px;
+  `}
 `;
 
 const Heading = styled.div`
@@ -55,11 +58,12 @@ const HeadingRight = styled.div`
 `;
 
 const HeadingImg = styled.img`
-  max-width: 100%;
+  width: 100%;
+  max-height: 300px;
   height: auto;
 `;
 
-interface Props extends RouteComponentProps{
+interface Props extends RouteComponentProps {
   value: ICourses;
 }
 
@@ -75,10 +79,10 @@ export default function Course({ value, history }: Props) {
       0
     );
 
-    useEffect(() => {
-      redirectNonLogin(history);
-      window.scrollTo(0, 0);
-    }, []);
+  useEffect(() => {
+    redirectNonLogin(history);
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <Container>
@@ -112,7 +116,7 @@ export default function Course({ value, history }: Props) {
           >
             <CourseCard key={value.name + i.toString()}>
               <Heading2>{section.title}</Heading2>
-              <Description>{section.description}</Description>
+                <Description>{section.description}</Description>
               <Small>
                 修了時間
                 {generateSectionMinute() >= 60 &&

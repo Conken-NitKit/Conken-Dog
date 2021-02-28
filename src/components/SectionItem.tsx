@@ -110,9 +110,9 @@ export const SectionItem = ({ content }: Props) => {
         </ContentsLink>
         <br />
         {content.requiredTime >= 60 &&
-          `  ${Math.floor(content.requiredTime / 60)}時間`}
+          ` ${Math.floor(content.requiredTime / 60)}時間`}
         {content.requiredTime % 60 !== 0 &&
-          `  ${Math.floor(content.requiredTime % 60)}分`}
+          ` ${Math.floor(content.requiredTime % 60)}分`}
         {content.mediaType.includes("VIDEO") ? (
           <MediaTypeTag>動画</MediaTypeTag>
         ) : (

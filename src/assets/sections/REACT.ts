@@ -50,9 +50,15 @@ export const REACT: ISection = {
     },
     {
       title: "Gitを学ぼう",
-      link: "https://prog-8.com/languages/git",
+      link: "https://ferret-plus.com/6104",
       mediaType: [],
       requiredTime: 60,
+    },
+    {
+      title: "知っておいて損はなし！新人Webデザイナーのための「npm」入門",
+      link: "https://prog-8.com/languages/commandline",
+      mediaType: ["READ_ONLY"],
+      requiredTime: 15,
     },
     {
       title: "create-react-appで環境構築しよう",
@@ -113,7 +119,19 @@ export const REACT: ISection = {
       link:
         "https://docs.google.com/presentation/d/1a9xbOO22ZAHJqGvUyOTRAT-E3ndMxnwRhNHNjNot7RA/edit?usp=sharing",
       mediaType: ["USE_GIT", "USE_MY_PC"],
-      requiredTime: 180,
+      requiredTime: 240,
+    },
+    {
+      title: "npmとは yarnとは",
+      link: "https://qiita.com/Hai-dozo/items/90b852ac29b79a7ea02b",
+      mediaType: ["READ_ONLY"],
+      requiredTime: 10,
+    },
+    {
+      title: "npmとyarnのコマンド早見表",
+      link: "https://qiita.com/Hai-dozo/items/1696530bb9fd59aa28d8",
+      mediaType: ["READ_ONLY"],
+      requiredTime: 10,
     },
     {
       title: "React 入門 #1 - Reactの新規プロジェクト立ち上げ",
@@ -214,18 +232,6 @@ export const REACT: ISection = {
       requiredTime: 20,
     },
     {
-      title: "自由自在にスタイルを操れる Tailwind CSSのご紹介！",
-      link: "https://youtu.be/J6uS3eXo0V0",
-      mediaType: ["READ_ONLY", "VIDEO"],
-      requiredTime: 10,
-    },
-    {
-      title: "ReactとTypeScriptの相性が良すぎる理由を解説しよう",
-      link: "https://youtu.be/X6haQpKrooM",
-      mediaType: ["READ_ONLY", "VIDEO"],
-      requiredTime: 20,
-    },
-    {
       title: "最速で学ぶTypeScript",
       link: "https://www.udemy.com/course/typescript-react-frontend/",
       mediaType: ["READ_ONLY", "VIDEO"],
@@ -235,21 +241,25 @@ export const REACT: ISection = {
       title: "最速で学ぶFirebase + React Hooks (TypeScript)",
       link: "https://www.udemy.com/course/firebasereact-hookstypescript-todo/",
       mediaType: ["USE_GIT", "USE_MY_PC", "VIDEO"],
-      requiredTime: 360,
+      requiredTime: 400,
     },
     {
-      title:
-        "俺のReactがこんなに遅いわけがない【React.memoによるパフォーマンスチューニング】",
+      title: "React.memoによるパフォーマンスチューニング",
       link: "https://youtu.be/s6HThFCXgsw",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 20,
     },
     {
-      title:
-        "俺のReactがこんなに遅いわけがない【Hooks時代のパフォーマンスチューニング】",
+      title: "Hooks時代のパフォーマンスチューニング",
       link: "https://youtu.be/cNDEUPeOJTo",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 25,
+    },
+    {
+      title: "Webの技術でアプリが作れる、ReactNative入門",
+      link: "https://youtu.be/_AKJE0vB-z0",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 10,
     },
   ],
 };

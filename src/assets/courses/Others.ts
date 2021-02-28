@@ -7,14 +7,19 @@ import { MEETING } from "../sections/MEETING";
 import { MENTAL_HEALTH } from "../sections/MENTAL_HEALTH";
 import { MIND_CONTROL } from "../sections/MIND_CONTROL";
 import { MONEY } from "../sections/MONEY";
+import logo from "../img/Knowledges.svg";
 
 export const OTHERS: ICourses = {
   name: "特集",
   metaName: "others",
-  logoSVG: "???",
+  logoSVG: logo,
   description:
-    "このコースでは実際の大手ゲーム会社の開発現場でも利用されているUnityを使ってゲーム開発を行う際に必要な知識を学習します。\n" +
-    "本コースではオフラインでのゲームはもちろん、最終的にはオンラインでの対戦ゲームの開発方法までをチュートリアルを通して身につけることができます。",
+    "このコースでは部活とは直接関係ない。\n" +
+    "ただ、知ってると超役に立つ実用的な知識をまとめています。\n" +
+    "内容としては「技術革新とそれによって激変する未来のお話」「出世するための仕事術」" +
+    "「良い人間関係構築のための会話術」「より良い人生を送るための健康法」「就職活動のノウハウ」" +
+    "「社会人になるまでに知っておかないと100%損するお金のお話」などなどです。\n" +
+    "正直、プログラミングの勉強なんかよりも格段に価値のあるコンテンツですので、少しずつ勉強していきましょう！！\n",
   sections: [
     INDUSTRY,
     LOGICAL_THINKING,

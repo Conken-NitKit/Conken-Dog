@@ -2,14 +2,14 @@ import { ISection } from ".";
 
 export const MONEY: ISection = {
   title: "【重要】お金のお話",
-  description: "参考文献:",
+  description:
+    "21世紀のこの資本主義社会を生きるために「お金に関する知識」は超重要な知識です。\n" +
+    "日本の公教育では、国語・算数・英語・理科・社会などの基礎教養については、誰でも平等に学ぶことができます。\n" +
+    "その一方で、「資本主義社会を上手に生き抜くコツ」を教えてくれる先生は、どこにも存在しません。\n" +
+    "本レッスンでは社会人になるまでに【必ず】知っておいて欲しい「お金の知識」をギュッとまとめました。\n" +
+    "世の中、金が全てでは無いですが、お金は充実した人生を生きる為の「重要なツール」であることもまた間違いありません。\n" +
+    "一度きりの人生、より充実したものにするためにしっかり勉強していきましょう！！",
   contentsList: [
-    {
-      title: "その保険、不要やで！！！～保険解約のススメとその理由～",
-      link: "https://youtu.be/A66-j0z-gfA",
-      mediaType: ["READ_ONLY", "VIDEO"],
-      requiredTime: 6,
-    },
     {
       title:
         "賃貸の部屋に傷をつけてしまった時に無料で直す方法〜火災保険の補償を使って直そう！",
@@ -43,10 +43,40 @@ export const MONEY: ISection = {
       requiredTime: 37,
     },
     {
+      title: "10歳から知っておきたいお金の心得",
+      link: "https://youtu.be/rDFB7KsrKG8",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 14,
+    },
+    {
       title: "資本論",
       link: "https://youtu.be/B8pRw5Hj5ak",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 11,
+    },
+    {
+      title: "【バビロン大富豪の教え①】",
+      link: "https://youtu.be/34qLgA-9oiU",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 23,
+    },
+    {
+      title: "【バビロン大富豪の教え②】",
+      link: "https://youtu.be/c9qQjN4BosE",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 23,
+    },
+    {
+      title: "【バビロン大富豪の教え③】",
+      link: "https://youtu.be/TxuDsrNc6ZE",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 21,
+    },
+    {
+      title: "【バビロン大富豪の教え】100年間、成功し続けてる資産の作り方",
+      link: "https://youtu.be/ONQe6GeyOzI",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 20,
     },
     {
       title: "金持ち父さん貧乏父さん【家と車が貧乏を量産】",
@@ -79,30 +109,6 @@ export const MONEY: ISection = {
       requiredTime: 23,
     },
     {
-      title: "【バビロン大富豪の教え①】",
-      link: "https://youtu.be/34qLgA-9oiU",
-      mediaType: ["READ_ONLY", "VIDEO"],
-      requiredTime: 23,
-    },
-    {
-      title: "【バビロン大富豪の教え②】",
-      link: "https://youtu.be/c9qQjN4BosE",
-      mediaType: ["READ_ONLY", "VIDEO"],
-      requiredTime: 23,
-    },
-    {
-      title: "【バビロン大富豪の教え③】",
-      link: "https://youtu.be/TxuDsrNc6ZE",
-      mediaType: ["READ_ONLY", "VIDEO"],
-      requiredTime: 21,
-    },
-    {
-      title: "【バビロン大富豪の教え】100年間、成功し続けてる資産の作り方",
-      link: "https://youtu.be/ONQe6GeyOzI",
-      mediaType: ["READ_ONLY", "VIDEO"],
-      requiredTime: 20,
-    },
-    {
       title: "サラリーマンの9割が豊かな老後を迎えられない理由と解決策",
       link: "https://youtu.be/W5sANNsnoVU",
       mediaType: ["READ_ONLY", "VIDEO"],
@@ -127,31 +133,14 @@ export const MONEY: ISection = {
       requiredTime: 16,
     },
     {
-      title: "【経営計画①】強いチームを作るための魔法の道具",
-      link: "https://youtu.be/zQDOOq9O3Rk",
-      mediaType: ["READ_ONLY", "VIDEO"],
-      requiredTime: 24,
-    },
-    {
-      title: "【経営計画②】具体的な経営計画の立て方",
-      link: "https://youtu.be/OGffRSsrsIQ",
-      mediaType: ["READ_ONLY", "VIDEO"],
-      requiredTime: 25,
-    },
-    {
-      title: "【経営計画③】方針を決めた後はスケジュール＆マニュアル化",
-      link: "https://youtu.be/SdxbMqoCIdE",
-      mediaType: ["READ_ONLY", "VIDEO"],
-      requiredTime: 22,
-    },
-    {
       title: "オープンイノベーション促進税制でスタートアップの時代到来！",
       link: "https://youtu.be/oSfdqOyLQ8U",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 5,
     },
     {
-      title: "エンジニアが最も起業に向いているという話。IT企業においてエンジニア出身社長は最強",
+      title:
+        "エンジニアが最も起業に向いているという話。IT企業においてエンジニア出身社長は最強",
       link: "https://youtu.be/eIiyFPPVGxM",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 12,
@@ -226,6 +215,12 @@ export const MONEY: ISection = {
       requiredTime: 8,
     },
     {
+      title: "知ってるかどうかで大差がつくお金の知識",
+      link: "https://youtu.be/6rin3c1pp-o",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 17,
+    },
+    {
       title: "【お金の授業総まとめ①】",
       link: "https://youtu.be/bi_WFrOYhgg",
       mediaType: ["READ_ONLY", "VIDEO"],
@@ -264,7 +259,7 @@ export const MONEY: ISection = {
     },
     {
       title: "【お金の大学①】一生お金に困らない5つの力を身につける",
-      link: "https://youtu.be/JE6YE3F67ok",
+      link: "https://youtu.be/HumEpqOb3HA",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 45,
     },
@@ -273,6 +268,12 @@ export const MONEY: ISection = {
       link: "https://youtu.be/GuiM0ikvJ_A",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 41,
+    },
+    {
+      title: "マネー本100冊解説して考えた投資の王道と取るべき戦略の結論",
+      link: "https://youtu.be/8oD1M61UGXs",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 21,
     },
     {
       title: "インデックスファンド選びの4つのポイント【株式投資編】",
@@ -305,6 +306,42 @@ export const MONEY: ISection = {
       requiredTime: 9,
     },
     {
+      title: "アメリカの高校生が学んでいるお金の教科書",
+      link: "https://youtu.be/5k0VjcXddCc",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 10,
+    },
+    {
+      title: "お金の不安をゼロにする！資産運用・完全講義",
+      link: "https://youtu.be/uVtOmwQE49k",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 84,
+    },
+    {
+      title: "金融詐欺師に気をつけろ！完全初心者向け！そもそも投資信託って何？",
+      link: "https://youtu.be/tCn8gvJDdcA",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 32,
+    },
+    {
+      title: "初心者は気をつけろ！つみたてNISA（積立NISA）の落とし穴",
+      link: "https://youtu.be/p7rFNULBpts",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 26,
+    },
+    {
+      title: "結局iDeCo(イデコ)ってお得なの！？",
+      link: "https://youtu.be/EnSKpLEt4j4",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 25,
+    },
+    {
+      title: "外貨建て生命保険（貯蓄型）をオススメできない３つの理由！",
+      link: "https://youtu.be/NjqZzBsIFlA",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 14,
+    },
+    {
       title: "【FIRE①】最速で経済的自立を実現する方法",
       link: "https://youtu.be/qDDc1pIsCFY",
       mediaType: ["READ_ONLY", "VIDEO"],
@@ -315,6 +352,18 @@ export const MONEY: ISection = {
       link: "https://youtu.be/bnCHUWvHC-g",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 28,
+    },
+    {
+      title: "最速で早期リタイアする方法",
+      link: "https://youtu.be/24SY0h9D15Q",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 21,
+    },
+    {
+      title: "日本一簡単な投資とお金",
+      link: "https://youtu.be/H9DAcCDyPgk",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 18,
     },
     {
       title: "資産運用を始めると実感する「2つの真実」",
