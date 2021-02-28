@@ -122,6 +122,13 @@ export const NODE: ISection = {
     },
     {
       title:
+        "Web開発の便利ツール ngrokをご紹介！ webhookを利用した開発に便利！",
+      link: "https://youtu.be/9UYZf-AUXhw",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 5,
+    },
+    {
+      title:
         "GraphQLを使いたいけどまだやってないという方に！ GraphQLの始め方を解説します！",
       link: "https://youtu.be/duis4yokW2Y",
       mediaType: ["READ_ONLY", "VIDEO"],

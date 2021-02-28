@@ -3,8 +3,10 @@ import { ISection } from ".";
 export const LOGICAL_THINKING: ISection = {
   title: "ロジカルシンキング",
   description:
-    "ハッカソンやアプリコンテスト、高専祭などでの企画出しはもちろん、" +
-    "組織の運営や日々の業務の効率化に役に立つ思考法・戦略立案の方法をまとめています。",
+    "ロジカルシンキングとは、物事を体系的に整理して筋道を立て、矛盾なく考える思考法のこと。\n" +
+    "この思考法はコンテストや高専祭のアイデア出しで使えることはもちろん、\n" +
+    "普段のコミュニケーションで活用することで「コイツ、出来る！！」って思ってもらえるなどの効果があります。\n" +
+    "このように幅広いケースで活用できる思考法なので、しっかり勉強して、できるビジネスマンに近づいていきましょう！\n",
   contentsList: [
     {
       title: "天才を殺す凡人｜世界の命運は凡人が握っていた",
@@ -59,6 +61,12 @@ export const LOGICAL_THINKING: ISection = {
       link: "https://youtu.be/FjZGSBGB8Lc",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 11,
+    },
+    {
+      title: "メモの魔力｜みんなが知らない2種類のメモ",
+      link: "https://youtu.be/1h8vTIRJpdc",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 15,
     },
     {
       title: "仕事遅いやつ 仮説持ててない説",
@@ -156,6 +164,12 @@ export const LOGICAL_THINKING: ISection = {
       link: "https://youtu.be/Y-znwItNGVI",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 14,
+    },
+    {
+      title: "ゼロ秒思考 頭がよくなる世界一シンプルなトレーニング",
+      link: "https://youtu.be/lpPDEaC1dmc",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 29,
     },
     {
       title: "ハートドリブン～目に見えないものを大切にする力 ～",

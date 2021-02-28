@@ -1,10 +1,14 @@
 import { ISection } from ".";
 
 export const MENTAL_HEALTH: ISection = {
-  title: "メンタルヘルス",
+  title: "健康管理",
   description:
-    "ハッカソンやアプリコンテスト、高専祭などでの企画出しの際や定期的な定例会議の際に" +
-    "効率よく議論を進めていくためのテクニックをまとめました。",
+    "日頃の仕事のパフォーマンス向上のためには、健康管理が超重要なのは今や常識です。\n" +
+    "仮にせっかくそれらがが充実していても、体調を崩してしまっては台無しになってしまいます。\n" +
+    "しかし、忙しいとなかなかケアが後回しになってしまうのが「健康」の現実。\n" +
+    "本レッスンではそれらを効率的に学び、実践していくためのコンテンツが用意されています。\n" +
+    "内容としては前半では「心の健康」を、後半では「身体の健康」という風な構成になっています。\n" +
+    "病気の辛さは、日頃の贅沢の我慢以上の辛さです。若いうちからしっかりと勉強して、実践していきましょう！\n",
   contentsList: [
     {
       title: "科学的に今すぐ人生を変える方法 ～人は変わることが出来る～",
@@ -49,10 +53,16 @@ export const MENTAL_HEALTH: ISection = {
       requiredTime: 9,
     },
     {
-      title: "究極のマインドフルネス",
-      link: "https://youtu.be/MjG1mbxENwM",
+      title: "ストレスに強い人と弱い人の違い",
+      link: "https://youtu.be/cEj48QKHl3A",
       mediaType: ["READ_ONLY", "VIDEO"],
-      requiredTime: 18,
+      requiredTime: 22,
+    },
+    {
+      title: "究極のマインドフルネス",
+      link: "https://youtu.be/qd6Gbiif1x4",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 9,
     },
     {
       title: "ストレスや逆境を利用して、爆発的に成長する方法",
@@ -103,12 +113,6 @@ export const MENTAL_HEALTH: ISection = {
       requiredTime: 28,
     },
     {
-      title: "世界一シンプルで科学的に証明された究極の食事",
-      link: "https://youtu.be/-5HBfmff_GQ",
-      mediaType: ["READ_ONLY", "VIDEO"],
-      requiredTime: 15,
-    },
-    {
       title: "脳が冴える最高の習慣術",
       link: "https://youtu.be/0o2u3is3OQ0",
       mediaType: ["READ_ONLY", "VIDEO"],
@@ -121,10 +125,70 @@ export const MENTAL_HEALTH: ISection = {
       requiredTime: 11,
     },
     {
+      title: "世界一シンプルで科学的に証明された究極の食事",
+      link: "https://youtu.be/-5HBfmff_GQ",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 15,
+    },
+    {
+      title: "眠れなくなるほど面白い糖質の話",
+      link: "https://youtu.be/Er776mFXi5A",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 11,
+    },
+    {
+      title: "空腹こそ最強のクスリ①",
+      link: "https://youtu.be/qxUwrcI79RU",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 27,
+    },
+    {
+      title: "空腹こそ最強のクスリ②",
+      link: "https://youtu.be/BMN1b5Q7Gpw",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 23,
+    },
+    {
+      title: "脳と体が若くなる断食力",
+      link: "https://youtu.be/MksoWQdOep0",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 29,
+    },
+    {
+      title: "老化は治療できる病！いつまでも若く生きられる",
+      link: "https://youtu.be/Nw1r2G5HgEA",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 21,
+    },
+    {
+      title: "老化を治して若返る行動と薬とは？",
+      link: "https://youtu.be/N6ZBIbrJ5Qg",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 20,
+    },
+    {
       title: "運動が脳に与える驚きの効果",
       link: "https://youtu.be/1SZE2NsAbGQ",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 12,
+    },
+    {
+      title: "回復の奥義 IAP呼吸法",
+      link: "https://youtu.be/xlBpubBdV9g",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 13,
+    },
+    {
+      title: "超一流の眠り方",
+      link: "https://youtu.be/SnG8OxmZOKU",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 8,
+    },
+    {
+      title: "よくわかるサウナ入門",
+      link: "https://youtu.be/Z5UbK91jrzg",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 10,
     },
     {
       title: "人生余裕ゲーになる笑いの凄い効果3選",

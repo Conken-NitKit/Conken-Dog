@@ -4,7 +4,7 @@ export const JAVASCRIPT: ISection = {
   title: "JavaScript",
   description:
     "JavaScriptでプログラミングの初歩を学ぶレッスンです。\n" +
-    "標準出力や変数、配列、演算子、条件分岐、ループ、クラス といったプログラミングの基本を手順を追って学びます。\n"+
+    "標準出力や変数、配列、演算子、条件分岐、ループ、クラス といったプログラミングの基本を手順を追って学びます。\n" +
     "加えて、ES6などの最新のJavaScriptの機能についても学習を行います。",
   contentsList: [
     {
@@ -145,6 +145,12 @@ export const JAVASCRIPT: ISection = {
       link: "https://codeprep.jp/books/35",
       mediaType: [],
       requiredTime: 15,
+    },
+    {
+      title: "GoogleMapで遊ぼう",
+      link: "https://codeprep.jp/books/96",
+      mediaType: [],
+      requiredTime: 25,
     },
     {
       title: "代入において時々現れる、括弧で囲まれた変数名は何なのか",
