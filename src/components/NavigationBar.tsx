@@ -1,17 +1,17 @@
 import styled from "styled-components";
 import media from "styled-media-query";
 
-import accountLogo from "../assets/img/nav/account.svg"
-import homeLogo from "../assets/img/nav/home.svg"
-import knowledgeLogo from "../assets/img/nav/knowledge.svg"
-import lessonLogo from "../assets/img/nav/lesson.svg"
-import notificationLogo from "../assets/img/nav/notification.svg"
+import accountLogo from "../assets/img/nav/account.svg";
+import homeLogo from "../assets/img/nav/home.svg";
+import knowledgeLogo from "../assets/img/nav/knowledge.svg";
+import lessonLogo from "../assets/img/nav/lesson.svg";
+import notificationLogo from "../assets/img/nav/notification.svg";
 
-import selectedAccountLogo from "../assets/img/nav/selected-account.svg"
-import selectedHomeLogo from "../assets/img/nav/selected-home.svg"
-import selectedKnowledgeLogo from "../assets/img/nav/selected-knowledge.svg"
-import selectedLessonLogo from "../assets/img/nav/selected-lesson.svg"
-import selectedNotificationLogo from "../assets/img/nav/selected-notification.svg"
+import selectedAccountLogo from "../assets/img/nav/selected-account.svg";
+import selectedHomeLogo from "../assets/img/nav/selected-home.svg";
+import selectedKnowledgeLogo from "../assets/img/nav/selected-knowledge.svg";
+import selectedLessonLogo from "../assets/img/nav/selected-lesson.svg";
+import selectedNotificationLogo from "../assets/img/nav/selected-notification.svg";
 
 const Container = styled.div`
   position: fixed;
@@ -60,24 +60,48 @@ export default function NavigationBar() {
   return (
     <Container>
       <NavItem>
-        <NavImage src={window.location.pathname ===  "/" ? selectedHomeLogo : homeLogo} />
-        <NavText selected={window.location.pathname ===  "/"}>ホーム</NavText>
+        <NavImage
+          src={window.location.pathname === "/" ? selectedHomeLogo : homeLogo}
+        />
+        <NavText selected={window.location.pathname === "/"}>ホーム</NavText>
       </NavItem>
       <NavItem>
-        <NavImage src={lessonLogo} />
-        <NavText selected={false}>レッスン</NavText>
+        <NavImage
+          src={
+            window.location.pathname === "/courses" ? selectedLessonLogo : lessonLogo
+          }
+        />
+        <NavText selected={window.location.pathname === "/courses"}>レッスン</NavText>
       </NavItem>
       <NavItem>
-        <NavImage src={knowledgeLogo} />
-        <NavText selected={false}>ナレッジ</NavText>
+        <NavImage
+          src={
+            window.location.pathname === "/knowledges"
+              ? selectedKnowledgeLogo
+              : knowledgeLogo
+          }
+        />
+        <NavText selected={window.location.pathname === "/knowledges"}>ナレッジ</NavText>
       </NavItem>
       <NavItem>
-        <NavImage src={notificationLogo} />
-        <NavText selected={false}>おしらせ</NavText>
+        <NavImage
+          src={
+            window.location.pathname === "/notifications"
+              ? selectedNotificationLogo
+              : notificationLogo
+          }
+        />
+        <NavText selected={window.location.pathname === "/notifications"}>おしらせ</NavText>
       </NavItem>
       <NavItem>
-        <NavImage src={accountLogo} />
-        <NavText selected={false}>アカウント</NavText>
+        <NavImage
+          src={
+            window.location.pathname === "/account" ? selectedAccountLogo : accountLogo
+          }
+        />
+        <NavText selected={window.location.pathname === "/account"}>
+          アカウント
+        </NavText>
       </NavItem>
     </Container>
   );
