@@ -4,7 +4,7 @@ import { CS } from "../sections/CS";
 import { P5 } from "../sections/P5";
 import { PHOTON } from "../sections/PHOTON";
 import { UNITY } from "../sections/UNITY";
-import logo from "../img/VR.svg";
+import logo from "../img/eye-catching/game1.svg";
 
 export const GAME_CREATE_COURSE: ICourses = {
   name: "ゲーム開発",

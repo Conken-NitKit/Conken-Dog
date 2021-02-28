@@ -7,7 +7,7 @@ import { MEETING } from "../sections/MEETING";
 import { MENTAL_HEALTH } from "../sections/MENTAL_HEALTH";
 import { MIND_CONTROL } from "../sections/MIND_CONTROL";
 import { MONEY } from "../sections/MONEY";
-import logo from "../img/Knowledges.svg";
+import logo from "../img/eye-catching/knowledges.svg";
 
 export const OTHERS: ICourses = {
   name: "特集",

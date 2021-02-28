@@ -100,6 +100,12 @@ export const INDUSTRY: ISection = {
       requiredTime: 39,
     },
     {
+      title: "今話題の自動運転！AIはどう使われているの？",
+      link: "https://www.sejuku.net/blog/62032",
+      mediaType: ["READ_ONLY"],
+      requiredTime: 10,
+    },
+    {
       title: "画像分類・物体検出・セグメンテーションの比較",
       link:
         "https://data-analysis-stats.jp/" +
