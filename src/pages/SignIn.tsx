@@ -3,8 +3,8 @@ import { RouteComponentProps } from "react-router-dom";
 
 import styled from "styled-components";
 import media from "styled-media-query";
-import Eyelogo from "../assets/img/Eye2.svg";
-import EyeOfflogo from "../assets/img/EyeOff.svg";
+import EyeLogo from "../assets/img/icons/eye.svg";
+import EyeOffLogo from "../assets/img/icons/eye-off.svg";
 import { Description } from "../styles/fonts/Description";
 import { Heading1 } from "../styles/fonts/Heading1";
 import { signIn } from "../utils/users/signIn";
@@ -262,7 +262,7 @@ export default function SignIn({ history }: RouteComponentProps) {
                   type={isRevealPassword ? "text" : "password"}
                 />
                 <Icon
-                  src={isRevealPassword ? Eyelogo : EyeOfflogo}
+                  src={isRevealPassword ? EyeLogo : EyeOffLogo}
                   onClick={() => setIsRevealPassword(!isRevealPassword)}
                 />
               </PasswordForm>

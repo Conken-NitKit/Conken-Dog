@@ -3,7 +3,7 @@ import { ATCODER } from "../sections/ATCODER";
 import { HTML } from "../sections/HTML";
 import { JAVASCRIPT } from "../sections/JAVASCRIPT";
 import { REACT } from "../sections/REACT";
-import logo from "../img/Business.svg";
+import logo from "../img/eye-catching/web1.svg";
 import { NEXT } from "../sections/NEXT";
 
 export const WEB_DESIGN_COURSE: ICourses = {

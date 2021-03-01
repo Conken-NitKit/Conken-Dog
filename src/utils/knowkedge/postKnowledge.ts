@@ -1,5 +1,5 @@
 import { defaultKnowledge } from "../../interfaces/Knowledge";
-import { auth, db } from "../firebase";
+import { db } from "../firebase";
 
 export const postKnowledge = async (
   title: string,

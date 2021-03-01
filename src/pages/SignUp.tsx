@@ -4,8 +4,8 @@ import Slick from "react-slick";
 import styled from "styled-components";
 import media from "styled-media-query";
 
-import Eyelogo from "../assets/img/Eye2.svg";
-import EyeOfflogo from "../assets/img/EyeOff.svg";
+import EyeLogo from "../assets/img/icons/eye.svg";
+import EyeOffLogo from "../assets/img/icons/eye-off.svg";
 import { userContext } from "../contexts/userContext";
 import { IUser, defaultUserInfo } from "../interfaces/User";
 import { Description } from "../styles/fonts/Description";
@@ -332,7 +332,7 @@ export default function SignUp({ history }: RouteComponentProps) {
                       type={isRevealPassword ? "text" : "password"}
                     />
                     <Icon
-                      src={isRevealPassword ? Eyelogo : EyeOfflogo}
+                      src={isRevealPassword ? EyeLogo : EyeOffLogo}
                       onClick={() => setIsRevealPassword(!isRevealPassword)}
                     />
                   </PasswordForm>
@@ -349,7 +349,7 @@ export default function SignUp({ history }: RouteComponentProps) {
                       type={isRevealCheckPassword ? "text" : "password"}
                     />
                     <Icon
-                      src={isRevealCheckPassword ? Eyelogo : EyeOfflogo}
+                      src={isRevealCheckPassword ? EyeLogo : EyeOffLogo}
                       onClick={() =>
                         setIsRevealCheckPassword(!isRevealCheckPassword)
                       }

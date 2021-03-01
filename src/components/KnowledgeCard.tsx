@@ -2,13 +2,13 @@ import { useContext } from "react";
 import styled from "styled-components";
 import media from "styled-media-query";
 import { Small } from "../styles/fonts/Small";
-import Tagslogo from "../assets/img/Tags.svg";
-import Eyelogo from "../assets/img/Eye.svg";
-import Eyelogo2 from "../assets/img/Eye2.svg";
-import Favlogo from "../assets/img/Fav.svg";
-import Favlogo2 from "../assets/img/Fav2.svg";
-import BookMarklogo from "../assets/img/BookMark.svg";
-import BookMarklogo2 from "../assets/img/BookMark2.svg";
+import Tagslogo from "../assets/img/icons/tags.svg";
+import EyeLogo from "../assets/img/icons/eye.svg";
+import SelectedEyeLogo from "../assets/img/icons/selected-eye.svg";
+import FavLogo from "../assets/img/icons/fav.svg";
+import SelectedFavLogo from "../assets/img/icons/selected-fav.svg";
+import BookMarkLogo from "../assets/img/icons/book-mark.svg";
+import SelectedBookMarkLogo from "../assets/img/icons/selected-book-mark.svg";
 import { IKnowledge } from "../interfaces/Knowledge";
 import { userContext } from "../contexts/userContext";
 
@@ -160,7 +160,9 @@ export default function KnowledgeCard({
         <Container>
           <Icon
             src={
-              knowledge.visitors.includes(user.displayName) ? Eyelogo2 : Eyelogo
+              knowledge.visitors.includes(user.displayName)
+                ? SelectedEyeLogo
+                : EyeLogo
             }
           />
           <Small>
@@ -177,7 +179,11 @@ export default function KnowledgeCard({
         </Container>
         <CanClickContainer onClick={() => tapFav(knowledge.uid)}>
           <Icon
-            src={knowledge.fans.includes(user.displayName) ? Favlogo2 : Favlogo}
+            src={
+              knowledge.fans.includes(user.displayName)
+                ? SelectedFavLogo
+                : FavLogo
+            }
           />
           <Small>
             <ColorSpan
@@ -195,8 +201,8 @@ export default function KnowledgeCard({
           <Icon
             src={
               knowledge.collectors.includes(user.displayName)
-                ? BookMarklogo2
-                : BookMarklogo
+                ? SelectedBookMarkLogo
+                : BookMarkLogo
             }
           />
           <Small>

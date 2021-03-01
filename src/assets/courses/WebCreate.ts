@@ -4,7 +4,7 @@ import { HTML } from "../sections/HTML";
 import { JAVASCRIPT } from "../sections/JAVASCRIPT";
 import { NODE } from "../sections/NODE";
 import { REACT } from "../sections/REACT";
-import logo from "../img/Business.svg";
+import logo from "../img/eye-catching/web1.svg";
 import { TYPESCRIPT } from "../sections/TYPESCRIPT";
 import { NEXT } from "../sections/NEXT";
 import { WEB } from "../sections/WEB";

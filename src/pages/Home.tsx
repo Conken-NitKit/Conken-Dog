@@ -3,8 +3,8 @@ import { RouteComponentProps } from "react-router-dom";
 import styled from "styled-components";
 import media from "styled-media-query";
 
-import NotificationLogo from "../assets/img/Notification.svg";
-import UserLogo from "../assets/img/UserCircle.svg";
+import NotificationLogo from "../assets/img/icons/notification.svg";
+import UserLogo from "../assets/img/icons/user-circle.svg";
 
 import { courseList } from "../assets/courses";
 import KnowledgeContainer from "../components/KnowledgeContainer";
@@ -18,6 +18,7 @@ import { auth, db } from "../utils/firebase";
 import { redirectNonLogin } from "../utils/users/redirectNonLogin";
 import { KnowledgeModal } from "../components/KnowledgeModal";
 import Ballooon from "../components/Balloon";
+import NavigationBar from "../components/NavigationBar";
 
 const HeaderContainer = styled.div`
   display: flex;
@@ -249,6 +250,7 @@ export default function Home({ history }: RouteComponentProps) {
       {isOpenKnowledgeModal && (
         <KnowledgeModal close={() => setIsOpenKnowledgeModal(false)} />
       )}
+      <NavigationBar />
     </div>
   );
 }
