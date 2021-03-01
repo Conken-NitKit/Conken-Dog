@@ -1,4 +1,4 @@
-import { Link, RouteComponentProps } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import media from "styled-media-query";
 
@@ -20,7 +20,7 @@ const Container = styled.div`
   bottom: 0;
   width: 100vw;
   height: 56px;
-  padding-top: 12px;
+  padding: 12px 0 16px;
   display: table;
   table-layout: fixed;
   border-top: solid lightgray 0.5px;

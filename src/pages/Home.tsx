@@ -19,6 +19,7 @@ import { redirectNonLogin } from "../utils/users/redirectNonLogin";
 import { KnowledgeModal } from "../components/KnowledgeModal";
 import Ballooon from "../components/Balloon";
 import NavigationBar from "../components/NavigationBar";
+import { ResponsiveWrapper } from "../layouts/ResponsiveWrapper";
 
 const HeaderContainer = styled.div`
   display: flex;
@@ -116,6 +117,13 @@ const MenuList = styled.ul`
   `}
 `;
 
+const FinishedLessonContainer = styled.div`
+  position: relative;
+  ${media.lessThan("medium")`
+    display: none;
+  `}
+`;
+
 const MenuListLink = styled.li`
   font-family: Lato, "Hiragino Maru Gothic Pro", "Meiryo UI", Meiryo,
     "MS PGothic", sans-serif;
@@ -154,7 +162,7 @@ const ContentsWrapper = styled.div`
     width: 92%;
     flex-direction: column;
     justify-content: center;
-    margin: 0 auto;
+    padding-top: 16px;
   `}
 `;
 
@@ -163,8 +171,9 @@ const ContentsContainer = styled.div`
   width: 462px;
   margin-top: 64px;
   ${media.lessThan("medium")`
-    padding: 0;
     width: 100%;
+    padding: 0;
+    margin-top: 32px;
   `}
 `;
 
@@ -197,59 +206,65 @@ export default function Home({ history }: RouteComponentProps) {
 
   return (
     <div>
-      <HeaderContainer>
-        <TopContainer>
-          <Title>ConDog</Title>
-          <SubTitle>遊ぶように、学ぼう、どこよりも</SubTitle>
-        </TopContainer>
-        <NavBar>
-          <Icon src={NotificationLogo} />
-          <div>
-            <Icon src={UserLogo} onClick={() => setIsOpenBalloon(true)} />
-            {isOpenBalloon && (
-              <Ballooon
-                close={() => setIsOpenBalloon(false)}
-                history={history}
-              />
-            )}
-          </div>
-          <LoginLink onClick={() => setIsOpenKnowledgeModal(true)}>
-            ナレッジを投稿
-          </LoginLink>
-        </NavBar>
-      </HeaderContainer>
-      <HeadContainer>
-        <MenuList>
-          {courseList.map((course) => (
-            <MenuListLink
-              key={`menu/${course.metaName}`}
-              onClick={() => history.push(course.metaName)}
-            >
-              {course.name}
-            </MenuListLink>
-          ))}
-        </MenuList>
-        <HeadContents>
-          <Slider />
-        </HeadContents>
-      </HeadContainer>
-      <ContentsWrapper>
-        <ContentsContainer>
-          <Heading2>レッスン</Heading2>
-          <Small>今後、あなたに取り組んで欲しいレッスン</Small>
-          <LessonContainer useFinishedFilter={false} />
+      <ResponsiveWrapper>
+        <HeaderContainer>
+          <TopContainer>
+            <Title>ConDog</Title>
+            <SubTitle>遊ぶように、学ぼう、どこよりも</SubTitle>
+          </TopContainer>
+          <NavBar>
+            <Icon src={NotificationLogo} />
+            <div>
+              <Icon src={UserLogo} onClick={() => setIsOpenBalloon(true)} />
+              {isOpenBalloon && (
+                <Ballooon
+                  close={() => setIsOpenBalloon(false)}
+                  history={history}
+                />
+              )}
+            </div>
+            <LoginLink onClick={() => setIsOpenKnowledgeModal(true)}>
+              ナレッジを投稿
+            </LoginLink>
+          </NavBar>
+        </HeaderContainer>
+        <HeadContainer>
+          <MenuList>
+            {courseList.map((course) => (
+              <MenuListLink
+                key={`menu/${course.metaName}`}
+                onClick={() => history.push(course.metaName)}
+              >
+                {course.name}
+              </MenuListLink>
+            ))}
+          </MenuList>
+          <HeadContents>
+            <Slider />
+          </HeadContents>
+        </HeadContainer>
+        <ContentsWrapper>
+          <ContentsContainer>
+            <Heading2>レッスン</Heading2>
+            <Small>今後、あなたに取り組んで欲しいレッスン</Small>
+            <LessonContainer useFinishedFilter={false} />
 
-          <Heading2>修了レッスン</Heading2>
-          <Small>あなたがこれまでに取り組んできたレッスン</Small>
-          <LessonContainer useFinishedFilter={true} />
-        </ContentsContainer>
-        <ContentsContainer>
-          <KnowledgeContainer />
-        </ContentsContainer>
-      </ContentsWrapper>
-      {isOpenKnowledgeModal && (
-        <KnowledgeModal close={() => setIsOpenKnowledgeModal(false)} />
-      )}
+            <FinishedLessonContainer>
+              <Heading2>修了レッスン</Heading2>
+              <Small>あなたがこれまでに取り組んできたレッスン</Small>
+              <LessonContainer useFinishedFilter={true} />
+            </FinishedLessonContainer>
+          </ContentsContainer>
+          <FinishedLessonContainer>
+            <ContentsContainer>
+              <KnowledgeContainer />
+            </ContentsContainer>
+          </FinishedLessonContainer>
+        </ContentsWrapper>
+        {isOpenKnowledgeModal && (
+          <KnowledgeModal close={() => setIsOpenKnowledgeModal(false)} />
+        )}
+      </ResponsiveWrapper>
       <NavigationBar />
     </div>
   );
