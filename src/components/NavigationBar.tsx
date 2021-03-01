@@ -67,7 +67,7 @@ export default function NavigationBar() {
         />
         <NavText selected={window.location.pathname === "/"}>ホーム</NavText>
       </NavItem>
-      <NavItem to={`/`}>
+      <NavItem to={`/courses`}>
         <NavImage
           src={
             window.location.pathname === "/courses" ? selectedLessonLogo : lessonLogo
