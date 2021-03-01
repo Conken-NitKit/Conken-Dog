@@ -120,17 +120,5 @@ export const ATCODER: ISection = {
       mediaType: [],
       requiredTime: 120,
     },
-    {
-      title: "2.04.参照",
-      link: "https://atcoder.jp/contests/apg4b/tasks/APG4b_u",
-      mediaType: [],
-      requiredTime: 180,
-    },
-    {
-      title: "2.05.再帰",
-      link: "https://atcoder.jp/contests/apg4b/tasks/APG4b_v",
-      mediaType: [],
-      requiredTime: 240,
-    },
   ],
 };

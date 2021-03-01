@@ -1,7 +1,7 @@
 import { ISection } from ".";
 
 export const WEB: ISection = {
-  title: "Webを支える技術",
+  title: "【資格対策】Web概論",
   description:
     "このレッスンでは、Web関連の開発を進めていく上で、\n" +
     "避けては通れないコンピュータネットワークのキホン中のキホンという項目を学んでいきます。",
@@ -14,10 +14,64 @@ export const WEB: ISection = {
       requiredTime: 20,
     },
     {
-      title: "OSI参照モデル",
-      link: "https://youtu.be/95Emu7W2j6Y",
+      title: "未経験からのインフラエンジニア勉強講座",
+      link: "https://youtu.be/aYbUDGn61cU",
       mediaType: ["READ_ONLY", "VIDEO"],
-      requiredTime: 20,
+      requiredTime: 40,
+    },
+    {
+      title: "「OSI参照モデル」が30分で絶対分かる！",
+      link: "https://youtu.be/5QHXbxZIUDg",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 32,
+    },
+    {
+      title: "CCNA「物理層」を完璧理解できる講座",
+      link: "https://youtu.be/7CqpCqLmghI",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 31,
+    },
+    {
+      title: "「イーサネットとは？」を徹底解説！",
+      link: "https://youtu.be/9Be3WupVp-E",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 81,
+    },
+    {
+      title: "TCP/IPとは？「仕組み」完全解説！",
+      link: "https://youtu.be/Pp6-YXxL06Y",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 66,
+    },
+    {
+      title: "「TCP」「UDP」を日本一易しく解説！",
+      link: "https://youtu.be/erY_CkAVSYE",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 70,
+    },
+    {
+      title: "2進数/16進数とは？「進数変換」をわかりやすく解説",
+      link: "https://youtu.be/YDqJHi6UPWc",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 28,
+    },
+    {
+      title: "「IPアドレス計算」が初心者でも絶対わかる！",
+      link: "https://youtu.be/KrrK3FJNigY",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 50,
+    },
+    {
+      title: "「ルーティング」これさえ見れば完全理解！",
+      link: "https://youtu.be/_sWIKXnWNmU",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 50,
+    },
+    {
+      title: "「OSPF」を世界一易しく解説！",
+      link: "https://youtu.be/g9tx6fMD8UA",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 33,
     },
     {
       title: "ヒヨコでもわかる TCP/IP 超入門",
@@ -63,10 +117,28 @@ export const WEB: ISection = {
       requiredTime: 30,
     },
     {
+      title: "絵で見てわかるセキュア通信の基本",
+      link: "https://qiita.com/t_nakayama0714/items/83ac0b12ced9e7083927",
+      mediaType: ["READ_ONLY"],
+      requiredTime: 20,
+    },
+    {
+      title: "HTTPS通信の中身ってどうなってる？踏み込んで解説",
+      link: "https://qiita.com/Threen/items/f799303a76b505f357e2",
+      mediaType: ["READ_ONLY"],
+      requiredTime: 20,
+    },
+    {
       title: "DNSの仕組み",
       link: "https://youtu.be/7svdkukHQ6Q",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 10,
+    },
+    {
+      title: "絵で見てわかるDNS用語",
+      link: "https://qiita.com/ka-aki/items/2b49121358745ef859c3",
+      mediaType: ["READ_ONLY"],
+      requiredTime: 15,
     },
     {
       title: "メールサーバの仕組み",
@@ -99,7 +171,8 @@ export const WEB: ISection = {
       requiredTime: 7,
     },
     {
-      title: "ブラウザキャッシュの使わせ方や HTTPのヘッダ、リダイレクトの仕組み",
+      title:
+        "ブラウザキャッシュの使わせ方や HTTPのヘッダ、リダイレクトの仕組み",
       link: "https://youtu.be/k3SgY3K1CqY",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 10,
