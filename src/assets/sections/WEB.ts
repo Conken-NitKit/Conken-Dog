@@ -74,12 +74,6 @@ export const WEB: ISection = {
       requiredTime: 33,
     },
     {
-      title: "OSI参照モデル",
-      link: "https://youtu.be/95Emu7W2j6Y",
-      mediaType: ["READ_ONLY", "VIDEO"],
-      requiredTime: 20,
-    },
-    {
       title: "ヒヨコでもわかる TCP/IP 超入門",
       link: "https://zenn.dev/kubo_programmer/books/fa1e01071e7aaa90672d",
       mediaType: ["READ_ONLY"],
