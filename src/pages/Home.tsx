@@ -162,6 +162,7 @@ const ContentsWrapper = styled.div`
     width: 92%;
     flex-direction: column;
     justify-content: center;
+    margin: 0 auto;
     padding-top: 16px;
   `}
 `;
