@@ -1,3 +1,4 @@
+import { Link, RouteComponentProps } from "react-router-dom";
 import styled from "styled-components";
 import media from "styled-media-query";
 
@@ -30,9 +31,10 @@ const Container = styled.div`
   `}
 `;
 
-const NavItem = styled.div`
+const NavItem = styled(Link)`
   display: table-cell;
   vertical-align: middle;
+  text-decoration: none;
   a {
     text-decoration: none;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -59,13 +61,13 @@ const NavText = styled.p<{ selected: boolean }>`
 export default function NavigationBar() {
   return (
     <Container>
-      <NavItem>
+      <NavItem to={`/`}>
         <NavImage
           src={window.location.pathname === "/" ? selectedHomeLogo : homeLogo}
         />
         <NavText selected={window.location.pathname === "/"}>ホーム</NavText>
       </NavItem>
-      <NavItem>
+      <NavItem to={`/`}>
         <NavImage
           src={
             window.location.pathname === "/courses" ? selectedLessonLogo : lessonLogo
@@ -73,7 +75,7 @@ export default function NavigationBar() {
         />
         <NavText selected={window.location.pathname === "/courses"}>レッスン</NavText>
       </NavItem>
-      <NavItem>
+      <NavItem to={`/knowledges`}>
         <NavImage
           src={
             window.location.pathname === "/knowledges"
@@ -83,7 +85,7 @@ export default function NavigationBar() {
         />
         <NavText selected={window.location.pathname === "/knowledges"}>ナレッジ</NavText>
       </NavItem>
-      <NavItem>
+      <NavItem to={`/notifications`}>
         <NavImage
           src={
             window.location.pathname === "/notifications"
@@ -93,7 +95,7 @@ export default function NavigationBar() {
         />
         <NavText selected={window.location.pathname === "/notifications"}>おしらせ</NavText>
       </NavItem>
-      <NavItem>
+      <NavItem to={`/account`}>
         <NavImage
           src={
             window.location.pathname === "/account" ? selectedAccountLogo : accountLogo

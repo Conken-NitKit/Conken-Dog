@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { Route, BrowserRouter, RouteComponentProps } from "react-router-dom";
 import { courseList } from "./assets/courses";
 import Home from "./pages/Home";
+import Account from "./pages/Account";
 import Course from "./pages/Course";
 import Section from "./pages/Section";
 import SignUp from "./pages/SignUp";
@@ -22,6 +23,7 @@ const Root = () => {
       >
         <BrowserRouter>
           <Route exact path="/" component={Home} />
+          <Route exact path="/account" component={Account} />
           <Route exact path="/signup" component={SignUp} />
           <Route exact path="/signin" component={SignIn} />
 
