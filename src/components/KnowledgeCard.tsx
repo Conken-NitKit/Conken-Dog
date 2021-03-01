@@ -94,13 +94,13 @@ const Icon = styled.div<{ src: string }>`
   background-size: 18px 18px;
 `;
 
-const Tag = styled.span`
+const Tag = styled.span<{ isLast: boolean }>`
   color: inherit;
   font-size: 0.8rem;
   line-height: 1.8;
   margin-right: 2px;
   &::after {
-    content: ",";
+    content: ${(props) => (props.isLast ? "" : ",")};
     margin-right: 4px;
   }
 `;
@@ -152,7 +152,12 @@ export default function KnowledgeCard({
         <Icon src={Tagslogo} />
         <Small>
           {knowledge.tags.map((tag, index) => (
-            <Tag key={`knowledge/tag/${index}`}>{tag}</Tag>
+            <Tag
+              key={`knowledge/tag/${index}`}
+              isLast={knowledge.tags.length === index + 1}
+            >
+              {tag}
+            </Tag>
           ))}
         </Small>
       </Container>

@@ -2,6 +2,8 @@ import styled from "styled-components";
 import * as H from "history";
 
 import { signOut } from "../utils/users/signOut";
+import { useContext } from "react";
+import { userContext } from "../contexts/userContext";
 
 const Wrapper = styled.div`
   position: relative;
@@ -88,6 +90,7 @@ interface Props {
 }
 
 export default function Ballooon({ close, history }: Props) {
+  const { user } = useContext(userContext);
   return (
     <Wrapper>
       <BalloonBackground onClick={close} />
@@ -95,7 +98,7 @@ export default function Ballooon({ close, history }: Props) {
         <MenuPopover>
           <MenuItem>
             <UserLink>
-              <UserName>窪田秀哉</UserName>
+              <UserName>{user.displayName}</UserName>
               <Summary>自分のプロフィールを表示</Summary>
             </UserLink>
           </MenuItem>
