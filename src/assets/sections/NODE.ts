@@ -121,6 +121,12 @@ export const NODE: ISection = {
       requiredTime: 80,
     },
     {
+      title: "図解クリーンアーキテクチャ",
+      link: "https://qiita.com/kz_12/items/bc79102247b86626fc72",
+      mediaType: ["READ_ONLY"],
+      requiredTime: 15,
+    },
+    {
       title:
         "Web開発の便利ツール ngrokをご紹介！ webhookを利用した開発に便利！",
       link: "https://youtu.be/9UYZf-AUXhw",

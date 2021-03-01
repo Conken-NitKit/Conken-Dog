@@ -1,7 +1,7 @@
 import { ISection } from ".";
 
 export const WEB: ISection = {
-  title: "Webを支える技術",
+  title: "【資格対策】Web概論",
   description:
     "このレッスンでは、Web関連の開発を進めていく上で、\n" +
     "避けては通れないコンピュータネットワークのキホン中のキホンという項目を学んでいきます。",
@@ -117,10 +117,28 @@ export const WEB: ISection = {
       requiredTime: 30,
     },
     {
+      title: "絵で見てわかるセキュア通信の基本",
+      link: "https://qiita.com/t_nakayama0714/items/83ac0b12ced9e7083927",
+      mediaType: ["READ_ONLY"],
+      requiredTime: 20,
+    },
+    {
+      title: "HTTPS通信の中身ってどうなってる？踏み込んで解説",
+      link: "https://qiita.com/Threen/items/f799303a76b505f357e2",
+      mediaType: ["READ_ONLY"],
+      requiredTime: 20,
+    },
+    {
       title: "DNSの仕組み",
       link: "https://youtu.be/7svdkukHQ6Q",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 10,
+    },
+    {
+      title: "絵で見てわかるDNS用語",
+      link: "https://qiita.com/ka-aki/items/2b49121358745ef859c3",
+      mediaType: ["READ_ONLY"],
+      requiredTime: 15,
     },
     {
       title: "メールサーバの仕組み",

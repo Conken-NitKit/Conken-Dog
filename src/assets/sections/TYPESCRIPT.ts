@@ -97,5 +97,11 @@ export const TYPESCRIPT: ISection = {
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 21,
     },
+    {
+      title: "こんなコードは嫌だ、古い書き方のコード駆逐したい",
+      link: "https://qiita.com/yuu_j/items/d6e6fc4476ab1dc35cdc",
+      mediaType: ["READ_ONLY"],
+      requiredTime: 20,
+    },
   ],
 };
