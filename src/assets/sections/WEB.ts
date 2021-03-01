@@ -14,6 +14,66 @@ export const WEB: ISection = {
       requiredTime: 20,
     },
     {
+      title: "未経験からのインフラエンジニア勉強講座",
+      link: "https://youtu.be/aYbUDGn61cU",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 40,
+    },
+    {
+      title: "「OSI参照モデル」が30分で絶対分かる！",
+      link: "https://youtu.be/5QHXbxZIUDg",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 32,
+    },
+    {
+      title: "CCNA「物理層」を完璧理解できる講座",
+      link: "https://youtu.be/7CqpCqLmghI",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 31,
+    },
+    {
+      title: "「イーサネットとは？」を徹底解説！",
+      link: "https://youtu.be/9Be3WupVp-E",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 81,
+    },
+    {
+      title: "TCP/IPとは？「仕組み」完全解説！",
+      link: "https://youtu.be/Pp6-YXxL06Y",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 66,
+    },
+    {
+      title: "「TCP」「UDP」を日本一易しく解説！",
+      link: "https://youtu.be/erY_CkAVSYE",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 70,
+    },
+    {
+      title: "2進数/16進数とは？「進数変換」をわかりやすく解説",
+      link: "https://youtu.be/YDqJHi6UPWc",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 28,
+    },
+    {
+      title: "「IPアドレス計算」が初心者でも絶対わかる！",
+      link: "https://youtu.be/KrrK3FJNigY",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 50,
+    },
+    {
+      title: "「ルーティング」これさえ見れば完全理解！",
+      link: "https://youtu.be/_sWIKXnWNmU",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 50,
+    },
+    {
+      title: "「OSPF」を世界一易しく解説！",
+      link: "https://youtu.be/g9tx6fMD8UA",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 33,
+    },
+    {
       title: "OSI参照モデル",
       link: "https://youtu.be/95Emu7W2j6Y",
       mediaType: ["READ_ONLY", "VIDEO"],
@@ -99,7 +159,8 @@ export const WEB: ISection = {
       requiredTime: 7,
     },
     {
-      title: "ブラウザキャッシュの使わせ方や HTTPのヘッダ、リダイレクトの仕組み",
+      title:
+        "ブラウザキャッシュの使わせ方や HTTPのヘッダ、リダイレクトの仕組み",
       link: "https://youtu.be/k3SgY3K1CqY",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 10,
