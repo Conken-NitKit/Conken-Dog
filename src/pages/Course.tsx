@@ -1,13 +1,15 @@
+import { useEffect } from "react";
+import { Link, RouteComponentProps } from "react-router-dom";
 import styled from "styled-components";
 import media from "styled-media-query";
 
-import { Link } from "react-router-dom";
 import { ICourses } from "../assets/courses";
 import { Container } from "../layouts/Container";
 import { Description } from "../styles/fonts/Description";
 import { Heading1 } from "../styles/fonts/Heading1";
 import { Heading2 } from "../styles/fonts/Heading2";
 import { Small } from "../styles/fonts/Small";
+import { redirectNonLogin } from "../utils/users/redirectNonLogin";
 
 const CourseCard = styled.div`
   background-color: #fff;
@@ -22,6 +24,9 @@ const CourseCard = styled.div`
   &:hover {
     box-shadow: 0 2px 16px rgba(0, 0, 0, 14%);
   }
+  ${media.lessThan("medium")`
+    padding: 56px 28px;
+  `}
 `;
 
 const Heading = styled.div`
@@ -53,15 +58,16 @@ const HeadingRight = styled.div`
 `;
 
 const HeadingImg = styled.img`
-  max-width: 100%;
+  width: 100%;
+  max-height: 300px;
   height: auto;
 `;
 
-interface Props {
+interface Props extends RouteComponentProps {
   value: ICourses;
 }
 
-export default function Course({ value }: Props) {
+export default function Course({ value, history }: Props) {
   const generateCourseMinute = () =>
     value.sections.reduce(
       (sum, cur): number =>
@@ -72,6 +78,11 @@ export default function Course({ value }: Props) {
         ),
       0
     );
+
+  useEffect(() => {
+    redirectNonLogin(history);
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <Container>
@@ -105,7 +116,7 @@ export default function Course({ value }: Props) {
           >
             <CourseCard key={value.name + i.toString()}>
               <Heading2>{section.title}</Heading2>
-              <Description>{section.description}</Description>
+                <Description>{section.description}</Description>
               <Small>
                 修了時間
                 {generateSectionMinute() >= 60 &&

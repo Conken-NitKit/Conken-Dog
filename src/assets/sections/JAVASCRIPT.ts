@@ -4,13 +4,13 @@ export const JAVASCRIPT: ISection = {
   title: "JavaScript",
   description:
     "JavaScriptでプログラミングの初歩を学ぶレッスンです。\n" +
-    "標準出力や変数、配列、演算子、条件分岐、ループ、クラス といったプログラミングの基本を手順を追って学びます。\n"+
+    "標準出力や変数、配列、演算子、条件分岐、ループ、クラス といったプログラミングの基本を手順を追って学びます。\n" +
     "加えて、ES6などの最新のJavaScriptの機能についても学習を行います。",
   contentsList: [
     {
       title: "JavaScript超入門コース 合併版",
       link: "https://youtu.be/gs0l4rsQCGM",
-      mediaType: ["READ_ONLY", "USE_SOUND"],
+      mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 85,
     },
     {
@@ -46,7 +46,7 @@ export const JAVASCRIPT: ISection = {
     {
       title: "【ES6】 変数・定数・関数の「正しい」宣言方法",
       link: "https://youtu.be/EXxIVEC72mU",
-      mediaType: ["READ_ONLY", "USE_SOUND"],
+      mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 30,
     },
     {
@@ -59,31 +59,31 @@ export const JAVASCRIPT: ISection = {
     {
       title: "APIを超ざっくり解説！",
       link: "https://youtu.be/k0j88HoUT-o",
-      mediaType: ["READ_ONLY", "USE_SOUND"],
+      mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 25,
     },
     {
       title: "非同期処理の完了を待つ方法！Promise＆async/await",
       link: "https://youtu.be/Vhnz1V-v1cU",
-      mediaType: ["READ_ONLY", "USE_SOUND"],
+      mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 25,
     },
     {
       title: "君たちは「即時関数」を知っているか",
       link: "https://youtu.be/1VyEfy03NTg",
-      mediaType: ["READ_ONLY", "USE_SOUND"],
+      mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 20,
     },
     {
       title: "DOM操作できなきゃJS使う意味がない",
       link: "https://youtu.be/dZyYqVOnrBg",
-      mediaType: ["READ_ONLY", "USE_SOUND"],
+      mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 20,
     },
     {
       title: "画像をアップロード＆プレビューしよう",
       link: "https://youtu.be/7WmkYEZc3as",
-      mediaType: ["READ_ONLY", "USE_SOUND"],
+      mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 25,
     },
     {
@@ -101,7 +101,7 @@ export const JAVASCRIPT: ISection = {
     {
       title: "正規表現マスター講義",
       link: "https://youtu.be/vncq2vWaGDI",
-      mediaType: ["READ_ONLY", "USE_SOUND"],
+      mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 35,
     },
     {
@@ -125,19 +125,19 @@ export const JAVASCRIPT: ISection = {
     {
       title: "ユーザー操作に応じて画面を書き換えよう",
       link: "https://youtu.be/549LwYas6O4",
-      mediaType: ["READ_ONLY", "USE_SOUND"],
+      mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 25,
     },
     {
       title: "実務で使える文字列操作５選",
       link: "https://youtu.be/K_awsMSs-84",
-      mediaType: ["READ_ONLY", "USE_SOUND"],
+      mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 20,
     },
     {
       title: "よく使うES6の配列メソッド3選",
       link: "https://youtu.be/VBuBGqPGALg",
-      mediaType: ["READ_ONLY", "USE_SOUND"],
+      mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 25,
     },
     {
@@ -145,6 +145,12 @@ export const JAVASCRIPT: ISection = {
       link: "https://codeprep.jp/books/35",
       mediaType: [],
       requiredTime: 15,
+    },
+    {
+      title: "GoogleMapで遊ぼう",
+      link: "https://codeprep.jp/books/96",
+      mediaType: [],
+      requiredTime: 25,
     },
     {
       title: "代入において時々現れる、括弧で囲まれた変数名は何なのか",

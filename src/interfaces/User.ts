@@ -7,25 +7,37 @@ export interface IActivityLog {
 export interface IUser {
   uid: string;
   activityLog: IActivityLog[];
-  birthData: string;
+  birthDate: string;
   completionList: string[];
   displayName: string;
   email: string;
-  role: "ADMIN" | "MEMBER" | "WAITING_AUTHENTICATION";
-  team:
+  role: "ADMIN" | "MEMBER" | "WAITING_AUTHENTICATION" | "DENINED";
+  team: (
     | "WEB_CREATE"
     | "WEB_DESIGN"
     | "GAME_CREATE"
     | "GAME_DESIGN"
     | "SECURITY"
     | "AI"
-    | "UNDECIDED";
+    | "ILLUST"
+  )[];
 }
 
 export const instanceOfUser = (arg: any): arg is IUser =>
   "uid" in arg &&
-  "birthData" in arg &&
+  "birthDate" in arg &&
   "completionList" in arg &&
   "displayName" in arg &&
   "email" in arg &&
   "team" in arg;
+
+export const defaultUserInfo: IUser = {
+  uid: "",
+  activityLog: [],
+  birthDate: "",
+  completionList: [],
+  displayName: "",
+  email: "",
+  role: "WAITING_AUTHENTICATION",
+  team: [],
+};

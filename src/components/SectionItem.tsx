@@ -1,16 +1,10 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import styled from "styled-components";
 
 import { IContent } from "../assets/sections";
+import { userContext } from "../contexts/userContext";
 import { Description } from "../styles/fonts/Description";
-import { Heading1 } from "../styles/fonts/Heading1";
-
-const ContentsList = styled.ul`
-  background: #fff;
-  border: solid 2px #f3eded;
-  padding: 30px;
-  border-radius: 6px;
-`;
+import { postUserInfo } from "../utils/users/postUserInfo"
 
 const ContentItem = styled.li`
   list-style: none;
@@ -38,6 +32,7 @@ const CheckBox = styled.label<{ isChecked: boolean }>`
   padding: 14px 20px;
   position: relative;
   width: auto;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
   &::before {
     background: #fff;
@@ -54,8 +49,8 @@ const CheckBox = styled.label<{ isChecked: boolean }>`
     ${(props) => props.isChecked && "border-color: #666;"}
   }
   &::after {
-    border-right: 6px solid #fedd1e;
-    border-bottom: 3px solid #fedd1e;
+    border-right: 6px solid red;
+    border-bottom: 3px solid red;
     content: "";
     display: block;
     height: 20px;
@@ -71,18 +66,42 @@ const CheckBox = styled.label<{ isChecked: boolean }>`
   }
 `;
 
+const MediaTypeTag = styled.span`
+  line-height: 28px;
+  font-size: 14px;
+  padding: 5px 6px;
+  margin: 0 0 0 11px;
+  color: white;
+  background-color: #999;
+  border-radius: 4px;
+`;
+
 interface Props {
   content: IContent;
 }
 
 export const SectionItem = ({ content }: Props) => {
-  const [isChecked, setIsChecked] = useState<boolean>(false);
+  const { user, setUser } = useContext(userContext);
+  const [isChecked, setIsChecked] = useState<boolean>(
+    user.completionList.includes(content.link)
+  );
+
+  const clickCheckBox = () => {
+    const newUser = user;
+    newUser.completionList = isChecked
+      ? user.completionList.filter((link) => link !== content.link)
+      : [...user.completionList, content.link];
+    setUser(newUser);
+    postUserInfo(newUser);
+    setIsChecked(!isChecked);
+  };
+
   return (
     <ContentItem>
       <DefaultCheckBox
         type="checkbox"
         id={content.title}
-        onClick={() => setIsChecked(!isChecked)}
+        onClick={clickCheckBox}
       />
       <CheckBox htmlFor={content.title} isChecked={isChecked} />
       <Description>
@@ -90,12 +109,24 @@ export const SectionItem = ({ content }: Props) => {
           {content.title}
         </ContentsLink>
         <br />
-        <ContentsLink href={content.link} target={"_blank"}>
-          {content.requiredTime >= 60 &&
-            `  ${Math.floor(content.requiredTime / 60)}時間`}
-          {content.requiredTime % 60 !== 0 &&
-            `  ${Math.floor(content.requiredTime % 60)}分`}
-        </ContentsLink>
+        {content.requiredTime >= 60 &&
+          ` ${Math.floor(content.requiredTime / 60)}時間`}
+        {content.requiredTime % 60 !== 0 &&
+          ` ${Math.floor(content.requiredTime % 60)}分`}
+        {content.mediaType.includes("VIDEO") ? (
+          <MediaTypeTag>動画</MediaTypeTag>
+        ) : (
+          <MediaTypeTag>テキスト</MediaTypeTag>
+        )}
+        {!content.mediaType.includes("READ_ONLY") && (
+          <MediaTypeTag>実践</MediaTypeTag>
+        )}
+        {content.mediaType.includes("USE_MY_PC") && (
+          <MediaTypeTag>PC必須</MediaTypeTag>
+        )}
+        {content.mediaType.includes("USE_GIT") && (
+          <MediaTypeTag>Gitで管理してみよう</MediaTypeTag>
+        )}
       </Description>
     </ContentItem>
   );
