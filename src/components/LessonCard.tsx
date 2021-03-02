@@ -66,7 +66,7 @@ const Progress = styled.div`
   color: rgba(43, 84, 106, 0.8);
   margin-bottom: 16px;
   ${media.lessThan("small")`
-    font-size: 0.6rem;
+    font-size: 0.5rem;
   `}
 `;
 
