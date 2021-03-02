@@ -42,8 +42,6 @@ const CategoryTag = styled.li<{ isSelected: boolean }>`
 `;
 
 const SectionContainer = styled.div<{ useFinishedFilter: boolean }>`
-  height: ${(props) => (props.useFinishedFilter ? 270 : 532)}px;
-  overflow-y: scroll;
   outline: none;
   padding: 12px 0 48px;
   &::-webkit-scrollbar {
@@ -52,6 +50,7 @@ const SectionContainer = styled.div<{ useFinishedFilter: boolean }>`
   ${media.greaterThan("medium")`
     height: 532px;
     padding-bottom: 0;
+    overflow-y: scroll;
   `}
 `;
 
@@ -100,6 +99,7 @@ export default function LessonContainer({ useFinishedFilter }: Props) {
     slidesToScroll: 1,
     beforeChange: slideChangeHandle,
   };
+
   return (
     <>
       <CategoryList>
