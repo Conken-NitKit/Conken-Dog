@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import { Route, BrowserRouter, RouteComponentProps } from "react-router-dom";
 import { courseList } from "./assets/courses";
@@ -19,6 +19,20 @@ import { knowledgesContext } from "./contexts/knowledgesContext";
 const Root = () => {
   const [user, setUser] = useState<IUser>(defaultUserInfo);
   const [knowledges, setKnowledges] = useState<IKnowledge[]>([]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+    };
+    document.documentElement.style.setProperty(
+      "--vh",
+      `${window.innerHeight * 0.01}px`
+    );
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <userContext.Provider value={{ user: user, setUser: setUser }}>
       <knowledgesContext.Provider
