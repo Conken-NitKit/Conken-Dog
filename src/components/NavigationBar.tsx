@@ -20,7 +20,7 @@ const Container = styled.div`
   bottom: 0;
   width: 100vw;
   height: 56px;
-  padding: 4px 0 24px;
+  padding: 8px 0 12px;
   display: table;
   table-layout: fixed;
   border-top: solid lightgray 0.5px;
