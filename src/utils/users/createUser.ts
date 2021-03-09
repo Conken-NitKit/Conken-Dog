@@ -5,7 +5,8 @@ import * as H from "history";
 export const createUser = async (
   userInfo: IUser,
   password: string,
-  history: H.History
+  history: H.History,
+  setSignUpError: (message: string) => void
 ) => {
   try {
     await auth.createUserWithEmailAndPassword(userInfo.email, password);
@@ -19,8 +20,9 @@ export const createUser = async (
           });
       }
     });
-    history.push('/');
+    history.push("/");
   } catch (error) {
     console.log(error.message);
+    setSignUpError(error.message);
   }
 };
