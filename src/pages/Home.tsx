@@ -180,7 +180,11 @@ const ContentsContainer = styled.div`
 
 export default function Home({ history }: RouteComponentProps) {
   const [isOpenKnowledgeModal, setIsOpenKnowledgeModal] = useState(false);
-  const [isOpenBalloon, setIsOpenBalloon] = useState(false);
+  const [
+    isOpenNotificationLogoBalloon,
+    setIsOpenNotificationLogoBalloon,
+  ] = useState(false);
+  const [isOpenUserLogoBalloon, setIsOpenUserLogoBalloon] = useState(false);
   const { user, setUser } = useContext(userContext);
 
   useEffect(() => {
@@ -214,12 +218,27 @@ export default function Home({ history }: RouteComponentProps) {
             <SubTitle>遊ぶように、学ぼう、どこよりも</SubTitle>
           </TopContainer>
           <NavBar>
-            <Icon src={NotificationLogo} />
             <div>
-              <Icon src={UserLogo} onClick={() => setIsOpenBalloon(true)} />
-              {isOpenBalloon && (
+              <Icon
+                src={NotificationLogo}
+                onClick={() => setIsOpenNotificationLogoBalloon(true)}
+              />
+              {isOpenNotificationLogoBalloon && (
                 <Ballooon
-                  close={() => setIsOpenBalloon(false)}
+                  close={() => setIsOpenNotificationLogoBalloon(false)}
+                  history={history}
+                />
+              )}
+            </div>
+
+            <div>
+              <Icon
+                src={UserLogo}
+                onClick={() => setIsOpenUserLogoBalloon(true)}
+              />
+              {isOpenUserLogoBalloon && (
+                <Ballooon
+                  close={() => setIsOpenUserLogoBalloon(false)}
                   history={history}
                 />
               )}
