@@ -4,6 +4,7 @@ import styled from "styled-components";
 import media from "styled-media-query";
 import KnowledgeCard from "./KnowledgeCard";
 import { Heading2 } from "../styles/fonts/Heading2";
+import { Small } from "../styles/fonts/Small";
 import { userContext } from "../contexts/userContext";
 import { fetchKnowledges } from "../utils/knowledge/fetchknowledge";
 import { knowledgesContext } from "../contexts/knowledgesContext";
@@ -164,6 +165,7 @@ export default function KnowledgeContainer() {
   return (
     <>
       <Heading2>ナレッジ</Heading2>
+      <Small>今、あなたに見て欲しいHotな情報</Small>
 
       <CategoryList>
         {knowledgeSort.map((course, index) => (
