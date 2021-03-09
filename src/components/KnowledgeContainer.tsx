@@ -166,7 +166,7 @@ export default function KnowledgeContainer() {
   return (
     <>
       <Heading2>ナレッジ</Heading2>
-      <Small>今、あなたに見て欲しいHotな情報</Small>
+      <Small>みんなで集めた、ここだけのHotな情報</Small>
 
       <CategoryList>
         {knowledgeSort.map((course, index) => (
