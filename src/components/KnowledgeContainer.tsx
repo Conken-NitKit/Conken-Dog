@@ -12,6 +12,7 @@ import { knowledgeSort } from "../assets/Knowledges/KnowledgeSort";
 import { db } from "../utils/firebase";
 
 const ScrollContainer = styled.div`
+  outline: none;
   max-height: 1256px;
   overflow-y: scroll;
   &::-webkit-scrollbar {
