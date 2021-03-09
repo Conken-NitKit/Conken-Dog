@@ -12,6 +12,7 @@ import { knowledgeSort } from "../assets/Knowledges/KnowledgeSort";
 import { db } from "../utils/firebase";
 
 const ScrollContainer = styled.div`
+  outline: none;
   max-height: 1256px;
   overflow-y: scroll;
   &::-webkit-scrollbar {
@@ -165,7 +166,7 @@ export default function KnowledgeContainer() {
   return (
     <>
       <Heading2>ナレッジ</Heading2>
-      <Small>今、あなたに見て欲しいHotな情報</Small>
+      <Small>みんなが投稿する、ここだけのHotな情報</Small>
 
       <CategoryList>
         {knowledgeSort.map((course, index) => (
