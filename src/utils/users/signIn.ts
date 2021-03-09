@@ -5,7 +5,8 @@ import * as H from "history";
 export const signIn = async (
   email: string,
   password: string,
-  history: H.History
+  history: H.History,
+  setSignInError: (message: string) => void
 ) => {
   try {
     await auth.signInWithEmailAndPassword(email, password);
@@ -23,5 +24,6 @@ export const signIn = async (
     history.push("/");
   } catch (error) {
     console.log(error.message);
+    setSignInError(error.message);
   }
 };
