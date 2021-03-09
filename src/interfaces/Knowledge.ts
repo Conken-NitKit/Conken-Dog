@@ -1,14 +1,14 @@
 export interface IKnowledge {
-  uid: string;
-  title: string;
-  link: string;
-  contributorId: string;
-  contributorName: string;
-  timestamp: string;
-  tags: string[];
-  visitors: string[];
-  fans: string[];
-  collectors: string[];
+  uid: string;              // 固有ID
+  title: string;            // 記事のタイトル
+  link: string;             // 記事のリンク
+  contributorId: string;    // 投稿者のユーザーID
+  contributorName: string;  // 投稿者のユーザーネーム
+  timestamp: string;        // 投稿日時
+  tags: string[];           // 付与したタグのリスト
+  visitors: string[];       // 記事を見た人のリスト
+  fans: string[];           // 記事に「いいね」した人のリスト
+  collectors: string[];     // 記事を「ブックマーク」した人のリスト
 }
 
 export const instanceOfKnowledge = (arg: any): arg is IKnowledge =>
