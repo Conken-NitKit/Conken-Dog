@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import Slick from "react-slick";
 import styled from "styled-components";
 import media from "styled-media-query";
@@ -26,6 +27,17 @@ const SlideImg = styled.img`
 `;
 
 export default function Slider() {
+  const [isGteMedium, setIsGteMedium] = useState<boolean>(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsGteMedium(window.innerWidth >= 768);
+    };
+    setIsGteMedium(window.innerWidth >= 768);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const contents = [
     {
       img: industryImg,
@@ -43,7 +55,6 @@ export default function Slider() {
 
   const settings = {
     dots: true,
-    arrows: true,
     infinite: true,
     autoplay: true,
     outoplaySpeed: 5000,
@@ -52,7 +63,7 @@ export default function Slider() {
     slidesToScroll: 1,
   };
   return (
-    <Slick {...settings}>
+    <Slick {...settings} arrows={isGteMedium}>
       {contents.map((content, index) => (
         <SlideContainer key={`slider/${index}`} to={content.link}>
           <SlideImg src={content.img} />
