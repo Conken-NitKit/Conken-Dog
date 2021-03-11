@@ -12,6 +12,7 @@ import { Description } from "../styles/fonts/Description";
 import { Heading1 } from "../styles/fonts/Heading1";
 import { createUser } from "../utils/users/createUser";
 import { redirectAlreadyLogin } from "../utils/users/redirectAlreadyLogin";
+import SignInOrSignUpError from "../components/SignInOrSignUpError";
 
 const HeaderContainer = styled.div`
   display: flex;
@@ -231,6 +232,7 @@ export default function SignUp({ history }: RouteComponentProps) {
   );
   const { setUser } = useContext(userContext);
   const formRef = useRef<Slick | null>();
+  const [signUpError, setSignUpError] = useState("");
 
   useEffect(() => {
     redirectAlreadyLogin(history);
@@ -255,7 +257,7 @@ export default function SignUp({ history }: RouteComponentProps) {
         birthDate: birthDate,
       };
       setUser(userInfo);
-      createUser(userInfo, password, history);
+      createUser(userInfo, password, history, setSignUpError);
     }
   };
 
@@ -322,7 +324,7 @@ export default function SignUp({ history }: RouteComponentProps) {
 
                 <InputContainer>
                   <InputTitle>パスワード</InputTitle>
-                  <InputDescription>8文字以上の半角英数記号</InputDescription>
+                  <InputDescription>6文字以上の半角英数記号</InputDescription>
                   <PasswordForm>
                     <PassInput
                       name={"password"}
@@ -382,6 +384,7 @@ export default function SignUp({ history }: RouteComponentProps) {
                     />
                   </PasswordForm>
                 </InputContainer>
+                <SignInOrSignUpError signInOrSignUpError={signUpError} />
                 <SubmitBtn onClick={signUp}>入部する</SubmitBtn>
               </Swiper>
             </Slick>

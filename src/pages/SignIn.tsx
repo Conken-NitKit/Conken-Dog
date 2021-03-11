@@ -8,6 +8,7 @@ import EyeOffLogo from "../assets/img/icons/eye-off.svg";
 import { Description } from "../styles/fonts/Description";
 import { Heading1 } from "../styles/fonts/Heading1";
 import { signIn } from "../utils/users/signIn";
+import SignInOrSignUpError from "../components/SignInOrSignUpError";
 import { redirectAlreadyLogin } from "../utils/users/redirectAlreadyLogin";
 
 const HeaderContainer = styled.div`
@@ -203,6 +204,7 @@ const SubmitBtn = styled.div`
 export default function SignIn({ history }: RouteComponentProps) {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const [signInError, setSignInError] = useState<string>("");
   const [isRevealPassword, setIsRevealPassword] = useState<boolean>(false);
 
   useEffect(() => {
@@ -267,7 +269,10 @@ export default function SignIn({ history }: RouteComponentProps) {
                 />
               </PasswordForm>
             </InputContainer>
-            <SubmitBtn onClick={() => signIn(email, password, history)}>
+            <SignInOrSignUpError signInOrSignUpError={signInError} />
+            <SubmitBtn
+              onClick={() => signIn(email, password, history, setSignInError)}
+            >
               ログイン
             </SubmitBtn>
           </FormContainer>

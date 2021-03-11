@@ -3,8 +3,8 @@ import ReactDOM from "react-dom";
 import styled from "styled-components";
 import { knowledgesContext } from "../contexts/knowledgesContext";
 import { userContext } from "../contexts/userContext";
-import { fetchKnowledges } from "../utils/knowkedge/fetchknowledge";
-import { postKnowledge } from "../utils/knowkedge/postKnowledge";
+import { fetchKnowledges } from "../utils/knowledge/fetchknowledge";
+import { postKnowledge } from "../utils/knowledge/postKnowledge";
 
 const modalRoot = document.getElementById("modal-root")!;
 
