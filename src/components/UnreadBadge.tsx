@@ -14,12 +14,10 @@ const Badge = styled.div`
   top: -10%;
   left: 60%;
 
-  border-radius: 50%;
+  border-radius: 10px;
 
-  padding: 0px;
-
-  width: 19px;
-  height: 19px;
+  min-width: 20px;
+  height: 20px;
 
   background-color: red;
 
@@ -28,6 +26,8 @@ const Badge = styled.div`
   line-height: 20px;
 
   color: white;
+
+  font-size: 14px;
 `;
 
 export default function UnreadBadge({ Count }: Props) {
