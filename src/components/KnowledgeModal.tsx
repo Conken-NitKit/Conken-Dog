@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import ReactDOM from "react-dom";
 import styled from "styled-components";
+import media from "styled-media-query";
 import { knowledgesContext } from "../contexts/knowledgesContext";
 import { userContext } from "../contexts/userContext";
 import { fetchKnowledges } from "../utils/knowledge/fetchknowledge";
@@ -25,6 +26,10 @@ const FormContainer = styled.div`
   flex-direction: column;
   background-color: white;
   border-radius: 6px;
+  ${media.lessThan("medium")`
+    width: 75%;
+    height: 403px;
+  `}
 `;
 
 const FormHeader = styled.div`
@@ -32,6 +37,9 @@ const FormHeader = styled.div`
   text-align: center;
   border: 1px solid #f2f2f2;
   border-radius: 6px 6px 0 0;
+  ${media.lessThan("medium")`
+    height: 74px;
+  `}
 `;
 
 const FormTitle = styled.p`
@@ -40,12 +48,20 @@ const FormTitle = styled.p`
   font-size: 1.3rem;
   color: rgb(43, 84, 106);
   line-height: 1.5;
+  ${media.lessThan("medium")`
+    font-size: 21px;
+  `}
 `;
 
 const InputContainer = styled.div`
   display: flex;
   align-items: center;
   margin: 24px 64px 0;
+  height: 20%;
+  ${media.lessThan("medium")`
+    height: 78px;
+    margin: 24px auto 0 auto;
+  `}
 `;
 
 export const InputTitle = styled.h2`
@@ -76,6 +92,9 @@ const FormInput = styled.input`
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  ${media.lessThan("medium")`
+    width: 145px;
+  `}
 `;
 
 const FormFooter = styled.footer`
@@ -86,6 +105,7 @@ const FormFooter = styled.footer`
   padding: 12px 20px;
   border-top: 1px solid #f2f2f2;
   border-radius: 0 0 6px 6px;
+  height: 23%;
 `;
 
 const CanncellBtn = styled.div`

@@ -3,6 +3,7 @@ import Slick from "react-slick";
 import styled from "styled-components";
 import media from "styled-media-query";
 import KnowledgeCard from "./KnowledgeCard";
+import KnowledgePost from "./KnowledgePost";
 import { Heading2 } from "../styles/fonts/Heading2";
 import { Small } from "../styles/fonts/Small";
 import { userContext } from "../contexts/userContext";
@@ -12,6 +13,7 @@ import { knowledgeSort } from "../assets/Knowledges/KnowledgeSort";
 import { db } from "../utils/firebase";
 
 const ScrollContainer = styled.div`
+  position: relative;
   outline: none;
   max-height: 1256px;
   overflow-y: scroll;
@@ -179,6 +181,8 @@ export default function KnowledgeContainer() {
           </CategoryTag>
         ))}
       </CategoryList>
+
+      <KnowledgePost />
 
       <Slick ref={(slider) => (courseRef.current = slider)} {...settings}>
         <ScrollContainer>
