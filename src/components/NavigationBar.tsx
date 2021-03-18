@@ -22,7 +22,7 @@ const Container = styled.div`
   bottom: 0;
   width: 100vw;
   height: 56px;
-  padding: 8px 0 12px;
+  padding: 16px 0;
   display: table;
   table-layout: fixed;
   border-top: solid lightgray 0.5px;
@@ -35,47 +35,27 @@ const Container = styled.div`
 
 const NavItem = styled(Link)`
   position: relative;
-  display: table-cell;
   padding: 0px;
+  display: table-cell;
   vertical-align: middle;
   text-decoration: none;
-  a {
-    text-decoration: none;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  }
-`;
-
-const BadgeSpace = styled.div`
-  margin-top: 0px;
-
-  position: relative;
-
-  display: block;
-
-  left: 50%;
-  transform: translateX(-50%);
-
-  width: 77px;
-  height: 56px;
 `;
 
 const NavImage = styled.img`
   position: relative;
   left: 50%;
-
-  transform: translateX(-50%);
-
-  height: 28px;
   width: 28px;
+  height: 28px;
+  transform: translateX(-50%);
 `;
 
 const NavText = styled.p<{ selected: boolean }>`
   position: relative;
-  text-align: center;
-  color: ${({ selected }) => (selected ? "#30c8d6" : "#888")};
-  font-size: 9px;
-  font-weight: ${({ selected }) => (selected ? "bolder" : "normal")};
   margin: 0;
+  font-size: 9px;
+  text-align: center;
+  font-weight: ${({ selected }) => (selected ? "bolder" : "normal")};
+  color: ${({ selected }) => (selected ? "#30c8d6" : "#888")};
 `;
 
 export default function NavigationBar() {
