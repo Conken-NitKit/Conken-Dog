@@ -70,10 +70,14 @@ export default function NavigationBar() {
       <NavItem to={`/courses`}>
         <NavImage
           src={
-            window.location.pathname === "/courses" ? selectedLessonLogo : lessonLogo
+            window.location.pathname === "/courses"
+              ? selectedLessonLogo
+              : lessonLogo
           }
         />
-        <NavText selected={window.location.pathname === "/courses"}>レッスン</NavText>
+        <NavText selected={window.location.pathname === "/courses"}>
+          レッスン
+        </NavText>
       </NavItem>
       <NavItem to={`/knowledges`}>
         <NavImage
@@ -83,7 +87,9 @@ export default function NavigationBar() {
               : knowledgeLogo
           }
         />
-        <NavText selected={window.location.pathname === "/knowledges"}>ナレッジ</NavText>
+        <NavText selected={window.location.pathname === "/knowledges"}>
+          ナレッジ
+        </NavText>
       </NavItem>
       <NavItem to={`/notifications`}>
         <NavImage
@@ -93,12 +99,16 @@ export default function NavigationBar() {
               : notificationLogo
           }
         />
-        <NavText selected={window.location.pathname === "/notifications"}>おしらせ</NavText>
+        <NavText selected={window.location.pathname === "/notifications"}>
+          おしらせ
+        </NavText>
       </NavItem>
       <NavItem to={`/account`}>
         <NavImage
           src={
-            window.location.pathname === "/account" ? selectedAccountLogo : accountLogo
+            window.location.pathname === "/account"
+              ? selectedAccountLogo
+              : accountLogo
           }
         />
         <NavText selected={window.location.pathname === "/account"}>
