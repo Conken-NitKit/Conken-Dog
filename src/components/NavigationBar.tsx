@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import media from "styled-media-query";
 
+import KnowledgeUnreadBadge from "./KnowledgeUnreadBadge";
+
 import accountLogo from "../assets/img/nav/account.svg";
 import homeLogo from "../assets/img/nav/home.svg";
 import knowledgeLogo from "../assets/img/nav/knowledge.svg";
@@ -32,7 +34,9 @@ const Container = styled.div`
 `;
 
 const NavItem = styled(Link)`
+  position: relative;
   display: table-cell;
+  padding: 0px;
   vertical-align: middle;
   text-decoration: none;
   a {
@@ -41,10 +45,26 @@ const NavItem = styled(Link)`
   }
 `;
 
+const BadgeSpace = styled.div`
+  margin-top: 0px;
+
+  position: relative;
+
+  display: block;
+
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 77px;
+  height: 56px;
+`;
+
 const NavImage = styled.img`
   position: relative;
   left: 50%;
+
   transform: translateX(-50%);
+
   height: 28px;
   width: 28px;
 `;
@@ -70,10 +90,14 @@ export default function NavigationBar() {
       <NavItem to={`/courses`}>
         <NavImage
           src={
-            window.location.pathname === "/courses" ? selectedLessonLogo : lessonLogo
+            window.location.pathname === "/courses"
+              ? selectedLessonLogo
+              : lessonLogo
           }
         />
-        <NavText selected={window.location.pathname === "/courses"}>レッスン</NavText>
+        <NavText selected={window.location.pathname === "/courses"}>
+          レッスン
+        </NavText>
       </NavItem>
       <NavItem to={`/knowledges`}>
         <NavImage
@@ -83,7 +107,10 @@ export default function NavigationBar() {
               : knowledgeLogo
           }
         />
-        <NavText selected={window.location.pathname === "/knowledges"}>ナレッジ</NavText>
+        <KnowledgeUnreadBadge />
+        <NavText selected={window.location.pathname === "/knowledges"}>
+          ナレッジ
+        </NavText>
       </NavItem>
       <NavItem to={`/notifications`}>
         <NavImage
@@ -93,12 +120,16 @@ export default function NavigationBar() {
               : notificationLogo
           }
         />
-        <NavText selected={window.location.pathname === "/notifications"}>おしらせ</NavText>
+        <NavText selected={window.location.pathname === "/notifications"}>
+          おしらせ
+        </NavText>
       </NavItem>
       <NavItem to={`/account`}>
         <NavImage
           src={
-            window.location.pathname === "/account" ? selectedAccountLogo : accountLogo
+            window.location.pathname === "/account"
+              ? selectedAccountLogo
+              : accountLogo
           }
         />
         <NavText selected={window.location.pathname === "/account"}>
