@@ -114,6 +114,7 @@ export default function Course({ value, history }: Props) {
           );
         return (
           <Link
+            key={`/${value.metaName}/${i + 1}`}
             to={`/${value.metaName}/${i + 1}`}
             style={{ textDecoration: "none", color: "rgb(88, 118, 163)" }}
           >
