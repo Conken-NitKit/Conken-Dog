@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import media from "styled-media-query";
 
+import KnowledgeUnreadBadge from "./KnowledgeUnreadBadge";
+
 import accountLogo from "../assets/img/nav/account.svg";
 import homeLogo from "../assets/img/nav/home.svg";
 import knowledgeLogo from "../assets/img/nav/knowledge.svg";
@@ -20,7 +22,7 @@ const Container = styled.div`
   bottom: 0;
   width: 100vw;
   height: 56px;
-  padding: 8px 0 12px;
+  padding: 16px 0;
   display: table;
   table-layout: fixed;
   border-top: solid lightgray 0.5px;
@@ -32,30 +34,28 @@ const Container = styled.div`
 `;
 
 const NavItem = styled(Link)`
+  position: relative;
+  padding: 0px;
   display: table-cell;
   vertical-align: middle;
   text-decoration: none;
-  a {
-    text-decoration: none;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  }
 `;
 
 const NavImage = styled.img`
   position: relative;
   left: 50%;
-  transform: translateX(-50%);
-  height: 28px;
   width: 28px;
+  height: 28px;
+  transform: translateX(-50%);
 `;
 
 const NavText = styled.p<{ selected: boolean }>`
   position: relative;
-  text-align: center;
-  color: ${({ selected }) => (selected ? "#30c8d6" : "#888")};
-  font-size: 9px;
-  font-weight: ${({ selected }) => (selected ? "bolder" : "normal")};
   margin: 0;
+  font-size: 9px;
+  text-align: center;
+  font-weight: ${({ selected }) => (selected ? "bolder" : "normal")};
+  color: ${({ selected }) => (selected ? "#30c8d6" : "#888")};
 `;
 
 export default function NavigationBar() {
@@ -70,10 +70,14 @@ export default function NavigationBar() {
       <NavItem to={`/courses`}>
         <NavImage
           src={
-            window.location.pathname === "/courses" ? selectedLessonLogo : lessonLogo
+            window.location.pathname === "/courses"
+              ? selectedLessonLogo
+              : lessonLogo
           }
         />
-        <NavText selected={window.location.pathname === "/courses"}>レッスン</NavText>
+        <NavText selected={window.location.pathname === "/courses"}>
+          レッスン
+        </NavText>
       </NavItem>
       <NavItem to={`/knowledges`}>
         <NavImage
@@ -83,7 +87,10 @@ export default function NavigationBar() {
               : knowledgeLogo
           }
         />
-        <NavText selected={window.location.pathname === "/knowledges"}>ナレッジ</NavText>
+        <KnowledgeUnreadBadge />
+        <NavText selected={window.location.pathname === "/knowledges"}>
+          ナレッジ
+        </NavText>
       </NavItem>
       <NavItem to={`/notifications`}>
         <NavImage
@@ -93,12 +100,16 @@ export default function NavigationBar() {
               : notificationLogo
           }
         />
-        <NavText selected={window.location.pathname === "/notifications"}>おしらせ</NavText>
+        <NavText selected={window.location.pathname === "/notifications"}>
+          おしらせ
+        </NavText>
       </NavItem>
       <NavItem to={`/account`}>
         <NavImage
           src={
-            window.location.pathname === "/account" ? selectedAccountLogo : accountLogo
+            window.location.pathname === "/account"
+              ? selectedAccountLogo
+              : accountLogo
           }
         />
         <NavText selected={window.location.pathname === "/account"}>
