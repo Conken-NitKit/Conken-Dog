@@ -1,9 +1,10 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { RouteComponentProps } from "react-router-dom";
 import styled from "styled-components";
 
 import { ISection } from "../assets/sections";
 import { SectionItem } from "../components/SectionItem";
+import { userContext } from "../contexts/userContext";
 import { Container } from "../layouts/Container";
 import { Description } from "../styles/fonts/Description";
 import { Heading1 } from "../styles/fonts/Heading1";
@@ -18,16 +19,18 @@ const ContentsList = styled.ul`
   border-radius: 6px;
 `;
 
-interface Props extends RouteComponentProps{
+interface Props extends RouteComponentProps {
   value: ISection;
 }
 
 export default function Section({ value, history }: Props) {
+  const { setUser } = useContext(userContext);
+
   const generateMinute = () =>
     value.contentsList.reduce((sum, cur): number => sum + cur.requiredTime, 0);
 
   useEffect(() => {
-    redirectNonLogin(history);
+    redirectNonLogin(history, setUser);
     window.scrollTo(0, 0);
   }, []);
 

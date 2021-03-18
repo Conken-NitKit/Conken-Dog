@@ -186,28 +186,10 @@ export default function Home({ history }: RouteComponentProps) {
     setIsOpenNotificationLogoBalloon,
   ] = useState(false);
   const [isOpenUserLogoBalloon, setIsOpenUserLogoBalloon] = useState(false);
-  const { user, setUser } = useContext(userContext);
+  const { setUser } = useContext(userContext);
 
   useEffect(() => {
-    redirectNonLogin(history);
-    const unSub = auth.onAuthStateChanged(async (fetchedUser) => {
-      if (
-        fetchedUser &&
-        JSON.stringify(user) === JSON.stringify(defaultUserInfo)
-      ) {
-        const userRef = db.collection("user").doc(fetchedUser.uid);
-        await userRef
-          .get()
-          .then((doc) => {
-            const fetchedUser = doc.data();
-            instanceOfUser(fetchedUser) && setUser(fetchedUser);
-          })
-          .catch((err) => console.log("Error getting documents", err));
-      }
-    });
-    return () => {
-      unSub();
-    };
+    redirectNonLogin(history, setUser);
   });
 
   return (
