@@ -24,13 +24,13 @@ interface Props extends RouteComponentProps {
 }
 
 export default function Section({ value, history }: Props) {
-  const { setUser } = useContext(userContext);
+  const { user, setUser } = useContext(userContext);
 
   const generateMinute = () =>
     value.contentsList.reduce((sum, cur): number => sum + cur.requiredTime, 0);
 
   useEffect(() => {
-    redirectNonLogin(history, setUser);
+    redirectNonLogin(history, user, setUser);
     window.scrollTo(0, 0);
   }, []);
 

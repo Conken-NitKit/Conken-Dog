@@ -11,10 +11,8 @@ import KnowledgeContainer from "../components/KnowledgeContainer";
 import LessonContainer from "../components/LessonContainer";
 import Slider from "../components/Slider";
 import { userContext } from "../contexts/userContext";
-import { defaultUserInfo, instanceOfUser } from "../interfaces/User";
 import { Heading2 } from "../styles/fonts/Heading2";
 import { Small } from "../styles/fonts/Small";
-import { auth, db } from "../utils/firebase";
 import { redirectNonLogin } from "../utils/users/redirectNonLogin";
 import { KnowledgeModal } from "../components/KnowledgeModal";
 import Ballooon from "../components/Balloon";
@@ -186,10 +184,13 @@ export default function Home({ history }: RouteComponentProps) {
     setIsOpenNotificationLogoBalloon,
   ] = useState(false);
   const [isOpenUserLogoBalloon, setIsOpenUserLogoBalloon] = useState(false);
-  const { setUser } = useContext(userContext);
+  const { user, setUser } = useContext(userContext);
 
   useEffect(() => {
-    redirectNonLogin(history, setUser);
+    const unSub = redirectNonLogin(history, user, setUser);
+    return () => {
+      unSub();
+    };
   });
 
   return (
