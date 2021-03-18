@@ -6,16 +6,36 @@ import { useState } from "react";
 import { KnowledgeModal } from "../components/KnowledgeModal";
 
 const PostImg = styled.img`
-  z-index: 2;
-  position: fixed;
+  margin: 8px;
 
-  top: 100px;
-
-  width: 28px;
-  height: 28px;
+  width: 40px;
+  height: 40px;
 
   ${media.greaterThan("medium")`
     display: none;
+  `}
+`;
+
+const PostImgBackground = styled.div`
+  display: box;
+
+  z-index: 2;
+  position: fixed;
+
+  top: 75%;
+  left: 80%;
+
+  border-radius: 50%;
+
+  box-shadow: 0 1px 8px -2px rgba(0, 0, 0, 0.4);
+
+  width: 56px;
+  height: 56px;
+
+  background-color: #0099ff;
+
+  ${media.greaterThan("medium")`
+  display: none;
   `}
 `;
 
@@ -24,12 +44,14 @@ export default function KnowledgePost() {
 
   return (
     <div>
-      <PostImg
-        src={PostLogo}
-        onClick={() => {
-          setIsOpenKnowledgeModal(true);
-        }}
-      />
+      <PostImgBackground>
+        <PostImg
+          src={PostLogo}
+          onClick={() => {
+            setIsOpenKnowledgeModal(true);
+          }}
+        />
+      </PostImgBackground>
 
       {isOpenKnowledgeModal && (
         <KnowledgeModal close={() => setIsOpenKnowledgeModal(false)} />
