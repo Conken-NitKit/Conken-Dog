@@ -20,6 +20,12 @@ export const MONEY: ISection = {
       requiredTime: 36,
     },
     {
+      title: "住宅ローンの完済予定年齢がヤバイ。ローン破産しない対策を解説",
+      link: "https://youtu.be/whexEXQW_I8",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 17,
+    },
+    {
       // memo: これまでの日本の経済のお話、副業と資産運用をする理由
       title: "歪められた福沢諭吉「学問のすすめ」の真意",
       link: "https://youtu.be/ZsYamRyLTj0",
@@ -130,6 +136,18 @@ export const MONEY: ISection = {
       requiredTime: 25,
     },
     {
+      title: "【前編】投資しないと貧乏が確定する3つの理由",
+      link: "https://youtu.be/kFp0vzLugAo",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 19,
+    },
+    {
+      title: "【後編】投資を今すぐ始めるべき理由！メリット多数！",
+      link: "https://youtu.be/owX5Jvftzjc",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 35,
+    },
+    {
       title: "【マネーマシンの作り方①】株と債券は具体的にどう買えばいいのか？",
       link: "https://youtu.be/pm2NKN_sjlA",
       mediaType: ["READ_ONLY", "VIDEO"],
@@ -219,6 +237,12 @@ export const MONEY: ISection = {
       link: "https://youtu.be/bnCHUWvHC-g",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 28,
+    },
+    {
+      title: "【早期リタイア】FIREって何？全員が目指してみるべき理由",
+      link: "https://youtu.be/qqddCzvfdRQ",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 17,
     },
     {
       title: "お金の不安をゼロにする！資産運用・完全講義",
