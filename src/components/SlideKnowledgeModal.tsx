@@ -29,6 +29,7 @@ const FormContainer = styled.div<{ isOpen: boolean }>`
   height: 98vh;
   width: 98vw;
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.4);
+  border: none;
   border-radius: 16px 16px 0 0;
   position: fixed;
   text-align: center;
@@ -42,8 +43,7 @@ const FormContainer = styled.div<{ isOpen: boolean }>`
 const FormHeader = styled.div`
   padding: 0 16px;
   text-align: center;
-  border: 1px solid #f2f2f2;
-  border-radius: 6px 6px 0 0;
+  border-bottom: 1px solid #f2f2f2;
   ${media.lessThan("medium")`
     height: 74px;
   `}
