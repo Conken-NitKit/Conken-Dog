@@ -88,6 +88,36 @@ export const CARRIER: ISection = {
       requiredTime: 14,
     },
     {
+      title: "転職エージェントを利用する”前”に知っておくべき重要ポイント8選",
+      link: "https://youtu.be/VRIXgDPhhUw",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 20,
+    },
+    {
+      title: "副収入よりも大きな副業のメリット",
+      link: "https://youtu.be/Feal8fLwLuU",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 10,
+    },
+    {
+      title: "エンジニアのリアルな副業事情",
+      link: "https://youtu.be/A2TjIAj_aWg",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 16,
+    },
+    {
+      title: "副業に興味がある人は絶対に身に着けておくべき３つのスキル",
+      link: "https://youtu.be/RC6PAXpysCk",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 16,
+    },
+    {
+      title: "簿記3級・2級の学習を始めるのに「最適な時期」とその理由",
+      link: "https://youtu.be/G-chS7B1czQ",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 17,
+    },
+    {
       title: "転職と副業のかけ算 ～生涯年収を最大化する生き方～",
       link: "https://youtu.be/5-iG9sS-l3A",
       mediaType: ["READ_ONLY", "VIDEO"],
@@ -149,16 +179,22 @@ export const CARRIER: ISection = {
       requiredTime: 23,
     },
     {
-      title: "簡単に年収を上げる方法、僕らはどのように生きればよいか？",
-      link: "https://youtu.be/PXNuV34z0O0",
+      title: "お金持ちになりたくない人がする行動5つ",
+      link: "https://youtu.be/uMps1aLrHkA",
       mediaType: ["READ_ONLY", "VIDEO"],
-      requiredTime: 16,
+      requiredTime: 15,
     },
     {
       title: "貧乏な人によくある勘違いTOP3",
       link: "https://youtu.be/cxxjNRXdiq8",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 13,
+    },
+    {
+      title: "簡単に年収を上げる方法、僕らはどのように生きればよいか？",
+      link: "https://youtu.be/PXNuV34z0O0",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 16,
     },
     {
       title: "あなたを幸せにするお金の使い方4選",

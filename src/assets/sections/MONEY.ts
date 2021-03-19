@@ -34,6 +34,18 @@ export const MONEY: ISection = {
       requiredTime: 11,
     },
     {
+      title: "雇われの時点で年収500万も年収1,000万も変わらない",
+      link: "https://youtu.be/1RW1YjSeGHI",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 11,
+    },
+    {
+      title: "クワドラントの上手な歩き方",
+      link: "https://youtu.be/Dy7w5ttcQfQ",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 11,
+    },
+    {
       // memo: 需要、供給、円安、円高、景気、インフレと貯蓄、原価
       title: "10歳から知っておきたいお金の心得",
       link: "https://youtu.be/rDFB7KsrKG8",
@@ -63,12 +75,6 @@ export const MONEY: ISection = {
       link: "https://youtu.be/15Jk7dYoyvo",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 20,
-    },
-    {
-      title: "知ってるかどうかで大差がつくお金の知識",
-      link: "https://youtu.be/6rin3c1pp-o",
-      mediaType: ["READ_ONLY", "VIDEO"],
-      requiredTime: 17,
     },
     {
       // 銀行の窓口の話、インデックスファウンド
@@ -160,6 +166,36 @@ export const MONEY: ISection = {
       requiredTime: 26,
     },
     {
+      title: "大金持ちは無理でも「小金持ち」になら誰でもなれる理由",
+      link: "https://youtu.be/uSJy02dn9Rk",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 18,
+    },
+    {
+      title: "知ってるかどうかで大差がつくお金の知識",
+      link: "https://youtu.be/6rin3c1pp-o",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 17,
+    },
+    {
+      title: "お金で時間を買うという発想",
+      link: "https://youtu.be/vbG_NLg8udk",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 13,
+    },
+    {
+      title: "あなたを幸せにするお金の使い方4選",
+      link: "https://youtu.be/-fhNuVeOQjo",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 13,
+    },
+    {
+      title: "お金持ちになれる人となれない人の決定的な違い",
+      link: "https://youtu.be/YNXmhItgMNw",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 10,
+    },
+    {
       title:
         "【働かないで生きていく①】最強の早期リタイア術〜遊んで暮らして金もある〜（FIRE）",
       link: "https://youtu.be/PfLaWgQNezk",
@@ -215,6 +251,12 @@ export const MONEY: ISection = {
       link: "https://youtu.be/H0pS2-t4pzA",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 22,
+    },
+    {
+      title: "お金に困りがちな人の「思い込み」5選",
+      link: "https://youtu.be/ukfKaMkQlUc",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 15,
     },
     {
       title: "インデックスファンド選びの4つのポイント【株式投資編】",
@@ -296,6 +338,12 @@ export const MONEY: ISection = {
       link: "https://youtu.be/-dE5xRYIhNA",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 15,
+    },
+    {
+      title: "本気でお金持ちになりたいなら簿記とFPを学ぶべき5つの理由",
+      link: "https://youtu.be/YuKeN3Sa0_A",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 21,
     },
     {
       title: "マネー本100冊解説して考えた投資の王道と取るべき戦略の結論",
