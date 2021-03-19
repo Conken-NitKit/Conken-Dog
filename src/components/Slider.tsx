@@ -6,9 +6,9 @@ import { Link } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import industryImg from "../assets/img/banner/industry.jpeg";
-import carrierImg from "../assets/img/banner/carrier.jpeg";
-import moneyImg from "../assets/img/banner/money.jpeg";
+import industryImg from "../assets/img/banner/industry.webp";
+import carrierImg from "../assets/img/banner/carrier.webp";
+import moneyImg from "../assets/img/banner/money.webp";
 
 const SlideContainer = styled(Link)`
   height: 296px;
