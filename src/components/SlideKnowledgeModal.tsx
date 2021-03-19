@@ -9,10 +9,10 @@ import { postKnowledge } from "../utils/knowledge/postKnowledge";
 
 const modalRoot = document.getElementById("modal-root")!;
 
-const Container = styled.div`
+const Container = styled.div<{ isOpen: boolean }>`
   z-index: 4;
   position: absolute;
-  top: 0;
+  top: ${({ isOpen }) => (isOpen ? "0" : "-100vh")};
   left: 0;
   display: flex;
   justify-content: center;
@@ -22,15 +22,19 @@ const Container = styled.div`
   background-color: rgba(0, 0, 0, 0.5);
 `;
 
-const FormContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-  border-radius: 6px;
-  ${media.lessThan("medium")`
-    width: 75%;
-    height: 403px;
-  `}
+const FormContainer = styled.div<{ isOpen: boolean }>`
+  bottom: ${({ isOpen }) => (isOpen ? "0" : "-100vh")};
+  left: 1vw;
+  height: 98vh;
+  width: 98vw;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.4);
+  border-radius: 16px 16px 0 0;
+  position: fixed;
+  text-align: center;
+  flex-wrap: wrap;
+  transition: all 0.3s;
+  background: white;
+  z-index: 2;
 `;
 
 const FormHeader = styled.div`
@@ -129,10 +133,11 @@ const SubmitBtn = styled.div<{ canClick: boolean }>`
 `;
 
 interface Props {
+  isOpen: boolean;
   close: () => void;
 }
 
-export const KnowledgeModal = ({ close }: Props) => {
+export const SlideKnowledgeModal = ({ isOpen, close }: Props) => {
   const [title, setTitle] = useState("");
   const [link, setLink] = useState("");
   const [tags, setTags] = useState("");
@@ -147,8 +152,8 @@ export const KnowledgeModal = ({ close }: Props) => {
   };
 
   return ReactDOM.createPortal(
-    <Container>
-      <FormContainer>
+    <Container isOpen={isOpen}>
+      <FormContainer isOpen={isOpen}>
         <FormHeader>
           <FormTitle>ナレッジの投稿</FormTitle>
         </FormHeader>

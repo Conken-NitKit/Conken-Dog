@@ -3,7 +3,7 @@ import media from "styled-media-query";
 import PostLogo from "../assets/img/icons/create-outline.svg";
 
 import { useState } from "react";
-import { KnowledgeModal } from "../components/KnowledgeModal";
+import { SlideKnowledgeModal } from "../components/SlideKnowledgeModal";
 
 const PostImg = styled.img`
   margin: 8px;
@@ -34,6 +34,11 @@ const PostImgBackground = styled.div`
 
   background-color: #0099ff;
 
+  &:active {
+    background-color: rgba(0, 153, 255, 0.4);
+    transition: all 0.3s;
+  }
+
   ${media.greaterThan("medium")`
   display: none;
   `}
@@ -44,18 +49,18 @@ export default function KnowledgePost() {
 
   return (
     <div>
-      <PostImgBackground>
-        <PostImg
-          src={PostLogo}
-          onClick={() => {
-            setIsOpenKnowledgeModal(true);
-          }}
-        />
+      <PostImgBackground
+        onClick={() => {
+          setIsOpenKnowledgeModal(true);
+        }}
+      >
+        <PostImg src={PostLogo} />
       </PostImgBackground>
 
-      {isOpenKnowledgeModal && (
-        <KnowledgeModal close={() => setIsOpenKnowledgeModal(false)} />
-      )}
+      <SlideKnowledgeModal
+        isOpen={isOpenKnowledgeModal}
+        close={() => setIsOpenKnowledgeModal(false)}
+      />
     </div>
   );
 }
