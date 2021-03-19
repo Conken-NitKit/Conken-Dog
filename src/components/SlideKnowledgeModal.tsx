@@ -20,6 +20,7 @@ const Container = styled.div<{ isOpen: boolean }>`
   height: 100vh;
   width: 100vw;
   background-color: rgba(0, 0, 0, 0.5);
+  transition-delay: 0.1s;
 `;
 
 const FormContainer = styled.div<{ isOpen: boolean }>`
@@ -33,6 +34,7 @@ const FormContainer = styled.div<{ isOpen: boolean }>`
   text-align: center;
   flex-wrap: wrap;
   transition: all 0.3s;
+  transition-delay: 0.1s;
   background: white;
   z-index: 2;
 `;
