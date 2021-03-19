@@ -3,14 +3,8 @@ import { ISection } from ".";
 export const CARRIER: ISection = {
   title: "【重要】キャリア形成",
   description:
-    "実際の業務の場では能力が高い場合であっても思うように成果が出せない人も少なくありません。\n" +
-    "その場合、問題になっているケースが多いのは「マインドセット」と呼ばれる心の持ちようです。\n" +
-    "どれだけたくさんの水が入ったペットボトルであっても、注ぎ口が小さいと多くの水を一気に排出できないように、\n" +
-    "どれだけ能力があっても、マインドセットがしっかりできていないと、自分の能力を存分にはっきすることができません。\n" +
     "本レッスンでは、前半に「就職活動で自分にあった会社を選び、入社するために必要なマインド」を、\n" +
-    "後半には「会社で出世、または経済的に大きな成功を収めるために必要なマインド」を身につけることができます。\n" +
-    "特にこれから就職活動する人は「マインドセット」が自身の能力以上に重要視されるので、\n" +
-    "大きな失敗に繋がり、悔やんでも悔やみきれない結果になりますので、しっかりチェックするようにしましょう！",
+    "後半には「会社で出世、または経済的に大きな成功を収めるために必要なマインド」を身につけることができます。",
   contentsList: [
     {
       title: "Yahoo! JAPAN 内定者が教える就活講座",
@@ -88,6 +82,42 @@ export const CARRIER: ISection = {
       requiredTime: 17,
     },
     {
+      title: "転職“未”経験者の評価が低くなる3つの理由",
+      link: "https://youtu.be/aFwiAVqOI1w",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 14,
+    },
+    {
+      title: "転職エージェントを利用する”前”に知っておくべき重要ポイント8選",
+      link: "https://youtu.be/VRIXgDPhhUw",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 20,
+    },
+    {
+      title: "副収入よりも大きな副業のメリット",
+      link: "https://youtu.be/Feal8fLwLuU",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 10,
+    },
+    {
+      title: "エンジニアのリアルな副業事情",
+      link: "https://youtu.be/A2TjIAj_aWg",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 16,
+    },
+    {
+      title: "副業に興味がある人は絶対に身に着けておくべき３つのスキル",
+      link: "https://youtu.be/RC6PAXpysCk",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 16,
+    },
+    {
+      title: "簿記3級・2級の学習を始めるのに「最適な時期」とその理由",
+      link: "https://youtu.be/G-chS7B1czQ",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 17,
+    },
+    {
       title: "転職と副業のかけ算 ～生涯年収を最大化する生き方～",
       link: "https://youtu.be/5-iG9sS-l3A",
       mediaType: ["READ_ONLY", "VIDEO"],
@@ -119,10 +149,22 @@ export const CARRIER: ISection = {
       requiredTime: 12,
     },
     {
+      title: "「信頼口座」の残高を増やすアクション5選",
+      link: "https://youtu.be/tobtVkOEOBc",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 21,
+    },
+    {
       title: "不幸になりたくない人が最重視すべきたった1つのこと",
       link: "https://youtu.be/v03ONJrQOPo",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 16,
+    },
+    {
+      title: "決断力がない人の特徴5選",
+      link: "https://youtu.be/RBzmP4AzH2k",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 14,
     },
     {
       title: "デキる人はみんなやってる決定疲れを防ぐ方法",
@@ -137,16 +179,22 @@ export const CARRIER: ISection = {
       requiredTime: 23,
     },
     {
-      title: "簡単に年収を上げる方法、僕らはどのように生きればよいか？",
-      link: "https://youtu.be/PXNuV34z0O0",
+      title: "お金持ちになりたくない人がする行動5つ",
+      link: "https://youtu.be/uMps1aLrHkA",
       mediaType: ["READ_ONLY", "VIDEO"],
-      requiredTime: 16,
+      requiredTime: 15,
     },
     {
       title: "貧乏な人によくある勘違いTOP3",
       link: "https://youtu.be/cxxjNRXdiq8",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 13,
+    },
+    {
+      title: "簡単に年収を上げる方法、僕らはどのように生きればよいか？",
+      link: "https://youtu.be/PXNuV34z0O0",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 16,
     },
     {
       title: "あなたを幸せにするお金の使い方4選",
@@ -183,6 +231,12 @@ export const CARRIER: ISection = {
       link: "https://youtu.be/hz5hzMmhotE",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 13,
+    },
+    {
+      title: "人にプレゼントしたもの13選＆プレゼントする時の3つのコツ",
+      link: "https://youtu.be/GRzE-TB0-hw",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 24,
     },
     {
       title: "自己投資の効果を爆上げする方法",
@@ -267,6 +321,12 @@ export const CARRIER: ISection = {
       link: "https://youtu.be/eVvci3WbJN0",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 15,
+    },
+    {
+      title: "金持ちになりたい人が絶対に聞くべき小話「魔法のザクロ」",
+      link: "https://youtu.be/DlA9lZq81DQ",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 16,
     },
     {
       title: "「不安で動けない人」と「不安をコントロールできる人」の5つの違い ",

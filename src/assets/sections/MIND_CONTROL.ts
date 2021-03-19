@@ -27,6 +27,12 @@ export const MIND_CONTROL: ISection = {
       requiredTime: 10,
     },
     {
+      title: "たった一つの切り返しで「相手の記憶を消す」方法",
+      link: "https://youtu.be/yQVgD2eOBJ8",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 5,
+    },
+    {
       title: "ビジネスで使えるズルい心理学 5選",
       link: "https://youtu.be/sfYnvDKsnxs",
       mediaType: ["READ_ONLY", "VIDEO"],
@@ -75,6 +81,12 @@ export const MIND_CONTROL: ISection = {
       requiredTime: 21,
     },
     {
+      title: "やってはいけない褒め方",
+      link: "https://youtu.be/u4pNuvlwks4",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 9,
+    },
+    {
       title: "相手を誘導するラベリング・テクニック",
       link: "https://youtu.be/hAjv_uiniUg",
       mediaType: ["READ_ONLY", "VIDEO"],
@@ -85,6 +97,12 @@ export const MIND_CONTROL: ISection = {
       link: "https://youtu.be/IRCz6RWcP7Q",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 15,
+    },
+    {
+      title: "むしろ怒られろ！好感度爆上げの完璧な謝罪方法",
+      link: "https://youtu.be/QAw7xcec5Q8",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 8,
     },
     {
       title: "99%の人が間違えてる心理テクニック",
