@@ -41,37 +41,42 @@ const FormContainer = styled.div<{ isOpen: boolean }>`
 `;
 
 const FormHeader = styled.div`
-  padding: 0 16px;
+  position: relative;
+  display: block;
+  margin-top: 0px;
   text-align: center;
   border-bottom: 1px solid #f2f2f2;
-  ${media.lessThan("medium")`
-    height: 74px;
-  `}
+  height: 15%;
 `;
 
 const FormTitle = styled.p`
+  margin: 0px;
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
   font-family: Lato, "Hiragino Maru Gothic Pro", "Meiryo UI", Meiryo,
     "MS PGothic", sans-serif;
-  font-size: 1.3rem;
+  font-size: 21px;
   color: rgb(43, 84, 106);
-  line-height: 1.5;
-  ${media.lessThan("medium")`
-    font-size: 21px;
-  `}
 `;
 
 const InputContainer = styled.div`
   display: flex;
+
+  margin: 0px auto;
   align-items: center;
-  margin: 24px 64px 0;
-  height: 20%;
-  ${media.lessThan("medium")`
-    height: 78px;
-    margin: 24px auto 0 auto;
-  `}
+  height: 23%;
+
+  padding: 0px;
 `;
 
 export const InputTitle = styled.h2`
+  margin-right: 16px;
+
   font-family: Lato, "Hiragino Maru Gothic Pro", "Meiryo UI", Meiryo,
     "MS PGothic", sans-serif;
   font-size: 1.1rem;
@@ -83,11 +88,11 @@ export const InputTitle = styled.h2`
 `;
 
 const FormInput = styled.input`
-  width: 88vw;
-  max-width: 330px;
+  width: 55vw;
   height: 31px;
   padding: 5px 10px;
   margin-left: 16px;
+  margin-right: 16px;
   vertical-align: middle;
   font-family: Lato, "Hiragino Maru Gothic Pro", "Meiryo UI", Meiryo,
     "MS PGothic", sans-serif;
@@ -99,23 +104,23 @@ const FormInput = styled.input`
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  ${media.lessThan("medium")`
-    width: 145px;
-  `}
 `;
 
 const FormFooter = styled.footer`
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  margin-top: 24px;
-  padding: 12px 20px;
+  padding: 22px 20px;
   border-top: 1px solid #f2f2f2;
   border-radius: 0 0 6px 6px;
-  height: 23%;
+  height: 15%;
 `;
 
 const CanncellBtn = styled.div`
+  display: inline-block;
+  max-height: 24px;
+  min-width: 72px;
+
   background-color: white;
   border: 1px solid #f2f2f2;
   color: rgb(43, 84, 106);
@@ -125,6 +130,10 @@ const CanncellBtn = styled.div`
 `;
 
 const SubmitBtn = styled.div<{ canClick: boolean }>`
+  display: inline-block;
+  max-height: 24px;
+  min-width: 48px;
+
   color: ${(props) => (props.canClick ? "white" : "#f2f2f2")};
   background-color: ${(props) => (props.canClick ? "#30c8d6" : "#d0d0d0")};
   border: 1px solid ${(props) => (props.canClick ? "#30c8d6" : "#f2f2f2")};
