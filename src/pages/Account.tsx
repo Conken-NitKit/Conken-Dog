@@ -12,7 +12,7 @@ const AccountTitlesWrapper = styled.div`
 
   display: box;
 
-  margin: 5%;
+  margin: 5vh 5vw;
   margin-bottom: 0;
 
   height: 86px;
@@ -36,16 +36,10 @@ export default function Account({ history }: RouteComponentProps) {
         <Small>みんなのぷろふぃーる！</Small>
       </AccountTitlesWrapper>
       <AccountElementsWrapper>
-        <AccountElementsCard ElementName="" Element="" />
-        <AccountElementsCard ElementName="" Element="" />
-        <AccountElementsCard ElementName="" Element="" />
-        <AccountElementsCard ElementName="" Element="" />
-        <AccountElementsCard ElementName="" Element="" />
-        <AccountElementsCard ElementName="" Element="" />
-        <AccountElementsCard ElementName="" Element="" />
-        <AccountElementsCard ElementName="" Element="" />
-        <AccountElementsCard ElementName="" Element="" />
-        <AccountElementsCard ElementName="" Element="" />
+        <AccountElementsCard ElementName="名前" Element="" />
+        <AccountElementsCard ElementName="メール" Element="" />
+        <AccountElementsCard ElementName="進捗" Element="" />
+        <AccountElementsCard ElementName="一言" Element="" />
       </AccountElementsWrapper>
       <NavigationBar />
     </ResponsiveWrapper>
