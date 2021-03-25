@@ -103,5 +103,11 @@ export const NEXT: ISection = {
       mediaType: ["USE_GIT", "USE_MY_PC", "VIDEO"],
       requiredTime: 80,
     },
+    {
+      title: "フロントエンド紅白LT合戦",
+      link: "https://youtu.be/mbtDV5EkSAI?t=340",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 90,
+    },
   ],
 };

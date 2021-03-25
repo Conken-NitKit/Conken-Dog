@@ -130,6 +130,12 @@ export const LOGICAL_THINKING: ISection = {
       requiredTime: 28,
     },
     {
+      title: "なぜ「悩む力」が最強なのか？",
+      link: "https://youtu.be/KEsMETo2hRU",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 16,
+    },
+    {
       title: "「空・雨・傘」理論で、無意味な資料作成から脱皮しよう！",
       link: "https://youtu.be/0JWUSfnSuD4",
       mediaType: ["READ_ONLY", "VIDEO"],

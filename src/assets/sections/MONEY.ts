@@ -307,6 +307,18 @@ export const MONEY: ISection = {
       requiredTime: 22,
     },
     {
+      title: "お金を使いすぎる人の思考・行動　よくある5パターン",
+      link: "https://youtu.be/cfv_9gp7h_M",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 13,
+    },
+    {
+      title: "ミニマリズムで「貧乏になる人」と「金持ちになる人」の決定的な違いとは？",
+      link: "https://youtu.be/ewuoMV3HlTM",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 16,
+    },
+    {
       title: "30歳で1000万貯まる『貯金を増やすコツ5選』",
       link: "https://youtu.be/vn8RdqwepN0",
       mediaType: ["READ_ONLY", "VIDEO"],
@@ -362,6 +374,18 @@ export const MONEY: ISection = {
       link: "https://youtu.be/dkE9vnU2byE",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 26,
+    },
+    {
+      title: "【危ない会社の見分け方①】あなたの会社は良い会社？危ない会社？",
+      link: "https://youtu.be/fRfiCEOK8VI",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 31,
+    },
+    {
+      title: "【危ない会社の見分け方②】就職・転職・投資に役立つ会社の基礎知識",
+      link: "https://youtu.be/ntpoZzTrZ2U",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 30,
     },
   ],
 };
