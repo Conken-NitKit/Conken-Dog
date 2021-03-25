@@ -57,6 +57,7 @@ const ElementSpace = styled.a`
   padding-left: 5%;
 
   height: 100%;
+  width: calc(100% - 83px);
 
   font-size: 20px;
   font-family: Lato, "Hiragino Maru Gothic Pro", "Meiryo UI", Meiryo,
