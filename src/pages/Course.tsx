@@ -1,9 +1,10 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { Link, RouteComponentProps } from "react-router-dom";
 import styled from "styled-components";
 import media from "styled-media-query";
 
 import { ICourses } from "../assets/courses";
+import { userContext } from "../contexts/userContext";
 import { Container } from "../layouts/Container";
 import { Description } from "../styles/fonts/Description";
 import { Heading1 } from "../styles/fonts/Heading1";
@@ -68,6 +69,8 @@ interface Props extends RouteComponentProps {
 }
 
 export default function Course({ value, history }: Props) {
+  const { user, setUser } = useContext(userContext);
+
   const generateCourseMinute = () =>
     value.sections.reduce(
       (sum, cur): number =>
@@ -80,7 +83,7 @@ export default function Course({ value, history }: Props) {
     );
 
   useEffect(() => {
-    redirectNonLogin(history);
+    redirectNonLogin(history, user, setUser);
     window.scrollTo(0, 0);
   }, []);
 
@@ -111,12 +114,13 @@ export default function Course({ value, history }: Props) {
           );
         return (
           <Link
+            key={`/${value.metaName}/${i + 1}`}
             to={`/${value.metaName}/${i + 1}`}
             style={{ textDecoration: "none", color: "rgb(88, 118, 163)" }}
           >
             <CourseCard key={value.name + i.toString()}>
               <Heading2>{section.title}</Heading2>
-                <Description>{section.description}</Description>
+              <Description>{section.description}</Description>
               <Small>
                 修了時間
                 {generateSectionMinute() >= 60 &&

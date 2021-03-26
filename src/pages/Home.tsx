@@ -11,10 +11,8 @@ import KnowledgeContainer from "../components/KnowledgeContainer";
 import LessonContainer from "../components/LessonContainer";
 import Slider from "../components/Slider";
 import { userContext } from "../contexts/userContext";
-import { defaultUserInfo, instanceOfUser } from "../interfaces/User";
 import { Heading2 } from "../styles/fonts/Heading2";
 import { Small } from "../styles/fonts/Small";
-import { auth, db } from "../utils/firebase";
 import { redirectNonLogin } from "../utils/users/redirectNonLogin";
 import { KnowledgeModal } from "../components/KnowledgeModal";
 import Ballooon from "../components/Balloon";
@@ -189,22 +187,7 @@ export default function Home({ history }: RouteComponentProps) {
   const { user, setUser } = useContext(userContext);
 
   useEffect(() => {
-    redirectNonLogin(history);
-    const unSub = auth.onAuthStateChanged(async (fetchedUser) => {
-      if (
-        fetchedUser &&
-        JSON.stringify(user) === JSON.stringify(defaultUserInfo)
-      ) {
-        const userRef = db.collection("user").doc(fetchedUser.uid);
-        await userRef
-          .get()
-          .then((doc) => {
-            const fetchedUser = doc.data();
-            instanceOfUser(fetchedUser) && setUser(fetchedUser);
-          })
-          .catch((err) => console.log("Error getting documents", err));
-      }
-    });
+    const unSub = redirectNonLogin(history, user, setUser);
     return () => {
       unSub();
     };
