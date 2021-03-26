@@ -7,12 +7,6 @@ export const HTML: ISection = {
     "最終的にはBootstrapというHTMLフレームワークを使って、簡単なWebページを作成します。",
   contentsList: [
     {
-      title: "非エンジニアでもわかる！Webサービス・アプリが動く仕組み",
-      link: "https://youtu.be/zq50JwOU_ls",
-      mediaType: ["READ_ONLY", "VIDEO"],
-      requiredTime: 20,
-    },
-    {
       title: "HTML&CSS初級編",
       link: "https://prog-8.com/html/study/1/1",
       mediaType: [],
@@ -37,7 +31,7 @@ export const HTML: ISection = {
       requiredTime: 10,
     },
     {
-      title: "ead内に書くべきタグを総まとめ：SEO対策に有効なものは？",
+      title: "Head内に書くべきタグを総まとめ：SEO対策に有効なものは？",
       link: "https://saruwakakun.com/html-css/basic/head",
       mediaType: ["READ_ONLY"],
       requiredTime: 10,

@@ -5,11 +5,44 @@ export const MENTAL_HEALTH: ISection = {
   description:
     "日頃の仕事のパフォーマンス向上のためには、健康管理が超重要なのは今や常識です。\n" +
     "仮にせっかくそれらがが充実していても、体調を崩してしまっては台無しになってしまいます。\n" +
-    "しかし、忙しいとなかなかケアが後回しになってしまうのが「健康」の現実。\n" +
-    "本レッスンではそれらを効率的に学び、実践していくためのコンテンツが用意されています。\n" +
-    "内容としては前半では「心の健康」を、後半では「身体の健康」という風な構成になっています。\n" +
-    "病気の辛さは、日頃の贅沢の我慢以上の辛さです。若いうちからしっかりと勉強して、実践していきましょう！\n",
+    "本レッスンではそれらを効率的に学び、実践していくためのコンテンツが用意されています。\n",
   contentsList: [
+    {
+      title: "メンタルが落ちやすい人がやるべき対処法５選",
+      link: "https://youtu.be/ZqSws_TU59I",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 21,
+    },
+    {
+      title: "反応しない練習｜10秒でストレスを消す思考法",
+      link: "https://youtu.be/cEj48QKHl3A",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 22,
+    },
+    {
+      title: "ニュースを見てはいけない理由",
+      link: "https://youtu.be/AJg2oOOSVrw",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 9,
+    },
+    {
+      title: "ストレスに強い人と弱い人の違い",
+      link: "https://youtu.be/cEj48QKHl3A",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 22,
+    },
+    {
+      title: "究極のマインドフルネス",
+      link: "https://youtu.be/qd6Gbiif1x4",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 9,
+    },
+    {
+      title: "【脳の休ませ方】知らないとあなたの脳は疲労し続けます",
+      link: "https://youtu.be/jGfOACqIodA",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 22,
+    },
     {
       title: "科学的に今すぐ人生を変える方法 ～人は変わることが出来る～",
       link: "https://youtu.be/VlLWH4w8QHg",
@@ -39,30 +72,6 @@ export const MENTAL_HEALTH: ISection = {
       link: "https://youtu.be/fjuYr1pj-Bo",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 26,
-    },
-    {
-      title: "反応しない練習｜10秒でストレスを消す思考法",
-      link: "https://youtu.be/cEj48QKHl3A",
-      mediaType: ["READ_ONLY", "VIDEO"],
-      requiredTime: 22,
-    },
-    {
-      title: "ニュースを見てはいけない理由",
-      link: "https://youtu.be/AJg2oOOSVrw",
-      mediaType: ["READ_ONLY", "VIDEO"],
-      requiredTime: 9,
-    },
-    {
-      title: "ストレスに強い人と弱い人の違い",
-      link: "https://youtu.be/cEj48QKHl3A",
-      mediaType: ["READ_ONLY", "VIDEO"],
-      requiredTime: 22,
-    },
-    {
-      title: "究極のマインドフルネス",
-      link: "https://youtu.be/qd6Gbiif1x4",
-      mediaType: ["READ_ONLY", "VIDEO"],
-      requiredTime: 9,
     },
     {
       title: "ストレスや逆境を利用して、爆発的に成長する方法",
@@ -149,10 +158,22 @@ export const MENTAL_HEALTH: ISection = {
       requiredTime: 23,
     },
     {
+      title: "空腹はなぜいいか？",
+      link: "https://youtu.be/xtil_EPQt3c",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 30,
+    },
+    {
       title: "脳と体が若くなる断食力",
       link: "https://youtu.be/MksoWQdOep0",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 29,
+    },
+    {
+      title: "１日３食をやめなさい",
+      link: "https://youtu.be/0e-FSZ8f5a8",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 31,
     },
     {
       title: "老化は治療できる病！いつまでも若く生きられる",

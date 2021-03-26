@@ -24,6 +24,18 @@ export const COMMUNICATION: ISection = {
       requiredTime: 29,
     },
     {
+      title: "好感度が激減する「話しの聞き方」",
+      link: "https://youtu.be/WxspqlGrw2s",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 8,
+    },
+    {
+      title: "相手を一切不快にさせないプロの会話の終わらせ方",
+      link: "https://youtu.be/cfxUl2Wtrh8",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 5,
+    },
+    {
       title: "一流の雑談力①",
       link: "https://youtu.be/-SMVyQAu8XM",
       mediaType: ["READ_ONLY", "VIDEO"],
@@ -102,6 +114,12 @@ export const COMMUNICATION: ISection = {
       requiredTime: 10,
     },
     {
+      title: "自分の印象を自由に操作するヤバいコミュニケーションテクニック",
+      link: "https://youtu.be/milkreFAfcQ",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 6,
+    },
+    {
       title: "悪口が損をしてしまう理由を徹底解説【←自発的特徴変換】",
       link: "https://youtu.be/eBW4NN0YFoA",
       mediaType: ["READ_ONLY", "VIDEO"],
@@ -115,6 +133,12 @@ export const COMMUNICATION: ISection = {
     },
     {
       title: "100%話術の達人になれる話し方の上達法",
+      link: "https://youtu.be/V7xWH2jsEAY",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 14,
+    },
+    {
+      title: "誰でも面白い話をする方法",
       link: "https://youtu.be/V7xWH2jsEAY",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 14,
@@ -136,6 +160,18 @@ export const COMMUNICATION: ISection = {
       link: "https://youtu.be/zE3wfLue4Ag",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 22,
+    },
+    {
+      title: "好感度が下がる話題",
+      link: "https://youtu.be/pYLdGY5z1uk",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 8,
+    },
+    {
+      title: "もう話題に困らない！一気に距離を縮めるたった7つの話題",
+      link: "https://youtu.be/rBfZo_AEGK0",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 8,
     },
     {
       title: "【対人関係①】カリスマや愛される人は後天的に作れる",
@@ -196,6 +232,18 @@ export const COMMUNICATION: ISection = {
       link: "https://youtu.be/QJv-1z68tok",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 15,
+    },
+    {
+      title: "たった一言で好感度を爆上げする方法",
+      link: "https://youtu.be/76HZ4KL7ot4",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 5,
+    },
+    {
+      title: "新生活！先輩に気に入られて特別な存在になる方法",
+      link: "https://youtu.be/cMbANp5darg",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 5,
     },
     {
       title: "部下から尊敬される上司と嫌われる上司の違い５選",

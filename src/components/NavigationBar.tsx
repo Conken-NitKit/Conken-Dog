@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import media from "styled-media-query";
 
+import KnowledgeUnreadBadge from "./KnowledgeUnreadBadge";
+
 import accountLogo from "../assets/img/nav/account.svg";
 import homeLogo from "../assets/img/nav/home.svg";
 import knowledgeLogo from "../assets/img/nav/knowledge.svg";
@@ -21,9 +23,9 @@ const Container = styled.div`
 
   z-index: 2;
 
-  border-top: solid lightgray 0.5px;
+  border-top: solid rgba(0, 0, 0, 0.1) 0.5px;
 
-  padding: 8px 0 12px;
+  padding: 18px 0 6px;
 
   left: 0;
   bottom: 0;
@@ -35,7 +37,7 @@ const Container = styled.div`
 
   background-color: white;
 
-  box-shadow: 0 -3px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 -3px 16px rgba(0, 0, 0, 0.1);
 
   ${media.greaterThan("medium")`
     display: none;
@@ -43,30 +45,28 @@ const Container = styled.div`
 `;
 
 const NavItem = styled(Link)`
+  position: relative;
+  padding: 0px;
   display: table-cell;
   vertical-align: middle;
   text-decoration: none;
-  a {
-    text-decoration: none;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  }
 `;
 
 const NavImage = styled.img`
   position: relative;
   left: 50%;
-  transform: translateX(-50%);
-  height: 28px;
   width: 28px;
+  height: 28px;
+  transform: translateX(-50%);
 `;
 
 const NavText = styled.p<{ selected: boolean }>`
   position: relative;
-  text-align: center;
-  color: ${({ selected }) => (selected ? "#30c8d6" : "#888")};
-  font-size: 9px;
-  font-weight: ${({ selected }) => (selected ? "bolder" : "normal")};
   margin: 0;
+  font-size: 9px;
+  text-align: center;
+  font-weight: ${({ selected }) => (selected ? "bolder" : "normal")};
+  color: ${({ selected }) => (selected ? "#30c8d6" : "#888")};
 `;
 
 export default function NavigationBar() {
@@ -98,6 +98,7 @@ export default function NavigationBar() {
               : knowledgeLogo
           }
         />
+        <KnowledgeUnreadBadge />
         <NavText selected={window.location.pathname === "/knowledges"}>
           ナレッジ
         </NavText>

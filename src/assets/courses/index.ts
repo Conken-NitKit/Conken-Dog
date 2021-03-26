@@ -2,6 +2,7 @@ import { ISection } from "../sections";
 import { AI_COURSE } from "./AI";
 import { GAME_CREATE_COURSE } from "./GameCreate";
 import { GAME_DESIGN_COURSE } from "./GameDesign";
+import { GAME_PLANING_COURSE } from "./GamePlaning";
 import { ILLUST_COURSE } from "./Illust";
 import { OTHERS } from "./Others";
 import { WEB_CREATE_COURSE } from "./WebCreate";
@@ -19,6 +20,7 @@ export const courseList: ICourses[] = [
   OTHERS,
   WEB_CREATE_COURSE,
   WEB_DESIGN_COURSE,
+  GAME_PLANING_COURSE,
   GAME_CREATE_COURSE,
   GAME_DESIGN_COURSE,
   AI_COURSE,
