@@ -2,6 +2,7 @@ import { useState } from "react";
 import { RouteComponentProps } from "react-router-dom";
 import styled from "styled-components";
 import AccountElementsCard from "../components/AccountElementsCard";
+import AccountIcon from "../components/AccountIcon";
 import NavigationBar from "../components/NavigationBar";
 import { ResponsiveWrapper } from "../layouts/ResponsiveWrapper";
 import { Heading2 } from "../styles/fonts/Heading2";
@@ -18,7 +19,7 @@ const AccountTitlesWrapper = styled.div`
   height: 86px;
 `;
 
-const AccountElementsWrapper = styled.div`
+const AccountElementsCardWrapper = styled.div`
   margin: calc(5vh + 86px) 5vw 0 5vw;
 
   height: calc(95vh - 162px);
@@ -35,12 +36,36 @@ export default function Account({ history }: RouteComponentProps) {
         <Heading2>アカウント</Heading2>
         <Small>みんなのぷろふぃーる！</Small>
       </AccountTitlesWrapper>
-      <AccountElementsWrapper>
-        <AccountElementsCard ElementName="名前" Element="" />
-        <AccountElementsCard ElementName="メール" Element="" />
-        <AccountElementsCard ElementName="進捗" Element="" />
-        <AccountElementsCard ElementName="一言" Element="" />
-      </AccountElementsWrapper>
+      <AccountElementsCardWrapper>
+        <AccountIcon />
+        <AccountElementsCard ElementName="名前" Element="ばかばか" />
+        <AccountElementsCard
+          ElementName="メール"
+          Element="bakabaka@gmail.com"
+        />
+        <AccountElementsCard ElementName="進捗" Element="89%" />
+        <AccountElementsCard ElementName="一言" Element="ばかばかばかばか" />
+        <AccountElementsCard
+          ElementName="test"
+          Element="スクロール機能のテスト"
+        />
+        <AccountElementsCard
+          ElementName="test"
+          Element="スクロール機能のテスト"
+        />
+        <AccountElementsCard
+          ElementName="test"
+          Element="スクロール機能のテスト"
+        />
+        <AccountElementsCard
+          ElementName="test"
+          Element="スクロール機能のテスト"
+        />
+        <AccountElementsCard
+          ElementName="test"
+          Element="スクロール機能のテスト"
+        />
+      </AccountElementsCardWrapper>
       <NavigationBar />
     </ResponsiveWrapper>
   );
