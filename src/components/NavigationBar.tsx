@@ -15,17 +15,28 @@ import selectedLessonLogo from "../assets/img/nav/selected-lesson.svg";
 import selectedNotificationLogo from "../assets/img/nav/selected-notification.svg";
 
 const Container = styled.div`
+  display: table;
+
   position: fixed;
+
+  z-index: 2;
+
+  border-top: solid lightgray 0.5px;
+
+  padding: 8px 0 12px;
+
   left: 0;
   bottom: 0;
-  width: 100vw;
+
   height: 56px;
-  padding: 8px 0 12px;
-  display: table;
+  width: 100vw;
+
   table-layout: fixed;
-  border-top: solid lightgray 0.5px;
+
   background-color: white;
-  z-index: 1;
+
+  box-shadow: 0 -3px 3px rgba(0, 0, 0, 0.2);
+
   ${media.greaterThan("medium")`
     display: none;
   `}
@@ -70,10 +81,14 @@ export default function NavigationBar() {
       <NavItem to={`/courses`}>
         <NavImage
           src={
-            window.location.pathname === "/courses" ? selectedLessonLogo : lessonLogo
+            window.location.pathname === "/courses"
+              ? selectedLessonLogo
+              : lessonLogo
           }
         />
-        <NavText selected={window.location.pathname === "/courses"}>レッスン</NavText>
+        <NavText selected={window.location.pathname === "/courses"}>
+          レッスン
+        </NavText>
       </NavItem>
       <NavItem to={`/knowledges`}>
         <NavImage
@@ -83,7 +98,9 @@ export default function NavigationBar() {
               : knowledgeLogo
           }
         />
-        <NavText selected={window.location.pathname === "/knowledges"}>ナレッジ</NavText>
+        <NavText selected={window.location.pathname === "/knowledges"}>
+          ナレッジ
+        </NavText>
       </NavItem>
       <NavItem to={`/notifications`}>
         <NavImage
@@ -93,12 +110,16 @@ export default function NavigationBar() {
               : notificationLogo
           }
         />
-        <NavText selected={window.location.pathname === "/notifications"}>おしらせ</NavText>
+        <NavText selected={window.location.pathname === "/notifications"}>
+          おしらせ
+        </NavText>
       </NavItem>
       <NavItem to={`/account`}>
         <NavImage
           src={
-            window.location.pathname === "/account" ? selectedAccountLogo : accountLogo
+            window.location.pathname === "/account"
+              ? selectedAccountLogo
+              : accountLogo
           }
         />
         <NavText selected={window.location.pathname === "/account"}>
