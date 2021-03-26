@@ -19,10 +19,10 @@ const AccountTitlesWrapper = styled.div`
   height: 86px;
 `;
 
-const AccountElementsCardWrapper = styled.div`
+const AccountElementsWrapper = styled.div`
   margin: calc(5vh + 86px) 5vw 0 5vw;
 
-  height: calc(95vh - 162px);
+  height: calc(95vh - 175px);
   width: 90vw;
 
   overflow: scroll;
@@ -36,7 +36,7 @@ export default function Account({ history }: RouteComponentProps) {
         <Heading2>アカウント</Heading2>
         <Small>みんなのぷろふぃーる！</Small>
       </AccountTitlesWrapper>
-      <AccountElementsCardWrapper>
+      <AccountElementsWrapper>
         <AccountIcon />
         <AccountElementsCard ElementName="名前" Element="ばかばか" />
         <AccountElementsCard
@@ -65,7 +65,7 @@ export default function Account({ history }: RouteComponentProps) {
           ElementName="test"
           Element="スクロール機能のテスト"
         />
-      </AccountElementsCardWrapper>
+      </AccountElementsWrapper>
       <NavigationBar />
     </ResponsiveWrapper>
   );
