@@ -17,17 +17,28 @@ import selectedLessonLogo from "../assets/img/nav/selected-lesson.svg";
 import selectedNotificationLogo from "../assets/img/nav/selected-notification.svg";
 
 const Container = styled.div`
+  display: table;
+
   position: fixed;
+
+  z-index: 2;
+
+  border-top: solid rgba(0, 0, 0, 0.1) 0.5px;
+
+  padding: 18px 0 6px;
+
   left: 0;
   bottom: 0;
-  width: 100vw;
+
   height: 56px;
-  padding: 16px 0;
-  display: table;
+  width: 100vw;
+
   table-layout: fixed;
-  border-top: solid lightgray 0.5px;
+
   background-color: white;
-  z-index: 1;
+
+  box-shadow: 0 -3px 16px rgba(0, 0, 0, 0.1);
+
   ${media.greaterThan("medium")`
     display: none;
   `}
