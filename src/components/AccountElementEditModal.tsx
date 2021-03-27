@@ -32,6 +32,22 @@ const Modal = styled.div<{ Open: boolean }>`
   transition: all 0.3s;
 `;
 
+const Header = styled.div`
+  display: flex;
+
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+
+  height: 11vh;
+`;
+
+const DoneButton = styled.button`
+  border: none;
+
+  outline: none;
+
+  background-color: white;
+`;
+
 interface Props {
   Open: boolean;
 }
@@ -41,7 +57,11 @@ export default function AccountElementEditModal({ Open }: Props) {
 
   return (
     <Container Open={Open}>
-      <Modal Open={Open}></Modal>
+      <Modal Open={Open}>
+        <Header>
+          <DoneButton>完了</DoneButton>
+        </Header>
+      </Modal>
     </Container>
   );
 }

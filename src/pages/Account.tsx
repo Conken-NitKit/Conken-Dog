@@ -1,29 +1,30 @@
-import { truncateSync } from "fs";
 import { useState } from "react";
 import styled from "styled-components";
 import AccountElementEditModal from "../components/AccountElementEditModal";
 import AccountElementsCard from "../components/AccountElementsCard";
 import AccountIcon from "../components/AccountIcon";
 import NavigationBar from "../components/NavigationBar";
-import { Heading2 } from "../styles/fonts/Heading2";
+import { AccountTitle } from "../styles/fonts/AccountTitle";
 import { Small } from "../styles/fonts/Small";
 
 const AccountTitleWrapper = styled.div`
-  display: box;
+  display: flex;
 
   border-bottom: solid rgba(0, 0, 0, 0.1) 0.5px;
 
   padding: 20px;
-  padding-top: 10px;
-  padding-bottom: 2px;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
 
-  height: 44px;
+  height: 7vh;
+
+  align-items: center;
 `;
 
 const AccountElementsWrapper = styled.div`
   padding: 0 20px 0 20px;
 
-  height: calc(100vh - 138px);
+  height: calc(89vh - 81px);
   width: calc(100vw - 40px);
 
   overflow: scroll;
@@ -38,11 +39,12 @@ export default function Account() {
   return (
     <div>
       <AccountTitleWrapper>
-        <Heading2>アカウント</Heading2>
+        <AccountTitle>アカウント</AccountTitle>
       </AccountTitleWrapper>
 
       <AccountElementsWrapper>
         <AccountIcon />
+
         <AccountElementsCard
           ElementName="名前"
           Element="ばかばか"
@@ -56,11 +58,13 @@ export default function Account() {
           Element="bakabaka@gmail.com"
           OpenPage={() => setIsOpenMailAddressPage(true)}
         />
+
         <AccountElementsCard
           ElementName="進捗"
           Element="89%"
           OpenPage={() => setIsOpenProgressPage(true)}
         />
+
         <AccountElementsCard
           ElementName="一言"
           Element="ばかばかばかばか"
