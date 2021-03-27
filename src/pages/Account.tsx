@@ -22,7 +22,7 @@ const AccountTitlesWrapper = styled.div`
 const AccountElementsWrapper = styled.div`
   margin: calc(5vh + 86px) 5vw 0 5vw;
 
-  height: calc(95vh - 175px);
+  height: calc(100vh - 195.4px);
   width: 90vw;
 
   overflow: scroll;
