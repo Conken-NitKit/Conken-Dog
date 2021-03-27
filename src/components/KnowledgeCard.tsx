@@ -12,6 +12,10 @@ import SelectedBookMarkLogo from "../assets/img/icons/selected-book-mark.svg";
 import { IKnowledge } from "../interfaces/Knowledge";
 import { userContext } from "../contexts/userContext";
 
+const Wrap = styled.div`
+  overflow: hidden;
+`;
+
 const KnowledgeContainer = styled.div`
   padding: 16px 24px;
   border-bottom: 1px solid #ddd;
@@ -31,7 +35,6 @@ const KnowledgeInfo = styled.p<{ isVisited: boolean }>`
   letter-spacing: 0.06em;
   color: #5876a3;
   margin: 0;
-  min-width: 280px;
   ${media.lessThan("small")`
     font-size: 0.65rem
   `}
@@ -45,6 +48,11 @@ const KnowledgeInfo = styled.p<{ isVisited: boolean }>`
     margin-left: 12px;
     border-radius: 10px;
     letter-spacing: 0.1em;
+    @media (max-width: 282px) {
+	    white-space: pre;
+      position: relative;
+      top: 4px;
+    }
     background-color: ${(props) => (props.isVisited ? "white" : "#f38702")};
   }
 `;
@@ -99,7 +107,7 @@ const Tag = styled.span<{ isLast: boolean }>`
   color: inherit;
   font-size: 0.8rem;
   line-height: 1.8;
-  margin-right: 2px;
+  margin-right: 8px;
   &::after {
     content: ${(props) => (props.isLast ? "" : ",")};
     margin-right: 4px;
@@ -136,94 +144,98 @@ export default function KnowledgeCard({
 }: Props) {
   const { user } = useContext(userContext);
   return (
-    <KnowledgeContainer>
-      <KnowledgeInfo isVisited={knowledge.visitors.includes(user.displayName)}>
-        "{knowledge.contributorName}" が {new Date().getFullYear()}年
+    <>
+      <Wrap>
+        <KnowledgeContainer>
+          <KnowledgeInfo isVisited={knowledge.visitors.includes(user.displayName)}>
+            "{knowledge.contributorName}" が {new Date().getFullYear()}年
         {new Date().getMonth() + 1}月{new Date().getDate()}日 に投稿
       </KnowledgeInfo>
-      <KnowledgeTitle
-        href={knowledge.link}
-        target={"_blank"}
-        onClick={() => addVisitor(knowledge.uid)}
-        isVisited={knowledge.visitors.includes(user.displayName)}
-      >
-        {knowledge.title}
-      </KnowledgeTitle>
-      <Container>
-        <Icon src={Tagslogo} />
-        <Small>
-          {knowledge.tags.map((tag, index) => (
-            <Tag
-              key={`knowledge/tag/${index}`}
-              isLast={knowledge.tags.length === index + 1}
-            >
-              {tag}
-            </Tag>
-          ))}
-        </Small>
-      </Container>
-      <StatusContainer>
-        <Container>
-          <Icon
-            src={
-              knowledge.visitors.includes(user.displayName)
-                ? SelectedEyeLogo
-                : EyeLogo
-            }
-          />
-          <Small>
-            <ColorSpan
-              color={
-                knowledge.visitors.includes(user.displayName)
-                  ? "#1DA1F2"
-                  : "#5876a3"
-              }
-            >
-              {knowledge.visitors.length}read
+          <KnowledgeTitle
+            href={knowledge.link}
+            target={"_blank"}
+            onClick={() => addVisitor(knowledge.uid)}
+            isVisited={knowledge.visitors.includes(user.displayName)}
+          >
+            {knowledge.title}
+          </KnowledgeTitle>
+          <Container>
+            <Icon src={Tagslogo} />
+            <Small>
+              {knowledge.tags.map((tag, index) => (
+                <Tag
+                  key={`knowledge/tag/${index}`}
+                  isLast={knowledge.tags.length === index + 1}
+                >
+                  {tag}
+                </Tag>
+              ))}
+            </Small>
+          </Container>
+          <StatusContainer>
+            <Container>
+              <Icon
+                src={
+                  knowledge.visitors.includes(user.displayName)
+                    ? SelectedEyeLogo
+                    : EyeLogo
+                }
+              />
+              <Small>
+                <ColorSpan
+                  color={
+                    knowledge.visitors.includes(user.displayName)
+                      ? "#1DA1F2"
+                      : "#5876a3"
+                  }
+                >
+                  {knowledge.visitors.length}read
             </ColorSpan>
-          </Small>
-        </Container>
-        <CanClickContainer onClick={() => tapFav(knowledge.uid)}>
-          <Icon
-            src={
-              knowledge.fans.includes(user.displayName)
-                ? SelectedFavLogo
-                : FavLogo
-            }
-          />
-          <Small>
-            <ColorSpan
-              color={
-                knowledge.fans.includes(user.displayName)
-                  ? "#e0245e"
-                  : "#5876a3"
-              }
-            >
-              {knowledge.fans.length}いいね
+              </Small>
+            </Container>
+            <CanClickContainer onClick={() => tapFav(knowledge.uid)}>
+              <Icon
+                src={
+                  knowledge.fans.includes(user.displayName)
+                    ? SelectedFavLogo
+                    : FavLogo
+                }
+              />
+              <Small>
+                <ColorSpan
+                  color={
+                    knowledge.fans.includes(user.displayName)
+                      ? "#e0245e"
+                      : "#5876a3"
+                  }
+                >
+                  {knowledge.fans.length}いいね
             </ColorSpan>
-          </Small>
-        </CanClickContainer>
-        <CanClickContainer onClick={() => tapBookMark(knowledge.uid)}>
-          <Icon
-            src={
-              knowledge.collectors.includes(user.displayName)
-                ? SelectedBookMarkLogo
-                : BookMarkLogo
-            }
-          />
-          <Small>
-            <ColorSpan
-              color={
-                knowledge.collectors.includes(user.displayName)
-                  ? "#27bf63"
-                  : "#5876a3"
-              }
-            >
-              {knowledge.collectors.length}ブックマーク
+              </Small>
+            </CanClickContainer>
+            <CanClickContainer onClick={() => tapBookMark(knowledge.uid)}>
+              <Icon
+                src={
+                  knowledge.collectors.includes(user.displayName)
+                    ? SelectedBookMarkLogo
+                    : BookMarkLogo
+                }
+              />
+              <Small>
+                <ColorSpan
+                  color={
+                    knowledge.collectors.includes(user.displayName)
+                      ? "#27bf63"
+                      : "#5876a3"
+                  }
+                >
+                  {knowledge.collectors.length}ブックマーク
             </ColorSpan>
-          </Small>
-        </CanClickContainer>
-      </StatusContainer>
-    </KnowledgeContainer>
+              </Small>
+            </CanClickContainer>
+          </StatusContainer>
+        </KnowledgeContainer>
+      </Wrap>
+    </>
   );
 }
