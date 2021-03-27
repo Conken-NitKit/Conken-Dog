@@ -1,37 +1,31 @@
-import { useState } from "react";
-import { RouteComponentProps } from "react-router-dom";
 import styled from "styled-components";
 import AccountElementsCard from "../components/AccountElementsCard";
 import AccountIcon from "../components/AccountIcon";
 import NavigationBar from "../components/NavigationBar";
-import { ResponsiveWrapper } from "../layouts/ResponsiveWrapper";
 import { Heading2 } from "../styles/fonts/Heading2";
 import { Small } from "../styles/fonts/Small";
 
 const AccountTitlesWrapper = styled.div`
-  position: fixed;
-
   display: box;
 
-  margin: 5vh 5vw;
+  margin: 20px;
   margin-bottom: 0;
 
   height: 86px;
 `;
 
 const AccountElementsWrapper = styled.div`
-  margin: calc(5vh + 86px) 5vw 0 5vw;
+  margin: 0 20px 0 20px;
 
-  height: calc(100vh - 195.4px);
-  width: 90vw;
+  height: calc(100vh - 187px);
+  width: calc(100vw - 40px);
 
   overflow: scroll;
 `;
 
-export default function Account({ history }: RouteComponentProps) {
-  const [isOpen, setIsOpen] = useState(false);
+export default function Account() {
   return (
-    <ResponsiveWrapper>
+    <div>
       <AccountTitlesWrapper>
         <Heading2>アカウント</Heading2>
         <Small>みんなのぷろふぃーる！</Small>
@@ -67,6 +61,6 @@ export default function Account({ history }: RouteComponentProps) {
         />
       </AccountElementsWrapper>
       <NavigationBar />
-    </ResponsiveWrapper>
+    </div>
   );
 }
