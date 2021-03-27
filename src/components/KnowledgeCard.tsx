@@ -20,7 +20,6 @@ const KnowledgeContainer = styled.div`
     background-color: #fafafa;
   }
   ${media.lessThan("medium")`
-    width: 100%;
     padding: 16px 0;
   `}
 `;
@@ -32,6 +31,7 @@ const KnowledgeInfo = styled.p<{ isVisited: boolean }>`
   letter-spacing: 0.06em;
   color: #5876a3;
   margin: 0;
+  min-width: 280px;
   ${media.lessThan("small")`
     font-size: 0.65rem
   `}
@@ -79,6 +79,7 @@ const Container = styled.div`
 
 const CanClickContainer = styled(Container)`
   cursor: pointer;
+  padding-right: 11px;
 `;
 
 const Icon = styled.div<{ src: string }>`
@@ -88,7 +89,7 @@ const Icon = styled.div<{ src: string }>`
   top: 50%;
   left: 10px;
   color: #999;
-  margin-right: 8px;
+  margin-right: 1px;
   background-image: url(${(props) => props.src});
   background-repeat: no-repeat;
   background-size: 18px 18px;
@@ -116,7 +117,7 @@ const ColorSpan = styled.span<{ color: string }>`
   color: ${(props) => props.color};
   font-weight: ${(props) => (props.color === "#5876a3" ? "normal" : "bold")};
   ${media.lessThan("small")`
-    font-size: 0.5rem
+    font-size: 0.5rem;
   `}
 `;
 
