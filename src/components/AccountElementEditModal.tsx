@@ -32,10 +32,6 @@ const Modal = styled.div<{ Open: boolean }>`
   transition: all 0.3s;
 `;
 
-const Header = styled.div`
-  display: flex;
-`;
-
 interface Props {
   Open: boolean;
 }

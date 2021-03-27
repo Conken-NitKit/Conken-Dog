@@ -8,19 +8,22 @@ import NavigationBar from "../components/NavigationBar";
 import { Heading2 } from "../styles/fonts/Heading2";
 import { Small } from "../styles/fonts/Small";
 
-const AccountTitlesWrapper = styled.div`
+const AccountTitleWrapper = styled.div`
   display: box;
 
-  margin: 20px;
-  margin-bottom: 0;
+  border-bottom: solid rgba(0, 0, 0, 0.1) 0.5px;
 
-  height: 86px;
+  padding: 20px;
+  padding-top: 10px;
+  padding-bottom: 2px;
+
+  height: 44px;
 `;
 
 const AccountElementsWrapper = styled.div`
-  margin: 0 20px 0 20px;
+  padding: 0 20px 0 20px;
 
-  height: calc(100vh - 187px);
+  height: calc(100vh - 138px);
   width: calc(100vw - 40px);
 
   overflow: scroll;
@@ -34,10 +37,10 @@ export default function Account() {
 
   return (
     <div>
-      <AccountTitlesWrapper>
+      <AccountTitleWrapper>
         <Heading2>アカウント</Heading2>
-        <Small>みんなのぷろふぃーる！</Small>
-      </AccountTitlesWrapper>
+      </AccountTitleWrapper>
+
       <AccountElementsWrapper>
         <AccountIcon />
         <AccountElementsCard
@@ -62,31 +65,6 @@ export default function Account() {
           ElementName="一言"
           Element="ばかばかばかばか"
           OpenPage={() => setIsOpenCommentPage(true)}
-        />
-        <AccountElementsCard
-          ElementName="test"
-          Element="スクロール機能のテスト"
-          OpenPage={() => setIsOpenUserNamePage(true)}
-        />
-        <AccountElementsCard
-          ElementName="test"
-          Element="スクロール機能のテスト"
-          OpenPage={() => setIsOpenUserNamePage(true)}
-        />
-        <AccountElementsCard
-          ElementName="test"
-          Element="スクロール機能のテスト"
-          OpenPage={() => setIsOpenUserNamePage(true)}
-        />
-        <AccountElementsCard
-          ElementName="test"
-          Element="スクロール機能のテスト"
-          OpenPage={() => setIsOpenUserNamePage(true)}
-        />
-        <AccountElementsCard
-          ElementName="test"
-          Element="スクロール機能のテスト"
-          OpenPage={() => setIsOpenUserNamePage(true)}
         />
       </AccountElementsWrapper>
       <NavigationBar />
