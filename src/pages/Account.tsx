@@ -1,4 +1,7 @@
+import { truncateSync } from "fs";
+import { useState } from "react";
 import styled from "styled-components";
+import AccountElementEditModal from "../components/AccountElementEditModal";
 import AccountElementsCard from "../components/AccountElementsCard";
 import AccountIcon from "../components/AccountIcon";
 import NavigationBar from "../components/NavigationBar";
@@ -24,6 +27,11 @@ const AccountElementsWrapper = styled.div`
 `;
 
 export default function Account() {
+  const [isOpenUserNamePage, setIsOpenUserNamePage] = useState(false);
+  const [isOpenMailAddressPage, setIsOpenMailAddressPage] = useState(false);
+  const [isOpenProgressPage, setIsOpenProgressPage] = useState(false);
+  const [isOpenCommentPage, setIsOpenCommentPage] = useState(false);
+
   return (
     <div>
       <AccountTitlesWrapper>
@@ -32,32 +40,53 @@ export default function Account() {
       </AccountTitlesWrapper>
       <AccountElementsWrapper>
         <AccountIcon />
-        <AccountElementsCard ElementName="名前" Element="ばかばか" />
+        <AccountElementsCard
+          ElementName="名前"
+          Element="ばかばか"
+          OpenPage={() => setIsOpenUserNamePage(true)}
+        />
+
+        <AccountElementEditModal Open={isOpenUserNamePage} />
+
         <AccountElementsCard
           ElementName="メール"
           Element="bakabaka@gmail.com"
-        />
-        <AccountElementsCard ElementName="進捗" Element="89%" />
-        <AccountElementsCard ElementName="一言" Element="ばかばかばかばか" />
-        <AccountElementsCard
-          ElementName="test"
-          Element="スクロール機能のテスト"
+          OpenPage={() => setIsOpenMailAddressPage(true)}
         />
         <AccountElementsCard
-          ElementName="test"
-          Element="スクロール機能のテスト"
+          ElementName="進捗"
+          Element="89%"
+          OpenPage={() => setIsOpenProgressPage(true)}
         />
         <AccountElementsCard
-          ElementName="test"
-          Element="スクロール機能のテスト"
+          ElementName="一言"
+          Element="ばかばかばかばか"
+          OpenPage={() => setIsOpenCommentPage(true)}
         />
         <AccountElementsCard
           ElementName="test"
           Element="スクロール機能のテスト"
+          OpenPage={() => setIsOpenUserNamePage(true)}
         />
         <AccountElementsCard
           ElementName="test"
           Element="スクロール機能のテスト"
+          OpenPage={() => setIsOpenUserNamePage(true)}
+        />
+        <AccountElementsCard
+          ElementName="test"
+          Element="スクロール機能のテスト"
+          OpenPage={() => setIsOpenUserNamePage(true)}
+        />
+        <AccountElementsCard
+          ElementName="test"
+          Element="スクロール機能のテスト"
+          OpenPage={() => setIsOpenUserNamePage(true)}
+        />
+        <AccountElementsCard
+          ElementName="test"
+          Element="スクロール機能のテスト"
+          OpenPage={() => setIsOpenUserNamePage(true)}
         />
       </AccountElementsWrapper>
       <NavigationBar />

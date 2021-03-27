@@ -99,15 +99,20 @@ const EditButton = styled.img`
 interface Props {
   ElementName: string;
   Element: string;
+  OpenPage: () => void;
 }
 
-export default function AccountElementsCard({ ElementName, Element }: Props) {
+export default function AccountElementsCard({
+  ElementName,
+  Element,
+  OpenPage,
+}: Props) {
   return (
     <Card>
       <ElementNameSpace>{ElementName}</ElementNameSpace>
       <ElementSpace>{Element}</ElementSpace>
       <EditButtonSpace>
-        <EditButton src={EditButtonImage} />
+        <EditButton src={EditButtonImage} onClick={OpenPage} />
       </EditButtonSpace>
     </Card>
   );
