@@ -77,7 +77,7 @@ const MediaTypeTag = styled.span`
 `;
 
 const TagContainer = styled.div`
-min-width: 150px;
+  min-width: 150px;
 `;
 
 interface Props {
