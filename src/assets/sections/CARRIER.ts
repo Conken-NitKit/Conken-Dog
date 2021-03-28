@@ -70,7 +70,8 @@ export const CARRIER: ISection = {
       requiredTime: 38,
     },
     {
-      title: "【キャリアの悩みの処方箋】仕事のモヤモヤを解消する「文字セラピー」",
+      title:
+        "【キャリアの悩みの処方箋】仕事のモヤモヤを解消する「文字セラピー」",
       link: "https://youtu.be/gNjauEf9t7c",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 5,
@@ -106,7 +107,8 @@ export const CARRIER: ISection = {
       requiredTime: 22,
     },
     {
-      title: "３つの蓄積をしないと将来ヤバい。40代以下は全員必読。人生100年時代の攻略本",
+      title:
+        "３つの蓄積をしないと将来ヤバい。40代以下は全員必読。人生100年時代の攻略本",
       link: "https://youtu.be/SJjQ5M-kqb4",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 25,
@@ -177,6 +179,12 @@ export const CARRIER: ISection = {
       link: "https://youtu.be/tobtVkOEOBc",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 21,
+    },
+    {
+      title: "「お金持ち」の考え方と、「貧乏人」の考え方の決定的な違い",
+      link: "https://youtu.be/CXIM1x9vswM",
+      mediaType: ["READ_ONLY", "RADIO"],
+      requiredTime: 11,
     },
     {
       title: "不幸になりたくない人が最重視すべきたった1つのこと",
@@ -290,6 +298,12 @@ export const CARRIER: ISection = {
       title: "「礼儀正しさ」こそ最強の生存戦略である",
       link: "https://youtu.be/PRgeqbffjYM",
       mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 11,
+    },
+    {
+      title: "オリエンタルランドから学ぶ「弱者の戦い方」",
+      link: "https://youtu.be/AfzktlfpTY8",
+      mediaType: ["READ_ONLY", "RADIO"],
       requiredTime: 11,
     },
     {
