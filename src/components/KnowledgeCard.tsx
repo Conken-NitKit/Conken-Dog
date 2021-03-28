@@ -38,6 +38,12 @@ const KnowledgeInfo = styled.p<{ isVisited: boolean }>`
   ${media.lessThan("small")`
     font-size: 0.65rem
   `}
+  &::before{
+    @media (max-width: 280px) {
+    content: " " ;
+		white-space: pre;
+    }
+  }
   &::after {
     content: "${(props) => (props.isVisited ? "" : "未読")}";
     font-family: "MS PGothic", sans-serif;
@@ -48,10 +54,10 @@ const KnowledgeInfo = styled.p<{ isVisited: boolean }>`
     margin-left: 12px;
     border-radius: 10px;
     letter-spacing: 0.1em;
-    @media (max-width: 282px) {
-	    white-space: pre;
+    @media (max-width: 280px) {
       position: relative;
       top: 4px;
+      white-space: pre;
     }
     background-color: ${(props) => (props.isVisited ? "white" : "#f38702")};
   }
@@ -108,6 +114,10 @@ const Tag = styled.span<{ isLast: boolean }>`
   font-size: 0.8rem;
   line-height: 1.8;
   margin-right: 8px;
+  word-break: break-all;
+  @media (max-width: 280px) {
+    display: flex;
+  }
   &::after {
     content: ${(props) => (props.isLast ? "" : ",")};
     margin-right: 4px;
