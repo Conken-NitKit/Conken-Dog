@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { IContent } from "../assets/sections";
 import { userContext } from "../contexts/userContext";
 import { Description } from "../styles/fonts/Description";
-import { postUserInfo } from "../utils/users/postUserInfo"
+import { postUserInfo } from "../utils/users/postUserInfo";
 
 const ContentItem = styled.li`
   list-style: none;
@@ -115,6 +115,8 @@ export const SectionItem = ({ content }: Props) => {
           ` ${Math.floor(content.requiredTime % 60)}分`}
         {content.mediaType.includes("VIDEO") ? (
           <MediaTypeTag>動画</MediaTypeTag>
+        ) : content.mediaType.includes("RADIO") ? (
+          <MediaTypeTag>ラジオ</MediaTypeTag>
         ) : (
           <MediaTypeTag>テキスト</MediaTypeTag>
         )}
