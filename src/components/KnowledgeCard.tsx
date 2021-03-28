@@ -41,7 +41,7 @@ const KnowledgeInfo = styled.p<{ isVisited: boolean }>`
   &::before{
     @media (max-width: 280px) {
     content: " " ;
-		white-space: pre;
+    white-space: pre;
     }
   }
   &::after {
