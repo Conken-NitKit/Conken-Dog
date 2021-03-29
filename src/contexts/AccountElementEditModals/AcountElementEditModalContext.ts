@@ -1,6 +1,6 @@
 import React from "react";
 
-export const UserNameModalContext = React.createContext<{
+export const AccountElementEditModalContext = React.createContext<{
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }>({

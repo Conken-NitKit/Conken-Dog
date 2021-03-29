@@ -1,5 +1,7 @@
+import { useContext } from "react";
 import styled from "styled-components";
 import EditButtonImage from "../assets/img/icons/chevron-forward-outline.svg";
+import { AccountElementEditModalContext } from "../contexts/AccountElementEditModals/AcountElementEditModalContext";
 
 const Card = styled.div`
   display: flex;
@@ -99,20 +101,22 @@ const EditButton = styled.img`
 interface Props {
   ElementName: string;
   Element: string;
-  OpenPage: () => void;
 }
 
-export default function AccountElementsCard({
-  ElementName,
-  Element,
-  OpenPage,
-}: Props) {
+export default function AccountElementsCard({ ElementName, Element }: Props) {
+  const { setIsOpen } = useContext(AccountElementEditModalContext);
+
   return (
     <Card>
       <ElementNameSpace>{ElementName}</ElementNameSpace>
       <ElementSpace>{Element}</ElementSpace>
       <EditButtonSpace>
-        <EditButton src={EditButtonImage} onClick={OpenPage} />
+        <EditButton
+          src={EditButtonImage}
+          onClick={() => {
+            setIsOpen(true);
+          }}
+        />
       </EditButtonSpace>
     </Card>
   );

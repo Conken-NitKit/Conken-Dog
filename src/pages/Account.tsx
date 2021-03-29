@@ -5,7 +5,7 @@ import AccountElementEditModal from "../components/AccountElementEditModal";
 import AccountElementsCard from "../components/AccountElementsCard";
 import AccountIcon from "../components/AccountIcon";
 import NavigationBar from "../components/NavigationBar";
-import { UserNameModalContext } from "../contexts/AccountElementEditModals/userNameModalContext";
+import { AccountElementEditModalContext } from "../contexts/AccountElementEditModals/AcountElementEditModalContext";
 import { AccountTitle } from "../styles/fonts/AccountTitle";
 import { Small } from "../styles/fonts/Small";
 
@@ -34,9 +34,9 @@ const AccountElementsWrapper = styled.div`
 
 export default function Account() {
   const [isOpenUserNameModal, setIsOpenUserNameModal] = useState(false);
-  const [isOpenMailAddressPage, setIsOpenMailAddressPage] = useState(false);
-  const [isOpenProgressPage, setIsOpenProgressPage] = useState(false);
-  const [isOpenCommentPage, setIsOpenCommentPage] = useState(false);
+  const [isOpenMailAddressModal, setIsOpenMailAddressModal] = useState(false);
+  const [isOpenProgressModal, setIsOpenProgressModal] = useState(false);
+  const [isOpenCommentModal, setIsOpenCommentModal] = useState(false);
 
   return (
     <div>
@@ -47,38 +47,52 @@ export default function Account() {
       <AccountElementsWrapper>
         <AccountIcon />
 
-        <UserNameModalContext.Provider
+        <AccountElementEditModalContext.Provider
           value={{
             isOpen: isOpenUserNameModal,
             setIsOpen: setIsOpenUserNameModal,
           }}
         >
+          <AccountElementsCard ElementName="名前" Element="ばかばか" />
+
+          <AccountElementEditModal />
+        </AccountElementEditModalContext.Provider>
+
+        <AccountElementEditModalContext.Provider
+          value={{
+            isOpen: isOpenMailAddressModal,
+            setIsOpen: setIsOpenMailAddressModal,
+          }}
+        >
           <AccountElementsCard
-            ElementName="名前"
-            Element="ばかばか"
-            OpenPage={() => setIsOpenUserNameModal(true)}
+            ElementName="メール"
+            Element="bakabaka@gmail.com"
           />
 
           <AccountElementEditModal />
-        </UserNameModalContext.Provider>
+        </AccountElementEditModalContext.Provider>
 
-        <AccountElementsCard
-          ElementName="メール"
-          Element="bakabaka@gmail.com"
-          OpenPage={() => setIsOpenMailAddressPage(true)}
-        />
+        <AccountElementEditModalContext.Provider
+          value={{
+            isOpen: isOpenProgressModal,
+            setIsOpen: setIsOpenProgressModal,
+          }}
+        >
+          <AccountElementsCard ElementName="進捗" Element="未実装です" />
 
-        <AccountElementsCard
-          ElementName="進捗"
-          Element="未実装です"
-          OpenPage={() => setIsOpenProgressPage(true)}
-        />
+          <AccountElementEditModal />
+        </AccountElementEditModalContext.Provider>
 
-        <AccountElementsCard
-          ElementName="一言"
-          Element="未実装です"
-          OpenPage={() => setIsOpenCommentPage(true)}
-        />
+        <AccountElementEditModalContext.Provider
+          value={{
+            isOpen: isOpenCommentModal,
+            setIsOpen: setIsOpenCommentModal,
+          }}
+        >
+          <AccountElementsCard ElementName="一言" Element="未実装です" />
+
+          <AccountElementEditModal />
+        </AccountElementEditModalContext.Provider>
       </AccountElementsWrapper>
       <NavigationBar />
     </div>

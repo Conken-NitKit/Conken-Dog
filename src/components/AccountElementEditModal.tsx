@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import styled from "styled-components";
-import { UserNameModalContext } from "../contexts/AccountElementEditModals/userNameModalContext";
+import { AccountElementEditModalContext } from "../contexts/AccountElementEditModals/AcountElementEditModalContext";
 import { AccountTitle } from "../styles/fonts/AccountTitle";
 
 const Container = styled.div<{ isOpen: boolean }>`
@@ -70,7 +70,7 @@ const DoneButton = styled.button`
 `;
 
 export default function AccountElementEditModal() {
-  const { isOpen, setIsOpen } = useContext(UserNameModalContext);
+  const { isOpen, setIsOpen } = useContext(AccountElementEditModalContext);
 
   return (
     <Container isOpen={isOpen}>
