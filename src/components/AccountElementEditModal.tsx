@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import styled from "styled-components";
-import { AccountElementEditModalContext } from "../contexts/AccountElementEditModals/AcountElementEditModalContext";
+import { AccountElementEditModalContext } from "../contexts/AcountElementEditModalContext";
 import { AccountTitle } from "../styles/fonts/AccountTitle";
 
 const Container = styled.div<{ isOpen: boolean }>`
@@ -25,7 +25,7 @@ const Container = styled.div<{ isOpen: boolean }>`
 const Modal = styled.div<{ isOpen: boolean }>`
   position: absolute;
 
-  border-radius: 16px 0 0 16px;
+  border-radius: 2.5vh 0 0 2.5vh;
 
   top: 0px;
   right: 0;
@@ -54,23 +54,27 @@ const DoneButton = styled.button`
   display: flex;
 
   border: none;
-  border-radius: 16px 16px 16px 0;
+  border-radius: 2.5vh 0 0 0;
   border-top-right-radius: none;
 
   padding: 0;
+  padding-right: 2.5vh;
 
-  padding-left: 3.5vh;
-  padding-right: 3.5vh;
+  width: 19vw;
+  min-width: 15vh;
 
   outline: none;
 
   align-items: center;
+  justify-content: center;
 
   background-color: blue;
 `;
 
 export default function AccountElementEditModal() {
-  const { isOpen, setIsOpen } = useContext(AccountElementEditModalContext);
+  const { isOpen, setIsOpen, modalType } = useContext(
+    AccountElementEditModalContext
+  );
 
   return (
     <Container isOpen={isOpen}>
@@ -81,7 +85,9 @@ export default function AccountElementEditModal() {
               setIsOpen(false);
             }}
           >
-            <AccountTitle>完了</AccountTitle>
+            <AccountTitle>
+              {modalType === "edit" ? "完了" : "閉じる"}
+            </AccountTitle>
           </DoneButton>
         </Header>
       </Modal>

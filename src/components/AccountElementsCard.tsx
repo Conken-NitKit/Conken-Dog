@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import styled from "styled-components";
 import EditButtonImage from "../assets/img/icons/chevron-forward-outline.svg";
-import { AccountElementEditModalContext } from "../contexts/AccountElementEditModals/AcountElementEditModalContext";
+import { AccountElementEditModalContext } from "../contexts/AcountElementEditModalContext";
 
 const Card = styled.div`
   display: flex;

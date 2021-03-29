@@ -7,5 +7,5 @@ export const AccountTitle = styled.h2`
     "MS PGothic", sans-serif;
   font-size: 4vh;
   color: rgb(43, 84, 106);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.0032vh;
 `;

@@ -5,7 +5,7 @@ import AccountElementEditModal from "../components/AccountElementEditModal";
 import AccountElementsCard from "../components/AccountElementsCard";
 import AccountIcon from "../components/AccountIcon";
 import NavigationBar from "../components/NavigationBar";
-import { AccountElementEditModalContext } from "../contexts/AccountElementEditModals/AcountElementEditModalContext";
+import { AccountElementEditModalContext } from "../contexts/AcountElementEditModalContext";
 import { AccountTitle } from "../styles/fonts/AccountTitle";
 import { Small } from "../styles/fonts/Small";
 
@@ -51,6 +51,7 @@ export default function Account() {
           value={{
             isOpen: isOpenUserNameModal,
             setIsOpen: setIsOpenUserNameModal,
+            modalType: "edit",
           }}
         >
           <AccountElementsCard ElementName="名前" Element="ばかばか" />
@@ -62,6 +63,7 @@ export default function Account() {
           value={{
             isOpen: isOpenMailAddressModal,
             setIsOpen: setIsOpenMailAddressModal,
+            modalType: "edit",
           }}
         >
           <AccountElementsCard
@@ -76,6 +78,7 @@ export default function Account() {
           value={{
             isOpen: isOpenProgressModal,
             setIsOpen: setIsOpenProgressModal,
+            modalType: "brousing",
           }}
         >
           <AccountElementsCard ElementName="進捗" Element="未実装です" />
@@ -87,6 +90,7 @@ export default function Account() {
           value={{
             isOpen: isOpenCommentModal,
             setIsOpen: setIsOpenCommentModal,
+            modalType: "edit",
           }}
         >
           <AccountElementsCard ElementName="一言" Element="未実装です" />
