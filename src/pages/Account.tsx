@@ -70,13 +70,13 @@ export default function Account() {
 
         <AccountElementsCard
           ElementName="進捗"
-          Element="89%"
+          Element="未実装です"
           OpenPage={() => setIsOpenProgressPage(true)}
         />
 
         <AccountElementsCard
           ElementName="一言"
-          Element="ばかばかばかばか"
+          Element="未実装です"
           OpenPage={() => setIsOpenCommentPage(true)}
         />
       </AccountElementsWrapper>
