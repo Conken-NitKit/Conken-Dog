@@ -1,11 +1,11 @@
 import React from "react";
 import { useContext, useState } from "react";
 import styled from "styled-components";
-import AccountElementEditModal from "../components/AccountElementEditModal";
+import AccountElementModal from "../components/AccountElementModal";
 import AccountElementsCard from "../components/AccountElementsCard";
 import AccountIcon from "../components/AccountIcon";
 import NavigationBar from "../components/NavigationBar";
-import { AccountElementEditModalContext } from "../contexts/AcountElementEditModalContext";
+import { AccountElementContext } from "../contexts/AcountElementContext";
 import { AccountTitle } from "../styles/fonts/AccountTitle";
 import { Small } from "../styles/fonts/Small";
 
@@ -47,56 +47,69 @@ export default function Account() {
       <AccountElementsWrapper>
         <AccountIcon />
 
-        <AccountElementEditModalContext.Provider
+        <AccountElementContext.Provider
           value={{
-            isOpen: isOpenUserNameModal,
-            setIsOpen: setIsOpenUserNameModal,
+            ElementName: "名前",
+
             modalType: "edit",
+
+            isModalOpen: isOpenUserNameModal,
+
+            setIsModalOpen: setIsOpenUserNameModal,
           }}
         >
-          <AccountElementsCard ElementName="名前" Element="ばかばか" />
+          <AccountElementsCard Element="ばかばか" />
 
-          <AccountElementEditModal />
-        </AccountElementEditModalContext.Provider>
+          <AccountElementModal />
+        </AccountElementContext.Provider>
 
-        <AccountElementEditModalContext.Provider
+        <AccountElementContext.Provider
           value={{
-            isOpen: isOpenMailAddressModal,
-            setIsOpen: setIsOpenMailAddressModal,
+            ElementName: "メール",
+
             modalType: "edit",
+
+            isModalOpen: isOpenMailAddressModal,
+
+            setIsModalOpen: setIsOpenMailAddressModal,
           }}
         >
-          <AccountElementsCard
-            ElementName="メール"
-            Element="bakabaka@gmail.com"
-          />
+          <AccountElementsCard Element="bakabaka@gmail.com" />
 
-          <AccountElementEditModal />
-        </AccountElementEditModalContext.Provider>
+          <AccountElementModal />
+        </AccountElementContext.Provider>
 
-        <AccountElementEditModalContext.Provider
+        <AccountElementContext.Provider
           value={{
-            isOpen: isOpenProgressModal,
-            setIsOpen: setIsOpenProgressModal,
+            ElementName: "進捗",
+
             modalType: "brousing",
+
+            isModalOpen: isOpenProgressModal,
+
+            setIsModalOpen: setIsOpenProgressModal,
           }}
         >
-          <AccountElementsCard ElementName="進捗" Element="未実装です" />
+          <AccountElementsCard Element="未実装です" />
 
-          <AccountElementEditModal />
-        </AccountElementEditModalContext.Provider>
+          <AccountElementModal />
+        </AccountElementContext.Provider>
 
-        <AccountElementEditModalContext.Provider
+        <AccountElementContext.Provider
           value={{
-            isOpen: isOpenCommentModal,
-            setIsOpen: setIsOpenCommentModal,
+            ElementName: "一言",
+
             modalType: "edit",
+
+            isModalOpen: isOpenCommentModal,
+
+            setIsModalOpen: setIsOpenCommentModal,
           }}
         >
-          <AccountElementsCard ElementName="一言" Element="未実装です" />
+          <AccountElementsCard Element="未実装です" />
 
-          <AccountElementEditModal />
-        </AccountElementEditModalContext.Provider>
+          <AccountElementModal />
+        </AccountElementContext.Provider>
       </AccountElementsWrapper>
       <NavigationBar />
     </div>

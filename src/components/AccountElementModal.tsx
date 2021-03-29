@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import styled from "styled-components";
-import { AccountElementEditModalContext } from "../contexts/AcountElementEditModalContext";
+import { AccountElementContext } from "../contexts/AcountElementContext";
 import { AccountTitle } from "../styles/fonts/AccountTitle";
 
 const Container = styled.div<{ isOpen: boolean }>`
@@ -71,18 +71,18 @@ const DoneButton = styled.button`
   background-color: blue;
 `;
 
-export default function AccountElementEditModal() {
-  const { isOpen, setIsOpen, modalType } = useContext(
-    AccountElementEditModalContext
+export default function AccountElementModal() {
+  const { ElementName, modalType, isModalOpen, setIsModalOpen } = useContext(
+    AccountElementContext
   );
 
   return (
-    <Container isOpen={isOpen}>
-      <Modal isOpen={isOpen}>
+    <Container isOpen={isModalOpen}>
+      <Modal isOpen={isModalOpen}>
         <Header>
           <DoneButton
             onClick={() => {
-              setIsOpen(false);
+              setIsModalOpen(false);
             }}
           >
             <AccountTitle>
