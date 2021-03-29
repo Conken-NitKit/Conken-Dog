@@ -1,9 +1,11 @@
-import { useState } from "react";
+import React from "react";
+import { useContext, useState } from "react";
 import styled from "styled-components";
 import AccountElementEditModal from "../components/AccountElementEditModal";
 import AccountElementsCard from "../components/AccountElementsCard";
 import AccountIcon from "../components/AccountIcon";
 import NavigationBar from "../components/NavigationBar";
+import { UserNameModalContext } from "../contexts/AccountElementEditModals/userNameModalContext";
 import { AccountTitle } from "../styles/fonts/AccountTitle";
 import { Small } from "../styles/fonts/Small";
 
@@ -27,11 +29,11 @@ const AccountElementsWrapper = styled.div`
   height: calc(89vh - 81px);
   width: calc(100vw - 40px);
 
-  overflow: scroll;
+  overflow: hidden scroll;
 `;
 
 export default function Account() {
-  const [isOpenUserNamePage, setIsOpenUserNamePage] = useState(false);
+  const [isOpenUserNameModal, setIsOpenUserNameModal] = useState(false);
   const [isOpenMailAddressPage, setIsOpenMailAddressPage] = useState(false);
   const [isOpenProgressPage, setIsOpenProgressPage] = useState(false);
   const [isOpenCommentPage, setIsOpenCommentPage] = useState(false);
@@ -45,13 +47,20 @@ export default function Account() {
       <AccountElementsWrapper>
         <AccountIcon />
 
-        <AccountElementsCard
-          ElementName="名前"
-          Element="ばかばか"
-          OpenPage={() => setIsOpenUserNamePage(true)}
-        />
+        <UserNameModalContext.Provider
+          value={{
+            isOpen: isOpenUserNameModal,
+            setIsOpen: setIsOpenUserNameModal,
+          }}
+        >
+          <AccountElementsCard
+            ElementName="名前"
+            Element="ばかばか"
+            OpenPage={() => setIsOpenUserNameModal(true)}
+          />
 
-        <AccountElementEditModal Open={isOpenUserNamePage} />
+          <AccountElementEditModal />
+        </UserNameModalContext.Provider>
 
         <AccountElementsCard
           ElementName="メール"

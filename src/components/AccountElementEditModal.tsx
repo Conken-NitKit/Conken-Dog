@@ -1,35 +1,45 @@
+import { useContext } from "react";
 import styled from "styled-components";
+import { UserNameModalContext } from "../contexts/AccountElementEditModals/userNameModalContext";
+import { AccountTitle } from "../styles/fonts/AccountTitle";
 
-const Container = styled.div<{ Open: boolean }>`
+const Container = styled.div<{ isOpen: boolean }>`
+  display: flex;
+
   position: absolute;
 
   z-index: 4;
 
   top: 0px;
-  right: ${({ Open }) => (Open ? "0" : "-100vw")};
+  right: 0;
 
   height: 100vh;
-  width: 100vw;
+  width: ${({ isOpen }) => (isOpen ? "100vw" : "0vw")};
 
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: ${({ isOpen }) =>
+    isOpen ? "rgba(0, 0, 0, 0.5)" : "rgba(0, 0, 0, 0)"};
+
+  transition: ${({ isOpen }) => (isOpen ? "width 0s" : "width 0s 0.3s")};
 `;
 
-const Modal = styled.div<{ Open: boolean }>`
+const Modal = styled.div<{ isOpen: boolean }>`
   position: absolute;
-
-  z-index: 6;
 
   border-radius: 16px 0 0 16px;
 
   top: 0px;
-  right: ${({ Open }) => (Open ? "0" : "-100vw")};
+  right: 0;
 
   height: 100vh;
-  width: 95vw;
+  width: ${({ isOpen }) => (isOpen ? "95vw" : "0vw")};
 
   background-color: white;
 
-  transition: all 0.3s;
+  box-shadow: -3px 0px 3px 0px rgba(0, 0, 0, 0.2);
+
+  overflow: hidden;
+
+  transition: width 0.3s ease;
 `;
 
 const Header = styled.div`
@@ -41,25 +51,38 @@ const Header = styled.div`
 `;
 
 const DoneButton = styled.button`
+  display: flex;
+
   border: none;
+  border-radius: 16px 16px 16px 0;
+  border-top-right-radius: none;
+
+  padding: 0;
+
+  padding-left: 3.5vh;
+  padding-right: 3.5vh;
 
   outline: none;
 
-  background-color: white;
+  align-items: center;
+
+  background-color: blue;
 `;
 
-interface Props {
-  Open: boolean;
-}
-
-export default function AccountElementEditModal({ Open }: Props) {
-  console.log(Open);
+export default function AccountElementEditModal() {
+  const { isOpen, setIsOpen } = useContext(UserNameModalContext);
 
   return (
-    <Container Open={Open}>
-      <Modal Open={Open}>
+    <Container isOpen={isOpen}>
+      <Modal isOpen={isOpen}>
         <Header>
-          <DoneButton>完了</DoneButton>
+          <DoneButton
+            onClick={() => {
+              setIsOpen(false);
+            }}
+          >
+            <AccountTitle>完了</AccountTitle>
+          </DoneButton>
         </Header>
       </Modal>
     </Container>
