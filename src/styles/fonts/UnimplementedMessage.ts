@@ -5,7 +5,9 @@ export const UnimplementedMessage = styled.h2`
 
   font-family: Lato, "Hiragino Maru Gothic Pro", "Meiryo UI", Meiryo,
     "MS PGothic", sans-serif;
-  font-size: 4vh;
-  color: red;
+  font-size: 5vw;
+
   letter-spacing: 0.04em;
+
+  color: red;
 `;

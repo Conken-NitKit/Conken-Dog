@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { AccountElementContext } from "../../contexts/AcountElementContext";
 import { AccountButtonTitle } from "../../styles/fonts/ButtonTitle";
 import { AccountTitle } from "../../styles/fonts/AccountTitle";
+import { UnimplementedMessage } from "../../styles/fonts/UnimplementedMessage";
 
 const Modal = styled.div<{ isOpen: boolean }>`
   position: absolute;
@@ -70,6 +71,22 @@ const NameSpace = styled.div`
   justify-content: center;
 `;
 
+const Body = styled.body`
+  display: flex;
+
+  border-bottom-left-radius: 2.5vh;
+
+  padding: 6vw;
+
+  height: calc(89vh - 12vw);
+  width: 83vw;
+
+  align-items: center;
+  justify-content: center;
+
+  background-color: blue;
+`;
+
 export default function AccountElementModal() {
   const { ElementName, modalType, isModalOpen, setIsModalOpen } = useContext(
     AccountElementContext
@@ -91,6 +108,14 @@ export default function AccountElementModal() {
           <AccountTitle>{ElementName}</AccountTitle>
         </NameSpace>
       </Header>
+      <Body>
+        <UnimplementedMessage>
+          　ここで内容の編集・閲覧が出来るようになる予定があります。
+          <br />
+          <br />
+          　機能は未実装です。ごめんね笑
+        </UnimplementedMessage>
+      </Body>
     </Modal>
   );
 }
