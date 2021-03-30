@@ -1,9 +1,9 @@
 import React from "react";
 import { useContext, useState } from "react";
 import styled from "styled-components";
-import AccountElementModal from "../components/AccountElementModal";
-import AccountElementsCard from "../components/AccountElementsCard";
-import AccountIcon from "../components/AccountIcon";
+import AccountElementModal from "../components/account-components/AccountElementModal";
+import AccountElementsCard from "../components/account-components/AccountElementsCard";
+import AccountIcon from "../components/account-components/AccountIcon";
 import { ModalContainer } from "../components/ModalContainer";
 import NavigationBar from "../components/NavigationBar";
 import { AccountElementContext } from "../contexts/AcountElementContext";
@@ -15,7 +15,7 @@ const AccountTitleWrapper = styled.div`
 
   border-bottom: solid rgba(0, 0, 0, 0.1) 0.5px;
 
-  padding: 20px;
+  padding: 6vw;
   padding-top: 2vh;
   padding-bottom: 2vh;
 
@@ -25,10 +25,10 @@ const AccountTitleWrapper = styled.div`
 `;
 
 const AccountElementsWrapper = styled.div`
-  padding: 0 20px 0 20px;
+  padding: 0 6vw 0 6vw;
 
   height: calc(89vh - 81px);
-  width: calc(100vw - 40px);
+  width: calc(88vw);
 
   overflow: hidden scroll;
 `;

@@ -1,17 +1,22 @@
 import styled from "styled-components";
 
-import TestIcon from "../assets/img/icons/test-icon.png";
+import TestIcon from "../../assets/img/icons/test-icon.png";
 
-const Icon = styled.img`
+const Container = styled.div`
   margin-top: 4vh;
   margin-bottom: 8vh;
-  margin-left: 25%;
+  margin-left: 20vw;
 
   border-radius: 50%;
 
-  width: 50%;
+  height: 44vw;
+  width: 44vw;
 `;
 
 export default function AccountIcon() {
-  return <Icon src={TestIcon} />;
+  return (
+    <Container>
+      <img src={TestIcon} />
+    </Container>
+  );
 }
