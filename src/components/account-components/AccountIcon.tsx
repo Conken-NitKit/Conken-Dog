@@ -5,10 +5,17 @@ import TestIcon from "../../assets/img/icons/test-icon.png";
 const Container = styled.div`
   margin-top: 4vh;
   margin-bottom: 8vh;
-  margin-left: 20vw;
+  margin-left: 22vw;
 
   border-radius: 50%;
 
+  height: 44vw;
+  width: 44vw;
+
+  overflow: hidden;
+`;
+
+const Icon = styled.img`
   height: 44vw;
   width: 44vw;
 `;
@@ -16,7 +23,7 @@ const Container = styled.div`
 export default function AccountIcon() {
   return (
     <Container>
-      <img src={TestIcon} />
+      <Icon src={TestIcon} />
     </Container>
   );
 }
