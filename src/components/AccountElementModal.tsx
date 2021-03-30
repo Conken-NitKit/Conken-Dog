@@ -4,25 +4,6 @@ import { AccountElementContext } from "../contexts/AcountElementContext";
 import { AccountButtonTitle } from "../styles/fonts/AccountButtonTitle";
 import { AccountTitle } from "../styles/fonts/AccountTitle";
 
-const Container = styled.div<{ isOpen: boolean }>`
-  display: flex;
-
-  position: absolute;
-
-  z-index: 4;
-
-  top: 0px;
-  right: 0;
-
-  height: 100vh;
-  width: ${({ isOpen }) => (isOpen ? "100vw" : "0vw")};
-
-  background-color: ${({ isOpen }) =>
-    isOpen ? "rgba(0, 0, 0, 0.5)" : "rgba(0, 0, 0, 0)"};
-
-  transition: ${({ isOpen }) => (isOpen ? "width 0s " : "width 0s 0.3s")};
-`;
-
 const Modal = styled.div<{ isOpen: boolean }>`
   position: absolute;
 
@@ -40,7 +21,7 @@ const Modal = styled.div<{ isOpen: boolean }>`
 
   overflow: hidden;
 
-  transition: width 0.3s ease;
+  transition: width 0.3s 0.1s ease;
 `;
 
 const Header = styled.div`
@@ -93,23 +74,21 @@ export default function AccountElementModal() {
   );
 
   return (
-    <Container isOpen={isModalOpen}>
-      <Modal isOpen={isModalOpen}>
-        <Header>
-          <DoneButton
-            onClick={() => {
-              setIsModalOpen(false);
-            }}
-          >
-            <AccountButtonTitle>
-              {modalType === "edit" ? "完了" : "閉じる"}
-            </AccountButtonTitle>
-          </DoneButton>
-          <NameSpace>
-            <AccountTitle>{ElementName}</AccountTitle>
-          </NameSpace>
-        </Header>
-      </Modal>
-    </Container>
+    <Modal isOpen={isModalOpen}>
+      <Header>
+        <DoneButton
+          onClick={() => {
+            setIsModalOpen(false);
+          }}
+        >
+          <AccountButtonTitle>
+            {modalType === "edit" ? "完了" : "閉じる"}
+          </AccountButtonTitle>
+        </DoneButton>
+        <NameSpace>
+          <AccountTitle>{ElementName}</AccountTitle>
+        </NameSpace>
+      </Header>
+    </Modal>
   );
 }
