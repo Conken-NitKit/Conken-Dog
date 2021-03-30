@@ -83,8 +83,6 @@ const Body = styled.body`
 
   align-items: center;
   justify-content: center;
-
-  background-color: blue;
 `;
 
 export default function AccountElementModal() {
