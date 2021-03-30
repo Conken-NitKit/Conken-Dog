@@ -7,6 +7,8 @@ import { AccountTitle } from "../styles/fonts/AccountTitle";
 const Modal = styled.div<{ isOpen: boolean }>`
   position: absolute;
 
+  z-index: 6;
+
   border-radius: 2.5vh 0 0 2.5vh;
 
   top: 0px;

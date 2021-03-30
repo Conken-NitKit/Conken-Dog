@@ -7,16 +7,16 @@ const Container = styled.div<{ isOpen: boolean }>`
 
   z-index: 4;
 
-  top: 0px;
-  right: 0;
+  top: 0;
+  left: 0;
 
-  height: 100vh;
-  width: ${({ isOpen }) => (isOpen ? "100vw" : "0vw")};
+  height: ${({ isOpen }) => (isOpen ? "100vh" : "0vh")};
+  width: 100vw;
 
   background-color: ${({ isOpen }) =>
     isOpen ? "rgba(0, 0, 0, 0.5)" : "rgba(0, 0, 0, 0)"};
 
-  transition: ${({ isOpen }) => (isOpen ? "width 0s " : "width 0s 0.3s")};
+  transition: color 0s 0.1s;
 `;
 
 interface Props {
@@ -24,5 +24,6 @@ interface Props {
 }
 
 export function ModalContainer({ isOpen }: Props) {
+  console.log(isOpen);
   return <Container isOpen={isOpen}></Container>;
 }

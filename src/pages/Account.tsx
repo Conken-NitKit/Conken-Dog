@@ -4,6 +4,7 @@ import styled from "styled-components";
 import AccountElementModal from "../components/AccountElementModal";
 import AccountElementsCard from "../components/AccountElementsCard";
 import AccountIcon from "../components/AccountIcon";
+import { ModalContainer } from "../components/ModalContainer";
 import NavigationBar from "../components/NavigationBar";
 import { AccountElementContext } from "../contexts/AcountElementContext";
 import { AccountTitle } from "../styles/fonts/AccountTitle";
@@ -38,8 +39,15 @@ export default function Account() {
   const [isOpenProgressModal, setIsOpenProgressModal] = useState(false);
   const [isOpenCommentModal, setIsOpenCommentModal] = useState(false);
 
+  const isModalOpen =
+    isOpenUserNameModal ||
+    isOpenMailAddressModal ||
+    isOpenProgressModal ||
+    isOpenCommentModal;
+
   return (
     <div>
+      <ModalContainer isOpen={isModalOpen} />
       <AccountTitleWrapper>
         <AccountTitle>アカウント</AccountTitle>
       </AccountTitleWrapper>
