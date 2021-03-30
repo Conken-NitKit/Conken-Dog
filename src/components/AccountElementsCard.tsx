@@ -25,6 +25,8 @@ const Card = styled.div`
   }
 
   box-shadow: 0 3px 6px -3px rgba(0, 0, 0, 0.3);
+
+  transition: background-color 0.1s;
 `;
 
 const ElementNameSpace = styled.a`
