@@ -66,7 +66,7 @@ export default function Account() {
             setIsModalOpen: setIsOpenUserNameModal,
           }}
         >
-          <AccountElementsCard Element="ばかばか" />
+          <AccountElementsCard Element="未実装です" />
 
           <AccountElementModal />
         </AccountElementContext.Provider>
@@ -82,7 +82,7 @@ export default function Account() {
             setIsModalOpen: setIsOpenMailAddressModal,
           }}
         >
-          <AccountElementsCard Element="bakabaka@gmail.com" />
+          <AccountElementsCard Element="未実装です" />
 
           <AccountElementModal />
         </AccountElementContext.Provider>

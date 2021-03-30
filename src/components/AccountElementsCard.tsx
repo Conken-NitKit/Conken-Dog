@@ -3,7 +3,7 @@ import styled from "styled-components";
 import EditButtonImage from "../assets/img/icons/chevron-forward-outline.svg";
 import { AccountElementContext } from "../contexts/AcountElementContext";
 
-const Card = styled.div`
+const Card = styled.div<{ isOpen: boolean }>`
   display: flex;
   display: -moz-flex;
   display: --webkit-flex;
@@ -58,7 +58,7 @@ const ElementNameSpace = styled.a`
   background-color: rgba(48, 200, 214, 1);
 `;
 
-const ElementSpace = styled.div`
+const ElementSpace = styled.div<{ isOpen: boolean }>`
   display: flex;
   display: -moz-flex;
   display: --webkit-flex;
@@ -84,7 +84,7 @@ const ElementSpace = styled.div`
   box-shadow: -10px 0 5px -5px rgba(0, 0, 0, 0.2) inset;
 `;
 
-const EditButtonSpace = styled.div`
+const EditButtonSpace = styled.div<{ isOpen: boolean }>`
   display: flex;
   display: -moz-flex;
   display: --webkit-flex;
@@ -109,19 +109,30 @@ interface Props {
 }
 
 export default function AccountElementsCard({ Element }: Props) {
-  const { ElementName, setIsModalOpen } = useContext(AccountElementContext);
+  const { ElementName, isModalOpen, setIsModalOpen } = useContext(
+    AccountElementContext
+  );
 
   return (
-    <Card>
+    <Card isOpen={isModalOpen}>
       <ElementNameSpace>{ElementName}</ElementNameSpace>
-      <ElementSpace>{Element}</ElementSpace>
-      <EditButtonSpace>
-        <EditButton
-          src={EditButtonImage}
-          onClick={() => {
-            setIsModalOpen(true);
-          }}
-        />
+
+      <ElementSpace
+        onClick={() => {
+          setIsModalOpen(true);
+        }}
+        isOpen={isModalOpen}
+      >
+        {Element}
+      </ElementSpace>
+
+      <EditButtonSpace
+        onClick={() => {
+          setIsModalOpen(true);
+        }}
+        isOpen={isModalOpen}
+      >
+        <EditButton src={EditButtonImage} />
       </EditButtonSpace>
     </Card>
   );
