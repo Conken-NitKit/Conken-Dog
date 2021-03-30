@@ -9,5 +9,5 @@ export const UnimplementedMessage = styled.h2`
 
   letter-spacing: 0.04em;
 
-  color: red;
+  color: darkorange;
 `;

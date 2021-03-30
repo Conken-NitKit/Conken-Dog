@@ -16,7 +16,7 @@ const Container = styled.div<{ isOpen: boolean }>`
   background-color: ${({ isOpen }) =>
     isOpen ? "rgba(0, 0, 0, 0.5)" : "rgba(0, 0, 0, 0)"};
 
-  transition: color 0s 0.1s;
+  transition: all 0s 0.1s;
 `;
 
 interface Props {
