@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import styled from "styled-components";
 import { AccountElementContext } from "../contexts/AcountElementContext";
+import { AccountButtonTitle } from "../styles/fonts/AccountButtonTitle";
 import { AccountTitle } from "../styles/fonts/AccountTitle";
 
 const Container = styled.div<{ isOpen: boolean }>`
@@ -19,7 +20,7 @@ const Container = styled.div<{ isOpen: boolean }>`
   background-color: ${({ isOpen }) =>
     isOpen ? "rgba(0, 0, 0, 0.5)" : "rgba(0, 0, 0, 0)"};
 
-  transition: ${({ isOpen }) => (isOpen ? "width 0s" : "width 0s 0.3s")};
+  transition: ${({ isOpen }) => (isOpen ? "width 0s " : "width 0s 0.3s")};
 `;
 
 const Modal = styled.div<{ isOpen: boolean }>`
@@ -48,27 +49,42 @@ const Header = styled.div`
   border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
 
   height: 11vh;
+
+  align-items: center;
+
+  overflow: hidden;
 `;
 
 const DoneButton = styled.button`
   display: flex;
 
+  margin-right: calc(47.5vw - 6vh - max(19vw, 13vh));
+
   border: none;
   border-radius: 2.5vh 0 0 0;
   border-top-right-radius: none;
 
-  padding: 0;
-  padding-right: 2.5vh;
+  padding: 0 1.5vh;
+
+  height: 11vh;
 
   width: 19vw;
-  min-width: 15vh;
+  min-width: 13vh;
 
   outline: none;
 
   align-items: center;
   justify-content: center;
 
-  background-color: blue;
+  background-color: white;
+`;
+
+const NameSpace = styled.div`
+  display: flex;
+
+  width: 12.0064vh;
+
+  justify-content: center;
 `;
 
 export default function AccountElementModal() {
@@ -85,10 +101,13 @@ export default function AccountElementModal() {
               setIsModalOpen(false);
             }}
           >
-            <AccountTitle>
+            <AccountButtonTitle>
               {modalType === "edit" ? "完了" : "閉じる"}
-            </AccountTitle>
+            </AccountButtonTitle>
           </DoneButton>
+          <NameSpace>
+            <AccountTitle>{ElementName}</AccountTitle>
+          </NameSpace>
         </Header>
       </Modal>
     </Container>

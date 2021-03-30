@@ -20,6 +20,10 @@ const Card = styled.div`
 
   align-items: center;
 
+  &:active {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
   box-shadow: 0 3px 6px -3px rgba(0, 0, 0, 0.3);
 `;
 
