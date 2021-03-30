@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import styled from "styled-components";
 import { AccountElementContext } from "../contexts/AcountElementContext";
-import { AccountButtonTitle } from "../styles/fonts/AccountButtonTitle";
+import { AccountButtonTitle } from "../styles/fonts/ButtonTitle";
 import { AccountTitle } from "../styles/fonts/AccountTitle";
 
 const Modal = styled.div<{ isOpen: boolean }>`
