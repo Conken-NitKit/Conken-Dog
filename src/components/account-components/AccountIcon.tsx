@@ -3,7 +3,7 @@ import styled from "styled-components";
 import TestIconSrc from "../../assets/img/icons/test-icon.png";
 import IconIconSrc from "../../assets/img/icons/icon-icon.svg";
 import DefaultIconSrc from "../../assets/img/icons/default-icon.svg";
-import EditIconButtonSrc from "../../assets/img/icons/up-edit-button.svg";
+import EditButtonSrc from "../../assets/img/icons/up-edit-button.svg";
 
 const Container = styled.div`
   display: flex;
@@ -66,6 +66,7 @@ const EditButton = styled.button`
   position: absolute;
 
   border: none;
+  border-top: 1px solid gainsboro;
 
   padding: 0;
 
