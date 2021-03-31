@@ -62,12 +62,11 @@ const Icon = styled.img`
   width: 44vw;
 `;
 
-const EditButton = styled.button`
+const EditButton = styled.div`
   display: flex;
 
   position: absolute;
 
-  border: none;
   border-top: 1px solid gainsboro;
 
   padding: 0;
@@ -78,8 +77,6 @@ const EditButton = styled.button`
   width: 31vw;
 
   justify-content: center;
-
-  outline: none;
 
   background-color: white;
 `;
