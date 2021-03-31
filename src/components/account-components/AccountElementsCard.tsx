@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import styled from "styled-components";
-import EditButtonImage from "../../assets/img/icons/chevron-forward-outline.svg";
+import EditButtonImage from "../../assets/img/icons/right-edit-button.svg";
 import { AccountElementContext } from "../../contexts/AcountElementContext";
 
 const Card = styled.div<{ isOpen: boolean }>`
