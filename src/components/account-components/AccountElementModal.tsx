@@ -30,7 +30,7 @@ const Modal = styled.div<{ isOpen: boolean }>`
 const Header = styled.div`
   display: flex;
 
-  border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 0.5px solid gainsboro;
 
   height: 11vh;
 

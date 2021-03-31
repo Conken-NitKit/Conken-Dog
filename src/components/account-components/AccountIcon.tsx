@@ -12,7 +12,7 @@ const Container = styled.div`
   margin-bottom: 8vh;
   margin-left: 11vw;
 
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid gainsboro;
   border-radius: 22vw;
 
   width: 55vw;
@@ -44,7 +44,7 @@ const IconContainer = styled.div`
 
   margin-left: -22vw;
 
-  border-left: 1px solid rgba(0, 0, 0, 0.2);
+  border-left: 1px solid gainsboro;
   border-radius: 22vw;
 
   height: 44vw;

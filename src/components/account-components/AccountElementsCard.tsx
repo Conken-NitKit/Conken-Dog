@@ -12,7 +12,7 @@ const Card = styled.div<{ isOpen: boolean }>`
 
   margin: 0 2% 10px;
 
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid gainsboro;
 
   border-radius: 5px;
 
