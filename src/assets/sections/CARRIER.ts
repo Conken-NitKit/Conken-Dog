@@ -32,6 +32,12 @@ export const CARRIER: ISection = {
       requiredTime: 17,
     },
     {
+      title: "20代の間に身につけておきたいスキル7選",
+      link: "https://youtu.be/yXuQ9qkT-T8",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 25,
+    },
+    {
       title:
         "ブラック企業とホワイト企業の違いをビジネスモデルと収益構造から分析しよう！",
       link: "https://youtu.be/d_hP9U4xmEs",
@@ -156,6 +162,12 @@ export const CARRIER: ISection = {
       requiredTime: 20,
     },
     {
+      title: "好きなことを仕事にしないと貧困になる理由",
+      link: "https://youtu.be/1dgpecnLKX4",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 35,
+    },
+    {
       title:
         "「心のブレーキ」の外し方～仕事とプライベートに効く7つの心理セラピー",
       link: "https://youtu.be/JVM2Vp4CvT4",
@@ -236,13 +248,13 @@ export const CARRIER: ISection = {
     },
     {
       title: "エッセンシャル思考④【エッセンシャルなチームをつくる！若手でも】",
-      link: "https://youtu.be/U6PKth3F_9o",
+      link: "https://youtu.be/IwFfFZfwYP0",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 26,
     },
     {
       title: "【ハマりがち】成功を遠ざける「時給思考」の5つの罠",
-      link: "https://youtu.be/IwFfFZfwYP0",
+      link: "https://youtu.be/U6PKth3F_9o",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 11,
     },
@@ -413,6 +425,24 @@ export const CARRIER: ISection = {
       link: "https://youtu.be/DITX9pov_v0",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 14,
+    },
+    {
+      title: "なぜ「格差」は開くのか？その背景を知り格差に立ち向かおう",
+      link: "https://youtu.be/9pEd9WjEDK4",
+      mediaType: ["READ_ONLY", "RADIO"],
+      requiredTime: 20,
+    },
+    {
+      title: "お金の秘密：追えば追うほど、お金は逃げる！",
+      link: "https://youtu.be/sRzFo3rwvhE",
+      mediaType: ["READ_ONLY", "RADIO"],
+      requiredTime: 28,
+    },
+    {
+      title: "金持ちになるにはレバレッジを使え！",
+      link: "https://youtu.be/sfOQ-W39SUA",
+      mediaType: ["READ_ONLY", "RADIO"],
+      requiredTime: 21,
     },
     {
       title: "永遠に幸せを感じる唯一の方法",
