@@ -3,7 +3,7 @@ import styled from "styled-components";
 import TestIconSrc from "../../assets/img/icons/test-icon.png";
 import IconIconSrc from "../../assets/img/icons/icon-icon.svg";
 import DefaultIconSrc from "../../assets/img/icons/default-icon.svg";
-import EditButtonSrc from "../../assets/img/icons/up-edit-button.svg";
+import EditButtonImgSrc from "../../assets/img/icons/up-edit-button.svg";
 
 const Container = styled.div`
   display: flex;
@@ -63,6 +63,8 @@ const Icon = styled.img`
 `;
 
 const EditButton = styled.button`
+  display: flex;
+
   position: absolute;
 
   border: none;
@@ -75,9 +77,16 @@ const EditButton = styled.button`
   height: 6.5vw;
   width: 31vw;
 
+  justify-content: center;
+
   outline: none;
 
   background-color: white;
+`;
+
+const EditButtonImg = styled.img`
+  height: 6.5vw;
+  width: 6.5vw;
 `;
 
 export default function AccountIconCard() {
@@ -88,7 +97,9 @@ export default function AccountIconCard() {
       </IconIconContainer>
       <IconContainer>
         <Icon src={DefaultIconSrc} />
-        <EditButton />
+        <EditButton>
+          <EditButtonImg src={EditButtonImgSrc} />
+        </EditButton>
       </IconContainer>
     </Container>
   );
