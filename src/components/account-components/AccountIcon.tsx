@@ -80,7 +80,7 @@ const EditButton = styled.button`
   background-color: white;
 `;
 
-export default function AccountIcon() {
+export default function AccountIconCard() {
   return (
     <Container>
       <IconIconContainer>

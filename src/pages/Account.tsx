@@ -3,7 +3,7 @@ import { useContext, useState } from "react";
 import styled from "styled-components";
 import AccountElementModal from "../components/account-components/AccountElementModal";
 import AccountElementsCard from "../components/account-components/AccountElementsCard";
-import AccountIcon from "../components/account-components/AccountIcon";
+import AccountIconCard from "../components/account-components/AccountIcon";
 import { ModalContainer } from "../components/ModalContainer";
 import NavigationBar from "../components/NavigationBar";
 import { AccountElementContext } from "../contexts/AcountElementContext";
@@ -53,7 +53,7 @@ export default function Account() {
       </AccountTitleWrapper>
 
       <AccountElementsWrapper>
-        <AccountIcon />
+        <AccountIconCard />
 
         <AccountElementContext.Provider
           value={{
