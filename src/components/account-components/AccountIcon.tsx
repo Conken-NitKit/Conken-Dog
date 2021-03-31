@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-import TestIcon from "../../assets/img/icons/test-icon.png";
+import TestIconSrc from "../../assets/img/icons/test-icon.png";
+import IconIconSrc from "../../assets/img/icons/icon-icon.svg";
+import EditIconButtonSrc from "../../assets/img/icons/up-edit-button.svg";
 
 const Container = styled.div`
   display: flex;
@@ -25,6 +27,13 @@ const IconIconContainer = styled.div`
   width: 33vw;
 
   background-color: rgba(48, 200, 214, 1);
+
+  align-items: center;
+`;
+
+const IconIcon = styled.img`
+  height: 11vw;
+  width: 11vw;
 `;
 
 const IconContainer = styled.div`
@@ -70,9 +79,11 @@ const EditButton = styled.button`
 export default function AccountIcon() {
   return (
     <Container>
-      <IconIconContainer />
+      <IconIconContainer>
+        <IconIcon src={IconIconSrc} />
+      </IconIconContainer>
       <IconContainer>
-        <Icon src={TestIcon} />
+        <Icon src={TestIconSrc} />
         <EditButton />
       </IconContainer>
     </Container>
