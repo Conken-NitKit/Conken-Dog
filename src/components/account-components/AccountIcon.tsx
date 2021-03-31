@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 import TestIconSrc from "../../assets/img/icons/test-icon.png";
 import IconIconSrc from "../../assets/img/icons/icon-icon.svg";
+import DefaultIconSrc from "../../assets/img/icons/default-icon.svg";
 import EditIconButtonSrc from "../../assets/img/icons/up-edit-button.svg";
 
 const Container = styled.div`
@@ -52,6 +53,8 @@ const IconContainer = styled.div`
   justify-content: center;
 
   overflow: hidden;
+
+  background-color: white;
 `;
 
 const Icon = styled.img`
@@ -83,7 +86,7 @@ export default function AccountIcon() {
         <IconIcon src={IconIconSrc} />
       </IconIconContainer>
       <IconContainer>
-        <Icon src={TestIconSrc} />
+        <Icon src={DefaultIconSrc} />
         <EditButton />
       </IconContainer>
     </Container>
