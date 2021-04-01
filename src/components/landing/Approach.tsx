@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { TopImages } from "./TopImages";
-import { Mission } from "./Mission";
+import { TopImages } from "./approach/TopImages";
+import { Mission } from "./approach/Mission";
 
 const TopBackgroundSquare = styled.div`
   position: absolute;
