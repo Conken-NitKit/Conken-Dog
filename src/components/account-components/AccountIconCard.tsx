@@ -200,7 +200,14 @@ export default function AccountIconCard() {
             <AccountTitle>アイコン</AccountTitle>
           </Header>
 
-          <Body isOpen={isOpenModal}></Body>
+          <Body isOpen={isOpenModal}>
+            <UnimplementedMessage>
+              　ここで画像の差し替えが出来るようになる予定があります。
+              <br />
+              <br />
+              　機能は未実装です。ごめんね笑
+            </UnimplementedMessage>
+          </Body>
         </ModalContainer>
       </IconContainer>
     </Container>
