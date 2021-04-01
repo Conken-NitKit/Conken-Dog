@@ -8,7 +8,6 @@ import { ModalContainer } from "../components/ModalContainer";
 import NavigationBar from "../components/NavigationBar";
 import { AccountElementContext } from "../contexts/AccountElementContext";
 import { AccountTitle } from "../styles/fonts/AccountTitle";
-import { Small } from "../styles/fonts/Small";
 
 const AccountTitleWrapper = styled.div`
   display: flex;

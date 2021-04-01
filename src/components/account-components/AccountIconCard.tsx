@@ -1,11 +1,14 @@
 import { useContext, useState } from "react";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
 import { AccountElementContext } from "../../contexts/AccountElementContext";
+
+import { AccountTitle } from "../../styles/fonts/AccountTitle";
 
 import IconIconSrc from "../../assets/img/icons/icon-icon.svg";
 import DefaultIconSrc from "../../assets/img/icons/default-icon.svg";
 import EditButtonImgSrc from "../../assets/img/icons/up-edit-button.svg";
+import { UnimplementedMessage } from "../../styles/fonts/UnimplementedMessage";
 
 const Container = styled.div`
   display: flex;
@@ -69,7 +72,7 @@ const ModalContainer = styled.div<{ isOpen: boolean }>`
 
   z-index: ${({ isOpen }) => (isOpen ? "6" : "0")};
 
-  border: 1px solid gainsboro;
+  border: 1px solid ${({ isOpen }) => (isOpen ? "silver" : "gainsboro")};
   border-radius: 1vh;
 
   padding: 0;
@@ -85,8 +88,8 @@ const ModalContainer = styled.div<{ isOpen: boolean }>`
 
   transition: ${({ isOpen }) =>
     isOpen
-      ? "top 1s, width 1s 1s, height 1s 2s"
-      : "top 1s 2s, width 1s 1s, height 1s, z-index 0s 1s"};
+      ? "top 0.1s, width 0.1s 0.1s, height 0.1s 0.2s, border 0s 0.1s"
+      : "top 0.1s 0.2s, width 0.1s 0.1s, height 0.1s, border 0s 0.1s, z-index 0s 0.1s"};
 `;
 
 const ModalOpenButton = styled.button`
@@ -115,16 +118,41 @@ const EditButtonImg = styled.img<{ isOpen: boolean }>`
 `;
 
 const Header = styled.header<{ isOpen: boolean }>`
+  display: flex;
+
   position: absolute;
+
+  padding-left: 2vh;
 
   top: 6.5vw;
 
   height: ${({ isOpen }) => (isOpen ? "8vh" : "0")};
-  width: 100%;
+  width: calc(100% - 2vh);
+
+  align-items: center;
 
   overflow: hidden;
 
-  transition: ${({ isOpen }) => (isOpen ? "height 0s 3s" : "")};
+  transition: height 0s ${({ isOpen }) => (isOpen ? "0.3s" : "")};
+`;
+
+const Body = styled.body<{ isOpen: boolean }>`
+  display: flex;
+
+  position: absolute;
+
+  padding: 0 5vw;
+
+  top: calc(8vh + 6.5vw);
+
+  height: ${({ isOpen }) => (isOpen ? "calc(66vh - 6.5vw - 81px)" : "0")};
+  width: calc(100% - 10vw);
+
+  align-items: center;
+
+  overflow: hidden;
+
+  transition: height 0s ${({ isOpen }) => (isOpen ? "0.3s" : "")};
 `;
 
 export default function AccountIconCard() {
@@ -149,7 +177,7 @@ export default function AccountIconCard() {
 
                 setTimeout(function () {
                   setIsOverflow(false);
-                }, 2000);
+                }, 200);
               }}
             >
               <EditButtonImg src={EditButtonImgSrc} isOpen={isOpenModal} />
@@ -161,14 +189,18 @@ export default function AccountIconCard() {
 
                 setTimeout(function () {
                   setIsOverflow(true);
-                }, 1000);
+                }, 100);
               }}
             >
               <EditButtonImg src={EditButtonImgSrc} isOpen={isOpenModal} />
             </ModalOpenButton>
           )}
 
-          <Header isOpen={isOpenModal}>baka</Header>
+          <Header isOpen={isOpenModal}>
+            <AccountTitle>アイコン</AccountTitle>
+          </Header>
+
+          <Body isOpen={isOpenModal}></Body>
         </ModalContainer>
       </IconContainer>
     </Container>
