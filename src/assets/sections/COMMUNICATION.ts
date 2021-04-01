@@ -120,6 +120,30 @@ export const COMMUNICATION: ISection = {
       requiredTime: 6,
     },
     {
+      title: "一瞬で好感度を上げる心理テクニック5選",
+      link: "https://youtu.be/X3NBHAY0edI",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 13,
+    },
+    {
+      title: "「話しかけやすい人」になるための心理学5選",
+      link: "https://youtu.be/Osnar2YbzRs",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 10,
+    },
+    {
+      title: "職場の雰囲気を明るくするムードメーカーのコツ5選",
+      link: "https://youtu.be/m1MVHYwV78k",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 10,
+    },
+    {
+      title: "好感度を上げる心理テクニック7選",
+      link: "https://youtu.be/nN3LRQ70zFM",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 10,
+    },
+    {
       title: "悪口が損をしてしまう理由を徹底解説【←自発的特徴変換】",
       link: "https://youtu.be/eBW4NN0YFoA",
       mediaType: ["READ_ONLY", "VIDEO"],

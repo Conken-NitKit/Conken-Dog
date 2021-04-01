@@ -7,6 +7,48 @@ export const TYPESCRIPT: ISection = {
     "同時に Webpack や Babel といったフロントエンドの難関ポイントについても学習していきます。",
   contentsList: [
     {
+      title: "新章開幕！最も独学が難しい分野を徹底解説していきます！",
+      link: "https://youtu.be/De9PH3EAz7c",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 11,
+    },
+    {
+      title: "ECMAScript、CommonJS、モジュール、名前空間を知ろう",
+      link: "https://youtu.be/PuomDgRbllw",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 27,
+    },
+    {
+      title: "Node.jsとパッケージ管理システムnpm",
+      link: "https://youtu.be/RdFE03K9B08",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 25,
+    },
+    {
+      title: "IIFE・AMDモジュールとブラウザ向けパッケージ管理システムBower",
+      link: "https://youtu.be/vuWAhqgRI3M",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 25,
+    },
+    {
+      title: "バンドル・コンパイルを知る。Browserify, webpack, Babel",
+      link: "https://youtu.be/PFeR332LurM",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 34,
+    },
+    {
+      title: "JavaScriptで重要な3つの概念",
+      link: "https://youtu.be/1TIK03WFAxM",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 14,
+    },
+    {
+      title: "現代フロントエンドに欠かせないwebpackとBabelを理解しよう！",
+      link: "https://youtu.be/gWzf-BEhTWk",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 58,
+    },
+    {
       title:
         "プログラミング言語のTypeScriptについて特徴をまじえて3分でわかりやすく解説します",
       link: "https://youtu.be/gWzf-BEhTWk",
@@ -18,12 +60,6 @@ export const TYPESCRIPT: ISection = {
       link: "https://youtu.be/gWzf-BEhTWk",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 16,
-    },
-    {
-      title: "現代フロントエンドに欠かせないwebpackとBabelを理解しよう！",
-      link: "https://youtu.be/gWzf-BEhTWk",
-      mediaType: ["READ_ONLY", "VIDEO"],
-      requiredTime: 58,
     },
     {
       title: "これからTypeScriptを始める全ての人たちへ",

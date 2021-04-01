@@ -82,10 +82,16 @@ export const INDUSTRY: ISection = {
       requiredTime: 10,
     },
     {
-      title: "2030年：すべてが「加速」する世界に備えよ",
-      link: "https://youtu.be/92rfzxH0yMo",
+      title: "2030年：すべてが「加速」する世界に備えよ｜ドラえもん過ぎる未来　",
+      link: "https://youtu.be/YELxkrMx40c",
       mediaType: ["READ_ONLY", "VIDEO"],
-      requiredTime: 25,
+      requiredTime: 23,
+    },
+    {
+      title: "世界を変えるテクノロジー８選",
+      link: "https://youtu.be/c9baM0MNuLU",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 31,
     },
     {
       title: "ソニーとトヨタの新構想で業界秩序が大きく変わる",
@@ -138,6 +144,12 @@ export const INDUSTRY: ISection = {
       link: "https://youtu.be/QIVNy4Xx-Qk",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 29,
+    },
+    {
+      title: "衝撃の未来予想",
+      link: "https://youtu.be/E3iVsbSweQc",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 28,
     },
   ],
 };

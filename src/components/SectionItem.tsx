@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { IContent } from "../assets/sections";
 import { userContext } from "../contexts/userContext";
 import { Description } from "../styles/fonts/Description";
-import { postUserInfo } from "../utils/users/postUserInfo"
+import { postUserInfo } from "../utils/users/postUserInfo";
 
 const ContentItem = styled.li`
   list-style: none;
@@ -76,6 +76,10 @@ const MediaTypeTag = styled.span`
   border-radius: 4px;
 `;
 
+const TagContainer = styled.div`
+  min-width: 150px;
+`;
+
 interface Props {
   content: IContent;
 }
@@ -113,20 +117,22 @@ export const SectionItem = ({ content }: Props) => {
           ` ${Math.floor(content.requiredTime / 60)}時間`}
         {content.requiredTime % 60 !== 0 &&
           ` ${Math.floor(content.requiredTime % 60)}分`}
-        {content.mediaType.includes("VIDEO") ? (
-          <MediaTypeTag>動画</MediaTypeTag>
-        ) : (
-          <MediaTypeTag>テキスト</MediaTypeTag>
-        )}
-        {!content.mediaType.includes("READ_ONLY") && (
-          <MediaTypeTag>実践</MediaTypeTag>
-        )}
-        {content.mediaType.includes("USE_MY_PC") && (
-          <MediaTypeTag>PC必須</MediaTypeTag>
-        )}
-        {content.mediaType.includes("USE_GIT") && (
-          <MediaTypeTag>Gitで管理してみよう</MediaTypeTag>
-        )}
+        <TagContainer>
+          {content.mediaType.includes("VIDEO") ? (
+            <MediaTypeTag>動画</MediaTypeTag>
+          ) : (
+              <MediaTypeTag>テキスト</MediaTypeTag>
+            )}
+          {!content.mediaType.includes("READ_ONLY") && (
+            <MediaTypeTag>実践</MediaTypeTag>
+          )}
+          {content.mediaType.includes("USE_MY_PC") && (
+            <MediaTypeTag>PC必須</MediaTypeTag>
+          )}
+          {content.mediaType.includes("USE_GIT") && (
+            <MediaTypeTag>Gitで管理してみよう</MediaTypeTag>
+          )}
+        </TagContainer>
       </Description>
     </ContentItem>
   );
