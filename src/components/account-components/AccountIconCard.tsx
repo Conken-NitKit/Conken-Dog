@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 import { AccountElementContext } from "../../contexts/AccountElementContext";
 
@@ -64,9 +64,7 @@ const Icon = styled.img`
   width: 44vw;
 `;
 
-const EditModal = styled.div<{ isOpen: boolean }>`
-  display: fixed;
-
+const ModalContainer = styled.div<{ isOpen: boolean }>`
   position: absolute;
 
   z-index: ${({ isOpen }) => (isOpen ? "6" : "0")};
@@ -87,13 +85,46 @@ const EditModal = styled.div<{ isOpen: boolean }>`
 
   transition: ${({ isOpen }) =>
     isOpen
-      ? "top 0.1s, width 0.1s 0.1s, height 0.1s 0.2s"
-      : "top 0.1s 0.2s, width 0.1s 0.1s, height 0.1s"};
+      ? "top 1s, width 1s 1s, height 1s 2s"
+      : "top 1s 2s, width 1s 1s, height 1s, z-index 0s 1s"};
 `;
 
-const EditButtonImg = styled.img`
+const ModalOpenButton = styled.button`
+  margin-top: 0;
+
+  border: none;
+  border-radius: calc(1vh - 1px);
+
+  padding: 0;
+
+  height: 6.5vw;
+  width: 100%;
+
+  outline: none;
+
+  background-color: white;
+`;
+
+const EditButtonImg = styled.img<{ isOpen: boolean }>`
   height: 6.5vw;
   width: 6.5vw;
+
+  transform: ${({ isOpen }) => (isOpen ? "rotate(540deg)" : "rotate(0)")};
+
+  transition: transform 0.5s ease-out;
+`;
+
+const Header = styled.header<{ isOpen: boolean }>`
+  position: absolute;
+
+  top: 6.5vw;
+
+  height: ${({ isOpen }) => (isOpen ? "8vh" : "0")};
+  width: 100%;
+
+  overflow: hidden;
+
+  transition: ${({ isOpen }) => (isOpen ? "height 0s 3s" : "")};
 `;
 
 export default function AccountIconCard() {
@@ -110,33 +141,35 @@ export default function AccountIconCard() {
       <IconContainer isOpen={isOverflow}>
         <Icon src={DefaultIconSrc} />
 
-        {isOpenModal ? (
-          <EditModal
-            isOpen={isOpenModal}
-            onClick={() => {
-              setIsOpenModal(false);
+        <ModalContainer isOpen={isOpenModal}>
+          {isOpenModal ? (
+            <ModalOpenButton
+              onClick={() => {
+                setIsOpenModal(false);
 
-              setTimeout(function () {
-                setIsOverflow(false);
-              }, 200);
-            }}
-          >
-            <EditButtonImg src={EditButtonImgSrc} />
-          </EditModal>
-        ) : (
-          <EditModal
-            isOpen={isOpenModal}
-            onClick={() => {
-              setIsOpenModal(true);
+                setTimeout(function () {
+                  setIsOverflow(false);
+                }, 2000);
+              }}
+            >
+              <EditButtonImg src={EditButtonImgSrc} isOpen={isOpenModal} />
+            </ModalOpenButton>
+          ) : (
+            <ModalOpenButton
+              onClick={() => {
+                setIsOpenModal(true);
 
-              setTimeout(function () {
-                setIsOverflow(true);
-              }, 100);
-            }}
-          >
-            <EditButtonImg src={EditButtonImgSrc} />
-          </EditModal>
-        )}
+                setTimeout(function () {
+                  setIsOverflow(true);
+                }, 1000);
+              }}
+            >
+              <EditButtonImg src={EditButtonImgSrc} isOpen={isOpenModal} />
+            </ModalOpenButton>
+          )}
+
+          <Header isOpen={isOpenModal}>baka</Header>
+        </ModalContainer>
       </IconContainer>
     </Container>
   );

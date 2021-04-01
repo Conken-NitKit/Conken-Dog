@@ -13,7 +13,7 @@ import { Small } from "../styles/fonts/Small";
 const AccountTitleWrapper = styled.div`
   display: flex;
 
-  border-bottom: solid rgba(0, 0, 0, 0.1) 0.5px;
+  border-bottom: 0.5px solid gainsboro;
 
   padding: 6vw;
   padding-top: 2vh;
