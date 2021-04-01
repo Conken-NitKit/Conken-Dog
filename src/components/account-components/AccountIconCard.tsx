@@ -69,7 +69,7 @@ const EditModal = styled.div<{ isOpen: boolean }>`
 
   position: absolute;
 
-  z-index: 6;
+  z-index: ${({ isOpen }) => (isOpen ? "6" : "0")};
 
   border: 1px solid gainsboro;
   border-radius: 1vh;
