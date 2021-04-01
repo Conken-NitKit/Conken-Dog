@@ -5,15 +5,15 @@ export const AccountElementContext = React.createContext<{
 
   modalType: string;
 
-  isModalOpen: boolean;
+  isOpenModal: boolean;
 
-  setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  setIsOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
 }>({
   ElementName: "",
 
   modalType: "",
 
-  isModalOpen: false,
+  isOpenModal: false,
 
-  setIsModalOpen: () => {},
+  setIsOpenModal: () => {},
 });

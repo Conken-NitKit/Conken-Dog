@@ -6,7 +6,7 @@ import AccountElementsCard from "../components/account-components/AccountElement
 import AccountIconCard from "../components/account-components/AccountIconCard";
 import { ModalContainer } from "../components/ModalContainer";
 import NavigationBar from "../components/NavigationBar";
-import { AccountElementContext } from "../contexts/AcountElementContext";
+import { AccountElementContext } from "../contexts/AccountElementContext";
 import { AccountTitle } from "../styles/fonts/AccountTitle";
 import { Small } from "../styles/fonts/Small";
 
@@ -38,12 +38,14 @@ export default function Account() {
   const [isOpenMailAddressModal, setIsOpenMailAddressModal] = useState(false);
   const [isOpenProgressModal, setIsOpenProgressModal] = useState(false);
   const [isOpenCommentModal, setIsOpenCommentModal] = useState(false);
+  const [isOpenIconModal, setIsOpenIconModal] = useState(false);
 
   const isModalOpen =
     isOpenUserNameModal ||
     isOpenMailAddressModal ||
     isOpenProgressModal ||
-    isOpenCommentModal;
+    isOpenCommentModal ||
+    isOpenIconModal;
 
   return (
     <div>
@@ -53,7 +55,16 @@ export default function Account() {
       </AccountTitleWrapper>
 
       <AccountElementsWrapper>
-        <AccountIconCard />
+        <AccountElementContext.Provider
+          value={{
+            ElementName: "",
+            modalType: "",
+            isOpenModal: isOpenIconModal,
+            setIsOpenModal: setIsOpenIconModal,
+          }}
+        >
+          <AccountIconCard />
+        </AccountElementContext.Provider>
 
         <AccountElementContext.Provider
           value={{
@@ -61,9 +72,9 @@ export default function Account() {
 
             modalType: "edit",
 
-            isModalOpen: isOpenUserNameModal,
+            isOpenModal: isOpenUserNameModal,
 
-            setIsModalOpen: setIsOpenUserNameModal,
+            setIsOpenModal: setIsOpenUserNameModal,
           }}
         >
           <AccountElementsCard Element="未実装です" />
@@ -77,9 +88,9 @@ export default function Account() {
 
             modalType: "edit",
 
-            isModalOpen: isOpenMailAddressModal,
+            isOpenModal: isOpenMailAddressModal,
 
-            setIsModalOpen: setIsOpenMailAddressModal,
+            setIsOpenModal: setIsOpenMailAddressModal,
           }}
         >
           <AccountElementsCard Element="未実装です" />
@@ -91,11 +102,11 @@ export default function Account() {
           value={{
             ElementName: "進捗",
 
-            modalType: "brousing",
+            modalType: "",
 
-            isModalOpen: isOpenProgressModal,
+            isOpenModal: isOpenProgressModal,
 
-            setIsModalOpen: setIsOpenProgressModal,
+            setIsOpenModal: setIsOpenProgressModal,
           }}
         >
           <AccountElementsCard Element="未実装です" />
@@ -109,9 +120,9 @@ export default function Account() {
 
             modalType: "edit",
 
-            isModalOpen: isOpenCommentModal,
+            isOpenModal: isOpenCommentModal,
 
-            setIsModalOpen: setIsOpenCommentModal,
+            setIsOpenModal: setIsOpenCommentModal,
           }}
         >
           <AccountElementsCard Element="未実装です" />

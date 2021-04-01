@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import styled from "styled-components";
 import EditButtonImage from "../../assets/img/icons/right-edit-button.svg";
-import { AccountElementContext } from "../../contexts/AcountElementContext";
+import { AccountElementContext } from "../../contexts/AccountElementContext";
 
 const Card = styled.div`
   display: flex;
@@ -109,7 +109,7 @@ interface Props {
 }
 
 export default function AccountElementsCard({ Element }: Props) {
-  const { ElementName, isModalOpen, setIsModalOpen } = useContext(
+  const { ElementName, isOpenModal, setIsOpenModal } = useContext(
     AccountElementContext
   );
 
@@ -119,7 +119,7 @@ export default function AccountElementsCard({ Element }: Props) {
 
       <ElementSpace
         onClick={() => {
-          setIsModalOpen(true);
+          setIsOpenModal(true);
         }}
       >
         {Element}
@@ -127,9 +127,9 @@ export default function AccountElementsCard({ Element }: Props) {
 
       <EditButtonSpace
         onClick={() => {
-          setIsModalOpen(true);
+          setIsOpenModal(true);
         }}
-        isOpen={isModalOpen}
+        isOpen={isOpenModal}
       >
         <EditButton src={EditButtonImage} />
       </EditButtonSpace>

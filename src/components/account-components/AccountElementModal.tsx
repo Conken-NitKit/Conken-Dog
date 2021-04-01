@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import styled from "styled-components";
-import { AccountElementContext } from "../../contexts/AcountElementContext";
+import { AccountElementContext } from "../../contexts/AccountElementContext";
 import { AccountButtonTitle } from "../../styles/fonts/ButtonTitle";
 import { AccountTitle } from "../../styles/fonts/AccountTitle";
 import { UnimplementedMessage } from "../../styles/fonts/UnimplementedMessage";
@@ -86,16 +86,16 @@ const Body = styled.body`
 `;
 
 export default function AccountElementModal() {
-  const { ElementName, modalType, isModalOpen, setIsModalOpen } = useContext(
+  const { ElementName, modalType, isOpenModal, setIsOpenModal } = useContext(
     AccountElementContext
   );
 
   return (
-    <Modal isOpen={isModalOpen}>
+    <Modal isOpen={isOpenModal}>
       <Header>
         <DoneButton
           onClick={() => {
-            setIsModalOpen(false);
+            setIsOpenModal(false);
           }}
         >
           <AccountButtonTitle>

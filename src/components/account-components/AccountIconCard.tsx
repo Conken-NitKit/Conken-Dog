@@ -1,8 +1,11 @@
+import { useContext, useState } from "react";
 import styled from "styled-components";
+
+import { AccountElementContext } from "../../contexts/AccountElementContext";
+
 import IconIconSrc from "../../assets/img/icons/icon-icon.svg";
 import DefaultIconSrc from "../../assets/img/icons/default-icon.svg";
 import EditButtonImgSrc from "../../assets/img/icons/up-edit-button.svg";
-import { useState } from "react";
 
 const Container = styled.div`
   display: flex;
@@ -66,6 +69,8 @@ const EditModal = styled.div<{ isOpen: boolean }>`
 
   position: absolute;
 
+  z-index: 6;
+
   border: 1px solid gainsboro;
   border-radius: 1vh;
 
@@ -92,8 +97,9 @@ const EditButtonImg = styled.img`
 `;
 
 export default function AccountIconCard() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const [isOverflow, setIsOverflow] = useState(false);
+
+  const { isOpenModal, setIsOpenModal } = useContext(AccountElementContext);
 
   return (
     <Container>
@@ -104,11 +110,11 @@ export default function AccountIconCard() {
       <IconContainer isOpen={isOverflow}>
         <Icon src={DefaultIconSrc} />
 
-        {isModalOpen ? (
+        {isOpenModal ? (
           <EditModal
-            isOpen={isModalOpen}
+            isOpen={isOpenModal}
             onClick={() => {
-              setIsModalOpen(false);
+              setIsOpenModal(false);
 
               setTimeout(function () {
                 setIsOverflow(false);
@@ -119,9 +125,9 @@ export default function AccountIconCard() {
           </EditModal>
         ) : (
           <EditModal
-            isOpen={isModalOpen}
+            isOpen={isOpenModal}
             onClick={() => {
-              setIsModalOpen(true);
+              setIsOpenModal(true);
 
               setTimeout(function () {
                 setIsOverflow(true);
