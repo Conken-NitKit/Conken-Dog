@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { ImageTop } from "./TopImages";
+import { TopImages } from "./TopImages";
+import { Mission } from "./Mission";
 
 const TopBackgroundSquare = styled.div`
   position: absolute;
@@ -20,30 +21,6 @@ const TopBackgroundCircle = styled.div`
   background-color: #87ceeb;
 `;
 
-const WhiteCircle = styled.div`
-  position: relative;
-  height: 550px;
-  width: 550px;
-  margin-right: auto;
-  margin-left: auto;
-  border-radius: 50%;
-  top: 926px;
-  background-color: white;
-  z-index: 2;
-`;
-
-
-const BigCircle = styled.div`
-  position: relative;
-  height: 560px;
-  width: 560px;
-  margin-right: auto;
-  margin-left: auto;
-  border-radius: 50%;
-  top: 371px;
-  background-color: #87ceeb;
-`;
-
 const CatchCopy = styled.h1`
   position: absolute;
   width: 1340px;
@@ -53,12 +30,38 @@ const CatchCopy = styled.h1`
   font-family: Gen Jyuu Gothic;
   font-style: normal;
   font-weight: normal;
-  font-size: 140px;
+  font-size: 750%;
   line-height: 238px;
   text-align: center;
   text-transform: capitalize;
   color: #FFFFFF;
   text-shadow: 10px 10px 4px #191970;
+`;
+
+const Condog = styled.h3`
+  position: fixed;
+  left: 3%;
+  top: 30px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 30px;
+  line-height: 53px;
+  color: #FFFFFF;
+  text-shadow: 3px 3px 2px #191970;
+`;
+
+const Login = styled.h3`
+  position: fixed;
+  right: 3%;
+  top: 30px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 30px;
+  line-height: 53px;
+  color: #FFFFFF;
+  text-shadow: 3px 3px 2px #191970;
 `;
 
 //上から下
@@ -68,11 +71,14 @@ export const Approach = () => {
       <TopBackgroundSquare>
         
         <TopBackgroundCircle />
-        <ImageTop />
-        <CatchCopy>Learn To Play
-          <br/> Than Anywhere</CatchCopy>
-        <WhiteCircle/>
-        <BigCircle />
+        <TopImages />
+
+        <Condog>Conken-Dog</Condog>
+        <Login>新規登録</Login>
+        <CatchCopy>Learn To Play<br/> Than Anywhere</CatchCopy>
+
+        <Mission/>
+
       </TopBackgroundSquare>
     </div>
   );

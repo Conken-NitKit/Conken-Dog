@@ -119,7 +119,7 @@ const Nekomimi = styled.img`
   width: 276px;
 `;
 
-export const ImageTop = () => {
+export const TopImages = () => {
   return(
       <div>
       <Kinpatu src={kinpatu} />
@@ -144,4 +144,4 @@ export const ImageTop = () => {
   )
 } 
 
-export default ImageTop;
+export default TopImages;
