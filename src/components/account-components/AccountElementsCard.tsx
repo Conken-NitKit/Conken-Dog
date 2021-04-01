@@ -3,7 +3,7 @@ import styled from "styled-components";
 import EditButtonImage from "../../assets/img/icons/right-edit-button.svg";
 import { AccountElementContext } from "../../contexts/AcountElementContext";
 
-const Card = styled.div<{ isOpen: boolean }>`
+const Card = styled.div`
   display: flex;
   display: -moz-flex;
   display: --webkit-flex;
@@ -58,7 +58,7 @@ const ElementNameSpace = styled.a`
   background-color: rgba(48, 200, 214, 1);
 `;
 
-const ElementSpace = styled.div<{ isOpen: boolean }>`
+const ElementSpace = styled.div`
   display: flex;
   display: -moz-flex;
   display: --webkit-flex;
@@ -114,14 +114,13 @@ export default function AccountElementsCard({ Element }: Props) {
   );
 
   return (
-    <Card isOpen={isModalOpen}>
+    <Card>
       <ElementNameSpace>{ElementName}</ElementNameSpace>
 
       <ElementSpace
         onClick={() => {
           setIsModalOpen(true);
         }}
-        isOpen={isModalOpen}
       >
         {Element}
       </ElementSpace>

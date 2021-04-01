@@ -24,6 +24,5 @@ interface Props {
 }
 
 export function ModalContainer({ isOpen }: Props) {
-  console.log(isOpen);
   return <Container isOpen={isOpen}></Container>;
 }
