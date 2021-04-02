@@ -1,11 +1,17 @@
 import { Container } from "./Container";
+import styled from "styled-components";
 
 export const Data = () => {
+  const Title = styled.h2`
+    color: skyblue;
+    font-weight: 8px;
+  `;
+
   return (
     <Container>
-      <h2>数字で見るコンピュータ研究部</h2>
+      <Title>数字で見るコンピュータ研究部</Title>
       <div>
-        <img src={"???"} />
+        <img src="../../assets/img/landing/datum/data.svg" />
         <p>
           コンピュータ研究部は
           <br />
