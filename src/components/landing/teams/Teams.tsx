@@ -20,35 +20,47 @@ const Title = styled.h1`
 
   padding-top: 140px;
 
-  line-height: 40px;
-  text-align: center;
-  font-weight: bold;
   font-size: 40px;
+  font-weight: bold;
 
   color: #87ceeb;
 
+  line-height: 40px;
+  text-align: center;
+
   ${media.between("medium", "large")`
     padding-top: 110px;
+
+    font-size: 35px;
+
+    line-height: 35px;
   `}
 `;
 
 const Text = styled.h2`
-  margin: 0 auto;
-  margin-top: 30px;
+  margin: 30px auto 0 auto;
 
   font-size: 20px;
   font-style: normal;
   font-weight: normal;
-  text-align: center;
 
   color: #000000;
+
+  text-align: center;
+
+  ${media.between("medium", "large")`
+    margin-top: 25px;
+  `}
 `;
 
 const CardContainer = styled.body`
   display: flex;
 
   height: 445px;
-  width: 940px;
+
+  ${media.between("medium", "large")`
+    height: 325px;
+  `}
 `;
 
 export const Teams = () => {
