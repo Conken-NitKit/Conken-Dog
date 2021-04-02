@@ -1,37 +1,68 @@
 import styled from "styled-components";
-import media from "styled-media-query";
+
+import { Container } from "./Container";
 
 import background from "../../assets/img/landing/teams/background.svg";
 
-const Container = styled.div`
-  margin: 0 auto;
-  padding: 15px;
-
-  ${media.lessThan("medium")`
-    width: 88%;
-  `}
-
-  ${media.between("medium", "large")`
-    width: 750px;
-  `}
-
-  ${media.greaterThan("large")`
-    width: 940px;
-  `}
+const TeamsContainer = styled(Container)`
+  justify-content: center;
 
   background-image: url(${background});
-  background-size: contain;
+  background-size: cover;
+`;
+
+const Title = styled.h1`
+  margin: 0 auto;
+  margin-top: 10vw;
+
+  height: 5vw;
+
+  line-height: 5vw;
+  text-align: center;
+
+  font-family: Meiryo;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 2.75vw;
+
+  color: #87ceeb;
+`;
+
+const Text = styled.p`
+  margin: 0 auto;
+  margin-top: 1vw;
+
+  height: 5vw;
+
+  font-family: Meiryo;
+  font-size: 1.4vw;
+  font-style: normal;
+  font-weight: normal;
+
+  line-height: 2.5vw;
+  text-align: center;
+
+  color: #000000;
+`;
+
+const CardContainer = styled.body`
+  display: flex;
+
+  height: calc(100vh - 21vw);
+  width: 940px;
 `;
 
 export const Teams = () => {
   return (
-    <Container>
-      <p>
+    <TeamsContainer>
+      <Title>配属チームの紹介</Title>
+
+      <Text>
         コンピュータ研究部は大きく分けて4つの班があり、
         <br />
-        各々が興味ある活動に集中して、取り組むことができます。
-      </p>
-      <div>
+        各々が興味ある活動に集中して、取り組むことが可能です。
+      </Text>
+      <CardContainer>
         <div>
           <h3>Web班</h3>
           <ul>
@@ -71,7 +102,7 @@ export const Teams = () => {
             <li># VTuber</li>
           </ul>
         </div>
-      </div>
-    </Container>
+      </CardContainer>
+    </TeamsContainer>
   );
 };
