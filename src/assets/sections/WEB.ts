@@ -178,6 +178,12 @@ export const WEB: ISection = {
       requiredTime: 10,
     },
     {
+      title: "【量子コンピュータとは？】仕組みを中学生でもわかるように解説",
+      link: "https://u-ful.com/14987",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 10,
+    },
+    {
       title: "量子コンピュータは既存のコンピュータとどう違うのか？",
       link: "https://youtu.be/jMLxX55eOmY",
       mediaType: ["READ_ONLY", "VIDEO"],

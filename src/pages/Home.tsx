@@ -67,6 +67,8 @@ const SubTitle = styled.p`
   ${media.lessThan("medium")`
     font-size: 0.9rem;
     margin-bottom: 0;
+    text-align: center;
+    min-width: 280px;
   `}
 `;
 

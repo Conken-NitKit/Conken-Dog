@@ -77,6 +77,12 @@ export const MONEY: ISection = {
       requiredTime: 20,
     },
     {
+      title: "バカでもわかる！株式投資の基礎知識",
+      link: "https://youtu.be/Eb8hzFUY4cY",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 48,
+    },
+    {
       // 銀行の窓口の話、インデックスファウンド
       title:
         "【お金の授業①】〜学校では教えてくれない「資産運用の鉄則」素人が必ずハマる罠編〜",
@@ -115,6 +121,18 @@ export const MONEY: ISection = {
       link: "https://youtu.be/nxrLeco0ACg",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 11,
+    },
+    {
+      title: "お金で人生を狂わせないために知るべきこと３選",
+      link: "https://youtu.be/inqVykLW8dg",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 22,
+    },
+    {
+      title: "もう騙されない！資産運用の始め方、徹底解説。",
+      link: "https://youtu.be/1JP5PfI5LaM",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 33,
     },
     {
       // S&P500、おすすめ銘柄
@@ -313,7 +331,8 @@ export const MONEY: ISection = {
       requiredTime: 13,
     },
     {
-      title: "ミニマリズムで「貧乏になる人」と「金持ちになる人」の決定的な違いとは？",
+      title:
+        "ミニマリズムで「貧乏になる人」と「金持ちになる人」の決定的な違いとは？",
       link: "https://youtu.be/ewuoMV3HlTM",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 16,
@@ -356,6 +375,12 @@ export const MONEY: ISection = {
       link: "https://youtu.be/YuKeN3Sa0_A",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 21,
+    },
+    {
+      title: "お金を増やす１２の方法【実行したら、確実に豊かになる】",
+      link: "https://youtu.be/xlvStyIwJuk",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 27,
     },
     {
       title: "マネー本100冊解説して考えた投資の王道と取るべき戦略の結論",

@@ -60,6 +60,7 @@ const FormTitle = styled.p`
     "MS PGothic", sans-serif;
   font-size: 21px;
   color: rgb(43, 84, 106);
+  min-width: 280px;
 `;
 
 const InputContainer = styled.div`
