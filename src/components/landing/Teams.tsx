@@ -52,6 +52,8 @@ const CardContainer = styled.body`
   width: 940px;
 `;
 
+const Card = styled.div``;
+
 export const Teams = () => {
   return (
     <TeamsContainer>
