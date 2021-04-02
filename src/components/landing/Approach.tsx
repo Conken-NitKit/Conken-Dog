@@ -7,7 +7,6 @@ import conken from "../../assets/img/landing/approach/Conken.png";
 import maru from "../../assets/img/landing/approach/maru.png";
 import sinkan from "../../assets/img/landing/approach/sinkan.png";
 
-
 const Div = styled.div`
   position: relative;
   height: 2350px;
@@ -76,46 +75,46 @@ const Login = styled.h3`
 `;
 
 const Kita = styled.img`
-position: absolute;
-left: 8%;
-top:68%;
-width: 250px;
+  position: absolute;
+  left: 8%;
+  top:68%;
+  width: 250px;
 `;
 
 const Conken = styled.img`
-position: absolute;
-right: 5%;
-top:70%;
-width: 300px;
+  position: absolute;
+  right: 5%;
+  top:70%;
+  width: 300px;
 `;
 
 const Maru = styled.img`
-position: absolute;
-right: 17%;
-top:87%;
-width: 280px;
+  position: absolute;
+  right: 17%;
+  top:87%;
+  width: 280px;
 `;
 
 const Sinkan = styled.img`
-position: absolute;
-left: 8%;
-top:83%;
-width: 350px;
+  position: absolute;
+  left: 8%;
+  top:83%;
+  width: 350px;
 `;
 
 const Moji = styled.h1`
-position: absolute;
-width: 1361px;
-height: 869px;
-right: -20%;
-top: 78%;
-font-family: Gen Jyuu Gothic;
-font-size: 50px;
+  position: absolute;
+  width: 1361px;
+  height: 869px;
+  right: -20%;
+  top: 78%;
+  font-family: Gen Jyuu Gothic;
+  font-size: 50px;
 `;
-
 
 //上から下
 export const Approach = () => {
+
   return (
     <Div>
       <TopBackgroundSquare>
@@ -124,7 +123,9 @@ export const Approach = () => {
         <TopImages />
 
         <Condog>Conken-Dog</Condog>
+        <a href="https://conken-dog.netlify.app/signup">
         <Login>新規登録</Login>
+        </a>
         <CatchCopy>Learn To Play<br/> Than Anywhere</CatchCopy>
 
         <Mission/>
