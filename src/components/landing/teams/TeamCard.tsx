@@ -21,7 +21,12 @@ const Card = styled.div`
   `};
 
   ${media.lessThan("medium")`
-		
+		margin: 12vw 0 0 4vw;
+
+		border-radius: 2vw;
+
+		height: 23vw;
+		width: 17vw;
 	`};
 `;
 
@@ -40,7 +45,14 @@ const Circle = styled.div`
 
 		height: 105px;
     width: 105px;
-  `}
+  `};
+
+  ${media.lessThan("medium")`
+		margin: -7vw 2vw;
+
+		height: 13vw;
+		width: 13vw;
+	`};
 `;
 
 const Title = styled.h3<{ Color: string }>`
@@ -65,6 +77,15 @@ const Title = styled.h3<{ Color: string }>`
 		
 		line-height: 25px;
   `}
+
+  ${media.lessThan("medium")`
+		margin-top: 4vw;
+
+		font-size: 3vw;
+		font-weight: 200;
+
+		line-height: 3vw;
+	`};
 `;
 
 const Contents = styled.ul`
@@ -86,7 +107,16 @@ const Contents = styled.ul`
 		font-weight: 300;
 
 		line-height: 15px;
-  `}
+  `};
+
+  ${media.lessThan("medium")`
+		margin: 3vw 0 0 2vw;
+
+		font-size: 1vw;
+		font-weight: 100;
+
+		line-height: 2vw;
+	`};
 `;
 
 interface Props {
