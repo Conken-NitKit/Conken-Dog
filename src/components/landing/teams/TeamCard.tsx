@@ -18,7 +18,11 @@ const Card = styled.div`
 
 		height: 195px;
 		width: 145px;
-  `}
+  `};
+
+  ${media.lessThan("medium")`
+		
+	`};
 `;
 
 const Circle = styled.div`
