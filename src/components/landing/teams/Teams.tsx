@@ -58,10 +58,14 @@ const Text = styled.h2`
 
   ${media.between("medium", "large")`
     margin-top: 25px;
+
+    font-size: 15px;
   `}
 
   ${media.lessThan("medium")`
     margin-top: 3vw;
+
+    font-size: 2vw;
   `}
 `;
 
