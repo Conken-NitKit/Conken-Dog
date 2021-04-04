@@ -20,6 +20,12 @@ const Title = styled.h2`
   color: #444444;
 `;
 
+const TitleSpan = styled.span`
+  font-size: 40px;
+
+  color: #30c8d6;
+`;
+
 interface Props {
   group: string;
   circles: string[];
@@ -33,7 +39,7 @@ export const Recommendation = ({ group, circles, points }: Props) => {
   return (
     <RecommendationContainer>
       <Title>
-        コン研の{group}は
+        コン研の<TitleSpan>{group}</TitleSpan>は
         <br />
         こんな<span>あなた</span>におすすめ！
       </Title>
