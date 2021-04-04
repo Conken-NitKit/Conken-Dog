@@ -1,10 +1,23 @@
 import styled from "styled-components";
 import { Container } from "./Container";
 
-import Background from "../../assets/img/landing/recommendation/background.svg";
-
 const RecommendationContainer = styled(Container)`
-  background-image: ${Background};
+  background-color: #dbf0f9;
+`;
+
+const Title = styled.h2`
+  display: flex;
+
+  margin-top: 105px;
+
+  font-size: 35px;
+
+  letter-spacing: 0.24em;
+
+  line-height: 40px;
+  justify-content: center;
+
+  color: #444444;
 `;
 
 interface Props {
@@ -19,10 +32,11 @@ interface Props {
 export const Recommendation = ({ group, circles, points }: Props) => {
   return (
     <RecommendationContainer>
-      <h2>
-        コン研の{group}は<br />
+      <Title>
+        コン研の{group}は
+        <br />
         こんな<span>あなた</span>におすすめ！
-      </h2>
+      </Title>
       {circles.map((circle, index) => (
         <div>
           <p>Point. {index + 1}</p>
