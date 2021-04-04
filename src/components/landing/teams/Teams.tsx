@@ -22,6 +22,8 @@ const TeamsContainer = styled(Container)`
   `};
 
   ${media.lessThan("medium")`
+    margin-top: 12vw;
+
     background-image: url(${PhoneBackground});
   `};
 `;
@@ -48,7 +50,7 @@ const Title = styled.h1`
   `};
 
   ${media.lessThan("medium")`
-    margin-top: 11vw;
+    padding-top: 11vw;
 
     font-size: 9vw;
 
