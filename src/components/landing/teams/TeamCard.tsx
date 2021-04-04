@@ -21,7 +21,7 @@ const Card = styled.div`
   `};
 
   ${media.lessThan("medium")`
-		margin: 18vw 0 0 1.3vw;
+		margin: 14vw 0 0 1.3vw;
 
 		border-radius: 3vw;
 

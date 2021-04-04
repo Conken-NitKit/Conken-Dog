@@ -79,7 +79,7 @@ const Text = styled.h2`
   `}
 
   ${media.lessThan("medium")`
-    margin-top: 8vw;
+    margin: 8vw auto 5vw auto;
 
     font-size: 3.2vw;
 
@@ -89,9 +89,12 @@ const Text = styled.h2`
 
 const CardContainer = styled.body`
   display: flex;
-  flex-wrap: wrap;
 
   height: 445px;
+
+  flex-wrap: wrap;
+
+  align-content: flex-start;
 
   ${media.between("medium", "large")`
     height: 325px;
