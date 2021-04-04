@@ -74,6 +74,14 @@ const Text = styled.h2`
 
     font-size: 15px;
   `}
+
+  ${media.lessThan("medium")`
+    margin-top: 8vw;
+
+    font-size: 4vw;
+
+    line-height: 5vw;
+  `};
 `;
 
 const CardContainer = styled.body`
