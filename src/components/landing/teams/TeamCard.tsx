@@ -96,6 +96,8 @@ const Contents = styled.ul`
   font-size: 15px;
   font-weight: 400;
 
+  color: #444444;
+
   line-height: 20px;
 
   list-style: none;
