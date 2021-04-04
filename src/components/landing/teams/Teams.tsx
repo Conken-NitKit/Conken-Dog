@@ -97,7 +97,7 @@ const CardContainer = styled.body`
   `}
 
   ${media.lessThan("medium")`
-    height: 98vw;
+    height: 49vw;
   `};
 `;
 
