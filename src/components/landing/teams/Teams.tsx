@@ -20,6 +20,10 @@ const TeamsContainer = styled(Container)`
   ${media.between("medium", "large")`
     margin: -30px auto 50px auto;
   `};
+
+  ${media.lessThan("medium")`
+    background-image: url(${PhoneBackground});
+  `};
 `;
 
 const Title = styled.h1`
