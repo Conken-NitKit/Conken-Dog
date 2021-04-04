@@ -19,6 +19,15 @@ const Card = styled.div`
     height: 195px;
 	  width: 145px;
   `};
+
+  ${media.lessThan("medium")`
+		margin: 18vw 0 0 1.3vw;
+
+		border-radius: 3vw;
+
+	  height: 28vw;
+	  width: 42vw;
+	`};
 `;
 
 const Circle = styled.div`
