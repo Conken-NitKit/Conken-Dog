@@ -172,10 +172,46 @@ export const LOGICAL_THINKING: ISection = {
       requiredTime: 14,
     },
     {
+      title: "失敗の本質｜なぜ日本は負け続けるのか？",
+      link: "https://youtu.be/8uyuz6DL0yk",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 21,
+    },
+    {
+      title: "エッセンシャル思考①【8割捨てろ】",
+      link: "https://youtu.be/BA9n_JJEcwI",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 12,
+    },
+    {
+      title: "エッセンシャル思考②【見極める技術】",
+      link: "https://youtu.be/rxjsGJWGTpU",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 9,
+    },
+    {
+      title: "エッセンシャル思考③【仕事を捨てる２STEP】",
+      link: "https://youtu.be/xNk3ziBreBA",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 11,
+    },
+    {
+      title: "エッセンシャル思考④【エッセンシャルなチームをつくる！若手でも】",
+      link: "https://youtu.be/IwFfFZfwYP0",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 26,
+    },
+    {
       title: "ゼロ秒思考 頭がよくなる世界一シンプルなトレーニング",
       link: "https://youtu.be/lpPDEaC1dmc",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 29,
+    },
+    {
+      title: "イノベーションのジレンマ【会社を滅ぼすのは、まさかのイノベーションでした】",
+      link: "https://youtu.be/UviocRxrxkk",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 12,
     },
     {
       title: "ハートドリブン～目に見えないものを大切にする力 ～",
