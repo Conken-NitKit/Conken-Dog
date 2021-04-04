@@ -46,6 +46,14 @@ const Title = styled.h1`
 
     line-height: 35px;
   `};
+
+  ${media.lessThan("medium")`
+    margin-top: 11vw;
+
+    font-size: 9vw;
+
+    line-height: 9vw;
+  `}
 `;
 
 const Text = styled.h2`
