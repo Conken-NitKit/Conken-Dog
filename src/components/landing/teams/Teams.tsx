@@ -67,12 +67,15 @@ const Text = styled.h2`
 
   color: #000000;
 
+  line-height: 35px;
   text-align: center;
 
   ${media.between("medium", "large")`
     margin-top: 25px;
 
     font-size: 15px;
+
+    line-height: 25px;
   `}
 
   ${media.lessThan("medium")`
