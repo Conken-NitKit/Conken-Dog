@@ -12,22 +12,13 @@ const Card = styled.div`
   background-color: white;
 
   ${media.between("medium", "large")`
-		margin: 95px 0 0 34px;
+	  margin: 95px 0 0 34px;
 
-		border-radius: 11px;
+	  border-radius: 11px;
 
-		height: 195px;
-		width: 145px;
+    height: 195px;
+	  width: 145px;
   `};
-
-  ${media.lessThan("medium")`
-		margin: 12vw 0 0 4vw;
-
-		border-radius: 2vw;
-
-		height: 23vw;
-		width: 17vw;
-	`};
 `;
 
 const Circle = styled.div`
@@ -41,18 +32,11 @@ const Circle = styled.div`
   background-color: white;
 
   ${media.between("medium", "large")`
-		margin: -56px 20px;
+	  margin: -56px 20px;
 
-		height: 105px;
+	  height: 105px;
     width: 105px;
   `};
-
-  ${media.lessThan("medium")`
-		margin: -7vw 2vw;
-
-		height: 13vw;
-		width: 13vw;
-	`};
 `;
 
 const Title = styled.h3<{ Color: string }>`
@@ -70,22 +54,13 @@ const Title = styled.h3<{ Color: string }>`
   text-align: center;
 
   ${media.between("medium", "large")`
-		margin-top: 35px;
+	  margin-top: 35px;
 
-		font-size: 25px;
-		font-weight: 700;
+	  font-size: 25px;
+	  font-weight: 700;
 		
-		line-height: 25px;
+	  line-height: 25px;
   `}
-
-  ${media.lessThan("medium")`
-		margin-top: 4vw;
-
-		font-size: 3vw;
-		font-weight: 200;
-
-		line-height: 3vw;
-	`};
 `;
 
 const Contents = styled.ul`
@@ -101,22 +76,13 @@ const Contents = styled.ul`
   list-style: none;
 
   ${media.between("medium", "large")`
-		margin: 20px 0 0 25px;
+	  margin: 20px 0 0 25px;
 
-		font-size: 10px;
-		font-weight: 300;
+	  font-size: 10px;
+	  font-weight: 300;
 
-		line-height: 15px;
+	  line-height: 15px;
   `};
-
-  ${media.lessThan("medium")`
-		margin: 3vw 0 0 2vw;
-
-		font-size: 1vw;
-		font-weight: 100;
-
-		line-height: 2vw;
-	`};
 `;
 
 interface Props {

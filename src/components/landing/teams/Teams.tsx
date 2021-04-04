@@ -7,12 +7,18 @@ import background from "../../../assets/img/landing/teams/background.svg";
 import { TeamCard } from "./TeamCard";
 
 const TeamsContainer = styled(Container)`
+  margin: -35px auto 60px auto;
+
   padding: 0;
 
   justify-content: center;
 
   background-image: url(${background});
   background-size: cover;
+
+  ${media.between("medium", "large")`
+    margin: -30px auto 50px auto;
+  `};
 `;
 
 const Title = styled.h1`
