@@ -4,6 +4,7 @@ import media from "styled-media-query";
 import { Container } from "../Container";
 
 import background from "../../../assets/img/landing/teams/background.svg";
+import PhoneBackground from "../../../assets/img/landing/teams/phone-background.svg";
 import { TeamCard } from "./TeamCard";
 
 const TeamsContainer = styled(Container)`
