@@ -41,14 +41,6 @@ const Title = styled.h1`
 
     line-height: 35px;
   `};
-
-  ${media.lessThan("medium")`
-    padding-top: 13vw;
-
-    font-size: 4vw;
-
-    line-height: 4vw;
-  `};
 `;
 
 const Text = styled.h2`
@@ -67,12 +59,6 @@ const Text = styled.h2`
 
     font-size: 15px;
   `}
-
-  ${media.lessThan("medium")`
-    margin-top: 3vw;
-
-    font-size: 2vw;
-  `}
 `;
 
 const CardContainer = styled.body`
@@ -82,10 +68,6 @@ const CardContainer = styled.body`
 
   ${media.between("medium", "large")`
     height: 325px;
-  `}
-
-  ${media.lessThan("medium")`
-    height: 39vw;
   `}
 `;
 
