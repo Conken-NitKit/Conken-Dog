@@ -95,6 +95,10 @@ const CardContainer = styled.body`
   ${media.between("medium", "large")`
     height: 325px;
   `}
+
+  ${media.lessThan("medium")`
+    height: 98vw;
+  `};
 `;
 
 export const Teams = () => {
