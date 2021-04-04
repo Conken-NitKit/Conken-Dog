@@ -97,7 +97,7 @@ const CardContainer = styled.body`
   `}
 
   ${media.lessThan("medium")`
-    height: 49vw;
+    height: 98vw;
   `};
 `;
 
@@ -122,6 +122,7 @@ export const Teams = () => {
             "# サーバー構築",
             "# ハッキング(仮)",
           ]}
+          Line={1}
         />
 
         <TeamCard
@@ -133,6 +134,7 @@ export const Teams = () => {
             "# 3Dモデルの作成",
             "# アニメーション",
           ]}
+          Line={1}
         />
 
         <TeamCard
@@ -145,6 +147,7 @@ export const Teams = () => {
             "# レコメンドシステム",
             "# 数学",
           ]}
+          Line={2}
         />
 
         <TeamCard
@@ -156,6 +159,7 @@ export const Teams = () => {
             "# Live2D",
             "# VTuber",
           ]}
+          Line={2}
         />
       </CardContainer>
     </TeamsContainer>
