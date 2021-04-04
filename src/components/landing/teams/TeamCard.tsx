@@ -46,6 +46,13 @@ const Circle = styled.div`
 	  height: 105px;
     width: 105px;
   `};
+
+  ${media.lessThan("medium")`
+		margin: -11vw 9.5vw;
+
+    height: 21vw;
+		width: 21vw;
+  `};
 `;
 
 const Title = styled.h3<{ Color: string }>`
