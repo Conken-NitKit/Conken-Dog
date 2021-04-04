@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import media from "styled-media-query";
 
-const Card = styled.div<{ Line: number }>`
+const Card = styled.div`
   margin: 120px 0 0 44px;
 
   border-radius: 14px;
@@ -126,14 +126,24 @@ interface Props {
 
   CardContents: string[];
 
-  Line: number;
+  SecondLine: boolean;
 }
 
-export const TeamCard = ({ CardTitle, Color, CardContents, Line }: Props) => {
+export const TeamCard = ({
+  CardTitle,
+
+  Color,
+
+  CardContents,
+
+  SecondLine,
+}: Props) => {
   return (
-    <Card Line={Line}>
+    <Card>
       <Circle />
+
       <Title Color={Color}>{CardTitle}</Title>
+
       <Contents>
         {CardContents.map((element) => {
           return <li>{element}</li>;

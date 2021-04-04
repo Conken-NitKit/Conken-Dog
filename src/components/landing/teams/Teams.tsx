@@ -89,6 +89,7 @@ const Text = styled.h2`
 
 const CardContainer = styled.body`
   display: flex;
+  flex-wrap: wrap;
 
   height: 445px;
 
@@ -122,7 +123,7 @@ export const Teams = () => {
             "# サーバー構築",
             "# ハッキング(仮)",
           ]}
-          Line={1}
+          SecondLine={false}
         />
 
         <TeamCard
@@ -134,7 +135,7 @@ export const Teams = () => {
             "# 3Dモデルの作成",
             "# アニメーション",
           ]}
-          Line={1}
+          SecondLine={false}
         />
 
         <TeamCard
@@ -147,7 +148,7 @@ export const Teams = () => {
             "# レコメンドシステム",
             "# 数学",
           ]}
-          Line={2}
+          SecondLine={true}
         />
 
         <TeamCard
@@ -159,7 +160,7 @@ export const Teams = () => {
             "# Live2D",
             "# VTuber",
           ]}
-          Line={2}
+          SecondLine={true}
         />
       </CardContainer>
     </TeamsContainer>
