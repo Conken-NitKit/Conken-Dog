@@ -79,9 +79,9 @@ const Title = styled.h3<{ Color: string }>`
   `}
 
   ${media.lessThan("medium")`
-    margin-top: 0;
+    margin-top: 2vw;
 
-		font-size: 5vw;
+		font-size: 4vw;
 		font-weight: 200;
 
 		line-height: 5vw;
@@ -107,6 +107,15 @@ const Contents = styled.ul`
 	  font-weight: 300;
 
 	  line-height: 15px;
+  `};
+
+  ${media.lessThan("medium")`
+	  margin: 3vw 0 0 9vw;
+
+		font-size: 2vw;
+		font-weight: 100;
+
+		line-height: 3vw;
   `};
 `;
 
