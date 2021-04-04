@@ -52,7 +52,7 @@ const Title = styled.h1`
   ${media.lessThan("medium")`
     padding-top: 11vw;
 
-    font-size: 9vw;
+    font-size: 8vw;
 
     line-height: 9vw;
   `}
@@ -81,7 +81,7 @@ const Text = styled.h2`
   ${media.lessThan("medium")`
     margin-top: 8vw;
 
-    font-size: 4vw;
+    font-size: 3.2vw;
 
     line-height: 5vw;
   `};
