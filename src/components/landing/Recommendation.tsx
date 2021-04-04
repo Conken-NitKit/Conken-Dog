@@ -1,4 +1,11 @@
+import styled from "styled-components";
 import { Container } from "./Container";
+
+import Background from "../../assets/img/landing/recommendation/background.svg";
+
+const RecommendationContainer = styled(Container)`
+  background-image: ${Background};
+`;
 
 interface Props {
   group: string;
@@ -11,7 +18,7 @@ interface Props {
 
 export const Recommendation = ({ group, circles, points }: Props) => {
   return (
-    <Container>
+    <RecommendationContainer>
       <h2>
         コン研の{group}は<br />
         こんな<span>あなた</span>におすすめ！
@@ -33,6 +40,6 @@ export const Recommendation = ({ group, circles, points }: Props) => {
           </div>
         </div>
       ))}
-    </Container>
+    </RecommendationContainer>
   );
 };
