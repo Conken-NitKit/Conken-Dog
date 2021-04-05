@@ -3,12 +3,19 @@ import media from 'styled-media-query';
 
 const Circle = styled.div`
   display: flex;
+
+  position: relative;
+
   margin: -127.5px auto 0 auto;
-  border: 8px solid #87ceeb;
+  border: 4px solid #87ceeb;
   border-radius: 50%;
+
+  flex-direction: column;
   justify-content: center;
   background-color: white;
   ${media.lessThan("medium")`
+    margin-top: -13vw;
+
     width: 70vw;
     height: 70vw;
   `}
@@ -27,9 +34,9 @@ const Circle = styled.div`
 
 
 const Title = styled.h2`
-  position: absolute;
   display: flex;
   margin: 0;
+  top: -35px;
   margin-bottom: 37.5px;
   height: 127.5px;
   font-family: Roboto;
@@ -41,21 +48,29 @@ const Title = styled.h2`
   z-index: 2;
   flex-direction: column-reverse;
   ${media.lessThan("medium")`
-    margin-top: -10vw;
+    margin-top: calc(14vw - 8px);
+
+    margin-bottom: 0;
+
+    height: calc(6vw + 8px);
+
+    flex-direction: column;
+
     font-size: 3vw;
 `}
 `;
 
 const Text = styled.p`
-flex-direction: column;
 margin: auto;
-border-radius: 50%;
 font-family: Roboto;
+margin-top: -10px;
 font-size: 27px;
 text-align: center;
 color: #000000;
 z-index: 2;
 ${media.lessThan("medium")`
+    margin-top: 0;
+
     top: 310px;
     font-size: 3vw;
 `}

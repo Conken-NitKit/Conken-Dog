@@ -11,14 +11,11 @@ import sinkan from "../../assets/img/landing/approach/sinkan.webp";
 
 const ApproachContainer = styled(Container)`
   padding: 0;
-  background-color: red;
 `;
 
 const CatchCopy = styled.h1`
-  position: absolute;
-  top: 160px;
-  left: 0px;
-  margin: auto;
+  position: relative;
+  margin: -460px auto 0 auto;
   width: 100%;
   font-family: Gen Jyuu Gothic;
   font-style: normal;
@@ -29,28 +26,42 @@ const CatchCopy = styled.h1`
   color: #FFFFFF;
   text-shadow: 8px 8px 3px #191970;
   ${media.lessThan("medium")`
-    font-size: 330%;
+    font-size: 14vw;
+    margin-top: -98vw;
+    width: 69vw;
     text-shadow: 3px 3px 3px #191970;
   `};
+  ${media.between("medium", "large")`
+    font-size: 500%;
+  `}
 `;
 
 const Header = styled.header`
   height: 530px;
-
   background-color: #87ceeb;
   ${media.lessThan("medium")`
     width: 100%;
     height: 127vw;
   `}
-
   ${media.between("medium", "large")`
     width: 750px;
     height: 650px;
   `}
-
   ${media.greaterThan("large")`
     width: 940px;
   `}
+`;
+
+const HeaderBottom = styled.div`
+  margin-top: -127.5px;
+  border-radius: 50%;
+  height: 255px;
+  width: 100%;
+  background-color: #87ceeb;
+  ${media.lessThan("medium")`
+    margin-top: -14vw;
+    height: 27vw;
+  `};
 `;
 
 const Condog = styled.h3`
@@ -62,6 +73,7 @@ const Condog = styled.h3`
   font-size: 20px;
   color: #FFFFFF;
   text-shadow: 3px 3px 2px #525283;
+  z-index: 100;
 `;
 
 const Login = styled.h3`
@@ -73,22 +85,21 @@ const Login = styled.h3`
   font-size: 20px;
   color: #FFFFFF;
   text-shadow: 3px 3px 2px #191970;
-`;
-
-const HeaderBottom = styled.div`
-  margin-top: -127.5px;
-  border-radius: 50%;
-
-  height: 255px;
-  width: 100%;
-  background-color: #87ceeb;
+  z-index: 100;
 `;
 
 const Block = styled.div`
-position: relative;
-height: 700px;
-width: 100%;
-background-color: blue;
+  position: relative;
+  height: 700px;
+  width: 100%;
+  background-color: blue;
+  ${media.lessThan("medium")`
+    height: 110vw;
+  `}
+
+  ${media.between("medium", "large")`
+  height: 650px;
+  `}
 `;
 
 const Kita = styled.img`
@@ -100,12 +111,8 @@ const Kita = styled.img`
   `}
 
   ${media.between("medium", "large")`
-    width: 20vw;
+    width: 180px;
     margin-left: 20px;
-  `}
-
-  ${media.greaterThan("large")`
-
   `}
 `;
 
@@ -130,31 +137,47 @@ const Text2 = styled.h1`
 position: absolute;
 width: 100%;
 text-align: center;
-margin: 80px auto;
+margin: 10vw auto 0 auto;
 font-family: Gen Jyuu Gothic;
 font-size: 3rem;
-${media.lessThan("medium")`
-font-size: 23px;
-`};
+  ${media.lessThan("medium")`
+    font-size: 5vw;
+  `};
+  ${media.between("medium", "large")`
+    font-size: 27px;
+  `}
 `;
 
 const Maru = styled.img`
   position: absolute;
-  width: 200px;
   right: 0px;
-  margin: 380px auto 70px auto;
-  ${media.lessThan("large")`
-  top: 70%;
-  left: 72%;
+  margin-top: 410px;
+  width: 200px;
+  ${media.lessThan("medium")`
+    width: 32%;
+    margin-top: 60vw;
+  `}
+
+  ${media.between("medium", "large")`
   width: 30%;
-  `};
+  margin-top: 380px;
+  `}
 `;
 
 const Sinkan = styled.img`
   position: absolute;
   left: 0px;
-  margin-top: 400px;
+  margin-top: 440px;
   width: 240px;
+  ${media.lessThan("medium")`
+    width: 32%;
+    margin-top: 68vw;
+  `}
+
+  ${media.between("medium", "large")`
+  width: 30%;
+  margin-top: 390px;
+  `}
   ${media.lessThan("large")`
   left: 7%;
   width: 34%;

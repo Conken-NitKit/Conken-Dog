@@ -17,10 +17,6 @@ import yoru from "../../../assets/img/landing/approach/yoru.webp";
 import nekomimi from "../../../assets/img/landing/approach/nekomimi.webp";
 import dotto from "../../../assets/img/landing/approach/dotto.webp";
 
-// flex-box　デメリット：大変、縦横比統一　メリット： 成長できる; 
-// keynote　デメリット：イラスト、写真が変更できない　macしか編集できない　メリット：　”ポイントを踏まえれば”簡単　こだわれる;
-
-
 const Conteiner = styled.div`
   display: flex;
   flex-direction: row;
@@ -28,6 +24,9 @@ const Conteiner = styled.div`
   justify-content: center;
   align-items: center;
   align-content: flex-start;
+  ${media.lessThan("medium")`
+    padding: 0 7vw 0 5vw;
+  `};
 `;
 
 const Image = styled.img`
@@ -36,8 +35,9 @@ const Image = styled.img`
   width: calc(100% - 10px);
   margin: 5px 5px 0px;
   ${media.lessThan("medium")`
-    flex-basis: 2%;
+    margin: 2vw 0 0 2vw;
     width: 23vw;
+    flex-basis: 2%;
   `};
 `;
 
@@ -59,7 +59,6 @@ export const TopImages = () => {
           <Image src={yoru}/>
           <Image src={nekomimi}/>
           <Image src={dotto}/>
-
         </Conteiner>
   )
 } 
