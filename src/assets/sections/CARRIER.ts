@@ -156,16 +156,22 @@ export const CARRIER: ISection = {
       requiredTime: 9,
     },
     {
-      title: "目標を達成するためのメンタルの作り方",
-      link: "https://youtu.be/9c41Parq39s",
+      title: "行動が結果を変えるハック大学式最強の仕事術",
+      link: "https://youtu.be/Qs4PpbR36ug",
       mediaType: ["READ_ONLY", "VIDEO"],
-      requiredTime: 20,
+      requiredTime: 12,
     },
     {
       title: "好きなことを仕事にしないと貧困になる理由",
       link: "https://youtu.be/1dgpecnLKX4",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 35,
+    },
+    {
+      title: "目標を達成するためのメンタルの作り方",
+      link: "https://youtu.be/9c41Parq39s",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 20,
     },
     {
       title:

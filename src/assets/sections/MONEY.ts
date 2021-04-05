@@ -129,6 +129,12 @@ export const MONEY: ISection = {
       requiredTime: 22,
     },
     {
+      title: "幸せな小金持ちになるための資産運用との「ほどよい」距離感",
+      link: "https://youtu.be/N-Id6X73gcY",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 18,
+    },
+    {
       title: "もう騙されない！資産運用の始め方、徹底解説。",
       link: "https://youtu.be/1JP5PfI5LaM",
       mediaType: ["READ_ONLY", "VIDEO"],
