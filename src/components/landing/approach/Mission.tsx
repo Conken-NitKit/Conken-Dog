@@ -49,13 +49,9 @@ const Title = styled.h2`
   flex-direction: column-reverse;
   ${media.lessThan("medium")`
     margin-top: calc(14vw - 8px);
-
     margin-bottom: 0;
-
     height: calc(6vw + 8px);
-
     flex-direction: column;
-
     font-size: 3vw;
 `}
 `;
@@ -70,13 +66,12 @@ color: #000000;
 z-index: 2;
 ${media.lessThan("medium")`
     margin-top: 0;
-
     top: 310px;
-    font-size: 3vw;
-`}
+    font-size: 2.4vw;
+`};
 
 ${media.between("medium", "large")`
-  margin-top: 150px;
+  margin-top: 0px;
   font-size: 16px;
 `}
 `;
