@@ -1,76 +1,85 @@
 import styled from "styled-components";
+import media from 'styled-media-query';
 
-const WhiteCircle = styled.div`
-  position: relative;
-  height: 550px;
-  width: 550px;
-  margin-right: auto;
-  margin-left: auto;
+const Circle = styled.div`
+  display: flex;
+  margin: -127.5px auto 0 auto;
+  border: 8px solid #87ceeb;
   border-radius: 50%;
-  top: 926px;
+  justify-content: center;
   background-color: white;
+  ${media.lessThan("medium")`
+    width: 70vw;
+    height: 70vw;
+  `}
+
+  ${media.between("medium", "large")`
+    width: 400px;
+    height: 400px;
+  `}
+
+  ${media.greaterThan("large")`
+    width: 550px;
+    height: 550px;
+  `}
+`;
+
+
+
+const Title = styled.h2`
+  position: absolute;
+  display: flex;
+  margin: 0;
+  margin-bottom: 37.5px;
+  height: 127.5px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 900px;
+  font-size: 25px;
+  text-align: center;
+  color: #87ceeb;
   z-index: 2;
+  flex-direction: column-reverse;
+  ${media.lessThan("medium")`
+    margin-top: -10vw;
+    font-size: 3vw;
+`}
 `;
 
-
-const BigCircle = styled.div`
-  position: relative;
-  height: 560px;
-  width: 560px;
-  margin-right: auto;
-  margin-left: auto;
-  border-radius: 50%;
-  top: 371px;
-  background-color: #87ceeb;
-`;
-
-const Komidasi = styled.h4`
-position: absolute;
-width: 90px;
-height: 29px;
-left: 675px;
-top: 114%;
+const Text = styled.p`
+flex-direction: column;
+margin: auto;
+border-radius: 50%;
 font-family: Roboto;
-font-style: normal;
-font-weight: 900;
-font-size: 25px;
-line-height: 29px;
-text-align: center;
-color: #87ceeb;
-z-index: 2;
-`;
-
-const Bun = styled.p`
-position: absolute;
-width: 513px;
-height: 256px;
-left: 465px;
-top:  124%;
-
-font-family: Roboto;
-font-style: normal;
-font-weight: normal;
 font-size: 27px;
-line-height: 32px;
 text-align: center;
 color: #000000;
 z-index: 2;
+${media.lessThan("medium")`
+    top: 310px;
+    font-size: 3vw;
+`}
+
+${media.between("medium", "large")`
+  margin-top: 150px;
+  font-size: 16px;
+`}
 `;
 
 export const Mission = () => {
     return(
-        <div>
-        <WhiteCircle/>
-        <BigCircle />
-        <Komidasi>mission</Komidasi>
-        <Bun>
+        <Circle>
+          <Title>mission</Title>
+          <Text>
           「〇〇がしたい！」という夢に向かって
-          <br/>楽しく学ぶうちに実力がついている場所を作りたい。
-          <br/>そのために、コンピュータ研究部は自由・
-          <br/>交流・自信を大切にして、部員全員が
-          <br/>「部活に行きたい！」と思える環境を目指しています。
-        </Bun>
-        </div>
+          <br/>楽しく学ぶうちに実力がついている
+          <br/>場所を作りたい。
+          <br/>そのために、コンピュータ研究部は
+          <br/>自由・交流・自信を大切にして、
+          <br/>部員全員が「部活に行きたい！」と思える
+          <br/>環境を目指しています。
+        </Text>
+        </Circle>
     )
 }
 
