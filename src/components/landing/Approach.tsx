@@ -92,7 +92,6 @@ const Block = styled.div`
   position: relative;
   height: 700px;
   width: 100%;
-  background-color: blue;
   ${media.lessThan("medium")`
     height: 110vw;
   `}
