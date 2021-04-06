@@ -4,6 +4,12 @@ import { Container } from "./Container";
 import CircleBackground from "../../assets/img/landing/Recommendation/circle-background.svg";
 
 const RecommendationContainer = styled(Container)`
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
   background-color: #dbf0f9;
 `;
 
@@ -42,6 +48,10 @@ const TitleSpan = styled.span`
 
 const Circles = styled.div`
   display: flex;
+
+  justify-content: space-between;
+
+  width: 770px;
 `;
 
 const Circle = styled.div`
