@@ -55,28 +55,58 @@ const Circles = styled.div`
 `;
 
 const Circle = styled.div`
+  display: flex;
+
   border-radius: 50%;
 
   height: 200px;
   width: 200px;
 
+  flex-direction: column;
+
+  align-items: center;
+
   background-image: url(${CircleBackground});
   background-size: 200px 200px;
 `;
 
-const PointNumber = styled.p`
+const PointNumber = styled.h3`
   display: flex;
 
   margin: 14px 0 0 0;
 
   height: 55px;
 
+  font-size: 25px;
+  font-weight: normal;
+
+  letter-spacing: 2px;
+
   justify-content: center;
   align-items: center;
 
-  font-size: 25px;
-
   color: white;
+`;
+
+const CircleText = styled.p`
+  display: flex;
+
+  margin: 15px 0 0 0;
+
+  min-height: 65px;
+  width: 190px;
+
+  font-size: 25px;
+  font-weight: 800;
+
+  letter-spacing: -1px;
+
+  line-height: 30px;
+
+  text-align: center;
+  align-items: center;
+
+  color: #444444;
 `;
 
 interface Props {
@@ -104,7 +134,7 @@ export const Recommendation = ({ group, circles, points }: Props) => {
         {circles.map((circle, index) => (
           <Circle>
             <PointNumber>Point. {index + 1}</PointNumber>
-            <p>{circle}</p>
+            <CircleText>{circle}</CircleText>
           </Circle>
         ))}
       </Circles>
