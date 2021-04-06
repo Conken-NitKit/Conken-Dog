@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { Container } from "./Container";
 
+import CircleBackground from "../../assets/img/landing/Recommendation/circle-background.svg";
+
 const RecommendationContainer = styled(Container)`
   background-color: #dbf0f9;
 `;
@@ -20,10 +22,36 @@ const Title = styled.h2`
   color: #444444;
 `;
 
-const TitleSpan = styled.span`
+const GroupSpan = styled.span`
   font-size: 40px;
 
   color: #30c8d6;
+`;
+
+const TitleSpan = styled.span`
+  display: flex;
+
+  flex-direction: column-reverse;
+
+  line-height: 40px;
+
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 5px;
+`;
+
+const Circles = styled.div`
+  display: flex;
+`;
+
+const Circle = styled.div`
+  border-radius: 50%;
+
+  height: 200px;
+  width: 200px;
+
+  background-image: url(${CircleBackground});
+  background-size: 200px 200px;
 `;
 
 interface Props {
@@ -39,16 +67,23 @@ export const Recommendation = ({ group, circles, points }: Props) => {
   return (
     <RecommendationContainer>
       <Title>
-        コン研の<TitleSpan>{group}</TitleSpan>は
+        コン研の<GroupSpan>{group}</GroupSpan>は
         <br />
-        こんな<span>あなた</span>におすすめ！
+        こんな
+        <TitleSpan>あなた</TitleSpan>
+        <br />
+        におすすめ！
       </Title>
-      {circles.map((circle, index) => (
-        <div>
-          <p>Point. {index + 1}</p>
-          <p>{circle}</p>
-        </div>
-      ))}
+
+      <Circles>
+        {circles.map((circle, index) => (
+          <Circle>
+            <p>Point. {index + 1}</p>
+            <p>{circle}</p>
+          </Circle>
+        ))}
+      </Circles>
+
       {points.map((point, index) => (
         <div>
           <div>
