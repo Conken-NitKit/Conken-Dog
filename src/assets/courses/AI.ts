@@ -1,13 +1,12 @@
 import { ICourses } from ".";
 import logo from "../img/eye-catching/game1.svg";
 import { ATCODER } from "../sections/ATCODER";
-import { ML } from "../sections/ML";
-import { MATH } from "../sections/MATH";
+import { INDUSTRY_AI } from "../sections/INDUSTRY_AI";
 import { PYTHON } from "../sections/PYTHON";
-import { OUTLINE } from "../sections/OUTLINE";
-import { DEEP } from "../sections/DEEP";
-import { NLP } from "../sections/NLP";
-import { SNN } from "../sections/SNN";
+import { ML } from "../sections/ML";
+import { CHAINER1 } from "../sections/CHAINER1";
+import { CHAINER2 } from "../sections/CHAINER2";
+import { CHAINER3 } from "../sections/CHAINER3";
 
 
 export const AI_COURSE: ICourses = {
@@ -15,5 +14,5 @@ export const AI_COURSE: ICourses = {
   metaName: "ai",
   logoSVG: logo,
   description: "",
-  sections: [ATCODER, ML, MATH, PYTHON, OUTLINE, DEEP, NLP, SNN],
+  sections: [ATCODER, INDUSTRY_AI, PYTHON, CHAINER1, CHAINER2, ML, CHAINER3],
 };
