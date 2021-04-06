@@ -48,6 +48,9 @@ export default function Lnading() {
         contentTitle2="専門 ( Webページのデザイン自体に関する知識 )"
         content2={`#Figma  #UI/UXデザイン #高度なCSSスタイリング\n#色彩心理学  #コピーライティング`}
       />
+
+      {/* チームのサークルテキストは、枠とのバランスを見て適宜改行して下さい。 */}
+
       <Recommendation
         group={"Web班"}
         circles={[
@@ -90,8 +93,6 @@ export default function Lnading() {
         ]}
       />
       <Partition />
-
-      {/* チームのサークルテキストは、枠とのバランスを見て適宜改行して下さい。 */}
 
       <Team
         name="Game班"
