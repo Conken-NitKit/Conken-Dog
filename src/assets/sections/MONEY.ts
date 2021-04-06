@@ -190,6 +190,12 @@ export const MONEY: ISection = {
       requiredTime: 26,
     },
     {
+      title: "2030年までにこれをやるべき！",
+      link: "https://youtu.be/qdljMEHPIzo",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 30,
+    },
+    {
       title: "大金持ちは無理でも「小金持ち」になら誰でもなれる理由",
       link: "https://youtu.be/uSJy02dn9Rk",
       mediaType: ["READ_ONLY", "VIDEO"],
@@ -417,6 +423,12 @@ export const MONEY: ISection = {
       link: "https://youtu.be/ntpoZzTrZ2U",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 30,
+    },
+    {
+      title: "暴落を狙って長期投資で利益を上げる投資法",
+      link: "https://youtu.be/M9JE6mt2ZvI",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 13,
     },
   ],
 };
