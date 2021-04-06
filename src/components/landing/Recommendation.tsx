@@ -64,6 +64,21 @@ const Circle = styled.div`
   background-size: 200px 200px;
 `;
 
+const PointNumber = styled.p`
+  display: flex;
+
+  margin: 14px 0 0 0;
+
+  height: 55px;
+
+  justify-content: center;
+  align-items: center;
+
+  font-size: 25px;
+
+  color: white;
+`;
+
 interface Props {
   group: string;
   circles: string[];
@@ -88,7 +103,7 @@ export const Recommendation = ({ group, circles, points }: Props) => {
       <Circles>
         {circles.map((circle, index) => (
           <Circle>
-            <p>Point. {index + 1}</p>
+            <PointNumber>Point. {index + 1}</PointNumber>
             <p>{circle}</p>
           </Circle>
         ))}
