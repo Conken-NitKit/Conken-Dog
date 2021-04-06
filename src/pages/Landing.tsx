@@ -91,6 +91,8 @@ export default function Lnading() {
       />
       <Partition />
 
+      {/* チームのサークルテキストは、枠とのバランスを見て適宜改行して下さい。 */}
+
       <Team
         name="Game班"
         thumbnail={"???"}
