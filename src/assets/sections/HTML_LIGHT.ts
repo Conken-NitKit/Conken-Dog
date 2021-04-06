@@ -1,9 +1,9 @@
 import { ISection } from ".";
 
 export const HTML_LIGHT: ISection = {
-  title: "HTML && CSS",
+  title: "Webの基本",
   description:
-    "Webページ作成の基礎となる、HTMLとCSSの初歩を学ぶレッスンです。\n" +
+    "Webページ作成の基礎を学ぶレッスンです。\n" +
     "最終的にはBootstrapというHTMLフレームワークを使って、簡単なWebページを作成します。",
   contentsList: [
     {
@@ -127,6 +127,72 @@ export const HTML_LIGHT: ISection = {
       link: "https://youtu.be/awRkFcv51r4",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 30,
+    },
+    {
+      title: "未経験からのインフラエンジニア勉強講座",
+      link: "https://youtu.be/aYbUDGn61cU",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 40,
+    },
+    {
+      title: "「OSI参照モデル」が30分で絶対分かる！",
+      link: "https://youtu.be/5QHXbxZIUDg",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 32,
+    },
+    {
+      title: "CCNA「物理層」を完璧理解できる講座",
+      link: "https://youtu.be/7CqpCqLmghI",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 31,
+    },
+    {
+      title: "「イーサネットとは？」を徹底解説！",
+      link: "https://youtu.be/9Be3WupVp-E",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 81,
+    },
+    {
+      title: "TCP/IPとは？「仕組み」完全解説！",
+      link: "https://youtu.be/Pp6-YXxL06Y",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 66,
+    },
+    {
+      title: "「TCP」「UDP」を日本一易しく解説！",
+      link: "https://youtu.be/erY_CkAVSYE",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 70,
+    },
+    {
+      title: "2進数/16進数とは？「進数変換」をわかりやすく解説",
+      link: "https://youtu.be/YDqJHi6UPWc",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 28,
+    },
+    {
+      title: "「IPアドレス計算」が初心者でも絶対わかる！",
+      link: "https://youtu.be/KrrK3FJNigY",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 50,
+    },
+    {
+      title: "「ルーティング」これさえ見れば完全理解！",
+      link: "https://youtu.be/_sWIKXnWNmU",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 50,
+    },
+    {
+      title: "「OSPF」を世界一易しく解説！",
+      link: "https://youtu.be/g9tx6fMD8UA",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 33,
+    },
+    {
+      title: "ヒヨコでもわかる TCP/IP 超入門",
+      link: "https://zenn.dev/kubo_programmer/books/fa1e01071e7aaa90672d",
+      mediaType: ["READ_ONLY"],
+      requiredTime: 60,
     },
   ],
 };

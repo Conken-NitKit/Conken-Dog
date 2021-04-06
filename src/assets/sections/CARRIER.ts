@@ -138,6 +138,18 @@ export const CARRIER: ISection = {
       requiredTime: 21,
     },
     {
+      title: "プロが明かす、どんな副業でも稼ぐための思考TOP5",
+      link: "https://youtu.be/1fBSr81G3IA",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 17,
+    },
+    {
+      title: "副業をガチるための本業のサボり方３選",
+      link: "https://youtu.be/HY35LQqlx7M",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 18,
+    },
+    {
       title: "副業に興味がある人は絶対に身に着けておくべき３つのスキル",
       link: "https://youtu.be/RC6PAXpysCk",
       mediaType: ["READ_ONLY", "VIDEO"],

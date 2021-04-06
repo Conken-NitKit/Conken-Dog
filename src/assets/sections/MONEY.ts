@@ -418,5 +418,11 @@ export const MONEY: ISection = {
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 30,
     },
+    {
+      title: "暴落を狙って長期投資で利益を上げる投資法",
+      link: "https://youtu.be/M9JE6mt2ZvI",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 13,
+    },
   ],
 };
