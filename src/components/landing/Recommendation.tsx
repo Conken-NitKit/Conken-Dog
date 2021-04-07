@@ -10,7 +10,7 @@ const RecommendationContainer = styled(Container)`
 
   align-items: center;
 
-  background-color: #dbf0f9;
+  background: #dbf0f9;
 `;
 
 const Title = styled.h2`
@@ -66,8 +66,7 @@ const Circle = styled.div`
 
   align-items: center;
 
-  background-image: url(${CircleBackground});
-  background-size: 200px 200px;
+  background: url(${CircleBackground}) top/200px;
 `;
 
 const PointNumber = styled.h3`
@@ -113,6 +112,13 @@ export const CircleText = styled.p`
 const Squares = styled.div`
   height: 385px;
   width: 770px;
+`;
+
+const PointTitles = styled.div`
+  height: 180px;
+  width: 505px;
+
+  background: #76d8c6;
 `;
 
 interface Props {
