@@ -115,13 +115,27 @@ const Square = styled.div`
 `;
 
 const PointTitles = styled.div`
+  position: relative;
+
   height: 180px;
   width: 505px;
 
   background: #76d8c6;
 `;
 
-const SquareNumber = styled.p``;
+const SquareNumber = styled.p`
+  position: absolute;
+
+  margin: 40px 0 0 35px;
+
+  font-size: 24px;
+
+  line-height: 30px;
+
+  letter-spacing: 2px;
+
+  color: white;
+`;
 
 interface Props {
   group: string;
@@ -156,7 +170,7 @@ export const Recommendation = ({ group, circles, points }: Props) => {
       {points.map((point, index) => (
         <Square>
           <PointTitles>
-            <p>Point. {index + 1}</p>
+            <SquareNumber>Point. {index + 1}</SquareNumber>
             {point.title}
           </PointTitles>
           <p>{point.description}</p>
