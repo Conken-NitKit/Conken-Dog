@@ -77,7 +77,7 @@ const PointNumber = styled.h3`
 
   height: 55px;
 
-  font-size: 25px;
+  font-size: 22px;
   font-weight: normal;
 
   letter-spacing: 2px;
@@ -96,12 +96,12 @@ export const CircleText = styled.p`
   min-height: 65px;
   width: 200px;
 
-  font-size: 25px;
+  font-size: 23px;
   font-weight: 800;
 
   letter-spacing: -1px;
 
-  line-height: 30px;
+  line-height: 28px;
   text-align: center;
 
   justify-content: center;
