@@ -15,7 +15,7 @@ const ApproachContainer = styled(Container)`
 
 const CatchCopy = styled.h1`
   position: relative;
-  margin: -460px auto 0 auto;
+  margin: -300px auto 0 auto;
   width: 100%;
   font-family: Gen Jyuu Gothic;
   font-style: normal;
@@ -33,6 +33,7 @@ const CatchCopy = styled.h1`
   `};
   ${media.between("medium", "large")`
     font-size: 500%;
+    margin-top: -460px;
   `}
 `;
 
