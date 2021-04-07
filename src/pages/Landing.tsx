@@ -56,8 +56,20 @@ export default function Lnading() {
         group={"Web班"}
         circles={[
           <CircleText>1年生のうちから色んな作品を作りたい</CircleText>,
-          <CircleText>作った作品をみんなに使って欲しい</CircleText>,
-          <CircleText>幅広い分野の色んなことに挑戦したい</CircleText>,
+          <CircleText>
+            作った作品を
+            <br />
+            みんなに
+            <br />
+            使って欲しい
+          </CircleText>,
+          <CircleText>
+            幅広い分野の
+            <br />
+            色んなことに
+            <br />
+            挑戦したい
+          </CircleText>,
         ]}
         points={[
           {
