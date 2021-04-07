@@ -69,7 +69,7 @@ const Circle = styled.div`
   background: url(${CircleBackground}) top/200px;
 `;
 
-const PointNumber = styled.h3`
+const CircleNumber = styled.h3`
   display: flex;
 
   margin: 14px 0 0 0;
@@ -145,7 +145,7 @@ export const Recommendation = ({ group, circles, points }: Props) => {
       <Circles>
         {circles.map((circle, index) => (
           <Circle>
-            <PointNumber>Point. {index + 1}</PointNumber>
+            <CircleNumber>Point. {index + 1}</CircleNumber>
             {circle}
           </Circle>
         ))}
@@ -153,10 +153,10 @@ export const Recommendation = ({ group, circles, points }: Props) => {
 
       {points.map((point, index) => (
         <Squares>
-          <div>
+          <PointTitles>
             <p>Point. {index + 1}</p>
             {point.title}
-          </div>
+          </PointTitles>
           <p>{point.description}</p>
         </Squares>
       ))}
