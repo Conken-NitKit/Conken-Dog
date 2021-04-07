@@ -110,6 +110,11 @@ export const CircleText = styled.p`
   color: #444444;
 `;
 
+const Squares = styled.div`
+  height: 385px;
+  width: 770px;
+`;
+
 interface Props {
   group: string;
   circles: JSX.Element[];
@@ -141,15 +146,13 @@ export const Recommendation = ({ group, circles, points }: Props) => {
       </Circles>
 
       {points.map((point, index) => (
-        <div>
+        <Squares>
           <div>
             <p>Point. {index + 1}</p>
             {point.title}
           </div>
-          <div>
-            <p>{point.description}</p>
-          </div>
-        </div>
+          <p>{point.description}</p>
+        </Squares>
       ))}
     </RecommendationContainer>
   );
