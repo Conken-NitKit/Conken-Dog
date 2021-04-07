@@ -94,7 +94,7 @@ export const CircleText = styled.p`
   margin: 15px 0 0 0;
 
   min-height: 65px;
-  width: 190px;
+  width: 200px;
 
   font-size: 25px;
   font-weight: 800;

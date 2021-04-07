@@ -55,7 +55,11 @@ export default function Lnading() {
       <Recommendation
         group={"Web班"}
         circles={[
-          <CircleText>1年生のうちから色んな作品を作りたい</CircleText>,
+          <CircleText>
+            1年生のうちから色んな作品を
+            <br />
+            作りたい
+          </CircleText>,
           <CircleText>
             作った作品を
             <br />
@@ -128,9 +132,25 @@ export default function Lnading() {
       <Recommendation
         group={"Game班"}
         circles={[
-          <CircleText>とにかくゲームを作りたい</CircleText>,
-          <CircleText>有名ゲームのおもしろさを分析したい</CircleText>,
-          <CircleText>高専祭でみんなに自分の作品を見せつけたい</CircleText>,
+          <CircleText>
+            とにかくゲームを
+            <br />
+            作りたい
+          </CircleText>,
+          <CircleText>
+            有名ゲームの
+            <br />
+            おもしろさを
+            <br />
+            分析したい
+          </CircleText>,
+          <CircleText>
+            高専祭でみんなに
+            <br />
+            自分の作品を
+            <br />
+            見せつけたい
+          </CircleText>,
         ]}
         points={[
           {
