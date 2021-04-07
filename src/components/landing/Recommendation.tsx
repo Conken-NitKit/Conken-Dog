@@ -88,7 +88,7 @@ const PointNumber = styled.h3`
   color: white;
 `;
 
-const CircleText = styled.p`
+export const CircleText = styled.p`
   display: flex;
 
   margin: 15px 0 0 0;
@@ -111,7 +111,7 @@ const CircleText = styled.p`
 
 interface Props {
   group: string;
-  circles: string[];
+  circles: JSX.Element[];
   points: {
     title: JSX.Element;
     description: string;
@@ -134,7 +134,7 @@ export const Recommendation = ({ group, circles, points }: Props) => {
         {circles.map((circle, index) => (
           <Circle>
             <PointNumber>Point. {index + 1}</PointNumber>
-            <CircleText>{circle}</CircleText>
+            {circle}
           </Circle>
         ))}
       </Circles>

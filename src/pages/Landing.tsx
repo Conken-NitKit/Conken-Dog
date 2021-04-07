@@ -8,7 +8,8 @@ import {
   Team,
   Teams,
   WhatIs,
-} from "../components/landing";
+} from "../components/landing/index";
+import { CircleText } from "../components/landing/index/RecommendationIndex";
 
 const Container = styled.div`
   width: 100vw;
@@ -54,9 +55,9 @@ export default function Lnading() {
       <Recommendation
         group={"Web班"}
         circles={[
-          "1年生のうちから色んな作品を作りたい",
-          "作った作品をみんなに使って欲しい",
-          "幅広い分野の色んなことに挑戦したい",
+          <CircleText>1年生のうちから色んな作品を作りたい</CircleText>,
+          <CircleText>作った作品をみんなに使って欲しい</CircleText>,
+          <CircleText>幅広い分野の色んなことに挑戦したい</CircleText>,
         ]}
         points={[
           {
@@ -115,9 +116,9 @@ export default function Lnading() {
       <Recommendation
         group={"Game班"}
         circles={[
-          "とにかくゲームを作りたい",
-          "有名ゲームのおもしろさを分析したい",
-          "高専祭でみんなに自分の作品を見せつけたい",
+          <CircleText>とにかくゲームを作りたい</CircleText>,
+          <CircleText>有名ゲームのおもしろさを分析したい</CircleText>,
+          <CircleText>高専祭でみんなに自分の作品を見せつけたい</CircleText>,
         ]}
         points={[
           {
