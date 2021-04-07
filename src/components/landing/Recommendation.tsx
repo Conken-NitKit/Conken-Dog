@@ -102,8 +102,9 @@ export const CircleText = styled.p`
   letter-spacing: -1px;
 
   line-height: 30px;
-
   text-align: center;
+
+  justify-content: center;
   align-items: center;
 
   color: #444444;
