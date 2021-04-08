@@ -102,6 +102,8 @@ const CircleText = styled.p`
 
   letter-spacing: -1px;
 
+  white-space: pre-wrap;
+
   line-height: 28px;
   text-align: center;
 
