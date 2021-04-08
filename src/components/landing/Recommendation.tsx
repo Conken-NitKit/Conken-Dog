@@ -49,6 +49,8 @@ const TitleSpan = styled.span`
 const Circles = styled.div`
   display: flex;
 
+  margin-bottom: 35px;
+
   justify-content: space-between;
 
   width: 770px;
@@ -110,6 +112,8 @@ export const CircleText = styled.p`
 `;
 
 const Square = styled.div`
+  margin-top: 75px;
+
   height: 385px;
   width: 770px;
 `;
