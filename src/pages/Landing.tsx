@@ -57,7 +57,7 @@ export default function Lnading() {
       <Recommendation
         group={"Web班"}
         circles={[
-          "1年生のうちから色んな作品を\n作りたい",
+          "1年生のうちから\n色んな作品を\n作りたい",
           "作った作品を\nみんなに\n使って欲しい",
           "幅広い分野の\n色んなことに\n挑戦したい",
         ]}
