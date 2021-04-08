@@ -16,7 +16,7 @@ const RecommendationContainer = styled(Container)`
 const Title = styled.h2`
   display: flex;
 
-  margin: 105px 0 0;
+  margin: 0;
 
   font-size: 35px;
 
