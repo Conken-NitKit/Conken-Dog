@@ -114,25 +114,44 @@ const Square = styled.div`
   width: 770px;
 `;
 
-const PointTitles = styled.div`
-  position: relative;
+const SquareTitles = styled.div`
+  display: flex;
+
+  padding-left: 35px;
 
   height: 180px;
   width: 505px;
+
+  flex-direction: column;
+
+  justify-content: center;
 
   background: #76d8c6;
 `;
 
 const SquareNumber = styled.p`
-  position: absolute;
-
-  margin: 40px 0 0 35px;
+  margin: 0;
 
   font-size: 24px;
 
+  letter-spacing: 2px;
+
   line-height: 30px;
 
+  color: white;
+`;
+
+export const SquareTitle = styled.p`
+  margin: 12px 0 0 0;
+
+  top: 70px;
+
+  font-size: 25px;
+  font-weight: 800;
+
   letter-spacing: 2px;
+
+  line-height: 30px;
 
   color: white;
 `;
@@ -169,10 +188,10 @@ export const Recommendation = ({ group, circles, points }: Props) => {
 
       {points.map((point, index) => (
         <Square>
-          <PointTitles>
+          <SquareTitles>
             <SquareNumber>Point. {index + 1}</SquareNumber>
             {point.title}
-          </PointTitles>
+          </SquareTitles>
           <p>{point.description}</p>
         </Square>
       ))}

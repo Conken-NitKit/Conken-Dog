@@ -9,7 +9,10 @@ import {
   Teams,
   WhatIs,
 } from "../components/landing/index";
-import { CircleText } from "../components/landing/index/RecommendationIndex";
+import {
+  CircleText,
+  SquareTitle,
+} from "../components/landing/index/RecommendationIndex";
 
 const Container = styled.div`
   width: 100vw;
@@ -78,32 +81,32 @@ export default function Lnading() {
         points={[
           {
             title: (
-              <p>
+              <SquareTitle>
                 全コースの中でももっとも
                 <br />
                 開発サイクルが "高速" で<br />
                 <span>たくさんの作品</span>を作ることができる
-              </p>
+              </SquareTitle>
             ),
             description: `Web班での作品はカンタンなものであれば、大体2~3日で済むので、プロジェクトもたくさん立ち上げることができて、1年生のうちでも活躍がしやすくなっています。`,
           },
           {
             title: (
-              <p>
+              <SquareTitle>
                 全コースの中でもっとも
                 <br />
                 <span>実用的なサービス</span>の開発が多い
-              </p>
+              </SquareTitle>
             ),
             description: `Web班の作品は「使ってくれる人がいるか？」という視点を大事にしてサービスの開発を行っていきます。そのため、作品を色んな人に使ってもらうという体験ができます。\n（Webデザイン班では "ビジネス的な戦略" についても学べます）`,
           },
           {
             title: (
-              <p>
+              <SquareTitle>
                 コンピュータの基礎的な部分を学び
                 <br />
                 <span>幅広い知識</span>を得ることが出来る
-              </p>
+              </SquareTitle>
             ),
             description: `Web班ではカンタンなWebサイトの他に、サーバー構築、ネットワーク、セキュリティといった知識についても勉強することができます。\n（上記に関しては "Web開発班" に配属者のみのコンテンツです）`,
           },
@@ -155,31 +158,31 @@ export default function Lnading() {
         points={[
           {
             title: (
-              <p>
+              <SquareTitle>
                 ゲームの開発に必要な知識を
                 <br />
                 <span>最短ルート</span>で学ぶことができる
-              </p>
+              </SquareTitle>
             ),
             description: `ゲーム班ではゲーム会社の実際の現場で使われている技術をもとにそれらを無駄なく学ぶためのカリキュラムを用意しています。\n現場で使われている技術なので、しっかりと内容を理解すれば、ほとんどのゲームが作ることができるようなれます。`,
           },
           {
             title: (
-              <p>
+              <SquareTitle>
                 全コースの中でもっとも
                 <br />
                 <span>実用的なサービス</span>の開発が多い
-              </p>
+              </SquareTitle>
             ),
             description: `ゲーム班では「ゲーム開発のスキル」以外にも、\n・ゲームを最も「おもしろい！」と感じる難易度に調整する方法\n・プレイヤーの「買いたい欲」を刺激する方法\nなどについても学ぶことができます。`,
           },
           {
             title: (
-              <p>
+              <SquareTitle>
                 コンピュータの基礎的な部分を学び
                 <br />
                 <span>幅広い知識</span>を得ることが出来る
-              </p>
+              </SquareTitle>
             ),
             description: `自分の作ったゲームを楽しんでもらうという体験をすることは、学生のうちだと、そういった機会はとても貴重な経験です。\n高専祭では実際に友人を招待して楽しんでもらい、そういった貴重な経験を積むことができます。`,
           },
