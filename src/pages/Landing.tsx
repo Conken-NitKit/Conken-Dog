@@ -6,16 +6,13 @@ import {
   Partition,
   Plan,
   Recommendation,
+  CircleText,
+  SquareTitle,
+  SquareSpan,
   Team,
   Teams,
   WhatIs,
 } from "../components/landing/index";
-
-import {
-  CircleText,
-  SquareTitle,
-  SquareSpan,
-} from "../components/landing/index/RecommendationIndex";
 
 const Container = styled.div`
   width: 100vw;

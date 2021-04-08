@@ -121,6 +121,10 @@ const Square = styled.div`
 const SquareTitles = styled.div`
   display: flex;
 
+  position: relative;
+
+  z-index: 2;
+
   padding-left: 35px;
 
   height: 180px;
@@ -166,6 +170,23 @@ export const SquareSpan = styled.span`
   color: yellow;
 `;
 
+const SquareText = styled.p`
+  margin: -65px 0 0 0;
+
+  padding: 110px 30px 0 30px;
+
+  height: 160px;
+  width: 740px;
+
+  font-size: 24px;
+
+  line-height: 30px;
+
+  white-space: pre-wrap;
+
+  background: white;
+`;
+
 interface Props {
   group: string;
   circles: JSX.Element[];
@@ -202,7 +223,7 @@ export const Recommendation = ({ group, circles, points }: Props) => {
             <SquareNumber>Point. {index + 1}</SquareNumber>
             {point.title}
           </SquareTitles>
-          <p>{point.description}</p>
+          <SquareText>{point.description}</SquareText>
         </Square>
       ))}
     </RecommendationContainer>
