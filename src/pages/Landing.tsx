@@ -6,7 +6,6 @@ import {
   Partition,
   Plan,
   Recommendation,
-  CircleText,
   SquareTitle,
   SquareSpan,
   Team,
@@ -58,25 +57,9 @@ export default function Lnading() {
       <Recommendation
         group={"Web班"}
         circles={[
-          <CircleText>
-            1年生のうちから色んな作品を
-            <br />
-            作りたい
-          </CircleText>,
-          <CircleText>
-            作った作品を
-            <br />
-            みんなに
-            <br />
-            使って欲しい
-          </CircleText>,
-          <CircleText>
-            幅広い分野の
-            <br />
-            色んなことに
-            <br />
-            挑戦したい
-          </CircleText>,
+          "1年生のうちから色んな作品を\n作りたい",
+          "作った作品を\nみんなに\n使って欲しい",
+          "幅広い分野の\n色んなことに\n挑戦したい",
         ]}
         points={[
           {
@@ -135,25 +118,9 @@ export default function Lnading() {
       <Recommendation
         group={"Game班"}
         circles={[
-          <CircleText>
-            とにかくゲームを
-            <br />
-            作りたい
-          </CircleText>,
-          <CircleText>
-            有名ゲームの
-            <br />
-            おもしろさを
-            <br />
-            分析したい
-          </CircleText>,
-          <CircleText>
-            高専祭でみんなに
-            <br />
-            自分の作品を
-            <br />
-            見せつけたい
-          </CircleText>,
+          "とにかくゲームを\n作りたい",
+          "有名ゲームの\nおもしろさを\n分析したい",
+          "高専祭でみんなに\n自分の作品を\n見せつけたい",
         ]}
         points={[
           {
