@@ -109,7 +109,7 @@ export const CircleText = styled.p`
   color: #444444;
 `;
 
-const Square = styled.div`
+const Squares = styled.div`
   height: 385px;
   width: 770px;
 `;
@@ -187,13 +187,13 @@ export const Recommendation = ({ group, circles, points }: Props) => {
       </Circles>
 
       {points.map((point, index) => (
-        <Square>
+        <Squares>
           <SquareTitles>
             <SquareNumber>Point. {index + 1}</SquareNumber>
             {point.title}
           </SquareTitles>
           <p>{point.description}</p>
-        </Square>
+        </Squares>
       ))}
     </RecommendationContainer>
   );
