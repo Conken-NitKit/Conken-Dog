@@ -109,7 +109,7 @@ export const CircleText = styled.p`
   color: #444444;
 `;
 
-const Squares = styled.div`
+const Square = styled.div`
   height: 385px;
   width: 770px;
 `;
