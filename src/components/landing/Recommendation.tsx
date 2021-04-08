@@ -156,6 +156,12 @@ export const SquareTitle = styled.p`
   color: white;
 `;
 
+export const SquareSpan = styled.span`
+  font-size: 30px;
+
+  color: yellow;
+`;
+
 interface Props {
   group: string;
   circles: JSX.Element[];
