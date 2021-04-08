@@ -6,6 +6,8 @@ import CircleBackground from "../../assets/img/landing/Recommendation/circle-bac
 const RecommendationContainer = styled(Container)`
   display: flex;
 
+  padding: 105px 15px 145px;
+
   flex-direction: column;
 
   align-items: center;
