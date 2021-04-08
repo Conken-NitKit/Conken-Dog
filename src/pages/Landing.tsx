@@ -53,7 +53,7 @@ export default function Lnading() {
         content2={`#Figma  #UI/UXデザイン #高度なCSSスタイリング\n#色彩心理学  #コピーライティング`}
       />
 
-      {/* チームのサークルテキストは、枠とのバランスを見て適宜改行して下さい。 */}
+      {/* チームのテキストは、枠とのバランスを見て適宜改行して下さい。 */}
 
       <Recommendation
         group={"Web班"}
