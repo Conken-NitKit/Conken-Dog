@@ -187,13 +187,13 @@ export const Recommendation = ({ group, circles, points }: Props) => {
       </Circles>
 
       {points.map((point, index) => (
-        <Squares>
+        <Square>
           <SquareTitles>
             <SquareNumber>Point. {index + 1}</SquareNumber>
             {point.title}
           </SquareTitles>
           <p>{point.description}</p>
-        </Squares>
+        </Square>
       ))}
     </RecommendationContainer>
   );
