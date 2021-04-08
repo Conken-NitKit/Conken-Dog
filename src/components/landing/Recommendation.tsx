@@ -49,7 +49,7 @@ const TitleSpan = styled.span`
 const Circles = styled.div`
   display: flex;
 
-  margin-bottom: 35px;
+  margin: 85px 0 35px 0;
 
   justify-content: space-between;
 
