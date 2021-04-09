@@ -102,7 +102,7 @@ const CircleNumber = styled.h3`
 
   margin: 18px 0 0 0;
 
-  height: 51px;
+  height: 50px;
 
   font-size: 23px;
   font-weight: normal;
