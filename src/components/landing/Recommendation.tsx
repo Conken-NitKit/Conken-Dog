@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Container } from "./Container";
 
 import CircleBackground from "../../assets/img/landing/Recommendation/circle-background.svg";
+import media from "styled-media-query";
 
 const RecommendationContainer = styled(Container)`
   display: flex;
@@ -13,6 +14,10 @@ const RecommendationContainer = styled(Container)`
   align-items: center;
 
   background: #dbf0f9;
+
+  ${media.between("medium", "large")`
+    padding: 85px 10px 115px;
+  `};
 `;
 
 const Title = styled.h2`
@@ -21,19 +26,34 @@ const Title = styled.h2`
   margin: 0;
 
   font-size: 35px;
+  font-weight: 900;
 
-  letter-spacing: 0.24em;
+  letter-spacing: 4px;
 
   line-height: 40px;
+
   justify-content: center;
 
   color: #444444;
+
+  ${media.between("medium", "large")`
+    font-size: 25px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    line-height: 30px
+  `};
 `;
 
 const GroupSpan = styled.span`
   font-size: 40px;
 
   color: #30c8d6;
+
+  ${media.between("medium", "large")`
+    font-size: 30px;
+  `}
 `;
 
 const TitleSpan = styled.span`
