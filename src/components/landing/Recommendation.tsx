@@ -62,16 +62,20 @@ const TitleSpan = styled.span`
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 5px;
+
+  ${media.between("medium", "large")`
+    text-underline-offset: 4px;
+  `};
 `;
 
 const Circles = styled.div`
   display: flex;
 
-  margin: 85px 0 35px 0;
+  margin: 9% 0 4% 0;
 
   justify-content: space-between;
 
-  width: 770px;
+  width: 82%;
 `;
 
 const Circle = styled.div`
