@@ -113,8 +113,6 @@ const CircleText = styled.p`
 
 const Square = styled.div`
   margin-top: 75px;
-
-  height: 385px;
   width: 770px;
 `;
 
@@ -180,9 +178,9 @@ const SquareText = styled.p`
   height: 160px;
   width: 675px;
 
-  font-size: 24px;
+  font-size: 20px;
 
-  line-height: 30px;
+  line-height: 25px;
 
   white-space: pre-wrap;
 

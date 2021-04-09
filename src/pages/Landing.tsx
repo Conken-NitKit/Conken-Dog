@@ -91,7 +91,7 @@ export default function Lnading() {
                 <SquareSpan>幅広い知識</SquareSpan>を得ることが出来る
               </SquareTitle>
             ),
-            description: `Web班ではカンタンなWebサイトの他に、\nサーバー構築、ネットワーク、セキュリティといった知識\nについても勉強することができます。\n（上記に関しては "Web開発班" に配属者のみのコンテンツです）`,
+            description: `Web班ではカンタンなWebサイトの他に、\nサーバー構築、ネットワーク、セキュリティといった知識についても\n勉強することができます。\n（上記に関しては "Web開発班" の配属者のみのコンテンツです）`,
           },
         ]}
       />
