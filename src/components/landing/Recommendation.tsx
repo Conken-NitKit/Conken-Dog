@@ -175,18 +175,22 @@ export const SquareSpan = styled.span`
 `;
 
 const SquareText = styled.p`
-  margin: -65px 0 0 0;
+  display: flex;
 
-  padding: 110px 30px 0 30px;
+  margin: -65px 0 0 35px;
+
+  padding: 65px 30px 0 30px;
 
   height: 160px;
-  width: 740px;
+  width: 675px;
 
   font-size: 24px;
 
   line-height: 30px;
 
   white-space: pre-wrap;
+
+  align-items: center;
 
   background: white;
 `;
@@ -208,7 +212,6 @@ export const Recommendation = ({ group, circles, points }: Props) => {
         <br />
         こんな
         <TitleSpan>あなた</TitleSpan>
-        <br />
         におすすめ！
       </Title>
 
