@@ -115,11 +115,11 @@ const CircleNumber = styled.h3`
   color: white;
 
   ${media.between("medium", "large")`
-    margin-top: 19px;
+    margin-top: 17;
 
-    height: 54px;
+    height: 50px;
 
-    font-size: 22px;
+    font-size: 20px;
   `};
 `;
 
@@ -145,6 +145,14 @@ const CircleText = styled.p`
   align-items: center;
 
   color: #444444;
+
+  ${media.between("medium", "large")`
+    margin-top: 7px;
+    
+    font-size: 18px;
+
+    line-height: 22px;
+  `};
 `;
 
 const Square = styled.div`
