@@ -84,13 +84,17 @@ const Circle = styled.div`
   border-radius: 50%;
 
   height: 200px;
-  width: 200px;
+  width: 26%;
 
   flex-direction: column;
 
   align-items: center;
 
   background: url(${CircleBackground}) top/200px;
+
+  ${media.between("medium", "large")`
+    height: 160px;
+  `};
 `;
 
 const CircleNumber = styled.h3`
