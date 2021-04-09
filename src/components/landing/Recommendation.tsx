@@ -37,10 +37,6 @@ const GroupSpan = styled.span`
 `;
 
 const TitleSpan = styled.span`
-  display: flex;
-
-  flex-direction: column-reverse;
-
   line-height: 40px;
 
   text-decoration: underline;
@@ -209,7 +205,8 @@ export const Recommendation = ({ group, circles, points }: Props) => {
     <RecommendationContainer>
       <Title>
         コン研の<GroupSpan>{group}</GroupSpan>は
-        <br />
+      </Title>
+      <Title>
         こんな
         <TitleSpan>あなた</TitleSpan>
         におすすめ！
