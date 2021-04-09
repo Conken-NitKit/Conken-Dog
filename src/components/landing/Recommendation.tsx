@@ -48,17 +48,17 @@ const Title = styled.h2`
 
 const GroupSpan = styled.span`
   font-size: 40px;
+  font-weight: bold;
 
   color: #30c8d6;
 
   ${media.between("medium", "large")`
     font-size: 30px;
+    font-weight: 900;
   `}
 `;
 
 const TitleSpan = styled.span`
-  line-height: 40px;
-
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 5px;
