@@ -100,11 +100,11 @@ const Circle = styled.div`
 const CircleNumber = styled.h3`
   display: flex;
 
-  margin: 14px 0 0 0;
+  margin: 18px 0 0 0;
 
-  height: 55px;
+  height: 51px;
 
-  font-size: 22px;
+  font-size: 23px;
   font-weight: normal;
 
   letter-spacing: 2px;
@@ -113,6 +113,14 @@ const CircleNumber = styled.h3`
   align-items: center;
 
   color: white;
+
+  ${media.between("medium", "large")`
+    margin-top: 19px;
+
+    height: 54px;
+
+    font-size: 22px;
+  `};
 `;
 
 const CircleText = styled.p`
