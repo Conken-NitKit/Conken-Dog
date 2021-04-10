@@ -18,6 +18,10 @@ const RecommendationContainer = styled(Container)`
   ${media.between("medium", "large")`
     padding: 85px 10px 115px;
   `};
+
+  ${media.lessThan("medium")`
+    padding: 10% 2% 20%;
+  `};
 `;
 
 const Title = styled.h2`
