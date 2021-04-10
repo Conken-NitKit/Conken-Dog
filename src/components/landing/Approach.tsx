@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import media from 'styled-media-query';
+import media from "styled-media-query";
 import { TopImages } from "./approach/TopImages";
 import { Mission } from "./approach/Mission";
 import { Container } from "./Container";
@@ -8,48 +8,38 @@ import kita from "../../assets/img/landing/approach/kita.webp";
 import conken from "../../assets/img/landing/approach/Conken.webp";
 import maru from "../../assets/img/landing/approach/maru.webp";
 import sinkan from "../../assets/img/landing/approach/sinkan.webp";
+import { TopImagesBottom } from "./approach/TopImagesBottom";
 
 const ApproachContainer = styled(Container)`
+  width: 100vw;
   padding: 0;
 `;
 
 const CatchCopy = styled.h1`
-  position: relative;
-  margin: -300px auto 0 auto;
-  width: 100%;
-  font-family: Gen Jyuu Gothic;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 600%;
+  position: absolute;
+  width: 100vw;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
   text-align: center;
-  text-transform: capitalize;
-  color: #FFFFFF;
-  text-shadow: 8px 8px 3px #191970;
+  font-family: Gen Jyuu Gothic;
+  font-weight: bold;
+  font-size: 600%;
+  color: rgba(0, 0, 0, 0);
+  -webkit-text-stroke: 1.5px #fff;
   ${media.lessThan("medium")`
-    font-size: 14vw;
-    margin-top: -98vw;
-    width: 69vw;
-    text-shadow: 3px 3px 3px #191970;
+    top: 25%;
+    font-size: 36px;
+    -webkit-text-stroke: 0.8px #fff;
   `};
-  ${media.between("medium", "large")`
-    font-size: 500%;
-    margin-top: -460px;
-  `}
 `;
 
 const Header = styled.header`
-  height: 530px;
+  height: 40vw;
   background-color: #87ceeb;
+  overflow: hidden;
   ${media.lessThan("medium")`
-    width: 100%;
-    height: 127vw;
-  `}
-  ${media.between("medium", "large")`
-    width: 750px;
-    height: 650px;
-  `}
-  ${media.greaterThan("large")`
-    width: 940px;
+    height: 140vw;
   `}
 `;
 
@@ -72,7 +62,7 @@ const Condog = styled.h3`
   font-family: Roboto;
   font-style: normal;
   font-size: 20px;
-  color: #FFFFFF;
+  color: #ffffff;
   text-shadow: 3px 3px 2px #525283;
   z-index: 100;
 `;
@@ -84,7 +74,7 @@ const Login = styled.h3`
   font-family: Roboto;
   font-style: normal;
   font-size: 20px;
-  color: #FFFFFF;
+  color: #ffffff;
   text-shadow: 3px 3px 2px #191970;
   z-index: 100;
 `;
@@ -134,12 +124,12 @@ const Conken = styled.img`
 `;
 
 const Text2 = styled.h1`
-position: absolute;
-width: 100%;
-text-align: center;
-margin: 10vw auto 0 auto;
-font-family: Gen Jyuu Gothic;
-font-size: 3rem;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  margin: 10vw auto 0 auto;
+  font-family: Gen Jyuu Gothic;
+  font-size: 3rem;
   ${media.lessThan("medium")`
     font-size: 5vw;
   `};
@@ -187,22 +177,26 @@ export const Approach = () => {
   return (
     <ApproachContainer>
       <Header>
-      <TopImages/>
-      <CatchCopy>Learn To Play<br/>Than Anywhere</CatchCopy>
-      <Condog>Conken-Dog</Condog>
-      <a href="https://conken-dog.netlify.app/signup">
-        <Login>新規登録</Login>
-      </a>
+        <TopImages />
+        <CatchCopy>
+          Learn To Play
+          <br />
+          Than Anywhere
+        </CatchCopy>
+        <Condog>Conken-Dog</Condog>
+        <a href="https://conken-dog.netlify.app/signup">
+          <Login>新規登録</Login>
+        </a>
       </Header>
-      <HeaderBottom/>
-      <Mission/>
+      <TopImagesBottom />
+      <Mission />
       <Block>
-        <Kita src={kita}/>
-        <Conken src={conken}/>
+        <Kita src={kita} />
+        <Conken src={conken} />
         <Text2>遊ぶように学ぼう　どこよりも</Text2>
-        <Maru src={maru}/>
-        <Sinkan src={sinkan}/>
+        <Maru src={maru} />
+        <Sinkan src={sinkan} />
       </Block>
-      </ApproachContainer>
+    </ApproachContainer>
   );
 };
