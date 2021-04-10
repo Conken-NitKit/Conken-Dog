@@ -207,9 +207,13 @@ export const SquareTitle = styled.p`
 
   letter-spacing: 2px;
 
-  line-height: 30px;
+  line-height: 1.2;
 
   color: white;
+
+  ${media.between("medium", "large")`
+    font-size: 19px;
+  `};
 `;
 
 export const SquareSpan = styled.span`
