@@ -42,6 +42,12 @@ const Title = styled.h2`
 
     letter-spacing: 2px;
   `};
+
+  ${media.between("medium", "large")`
+    font-size: 6vw;
+
+    line-height: 1.2;
+  `};
 `;
 
 const GroupSpan = styled.span`
