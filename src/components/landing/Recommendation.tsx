@@ -157,7 +157,7 @@ const CircleText = styled.p`
 
 const Square = styled.div`
   margin-top: 75px;
-  width: 775px;
+  width: 82%;
 `;
 
 const SquareTitles = styled.div`
@@ -215,7 +215,7 @@ export const SquareSpan = styled.span`
 const SquareText = styled.p`
   display: flex;
 
-  margin: -65px 0 0 35px;
+  margin: -65px 0 0 auto;
 
   padding: 65px 30px 0;
 
