@@ -244,13 +244,19 @@ const SquareText = styled.p`
 
   font-size: 21px;
 
-  line-height: 25px;
+  line-height: 1.2;
 
   white-space: pre-wrap;
 
   align-items: center;
 
+  color: #444444;
+
   background: white;
+
+  ${media.between("medium", "large")`
+    font-size: 17px;
+  `};
 `;
 
 interface Props {
