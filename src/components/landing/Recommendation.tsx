@@ -30,7 +30,7 @@ const Title = styled.h2`
 
   letter-spacing: 4px;
 
-  line-height: 40px;
+  line-height: 1.2;
 
   justify-content: center;
 
@@ -41,14 +41,14 @@ const Title = styled.h2`
     font-weight: 800;
 
     letter-spacing: 2px;
-
-    line-height: 30px
   `};
 `;
 
 const GroupSpan = styled.span`
-  font-size: 40px;
+  font-size: 42px;
   font-weight: bold;
+
+  line-height: 1;
 
   color: #30c8d6;
 
@@ -188,9 +188,13 @@ const SquareNumber = styled.p`
 
   letter-spacing: 2px;
 
-  line-height: 30px;
+  line-height: 1.3;
 
   color: white;
+
+  ${media.between("medium", "large")`
+    font-size: 19px;
+  `};
 `;
 
 export const SquareTitle = styled.p`
