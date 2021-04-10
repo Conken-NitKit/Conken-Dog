@@ -43,20 +43,8 @@ const Header = styled.header`
   `}
 `;
 
-const HeaderBottom = styled.div`
-  margin-top: -127.5px;
-  border-radius: 50%;
-  height: 255px;
-  width: 100%;
-  background-color: #87ceeb;
-  ${media.lessThan("medium")`
-    margin-top: -14vw;
-    height: 27vw;
-  `};
-`;
-
 const Condog = styled.h3`
-  position: fixed;
+  position: absolute;
   left: 3%;
   top: 30px;
   font-family: Roboto;
@@ -68,7 +56,7 @@ const Condog = styled.h3`
 `;
 
 const Login = styled.h3`
-  position: fixed;
+  position: absolute;
   right: 3%;
   top: 25px;
   font-family: Roboto;
@@ -79,100 +67,77 @@ const Login = styled.h3`
   z-index: 100;
 `;
 
-const Block = styled.div`
+const Block = styled(Container)`
   position: relative;
-  height: 700px;
-  width: 100%;
-  ${media.lessThan("medium")`
-    height: 110vw;
-  `}
-
-  ${media.between("medium", "large")`
-  height: 650px;
-  `}
+  padding-bottom: 80px;
+  ${media.greaterThan("medium")`
+    padding-bottom: 128px;
+  `};
 `;
 
 const Kita = styled.img`
-  width: 200px;
-  margin: 0 auto auto 60px;
-  ${media.lessThan("medium")`
-    width: 35%;
-    margin-left: 7px;
-  `}
-
-  ${media.between("medium", "large")`
-    width: 180px;
-    margin-left: 20px;
-  `}
+  position: relative;
+  width: 32%;
+  border-radius: 50%;
+  border: solid 4px white;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+  ${media.greaterThan("medium")`
+    width: 24%;
+  `};
 `;
 
 const Conken = styled.img`
   position: absolute;
-  right: 0;
-  top: 40px;
-  width: 230px;
-  margin-right: 30px;
-  ${media.lessThan("medium")`
-    width: 32%;
-    margin-right: 7px;
-  `}
-
-  ${media.between("medium", "large")`
-  margin-right: 3px;
-  width: 30%;
-  `}
+  top: 48px;
+  right: 16px;
+  width: 32%;
+  border-radius: 50%;
+  border: solid 4px white;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+  ${media.greaterThan("medium")`
+    width: 24%;
+  `};
 `;
 
 const Text2 = styled.h1`
-  position: absolute;
-  width: 100%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  color: #333;
   text-align: center;
-  margin: 10vw auto 0 auto;
-  font-family: Gen Jyuu Gothic;
   font-size: 3rem;
+  margin: 128px 0 96px;
   ${media.lessThan("medium")`
     font-size: 5vw;
+    margin: 80px 0 48px;
   `};
-  ${media.between("medium", "large")`
-    font-size: 27px;
-  `}
 `;
 
 const Maru = styled.img`
-  position: absolute;
-  right: 0px;
-  margin-top: 410px;
-  width: 200px;
-  ${media.lessThan("medium")`
-    width: 32%;
-    margin-top: 60vw;
-  `}
-
-  ${media.between("medium", "large")`
-  width: 30%;
-  margin-top: 380px;
-  `}
+  position: relative;
+  top: 48px;
+  width: 32%;
+  border-radius: 50%;
+  border: solid 4px white;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+  ${media.greaterThan("medium")`
+    width: 24%;
+  `};
 `;
 
 const Sinkan = styled.img`
   position: absolute;
-  left: 0px;
-  margin-top: 440px;
-  width: 240px;
-  ${media.lessThan("medium")`
-    width: 32%;
-    margin-top: 68vw;
-  `}
-
-  ${media.between("medium", "large")`
-  width: 30%;
-  margin-top: 390px;
-  `}
-  ${media.lessThan("large")`
-  left: 7%;
-  width: 34%;
+  right: 16px;
+  width: 32%;
+  border-radius: 50%;
+  border: solid 4px white;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+  ${media.greaterThan("medium")`
+    width: 24%;
   `};
 `;
+
 export const Approach = () => {
   return (
     <ApproachContainer>
