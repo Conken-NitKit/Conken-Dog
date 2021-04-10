@@ -222,7 +222,7 @@ const SquareText = styled.p`
   height: 205px;
   width: 680px;
 
-  font-size: 20px;
+  font-size: 21px;
 
   line-height: 25px;
 
