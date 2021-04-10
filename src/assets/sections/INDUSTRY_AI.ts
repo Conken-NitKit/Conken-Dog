@@ -25,12 +25,6 @@ export const INDUSTRY_AI: ISection = {
       requiredTime: 3,
     },
     {
-      title: "クラウドとは？使うメリット｜SaaS・PaaS・IaaSの違い",
-      link: "https://youtu.be/i67vtGw7rKw",
-      mediaType: ["READ_ONLY", "VIDEO"],
-      requiredTime: 10,
-    },
-    {
       title: "知らないとヤバい！最先端テクノロジー5選",
       link: "https://youtu.be/A78cKqNb8aI",
       mediaType: ["READ_ONLY", "VIDEO"],
