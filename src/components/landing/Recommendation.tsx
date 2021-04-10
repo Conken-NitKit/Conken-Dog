@@ -158,6 +158,7 @@ const CircleText = styled.p`
 const Square = styled.div`
   margin-top: 75px;
 
+  height: 385px;
   width: 82%;
 `;
 
@@ -170,8 +171,8 @@ const SquareTitles = styled.div`
 
   padding-left: 35px;
 
-  height: 180px;
-  width: 470px;
+  height: 46%;
+  width: 61%;
 
   flex-direction: column;
 
