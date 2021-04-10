@@ -43,7 +43,7 @@ const Title = styled.h2`
     letter-spacing: 2px;
   `};
 
-  ${media.between("medium", "large")`
+  ${media.lessThan("medium")`
     font-size: 6vw;
 
     line-height: 1.2;
