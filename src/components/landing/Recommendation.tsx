@@ -160,6 +160,10 @@ const Square = styled.div`
 
   height: 385px;
   width: 82%;
+
+  ${media.between("medium", "large")`
+    height: 310px;
+  `};
 `;
 
 const SquareTitles = styled.div`
@@ -233,10 +237,10 @@ const SquareText = styled.p`
 
   margin: -8% 0 0 auto;
 
-  padding: 8% 30px 0;
+  padding: 8% 4% 0;
 
   height: 54%;
-  width: 680px;
+  width: 89%;
 
   font-size: 21px;
 
