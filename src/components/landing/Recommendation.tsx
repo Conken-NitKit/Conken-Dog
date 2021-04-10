@@ -157,6 +157,7 @@ const CircleText = styled.p`
 
 const Square = styled.div`
   margin-top: 75px;
+
   width: 82%;
 `;
 
