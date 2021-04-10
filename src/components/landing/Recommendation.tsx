@@ -95,6 +95,12 @@ const Circles = styled.div`
   justify-content: space-between;
 
   width: 82%;
+
+  ${media.lessThan("medium")`
+    height: 110vw;
+
+    flex-direction: column;
+  `};
 `;
 
 const Circle = styled.div`
