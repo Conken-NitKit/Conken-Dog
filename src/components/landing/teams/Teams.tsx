@@ -8,10 +8,9 @@ import PhoneBackground from "../../../assets/img/landing/teams/phone-background.
 import { TeamCard } from "./TeamCard";
 
 const TeamsContainer = styled(Container)`
-  margin: -35px auto 60px auto;
+  margin: -35px auto 60px;
 
   padding: 0;
-
   justify-content: center;
 
   background-image: url(${background});
@@ -22,38 +21,31 @@ const TeamsContainer = styled(Container)`
   `};
 
   ${media.lessThan("medium")`
+    width: 100%;
     margin-top: 12vw;
-
     background-image: url(${PhoneBackground});
   `};
 `;
 
 const Title = styled.h1`
   margin: 0 auto;
-
   padding-top: 140px;
 
   font-size: 40px;
   font-weight: bold;
-
   color: #87ceeb;
-
   line-height: 40px;
   text-align: center;
 
   ${media.between("medium", "large")`
     padding-top: 110px;
-
     font-size: 35px;
-
     line-height: 35px;
   `};
 
   ${media.lessThan("medium")`
     padding-top: 11vw;
-
     font-size: 8vw;
-
     line-height: 9vw;
   `}
 `;
@@ -64,37 +56,29 @@ const Text = styled.h2`
   font-size: 20px;
   font-style: normal;
   font-weight: normal;
-
   color: #000000;
-
   line-height: 35px;
   text-align: center;
 
   ${media.between("medium", "large")`
     margin-top: 25px;
-
     font-size: 15px;
-
     line-height: 25px;
   `}
 
   ${media.lessThan("medium")`
     margin: 8vw auto 5vw auto;
-
     font-size: 3.2vw;
-
     line-height: 5vw;
   `};
 `;
 
-const CardContainer = styled.body`
+const CardContainer = styled.div`
   display: flex;
-
   height: 445px;
-
   flex-wrap: wrap;
-
   align-content: flex-start;
+  justify-content: center;
 
   ${media.between("medium", "large")`
     height: 325px;
