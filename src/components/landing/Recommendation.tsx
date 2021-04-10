@@ -169,7 +169,7 @@ const SquareTitles = styled.div`
 
   z-index: 2;
 
-  padding-left: 35px;
+  padding-left: 4%;
 
   height: 46%;
   width: 61%;
