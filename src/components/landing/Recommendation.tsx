@@ -217,9 +217,15 @@ export const SquareTitle = styled.p`
 `;
 
 export const SquareSpan = styled.span`
-  font-size: 30px;
+  font-size: 29px;
+
+  line-height: 1;
 
   color: yellow;
+
+  ${media.between("medium", "large")`
+    font-size: 23px;
+  `};
 `;
 
 const SquareText = styled.p`
