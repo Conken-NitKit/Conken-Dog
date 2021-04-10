@@ -163,13 +163,13 @@ export const COMMUNICATION: ISection = {
     },
     {
       title: "誰でも面白い話をする方法",
-      link: "https://youtu.be/V7xWH2jsEAY",
+      link: "https://youtu.be/5OAy1k1ypsU",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 14,
     },
     {
       title: "組織が広がり続ける仕組み【ABCで人生楽勝】",
-      link: "https://youtu.be/QJv-1z68tok",
+      link: "https://youtu.be/NqvLHGWB938",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 20,
     },

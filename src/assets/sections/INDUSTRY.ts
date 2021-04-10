@@ -52,12 +52,6 @@ export const INDUSTRY: ISection = {
       requiredTime: 3,
     },
     {
-      title: "クラウドとは？使うメリット｜SaaS・PaaS・IaaSの違い",
-      link: "https://youtu.be/i67vtGw7rKw",
-      mediaType: ["READ_ONLY", "VIDEO"],
-      requiredTime: 10,
-    },
-    {
       title: "知らないとヤバい！最先端テクノロジー5選",
       link: "https://youtu.be/A78cKqNb8aI",
       mediaType: ["READ_ONLY", "VIDEO"],
@@ -148,12 +142,6 @@ export const INDUSTRY: ISection = {
     {
       title: "自己位置推定がなぜ自動運転において重要か",
       link: "https://qiita.com/NaokiAkai/items/ce66684d9ec05f3cb669",
-      mediaType: ["READ_ONLY"],
-      requiredTime: 10,
-    },
-    {
-      title: "自動運転系Deep Learningエンジニアになる為の勉強法",
-      link: "https://qiita.com/NaokiAkai/items/4dc83791306ce80d8f17",
       mediaType: ["READ_ONLY"],
       requiredTime: 10,
     },
