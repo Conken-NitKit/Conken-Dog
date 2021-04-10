@@ -62,6 +62,11 @@ const GroupSpan = styled.span`
     font-size: 30px;
     font-weight: 900;
   `}
+
+  ${media.lessThan("medium")`
+    font-size: 7.2vw;
+    font-weight: 800;
+  `};
 `;
 
 const TitleSpan = styled.span`
