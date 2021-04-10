@@ -8,16 +8,18 @@ const WhatIsContainer = styled(Container)`
 
 const Title = styled.div`
   
-  margin-top: 1vw;
-  color: #0aa5f8;
-  font-size: 3vw;
+  margin-top: 0.1vw;
+  color: #6fd0ee;
+  font-size: 3.5vw;
+  width: 100%;
   @media (max-width: 414px) {
   font-size: 5.3vw;
 }
 `;
 
 const Sentence = styled.p`
-  font-size: 2vw;
+  font-size: 2.5vw;
+  color: #7e7e7e;
   @media (max-width: 414px) {
   font-size: 4vw;
 }
@@ -25,13 +27,14 @@ const Sentence = styled.p`
 
 const WhatIsImg = styled.img`
   height: 25vw;
-  width: 70vw;
+  width: 95%;
   object-fit: cover;
+  margin-bottom: 1vw;
   border-radius: 8px;
   @media (max-width: 414px) {
   width: 80vw;
   height: 40vw;
-  margin: 0 auto;
+  margin: auto auto;
 }
 `;
 
