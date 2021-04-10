@@ -21,6 +21,12 @@ export const MEETING: ISection = {
       requiredTime: 16,
     },
     {
+      title: "議論が苦手な人の致命的な欠点",
+      link: "https://youtu.be/vcdNH_EPbHY",
+      mediaType: ["READ_ONLY", "RADIO"],
+      requiredTime: 10,
+    },
+    {
       title: "なぜあなたの話は伝わらないのか",
       link: "https://youtu.be/ovMPaRebt28",
       mediaType: ["READ_ONLY", "VIDEO"],
