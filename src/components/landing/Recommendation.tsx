@@ -77,6 +77,10 @@ const TitleSpan = styled.span`
   ${media.between("medium", "large")`
     text-underline-offset: 4px;
   `};
+
+  ${media.lessThan("medium")`
+    text-underline-offset: 2px;
+  `};
 `;
 
 const Circles = styled.div`
