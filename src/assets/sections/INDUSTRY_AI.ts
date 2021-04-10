@@ -1,38 +1,11 @@
 import { ISection } from ".";
 
-export const INDUSTRY: ISection = {
-  title: "業界情報",
+export const INDUSTRY_AI: ISection = {
+  title: "最新テクノロジー",
   description:
-    "本レッスンでは、IT業界とその周辺の業界がどのように変化していくのかを学んでいきます。\n" +
-    "これからの先の未来では今までからは考えられないほどの激動の変化が連続して発生することが予想されます。\n" +
-    "この激しい変化を読み間違えてしまうと、あなたが就職した会社が業界ごと消し飛んでしまう可能性も...。\n" +
-    "ここでは利権まみれの学校が授業なんかでは「絶対」に教えてくれない、かなりブラックなお話を遠慮なくしています。\n" +
-    "将来の就職先、志望先のコースのミスマッチを防ぐために必須の知識ばかりですのでホントに要チェックです！",
+    "本レッスンでは、最新テクノロジーとそれによってどう世の中が変化していくのかを学んでいきます。\n" +
+    "具体的なAIなどの活用方法など考える上でとても役に立つ知識ですので、要チェックです。",
   contentsList: [
-    {
-      title: "エンジニアの将来性・10年後の需要",
-      link: "https://youtu.be/riG4DuBa7Zc",
-      mediaType: ["READ_ONLY", "VIDEO"],
-      requiredTime: 25,
-    },
-    {
-      title: "IT業界でひと括りにするのは危険",
-      link: "https://youtu.be/_IJQ2iBkf4w",
-      mediaType: ["READ_ONLY", "VIDEO"],
-      requiredTime: 19,
-    },
-    {
-      title: "SIer業界がブラックな理由を解説",
-      link: "https://youtu.be/iy4nnAI9og4",
-      mediaType: ["READ_ONLY", "VIDEO"],
-      requiredTime: 20,
-    },
-    {
-      title: "システム開発プロジェクトが炎上すると何が起きるのか？",
-      link: "https://youtu.be/k4yvcMOZhXE",
-      mediaType: ["READ_ONLY", "VIDEO"],
-      requiredTime: 11,
-    },
     {
       title: "5Gってなに？【3分でわかったフリするITの話】",
       link: "https://youtu.be/TMzAAr0lXhA",
@@ -142,6 +115,12 @@ export const INDUSTRY: ISection = {
     {
       title: "自己位置推定がなぜ自動運転において重要か",
       link: "https://qiita.com/NaokiAkai/items/ce66684d9ec05f3cb669",
+      mediaType: ["READ_ONLY"],
+      requiredTime: 10,
+    },
+    {
+      title: "自動運転系Deep Learningエンジニアになる為の勉強法",
+      link: "https://qiita.com/NaokiAkai/items/4dc83791306ce80d8f17",
       mediaType: ["READ_ONLY"],
       requiredTime: 10,
     },

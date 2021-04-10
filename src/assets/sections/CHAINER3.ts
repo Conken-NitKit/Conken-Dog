@@ -1,0 +1,177 @@
+import { ISection } from ".";
+
+export const CHAINER3: ISection = {
+  title: "ディープラーニング入門",
+  description:
+    "数学の基礎、プログラミング言語 Python の基礎から、機械学習・ディープラーニングの理論の基礎とコーディングまでを幅広く解説（その３）",
+  contentsList: [
+    {
+        title: "ディープラーニングとは関数近似器である",
+        link: "https://youtu.be/SyWwoMpP_P4",
+        mediaType: ["READ_ONLY", "VIDEO"],
+        requiredTime: 8,
+    },
+    {
+        title: "学習 - なぜ必要なのか？何をするのか？",
+        link: "https://youtu.be/RLlTmbyJORM",
+        mediaType: ["READ_ONLY", "VIDEO"],
+        requiredTime: 17,
+    },
+    {
+        title: "関数 - なぜ「深さ」が AI を生み出しているのか？",
+        link: "https://youtu.be/Mw4j4yPsFtg",
+        mediaType: ["READ_ONLY", "VIDEO"],
+        requiredTime: 21 ,
+    },
+    {
+        title: "全結合層 - それはいちばん大事な部品のお話",
+        link: "https://youtu.be/FYDJ439Va_Y",
+        mediaType: ["READ_ONLY", "VIDEO"],
+        requiredTime: 18,
+    },
+    {
+        title: "畳み込み層の本当の意味、あなたは説明できますか？",
+        link: "https://youtu.be/vU-JfZNBdYU",
+        mediaType: ["READ_ONLY", "VIDEO"],
+        requiredTime: 24,
+    },
+    {
+        title: "プーリング層 - シンプルだけど大きな役割を担う層",
+        link: "https://youtu.be/MLixg9K6oeU",
+        mediaType: ["READ_ONLY", "VIDEO"],
+        requiredTime: 10,
+    },
+    {
+        title: "CNN 実装してみた",
+        link: "https://youtu.be/GsofrxoAsow",
+        mediaType: ["READ_ONLY", "VIDEO"],
+        requiredTime: 9,
+    },
+    {
+        title: "RNN の意味を徹底解説！",
+        link: "https://youtu.be/NJdrYvYgaPM",
+        mediaType: ["READ_ONLY", "VIDEO"],
+        requiredTime: 16,
+    },
+    {
+        title: "RNN の3通りの使い方 - RNN の混乱ポイントを倒す！",
+        link: "https://youtu.be/IcCIu5Gx6uA",
+        mediaType: ["READ_ONLY", "VIDEO"],
+        requiredTime: 12,
+    },
+    {
+        title: "GRU - RNN に記憶をもたせる試みその1",
+        link: "https://youtu.be/K8ktkhAEuLM",
+        mediaType: ["READ_ONLY", "VIDEO"],
+        requiredTime: 18,
+    },
+    {
+        title: "GRU - RNN に記憶をもたせる試みその2",
+        link: "https://youtu.be/oxygME2UBFc",
+        mediaType: ["READ_ONLY", "VIDEO"],
+        requiredTime: 26,
+    },
+    {
+        title: "bi-LSTM - 前後の文脈を利用する Recurrent layer",
+        link: "https://youtu.be/O1PCh_aaprE",
+        mediaType: ["READ_ONLY", "VIDEO"],
+        requiredTime: 7,
+    },
+    {
+        title: "CNN紹介 'LeNet' 1990年代に活躍したCNN",
+        link: "https://youtu.be/-tWolA2WvFI",
+        mediaType: ["READ_ONLY", "VIDEO"],
+        requiredTime: 18,
+    },
+    {
+        title: "CNN紹介 'AlexNet' 2012年に登場し、画像処理に革命を起こしたモデル",
+        link: "https://youtu.be/KebUnMbOGU8",
+        mediaType: ["READ_ONLY", "VIDEO"],
+        requiredTime: 17,
+    },
+    {
+        title: "CNN紹介 'GoogLeNet' ILSVRC2014をInceptionで制したモデル",
+        link: "https://youtu.be/p-SflGf3m2Y",
+        mediaType: ["READ_ONLY", "VIDEO"],
+        requiredTime: 17,
+    },
+    {
+        title: "CNN 紹介 'VGGNet' シンプルで強い転移学習の味方",
+        link: "https://youtu.be/IANRZujgLT8",
+        mediaType: ["READ_ONLY", "VIDEO"],
+        requiredTime: 10,
+    },
+    {
+        title: "CNN 紹介 'ResNe' 言わずとしれた CNN の標準技術が登場！",
+        link: "https://youtu.be/WslQrSO94qE",
+        mediaType: ["READ_ONLY", "VIDEO"],
+        requiredTime: 25,
+    },
+    {
+        title: "CNN 紹介 'Xception' 大胆仮説でパラメタ削減と汎化を達成",
+        link: "https://youtu.be/9KOb-_oy45g",
+        mediaType: ["READ_ONLY", "VIDEO"],
+        requiredTime: 18,
+    },
+    {
+        title: "SENet - 「圧縮興奮機構」による性能向上",
+        link: "https://youtu.be/vDL3Ivtef0U",
+        mediaType: ["READ_ONLY", "VIDEO"],
+        requiredTime: 23,
+    },
+    {
+        title: "RNNLM - 自然言語処理に革命を起こした RNN について",
+        link: "https://youtu.be/__-vWa8jyVc",
+        mediaType: ["READ_ONLY", "VIDEO"],
+        requiredTime: 22,
+    },
+    {
+        title: "word2vec - 単語の意味を機械が理解する仕組み",
+        link: "https://youtu.be/0CXCqxQAKKQ",
+        mediaType: ["READ_ONLY", "VIDEO"],
+        requiredTime: 37,
+    },
+    {
+        title: "word2vec の数理 - なぜ単語の計算が可能なのか",
+        link: "https://youtu.be/jlmt4nY0-o0",
+        mediaType: ["READ_ONLY", "VIDEO"],
+        requiredTime: 20,
+    },
+    {
+        title: "doc2vec - 文章の意味を機械が理解する仕組み",
+        link: "https://youtu.be/lJocgM6Pa18",
+        mediaType: ["READ_ONLY", "VIDEO"],
+        requiredTime: 20,
+    },
+    {
+        title: "Attention - 全領域に応用され最高精度を叩き出す注意機構の仕組み",
+        link: "https://youtu.be/lJocgM6Pa18",
+        mediaType: ["READ_ONLY", "VIDEO"],
+        requiredTime: 37,
+    },
+    {
+        title: "ニューラルネットワークの基礎",
+        link: "https://tutorials.chainer.org/ja/13_Basics_of_Neural_Networks.html",
+        mediaType: [],
+        requiredTime: 60,
+    },
+    {
+        title: "Chainer の基礎",
+        link: "https://tutorials.chainer.org/ja/14_Basics_of_Chainer.html",
+        mediaType: [],
+        requiredTime: 60,
+    },
+    {
+        title: "Chainer の応用",
+        link: "https://tutorials.chainer.org/ja/14_Basics_of_Chainer.html",
+        mediaType: [],
+        requiredTime: 60,
+    },
+    {
+        title: "トレーナとエクステンション",
+        link: "https://tutorials.chainer.org/ja/16_Trainer_and_Extension.html",
+        mediaType: [],
+        requiredTime: 60,
+    },
+    ],
+};
