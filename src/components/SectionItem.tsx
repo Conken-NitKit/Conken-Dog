@@ -118,11 +118,13 @@ export const SectionItem = ({ content }: Props) => {
         {content.requiredTime % 60 !== 0 &&
           ` ${Math.floor(content.requiredTime % 60)}分`}
         <TagContainer>
-          {content.mediaType.includes("VIDEO") ? (
-            <MediaTypeTag>動画</MediaTypeTag>
-          ) : (
-              <MediaTypeTag>テキスト</MediaTypeTag>
-            )}
+          <MediaTypeTag>
+            {content.mediaType.includes("VIDEO")
+              ? "動画"
+              : content.mediaType.includes("RADIO")
+              ? "ラジオ"
+              : "テキスト"}
+          </MediaTypeTag>
           {!content.mediaType.includes("READ_ONLY") && (
             <MediaTypeTag>実践</MediaTypeTag>
           )}
