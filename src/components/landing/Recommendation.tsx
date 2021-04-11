@@ -152,6 +152,14 @@ const CircleNumber = styled.h3`
 
     font-size: 20px;
   `};
+
+  ${media.lessThan("medium")`
+    margin-top: 17px;
+
+    height: 51px;
+
+    font-size: 6vw;
+  `};
 `;
 
 const CircleText = styled.p`
@@ -183,6 +191,10 @@ const CircleText = styled.p`
     font-size: 18px;
 
     line-height: 22px;
+  `};
+
+  ${media.lessThan("medium")`
+    display: none;
   `};
 `;
 
