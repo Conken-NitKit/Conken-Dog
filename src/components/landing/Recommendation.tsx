@@ -279,6 +279,10 @@ export const SquareTitle = styled.p`
   ${media.between("medium", "large")`
     font-size: 19px;
   `};
+
+  ${media.lessThan("medium")`
+    font-size: 4vw;
+  `};
 `;
 
 export const SquareSpan = styled.span`
