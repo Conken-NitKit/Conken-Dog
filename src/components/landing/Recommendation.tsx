@@ -97,7 +97,8 @@ const Circles = styled.div`
   width: 82%;
 
   ${media.lessThan("medium")`
-    height: 110vw;
+    height: 136vw;
+    width: 48%;
 
     flex-direction: column;
   `};
@@ -119,6 +120,11 @@ const Circle = styled.div`
 
   ${media.between("medium", "large")`
     height: 160px;
+  `};
+
+  ${media.lessThan("medium")`
+    height: 42.24vw;
+    width: 100%;
   `};
 `;
 
