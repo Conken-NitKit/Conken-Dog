@@ -338,6 +338,16 @@ const SquareText = styled.p`
   ${media.between("medium", "large")`
     font-size: 17px;
   `};
+
+  ${media.lessThan("medium")`
+    margin-top: -12%;
+
+    padding-top: 12%;
+
+    height: 50%;
+
+    font-size: 3vw;
+  `};
 `;
 
 interface Props {
