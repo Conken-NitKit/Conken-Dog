@@ -96,6 +96,12 @@ const Circles = styled.div`
 
   width: 82%;
 
+  height: 200px;
+
+  ${media.between("medium", "large")`
+    height: 160px;
+  `};
+
   ${media.lessThan("medium")`
     height: 136vw;
     width: 48%;
@@ -109,7 +115,7 @@ const Circle = styled.div`
 
   border-radius: 50%;
 
-  height: 200px;
+  height: 100%;
   width: 26%;
 
   flex-direction: column;
@@ -117,10 +123,6 @@ const Circle = styled.div`
   align-items: center;
 
   background: url(${CircleBackground}) top/cover;
-
-  ${media.between("medium", "large")`
-    height: 160px;
-  `};
 
   ${media.lessThan("medium")`
     height: 42.24vw;
