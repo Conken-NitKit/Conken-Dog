@@ -116,7 +116,7 @@ const Circle = styled.div`
 
   align-items: center;
 
-  background: url(${CircleBackground}) top/200px;
+  background: url(${CircleBackground}) top/cover;
 
   ${media.between("medium", "large")`
     height: 160px;
@@ -146,9 +146,9 @@ const CircleNumber = styled.h3`
   color: white;
 
   ${media.between("medium", "large")`
-    margin-top: 17;
+    margin-top: 15px;
 
-    height: 50px;
+    height: 40px;
 
     font-size: 20px;
   `};
