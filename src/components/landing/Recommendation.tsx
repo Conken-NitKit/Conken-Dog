@@ -49,8 +49,6 @@ const Title = styled.h2`
 
   ${media.lessThan("medium")`
     font-size: 5.9vw;
-
-    line-height: 1.2;
   `};
 `;
 
@@ -237,6 +235,11 @@ const SquareTitles = styled.div`
   justify-content: center;
 
   background: #76d8c6;
+
+  ${media.lessThan("medium")`
+    height: 50%;
+    width: 80%;
+  `};
 `;
 
 const SquareNumber = styled.p`
@@ -252,6 +255,10 @@ const SquareNumber = styled.p`
 
   ${media.between("medium", "large")`
     font-size: 19px;
+  `};
+
+  ${media.lessThan("medium")`
+    font-size: 4vw;
   `};
 `;
 
