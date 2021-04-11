@@ -196,7 +196,9 @@ const CircleText = styled.p`
   `};
 
   ${media.lessThan("medium")`
-    font-size: 5vw;
+    margin-top: 1.5vw;
+
+    font-size: 5.3vw;
   `};
 `;
 
