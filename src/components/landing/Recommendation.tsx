@@ -238,7 +238,7 @@ const SquareTitles = styled.div`
 
   ${media.lessThan("medium")`
     height: 50%;
-    width: 80%;
+    width: 85%;
   `};
 `;
 
@@ -255,10 +255,14 @@ const SquareNumber = styled.p`
 
   ${media.between("medium", "large")`
     font-size: 19px;
+
+    letter-spacing: 1px;
   `};
 
   ${media.lessThan("medium")`
-    font-size: 4vw;
+    font-size: 3.8vw;
+
+    letter-spacing: 1px;
   `};
 `;
 
@@ -280,10 +284,16 @@ export const SquareTitle = styled.p`
     margin-top: 9px;
 
     font-size: 19px;
+
+    letter-spacing: 1px;
   `};
 
   ${media.lessThan("medium")`
-    font-size: 4vw;
+    margin-top: 2%;
+
+    font-size: 3.8vw;
+
+    letter-spacing: 1px;
   `};
 `;
 
@@ -299,7 +309,7 @@ export const SquareSpan = styled.span`
   `};
 
   ${media.lessThan("medium")`
-    font-size: 4.8vw;
+    font-size: 4.56vw;
   `};
 `;
 
