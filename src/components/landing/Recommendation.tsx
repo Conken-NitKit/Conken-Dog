@@ -48,7 +48,7 @@ const Title = styled.h2`
   `};
 
   ${media.lessThan("medium")`
-    font-size: 6vw;
+    font-size: 5.9vw;
 
     line-height: 1.2;
   `};
@@ -68,7 +68,7 @@ const GroupSpan = styled.span`
   `}
 
   ${media.lessThan("medium")`
-    font-size: 7.2vw;
+    font-size: 7.08vw;
     font-weight: 800;
   `};
 `;
