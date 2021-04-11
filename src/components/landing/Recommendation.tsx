@@ -211,6 +211,13 @@ const Square = styled.div`
   ${media.between("medium", "large")`
     height: 310px;
   `};
+
+  ${media.lessThan("medium")`
+    margin-top: 12%;
+
+    height: 48vw;
+    width: 95%;
+  `};
 `;
 
 const SquareTitles = styled.div`
