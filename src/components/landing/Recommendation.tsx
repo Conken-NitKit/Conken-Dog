@@ -260,7 +260,7 @@ const SquareNumber = styled.p`
   `};
 
   ${media.lessThan("medium")`
-    font-size: 3.8vw;
+    font-size: 3.7vw;
 
     letter-spacing: 1px;
   `};
@@ -291,7 +291,7 @@ export const SquareTitle = styled.p`
   ${media.lessThan("medium")`
     margin-top: 2%;
 
-    font-size: 3.8vw;
+    font-size: 3.7vw;
 
     letter-spacing: 1px;
   `};
@@ -309,7 +309,7 @@ export const SquareSpan = styled.span`
   `};
 
   ${media.lessThan("medium")`
-    font-size: 4.56vw;
+    font-size: 4.44vw;
   `};
 `;
 
