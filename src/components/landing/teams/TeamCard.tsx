@@ -118,8 +118,8 @@ export const TeamCard = ({
       <Title Color={Color}>{CardTitle}</Title>
 
       <Contents>
-        {CardContents.map((element) => {
-          return <li>{element}</li>;
+        {CardContents.map((element, index) => {
+          return <li key={`card/${index}`}>{element}</li>;
         })}
       </Contents>
     </Card>

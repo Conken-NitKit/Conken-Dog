@@ -6,14 +6,11 @@ import media from "styled-media-query";
 
 const RecommendationContainer = styled(Container)`
   display: flex;
-
-  padding: 105px 15px 145px;
-
+  padding: 105px 15px;
   flex-direction: column;
-
   align-items: center;
-
   background: #dbf0f9;
+  margin-bottom: 90px;
 
   ${media.between("medium", "large")`
     padding: 85px 10px 115px;
@@ -26,18 +23,12 @@ const RecommendationContainer = styled(Container)`
 
 const Title = styled.h2`
   display: flex;
-
   margin: 0;
-
   font-size: 35px;
   font-weight: 900;
-
   letter-spacing: 4px;
-
   line-height: 1.2;
-
   justify-content: center;
-
   color: #444444;
 
   ${media.between("medium", "large")`
@@ -55,7 +46,6 @@ const Title = styled.h2`
 const GroupSpan = styled.span`
   font-size: 42px;
   font-weight: bold;
-
   line-height: 1;
 
   color: #30c8d6;
@@ -87,13 +77,9 @@ const TitleSpan = styled.span`
 
 const Circles = styled.div`
   display: flex;
-
   margin: 9% 0 4% 0;
-
   justify-content: space-between;
-
   width: 82%;
-
   height: 200px;
 
   ${media.between("medium", "large")`
@@ -103,23 +89,17 @@ const Circles = styled.div`
   ${media.lessThan("medium")`
     height: 136vw;
     width: 48%;
-
     flex-direction: column;
   `};
 `;
 
 const Circle = styled.div`
   display: flex;
-
   border-radius: 50%;
-
   height: 100%;
   width: 26%;
-
   flex-direction: column;
-
   align-items: center;
-
   background: url(${CircleBackground}) top/cover;
 
   ${media.lessThan("medium")`
@@ -130,80 +110,56 @@ const Circle = styled.div`
 
 const CircleNumber = styled.h3`
   display: flex;
-
   margin: 18px 0 0 0;
-
   height: 50px;
-
   font-size: 23px;
   font-weight: normal;
-
   letter-spacing: 2px;
-
   justify-content: center;
   align-items: center;
-
   color: white;
 
   ${media.between("medium", "large")`
     margin-top: 15px;
-
     height: 40px;
-
     font-size: 20px;
   `};
 
   ${media.lessThan("medium")`
     margin-top: 5vw;
-
     height: 9.5vw;
-
     font-size: 6vw;
   `};
 `;
 
 const CircleText = styled.p`
   display: flex;
-
   margin: 15px 0 0 0;
-
   min-height: 65px;
   width: 100%;
-
   font-size: 23px;
   font-weight: 800;
-
   letter-spacing: -1px;
-
   white-space: pre-wrap;
-
   line-height: 1.2;
   text-align: center;
-
   justify-content: center;
   align-items: center;
-
   color: #444444;
+  margin-top: 18px;
 
   ${media.between("medium", "large")`
-    margin-top: 7px;
-    
     font-size: 18px;
-
     line-height: 22px;
   `};
 
   ${media.lessThan("medium")`
-    margin-top: 1.5vw;
-
-    font-size: 5.3vw;
+    font-size: 4.2vw;
   `};
 `;
 
 const Square = styled.div`
-  margin-top: 8%;
-
-  height: 385px;
+  margin: 4% 0;
   width: 82%;
 
   ${media.between("medium", "large")`
@@ -211,8 +167,7 @@ const Square = styled.div`
   `};
 
   ${media.lessThan("medium")`
-    margin-top: 12%;
-
+    margin: 12% 0;
     height: 48vw;
     width: 95%;
   `};
@@ -220,23 +175,19 @@ const Square = styled.div`
 
 const SquareTitles = styled.div`
   display: flex;
-
   position: relative;
-
   z-index: 2;
-
-  padding-left: 4%;
+  padding: 28px 4%;
 
   height: 46%;
   width: 61%;
 
   flex-direction: column;
-
   justify-content: center;
-
   background: #76d8c6;
 
   ${media.lessThan("medium")`
+    padding: 2px 4%;
     height: 50%;
     width: 85%;
   `};
@@ -244,66 +195,49 @@ const SquareTitles = styled.div`
 
 const SquareNumber = styled.p`
   margin: 0;
-
   font-size: 24px;
-
   letter-spacing: 2px;
-
   line-height: 1.3;
 
   color: white;
 
   ${media.between("medium", "large")`
     font-size: 19px;
-
     letter-spacing: 1px;
   `};
 
   ${media.lessThan("medium")`
     font-size: 3.7vw;
-
     letter-spacing: 1px;
   `};
 `;
 
 export const SquareTitle = styled.p`
   margin: 12px 0 0 0;
-
   top: 70px;
-
   font-size: 24px;
   font-weight: 800;
-
   letter-spacing: 2px;
-
   line-height: 1.2;
-
   color: white;
 
   ${media.between("medium", "large")`
     margin-top: 9px;
-
     font-size: 19px;
-
     letter-spacing: 1px;
   `};
 
   ${media.lessThan("medium")`
     margin-top: 2%;
-
     font-size: 3.7vw;
-
     letter-spacing: 1px;
   `};
 `;
 
 export const SquareSpan = styled.span`
   font-size: 29px;
-
   line-height: 1;
-
   color: yellow;
-
   ${media.between("medium", "large")`
     font-size: 23px;
   `};
@@ -315,24 +249,14 @@ export const SquareSpan = styled.span`
 
 const SquareText = styled.p`
   display: flex;
-
   margin: -8% 0 0 auto;
-
-  padding: 8% 4% 0;
-
-  height: 54%;
+  padding: 96px 4% 32px;
   width: 89%;
-
   font-size: 21px;
-
   line-height: 1.2;
-
   white-space: pre-wrap;
-
   align-items: center;
-
   color: #444444;
-
   background: white;
 
   ${media.between("medium", "large")`
@@ -341,11 +265,8 @@ const SquareText = styled.p`
 
   ${media.lessThan("medium")`
     margin-top: -12%;
-
-    padding-top: 12%;
-
+    padding-top: 48px;
     height: 50%;
-
     font-size: 3vw;
   `};
 `;
@@ -373,7 +294,7 @@ export const Recommendation = ({ group, circles, points }: Props) => {
 
       <Circles>
         {circles.map((circle, index) => (
-          <Circle>
+          <Circle key={`circle/${index}`}>
             <CircleNumber>Point. {index + 1}</CircleNumber>
             <CircleText>{circle}</CircleText>
           </Circle>
@@ -381,7 +302,7 @@ export const Recommendation = ({ group, circles, points }: Props) => {
       </Circles>
 
       {points.map((point, index) => (
-        <Square>
+        <Square key={`square/${index}`}>
           <SquareTitles>
             <SquareNumber>Point. {index + 1}</SquareNumber>
             {point.title}
