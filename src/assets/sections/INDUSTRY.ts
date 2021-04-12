@@ -52,6 +52,48 @@ export const INDUSTRY: ISection = {
       requiredTime: 3,
     },
     {
+      title: "今話題のDXとは（デジタル・トランスフォーメーション）",
+      link: "https://youtu.be/-AJn0EHcIts",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 7,
+    },
+    {
+      title: "デジタルトランスフォーメーション（DX）を成功させるため必要な3つのコト",
+      link: "https://youtu.be/8nHtLthBuDg",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 6,
+    },
+    {
+      title: "AI（人工知能）って何！？AIで出来るコトとビジネスに活かす方法",
+      link: "https://youtu.be/jRuGTK6pMJQ",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 15,
+    },
+    {
+      title: "機械学習入門をビジネスの例も出しながら解説していく",
+      link: "https://youtu.be/GeJrQTdNFdU",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 10,
+    },
+    {
+      title: "ディープラーニングの仕組み・歴史・将来について簡単に解説！",
+      link: "https://youtu.be/i2jqy0gCfXk",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 10,
+    },
+    {
+      title: "ディープラーニングって何？始め方や無料で使える人工知能API３選を紹介します！",
+      link: "https://youtu.be/YdIIo9MYNn4",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 11,
+    },
+    {
+      title: "【AI vs 人間】人工知能に仕事を奪われるのか？｜現役エンジニアが解説",
+      link: "https://youtu.be/u8JvPfNuZM4",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 9,
+    },
+    {
       title: "知らないとヤバい！最先端テクノロジー5選",
       link: "https://youtu.be/A78cKqNb8aI",
       mediaType: ["READ_ONLY", "VIDEO"],
@@ -82,6 +124,18 @@ export const INDUSTRY: ISection = {
       requiredTime: 36,
     },
     {
+      title: "シン・ニホン｜日本に残された唯一の道",
+      link: "https://youtu.be/9WaPO8ZAPuQ",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 20,
+    },
+    {
+      title: "AIエンジニアが職業を奪われない3つの理由",
+      link: "https://youtu.be/gF9C-d-uNy0",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 16,
+    },
+    {
       title: "ビッグデータって何？と思っているあなたに",
       link: "https://qiita.com/nishiokya/items/1a8d79e0d0ebe19fbb80",
       mediaType: ["READ_ONLY"],
@@ -98,6 +152,36 @@ export const INDUSTRY: ISection = {
       link: "https://qiita.com/nishiokya/items/d85a8279c3647f07d591",
       mediaType: ["READ_ONLY"],
       requiredTime: 10,
+    },
+    {
+      title: "ABテストについて統計学的観点も交えて詳しく解説！",
+      link: "https://youtu.be/D-leDiVDiqU",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 10,
+    },
+    {
+      title: "マーケティング効果を最大化する手法「アップリフトモデリング」",
+      link: "https://youtu.be/D2WkiuuQ1fU",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 8,
+    },
+    {
+      title: "ワークマンは商品を変えずに売り方を変えただけでなぜ2倍売れたのか",
+      link: "https://youtu.be/_32iNmVsLPY",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 10,
+    },
+    {
+      title: "会社を変える分析の力！分析をビジネスに活かすためにはどうすればよいのか！？",
+      link: "https://youtu.be/NxLpfx2iC-w",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 10,
+    },
+    {
+      title: "Pythonを扱えるWebマーケターが最強な理由",
+      link: "https://youtu.be/tdYmJIfLvdE",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 9,
     },
     {
       title: "2030年：すべてが「加速」する世界に備えよ｜ドラえもん過ぎる未来　",
@@ -156,12 +240,6 @@ export const INDUSTRY: ISection = {
       link: "https://youtu.be/QIVNy4Xx-Qk",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 29,
-    },
-    {
-      title: "衝撃の未来予想",
-      link: "https://youtu.be/E3iVsbSweQc",
-      mediaType: ["READ_ONLY", "VIDEO"],
-      requiredTime: 28,
     },
   ],
 };
