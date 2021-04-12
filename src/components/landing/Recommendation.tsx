@@ -12,53 +12,29 @@ const RecommendationContainer = styled(Container)`
   background: #dbf0f9;
   margin-bottom: 90px;
 
-  ${media.between("medium", "large")`
-    padding: 85px 10px 115px;
-  `};
-
   ${media.lessThan("medium")`
-    padding: 10% 2% 20%;
+    padding: 32px 4px;
   `};
 `;
 
-const Title = styled.h2`
-  display: flex;
+const Title = styled.p`
   margin: 0;
-  font-size: 35px;
+  font-size: 24px;
   font-weight: 900;
   letter-spacing: 4px;
-  line-height: 1.2;
-  justify-content: center;
+  vertical-align: bottom;
   color: #444444;
+  letter-spacing: 2px;
 
-  ${media.between("medium", "large")`
-    font-size: 25px;
-    font-weight: 800;
-
-    letter-spacing: 2px;
-  `};
-
-  ${media.lessThan("medium")`
-    font-size: 5.9vw;
+  ${media.lessThan("large")`
+    font-size: 16px;
   `};
 `;
 
 const GroupSpan = styled.span`
-  font-size: 42px;
+  font-size: 32px;
   font-weight: bold;
-  line-height: 1;
-
   color: #30c8d6;
-
-  ${media.between("medium", "large")`
-    font-size: 30px;
-    font-weight: 900;
-  `}
-
-  ${media.lessThan("medium")`
-    font-size: 7.08vw;
-    font-weight: 800;
-  `};
 `;
 
 const TitleSpan = styled.span`
@@ -112,7 +88,7 @@ const CircleNumber = styled.h3`
   display: flex;
   margin: 18px 0 0 0;
   height: 50px;
-  font-size: 23px;
+  font-size: 22px;
   font-weight: normal;
   letter-spacing: 2px;
   justify-content: center;
@@ -122,19 +98,19 @@ const CircleNumber = styled.h3`
   ${media.between("medium", "large")`
     margin-top: 15px;
     height: 40px;
-    font-size: 20px;
+    font-size: 18px;
   `};
 
   ${media.lessThan("medium")`
     margin-top: 5vw;
     height: 9.5vw;
-    font-size: 6vw;
+    font-size: 0.95rem;
   `};
 `;
 
 const CircleText = styled.p`
   display: flex;
-  margin: 15px 0 0 0;
+  margin: 8px auto;
   min-height: 65px;
   width: 100%;
   font-size: 23px;
@@ -146,7 +122,6 @@ const CircleText = styled.p`
   justify-content: center;
   align-items: center;
   color: #444444;
-  margin-top: 18px;
 
   ${media.between("medium", "large")`
     font-size: 18px;
@@ -162,13 +137,8 @@ const Square = styled.div`
   margin: 4% 0;
   width: 82%;
 
-  ${media.between("medium", "large")`
-    height: 310px;
-  `};
-
   ${media.lessThan("medium")`
     margin: 12% 0;
-    height: 48vw;
     width: 95%;
   `};
 `;
@@ -177,25 +147,24 @@ const SquareTitles = styled.div`
   display: flex;
   position: relative;
   z-index: 2;
-  padding: 28px 4%;
-
-  height: 46%;
-  width: 61%;
+  padding: 32px;
+  padding-right: 12px;
+  width: 82%;
 
   flex-direction: column;
   justify-content: center;
   background: #76d8c6;
 
+
   ${media.lessThan("medium")`
-    padding: 2px 4%;
-    height: 50%;
-    width: 85%;
+    padding: 20px;
+    padding-right: 12px;
   `};
 `;
 
 const SquareNumber = styled.p`
   margin: 0;
-  font-size: 24px;
+  font-size: 20px;
   letter-spacing: 2px;
   line-height: 1.3;
 
@@ -215,59 +184,40 @@ const SquareNumber = styled.p`
 export const SquareTitle = styled.p`
   margin: 12px 0 0 0;
   top: 70px;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 800;
   letter-spacing: 2px;
-  line-height: 1.2;
+  line-height: 32px;
   color: white;
-
-  ${media.between("medium", "large")`
-    margin-top: 9px;
-    font-size: 19px;
-    letter-spacing: 1px;
-  `};
-
-  ${media.lessThan("medium")`
-    margin-top: 2%;
-    font-size: 3.7vw;
-    letter-spacing: 1px;
+  ${media.lessThan("large")`
+    font-size: 10px;
+    line-height: 24px;
+    letter-spacing: 1.2px;
   `};
 `;
 
 export const SquareSpan = styled.span`
-  font-size: 29px;
-  line-height: 1;
+  font-size: 28px;
+  line-height: 36px;
   color: yellow;
-  ${media.between("medium", "large")`
-    font-size: 23px;
-  `};
-
-  ${media.lessThan("medium")`
-    font-size: 4.44vw;
+  ${media.lessThan("large")`
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 1.2px;
   `};
 `;
 
 const SquareText = styled.p`
-  display: flex;
-  margin: -8% 0 0 auto;
-  padding: 96px 4% 32px;
+  margin: -48px 0 0 auto;
+  padding: 72px 4% 32px;
   width: 89%;
-  font-size: 21px;
-  line-height: 1.2;
-  white-space: pre-wrap;
-  align-items: center;
+  font-size: 16px;
+  line-height: 28px;
   color: #444444;
   background: white;
-
-  ${media.between("medium", "large")`
-    font-size: 17px;
-  `};
-
+  white-space: pre-wrap;
   ${media.lessThan("medium")`
-    margin-top: -12%;
-    padding-top: 48px;
-    height: 50%;
-    font-size: 3vw;
+    font-size: 12px;
   `};
 `;
 
