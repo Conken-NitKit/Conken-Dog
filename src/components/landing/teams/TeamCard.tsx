@@ -102,21 +102,11 @@ interface Props {
   SecondLine: boolean;
 }
 
-export const TeamCard = ({
-  CardTitle,
-
-  Color,
-
-  CardContents,
-
-  SecondLine,
-}: Props) => {
+export const TeamCard = ({ CardTitle, Color, CardContents }: Props) => {
   return (
     <Card>
       <Circle />
-
       <Title Color={Color}>{CardTitle}</Title>
-
       <Contents>
         {CardContents.map((element, index) => {
           return <li key={`card/${index}`}>{element}</li>;

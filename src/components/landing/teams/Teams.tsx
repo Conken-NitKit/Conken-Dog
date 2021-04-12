@@ -31,22 +31,16 @@ const Title = styled.h1`
   margin: 0 auto;
   padding-top: 140px;
 
-  font-size: 40px;
+  font-size: 36px;
   font-weight: bold;
   color: #87ceeb;
   line-height: 40px;
   text-align: center;
 
-  ${media.between("medium", "large")`
-    padding-top: 110px;
-    font-size: 35px;
-    line-height: 35px;
-  `};
-
   ${media.lessThan("medium")`
     padding-top: 11vw;
-    font-size: 8vw;
-    line-height: 9vw;
+    font-size: 1.35rem;
+    line-height: 36px;
   `}
 `;
 

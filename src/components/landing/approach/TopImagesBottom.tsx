@@ -28,8 +28,8 @@ const HeaderBottom = styled.div`
 
 const BottomCover = styled.div`
   position: relative;
-  top: -110vw;
-  height: 50vw;
+  top: -200vw;
+  height: 200vw;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.6);
   ${media.greaterThan("medium")`

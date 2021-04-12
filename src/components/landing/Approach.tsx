@@ -15,43 +15,6 @@ const ApproachContainer = styled(Container)`
   padding: 0;
 `;
 
-const CatchCopy = styled.h1`
-  position: absolute;
-  width: 100vw;
-  top: 10%;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  font-family: Gen Jyuu Gothic;
-  font-weight: bold;
-  font-size: 600%;
-  color: rgba(0, 0, 0, 0);
-  -webkit-text-stroke: 1.8px #fff;
-  ${media.lessThan("medium")`
-    top: 25%;
-    font-size: 36px;
-    -webkit-text-stroke: 1.3px #fff;
-  `};
-`;
-
-const Sub = styled.p`
-  position: absolute;
-  top: calc(10% + 380px);
-  width: 100%;
-
-  font-family: Lato, "Hiragino Maru Gothic Pro", "Meiryo UI", Meiryo,
-    "MS PGothic", sans-serif;
-  font-weight: lighter;
-  font-size: 20px;
-  letter-spacing: 4px;
-  text-align: center;
-  color: white;
-  ${media.lessThan("medium")`
-    top: calc(10% + 300px);
-    font-size: 12px;
-  `};
-`;
-
 const Header = styled.header`
   height: 40vw;
   background-color: #87ceeb;
@@ -161,16 +124,10 @@ export const Approach = () => {
     <ApproachContainer>
       <Header>
         <TopImages />
-        <CatchCopy>
-          Learn To Play
-          <br />
-          Than Anywhere
-        </CatchCopy>
         <Condog>Conken-Dog</Condog>
         <a href="https://conken-dog.netlify.app/signup">
           <Login>新規登録</Login>
         </a>
-        <Sub>〜 遊ぶように学ぼう どこよりも 〜</Sub>
       </Header>
       <TopImagesBottom />
       <Mission />

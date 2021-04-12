@@ -10,21 +10,20 @@ const WhatIsContainer = styled(Container)`
   }
 `;
 
-const Title = styled.div`
-  margin-top: 0.1vw;
+const Title = styled.p`
   color: #6fd0ee;
-  font-size: 2rem;
+  font-size: 1rem;
   width: 100%;
-  @media (max-width: 414px) {
-    font-size: 5.3vw;
+  @media (min-width: 414px) {
+    font-size: 1.8rem;
   }
 `;
 
 const Sentence = styled.p`
-  font-size: 1.4rem;
+  font-size: 0.75rem;
   color: #7e7e7e;
-  @media (max-width: 414px) {
-    font-size: 4vw;
+  @media (min-width: 414px) {
+    font-size: 1.3rem;
   }
 `;
 
@@ -32,12 +31,12 @@ const WhatIsImg = styled.img`
   height: 25vw;
   width: 80%;
   object-fit: cover;
-  margin-bottom: 1vw;
+  margin: 16px;
   border-radius: 8px;
   @media (max-width: 414px) {
     width: 90vw;
     height: 45vw;
-    margin: auto;
+    margin: 16px auto;
   }
 `;
 

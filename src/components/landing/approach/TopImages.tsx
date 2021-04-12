@@ -13,6 +13,7 @@ import riceball from "../../../assets/img/landing/approach/RiceBall.webp";
 import megane from "../../../assets/img/landing/approach/megane.webp";
 
 const Conteiner = styled.div`
+  position: relative;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -20,6 +21,7 @@ const Conteiner = styled.div`
   align-items: center;
   align-content: flex-start;
   width: 100vw;
+  z-index: 2;
 `;
 
 const Cover = styled.div`
@@ -42,6 +44,43 @@ const Image = styled.img`
   `};
 `;
 
+const CatchCopy = styled.h1`
+  position: absolute;
+  width: 100vw;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-family: Gen Jyuu Gothic;
+  font-weight: bold;
+  font-size: 600%;
+  color: rgba(0, 0, 0, 0);
+  -webkit-text-stroke: 1.8px #fff;
+  ${media.lessThan("medium")`
+    top: 25%;
+    font-size: 36px;
+    -webkit-text-stroke: 1.3px #fff;
+  `};
+`;
+
+const Sub = styled.p`
+  position: absolute;
+  top: calc(10% + 380px);
+  width: 100%;
+
+  font-family: Lato, "Hiragino Maru Gothic Pro", "Meiryo UI", Meiryo,
+    "MS PGothic", sans-serif;
+  font-weight: lighter;
+  font-size: 20px;
+  letter-spacing: 4px;
+  text-align: center;
+  color: white;
+  ${media.lessThan("medium")`
+    top: calc(10% + 300px);
+    font-size: 12px;
+  `};
+`;
+
 export const TopImages = () => {
   return (
     <Conteiner>
@@ -56,6 +95,12 @@ export const TopImages = () => {
       <Image src={riceball} />
       <Image src={megane} />
       <Cover />
+      <CatchCopy>
+        Learn To Play
+        <br />
+        Than Anywhere
+      </CatchCopy>
+      <Sub>〜 遊ぶように学ぼう どこよりも 〜</Sub>
     </Conteiner>
   );
 };
