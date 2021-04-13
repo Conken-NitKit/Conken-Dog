@@ -129,6 +129,12 @@ export const MONEY: ISection = {
       requiredTime: 22,
     },
     {
+      title: "幸せな小金持ちになるための資産運用との「ほどよい」距離感",
+      link: "https://youtu.be/N-Id6X73gcY",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 18,
+    },
+    {
       title: "もう騙されない！資産運用の始め方、徹底解説。",
       link: "https://youtu.be/1JP5PfI5LaM",
       mediaType: ["READ_ONLY", "VIDEO"],
@@ -182,6 +188,12 @@ export const MONEY: ISection = {
       link: "https://youtu.be/h9-n7aphXRI",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 26,
+    },
+    {
+      title: "2030年までにこれをやるべき！",
+      link: "https://youtu.be/qdljMEHPIzo",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 30,
     },
     {
       title: "大金持ちは無理でも「小金持ち」になら誰でもなれる理由",
@@ -411,6 +423,12 @@ export const MONEY: ISection = {
       link: "https://youtu.be/ntpoZzTrZ2U",
       mediaType: ["READ_ONLY", "VIDEO"],
       requiredTime: 30,
+    },
+    {
+      title: "暴落を狙って長期投資で利益を上げる投資法",
+      link: "https://youtu.be/M9JE6mt2ZvI",
+      mediaType: ["READ_ONLY", "VIDEO"],
+      requiredTime: 13,
     },
   ],
 };

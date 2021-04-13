@@ -141,6 +141,12 @@ export const WEB: ISection = {
       requiredTime: 15,
     },
     {
+      title: "とりあえず動かす DNS",
+      link: "https://zenn.dev/koyamaso/books/cbc1f9f136634c",
+      mediaType: ["USE_MY_PC"],
+      requiredTime: 120,
+    },
+    {
       title: "メールサーバの仕組み",
       link: "https://youtu.be/SfvcDsaAdC4",
       mediaType: ["READ_ONLY", "VIDEO"],

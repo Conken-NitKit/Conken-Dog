@@ -1,30 +1,42 @@
 import { Container } from "./Container";
 import styled from "styled-components";
 import DataSrc from "../../assets/img/landing/datum/data.svg";
+import media from "styled-media-query";
 
 const ImgStyle = styled.img`
   width: 403px;
   height: 462px;
+  ${media.lessThan("medium")`
+  width: 160px;
+  height: 170px; 
+  `};
 `;
 
 const Title = styled.h2`
   font-family: Meiryo;
   font-style: normal;
   font-weight: bold;
-  font-size: 55px;
-  line-height: 90px;
+  font-size: 50px;
+  line-height: 80px;
   text-align: center;
   color: #87ceeb;
+  ${media.lessThan("medium")`
+    font-size: 22px;
+  `};
 `;
 
 const DataStyle = styled.div`
   display: flex;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 `;
 
 const DescriptionStyle = styled.div`
   margin-left: 60px;
-  margin-top: 60px;
+  margin-top: 30px;
+  ${media.lessThan("medium")`
+    margin-left: 10px;
+    margin-top: 0;
+  `};
 `;
 
 const TextStyle = styled.p`
@@ -32,8 +44,14 @@ const TextStyle = styled.p`
   font-family: Yinmar;
   font-style: normal;
   font-weight: normal;
-  line-height: 40px;
+  line-height: 50px;
   color: #444444;
+  ${media.lessThan("medium")`
+    font-size: 15px;
+    margin: 0;
+    margin-bottom: 15px;
+    line-height: 20px;
+  `};
 `;
 
 export const Data = () => {
