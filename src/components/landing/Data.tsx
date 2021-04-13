@@ -21,35 +21,37 @@ const Title = styled.h2`
   text-align: center;
   color: #87ceeb;
   ${media.lessThan("medium")`
-    font-size: 22px;
+    font-size: 16px;
   `};
 `;
 
 const DataStyle = styled.div`
   display: flex;
   margin-bottom: 50px;
+  ${media.lessThan("medium")`
+    align-items: center;
+    flex-direction: column;
+  `};
+
 `;
 
 const DescriptionStyle = styled.div`
-  margin-left: 60px;
-  margin-top: 30px;
+  margin: 30px 0 0 60px;
   ${media.lessThan("medium")`
-    margin-left: 10px;
-    margin-top: 0;
+    margin: 0;
   `};
 `;
 
 const TextStyle = styled.p`
-  font-size: 25px;
-  font-family: Yinmar;
+  font-size: 20px;
   font-style: normal;
   font-weight: normal;
-  line-height: 50px;
+  line-height: 32px;
   color: #444444;
+  margin: 32px auto 0;
   ${media.lessThan("medium")`
-    font-size: 15px;
-    margin: 0;
-    margin-bottom: 15px;
+    font-size: 13px;
+    margin: 32px auto -16px;
     line-height: 20px;
   `};
 `;
