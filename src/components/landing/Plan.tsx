@@ -26,45 +26,37 @@ const PlanContainer = styled(Container)`
 const TitleBox = styled.div`
   text-align: center;
 `;
+
 const Box = styled.div`
   display: flex;
   justify-content: space-around;
+  ${media.lessThan("medium")`
+    flex-direction: column;
+  `};
 `;
 
 const Title = styled.h2`
-  vertical-align: middle;
-
   font-family: Roboto;
   font-size: 3rem;
   width: 100%;
-
-  white-space: nowrap;
-
   color: #55dddd;
-  ${media.between("medium", "large")`
-  font-size: 2rem;
-  `};
+
   ${media.lessThan("medium")`
-  font-size: 1.8rem;
+    font-size: 1.2rem;
   `};
-  @media (max-width: 414px) {
-    font-size: 1.5rem;
-  }
 `;
 
 const Option = styled.div`
   width: 47%;
-  height: 37vh;
+  padding: 0 0 24px;
 
   background: #ffffff;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.25);
   border-radius: 25px;
 
-  ${media.between("medium", "large")`
-    height:30vh;
-  `};
   ${media.lessThan("medium")`
-    height: 28vw;
+    margin: 16px auto;
+    width: 96%;
   `};
 `;
 
@@ -101,34 +93,26 @@ const Lead = styled.p`
     padding-bottom: 8px;
   }
 `;
-const Cat = styled.h3`
+
+const CourseTitle = styled.h3`
   font-family: Roboto;
   font-style: normal;
   font-size: 1.9rem;
-  line-height: 10px;
   text-align: center;
   white-space: nowrap;
 
   color: #a296ec;
 
-  ${media.between("medium", "large")`
-    font-size: 1.7rem;
-    line-height: 8px;
-  `};
   ${media.lessThan("medium")`
-    font-size: 1.5rem;
-    line-height: 5px;
+    font-size: 1.3rem;
   `};
-  @media (max-width: 414px) {
-    font-size: 1.9rem;
-    line-height: 10px;
-  }
 `;
-const Content = styled.h4`
+
+const ContentTitle = styled.h4`
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
-  font-size: 0.8rem;
+  font-size: 1rem;
   line-height: 8px;
 
   text-align: center;
@@ -136,42 +120,24 @@ const Content = styled.h4`
 
   color: #444444;
 
-  ${media.between("medium", "large")`
-    font-size: 0.7rem;
-    line-height: 6px;
-  `};
   ${media.lessThan("medium")`
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     line-height: 6px;
   `};
-  @media (max-width: 414px) {
-    font-size: 0.8rem;
-    line-height: 8px;
-  }
 `;
-const List = styled.p`
+
+const ContentItems = styled.p`
+  color: #888888;
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
-  font-size: 0.8rem;
-  line-height: 13px;
-
+  font-size: 1rem;
+  line-height: 20px;
   text-align: center;
-
-  color: #888888;
-
-  ${media.between("medium", "large")`
-    font-size: 0.7rem;
-    line-height: 12px;
-  `};
+  white-space: pre-wrap;
   ${media.lessThan("medium")`
-    font-size: 0.7rem;
-    line-height: 13px;
+    font-size: 0.55rem;
   `};
-  @media (max-width: 414px) {
-    font-size: 0.8rem;
-    line-height: 10px;
-  }
 `;
 
 export const Plan = ({
@@ -194,20 +160,20 @@ export const Plan = ({
       <Box>
         <Option>
           <Lead>{heading1}</Lead>
-          <Cat>{plan1}</Cat>
-          <Content>{commonTitle}</Content>
-          <List>{common}</List>
-          <Content>{contentTitle1}</Content>
-          <List>{content1}</List>
+          <CourseTitle>{plan1}</CourseTitle>
+          <ContentTitle>{commonTitle}</ContentTitle>
+          <ContentItems>{common}</ContentItems>
+          <ContentTitle>{contentTitle1}</ContentTitle>
+          <ContentItems>{content1}</ContentItems>
         </Option>
 
         <Option>
           <Lead>{heading2}</Lead>
-          <Cat>{plan2}</Cat>
-          <Content>{commonTitle}</Content>
-          <List>{common}</List>
-          <Content>{contentTitle2}</Content>
-          <List>{content2}</List>
+          <CourseTitle>{plan2}</CourseTitle>
+          <ContentTitle>{commonTitle}</ContentTitle>
+          <ContentItems>{common}</ContentItems>
+          <ContentTitle>{contentTitle2}</ContentTitle>
+          <ContentItems>{content2}</ContentItems>
         </Option>
       </Box>
     </PlanContainer>
