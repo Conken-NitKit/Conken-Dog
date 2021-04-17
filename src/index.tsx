@@ -16,6 +16,9 @@ import { userContext } from "./contexts/userContext";
 import { defaultUserInfo, IUser } from "./interfaces/User";
 import { IKnowledge } from "./interfaces/Knowledge";
 import { knowledgesContext } from "./contexts/knowledgesContext";
+import Admin from "./pages/Admin";
+import AdminList from "./pages/AdminList";
+import AdminSection from "./pages/AdminSection";
 
 const Root = () => {
   const [user, setUser] = useState<IUser>(defaultUserInfo);
@@ -41,6 +44,9 @@ const Root = () => {
       >
         <BrowserRouter>
           <Route exact path="/" component={Home} />
+          <Route exact path="/admin/" component={AdminList} />
+          <Route exact path="/admin/:id" component={Admin} />
+          <Route exact path="/admin-section/:id" component={AdminSection} />
           <Route exact path="/landing" component={Lnading} />
           <Route exact path="/courses" component={Courses} />
           <Route exact path="/knowledges" component={Knowledges} />
@@ -61,7 +67,7 @@ const Root = () => {
           ))}
 
           {courseList.map((course) =>
-            course.sections.map((section, index) => (
+            course.sections.map((section, index) => [
               <Route
                 exact
                 key={`${course.metaName}/${index}`}
@@ -69,8 +75,16 @@ const Root = () => {
                 component={(routeComponentProps: RouteComponentProps) => (
                   <Section value={section} {...routeComponentProps} />
                 )}
-              />
-            ))
+              />,
+              <Route
+                exact
+                key={`/admin/${course.metaName}/${index}`}
+                path={`/admin/${course.metaName}/${index + 1}/:id`}
+                component={(routeComponentProps: RouteComponentProps) => (
+                  <AdminSection value={section} {...routeComponentProps} />
+                )}
+              />,
+            ])
           )}
         </BrowserRouter>
       </knowledgesContext.Provider>
