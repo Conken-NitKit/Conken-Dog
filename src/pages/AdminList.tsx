@@ -89,58 +89,62 @@ export default function AdminList({ history }: RouteComponentProps) {
             <th scope={"col"}>氏名</th>
             <th scope={"col"}>ロール</th>
             <th scope={"col"}>生年月日</th>
-            {courseList.map(({ name }) => (
-              <th scope={"col"}>{name}</th>
+            {courseList.map(({ name }, index) => (
+              <th key={`course/${index}`} scope={"col"}>
+                {name}
+              </th>
             ))}
             <th scope={"col"}>メールアドレス</th>
           </tr>
         </thead>
 
         {allUsers.map((watchedUser) => (
-          <tbody>
-            <th>
-              <Link to={`admin/${watchedUser.uid}`}>
-                {watchedUser.displayName == ""
-                  ? "No Name"
-                  : watchedUser.displayName}
-              </Link>
-            </th>
-            {watchedUser.role === "ADMIN" ? (
+          <tbody key={`users/${watchedUser.uid}`}>
+            <tr>
               <th>
-                管理者
-                <br />
-                👑
+                <Link to={`admin/${watchedUser.uid}`}>
+                  {watchedUser.displayName == ""
+                    ? "No Name"
+                    : watchedUser.displayName}
+                </Link>
               </th>
-            ) : watchedUser.role === "MEMBER" ? (
-              <th>
-                一般部員
-                <br />
-                🎉
-              </th>
-            ) : watchedUser.role === "WAITING_AUTHENTICATION" ? (
-              <th>
-                承認待ち
-                <br />
-                🙏
-              </th>
-            ) : (
-              <th>
-                認証拒否
-                <br />❌
-              </th>
-            )}
-            <th>{watchedUser.birthDate}</th>
-            {courseList.map(({ sections }) => (
-              <th scope={"col"}>
-                {Math.floor(
-                  (countComplete(sections, watchedUser.completionList) /
-                    countContents(sections)) *
-                    100
-                )}%<br />
-                ({countComplete(sections, watchedUser.completionList)})
-              </th>
-            ))}
-            <th>{watchedUser.email}</th>
+              {watchedUser.role === "ADMIN" ? (
+                <th>
+                  管理者
+                  <br />
+                  👑
+                </th>
+              ) : watchedUser.role === "MEMBER" ? (
+                <th>
+                  一般部員
+                  <br />
+                  🎉
+                </th>
+              ) : watchedUser.role === "WAITING_AUTHENTICATION" ? (
+                <th>
+                  承認待ち
+                  <br />
+                  🙏
+                </th>
+              ) : (
+                <th>
+                  認証拒否
+                  <br />❌
+                </th>
+              )}
+              <th>{watchedUser.birthDate}</th>
+              {courseList.map(({ sections }, index) => (
+                <th key={`users/${watchedUser.uid}/${index}`} scope={"col"}>
+                  {Math.floor(
+                    (countComplete(sections, watchedUser.completionList) /
+                      countContents(sections)) *
+                      100
+                  )}
+                  %<br />({countComplete(sections, watchedUser.completionList)})
+                </th>
+              ))}
+              <th>{watchedUser.email}</th>
+            </tr>
           </tbody>
         ))}
       </Table>

@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 import { IContent } from "../assets/sections";
@@ -65,6 +64,18 @@ const CheckBox = styled.label<{ isChecked: boolean }>`
   }
 `;
 
+const ContentItemDescription = styled.div`
+  font-family: Lato, "Hiragino Maru Gothic Pro", "Meiryo UI", Meiryo,
+    "MS PGothic", sans-serif;
+  font-size: 0.9rem;
+  color: rgb(88, 118, 163);
+  line-height: 1.8;
+  letter-spacing: 0.04em;
+  margin-bottom: 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+`;
+
 const MediaTypeTag = styled.span`
   line-height: 28px;
   font-size: 14px;
@@ -88,10 +99,13 @@ export const AdminSectionItem = ({ content, user }: Props) => {
   return (
     <ContentItem>
       <DefaultCheckBox type="checkbox" id={content.title} />
-      <CheckBox htmlFor={content.title} isChecked={user.completionList.includes(content.link)} />
-      <Description>
+      <CheckBox
+        htmlFor={content.title}
+        isChecked={user.completionList.includes(content.link)}
+      />
+      <ContentItemDescription>
         <ContentsLink href={content.link} target={"_blank"}>
-          {content.title}
+          {" " + content.title}
         </ContentsLink>
         <br />
         {content.requiredTime >= 60 &&
@@ -116,7 +130,7 @@ export const AdminSectionItem = ({ content, user }: Props) => {
             <MediaTypeTag>Gitで管理してみよう</MediaTypeTag>
           )}
         </TagContainer>
-      </Description>
+      </ContentItemDescription>
     </ContentItem>
   );
 };
