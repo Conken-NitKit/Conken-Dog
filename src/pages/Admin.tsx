@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from "react";
-import { useParams } from "react-router";
+import { useContext, useEffect, useRef, useState } from "react";
+import { RouteComponentProps, useParams } from "react-router";
 import { defaultUserInfo, IUser } from "../interfaces/User";
 import { fetchUser } from "../utils/users/fetchUser";
 import Slick from "react-slick";
@@ -11,6 +11,8 @@ import { courseList } from "../assets/courses";
 import styled from "styled-components";
 import media from "styled-media-query";
 import { Container } from "../layouts/Container";
+import { userContext } from "../contexts/userContext";
+import { redirectNonAdmin } from "../utils/users/redirectNonAdmin";
 
 const CategoryList = styled.ul`
   display: flex;
@@ -62,23 +64,28 @@ interface ParamTypes {
   id: string;
 }
 
-export default function Admin() {
+export default function Admin({ history }: RouteComponentProps) {
   const { id } = useParams<ParamTypes>();
-  const [user, setUser] = useState<IUser>(defaultUserInfo);
+  const { user, setUser } = useContext(userContext);
+  const [watchedUser, setWatchedUser] = useState<IUser>(defaultUserInfo);
   const [courseIndex, setCourseIndex] = useState<number>(
     Number(localStorage.getItem("AdminCourseIndex")) ?? 0
   );
 
   useEffect(() => {
+    const unSub = redirectNonAdmin(history, user, setUser);
     const f = async () => {
       console.log(id);
       const fetchedUser = await fetchUser(id);
-      setUser(fetchedUser);
+      setWatchedUser(fetchedUser);
     };
     f();
     courseRef.current!.slickGoTo(
       Number(localStorage.getItem("AdminCourseIndex") ?? 0)
     );
+    return () => {
+      unSub();
+    };
   }, []);
 
   const courseRef = useRef<Slick | null>();
@@ -119,7 +126,7 @@ export default function Admin() {
               <LessonCard
                 key={`course/admin-section/${index}`}
                 section={section}
-                propsUser={user}
+                propsUser={watchedUser}
                 useFinishedFilter={true}
                 metaName={course.metaName}
                 index={index}
@@ -129,7 +136,7 @@ export default function Admin() {
               <LessonCard
                 key={`course/admin-section/${index}`}
                 section={section}
-                propsUser={user}
+                propsUser={watchedUser}
                 useFinishedFilter={false}
                 metaName={course.metaName}
                 index={index}

@@ -1,16 +1,17 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { RouteComponentProps, useParams } from "react-router-dom";
 import styled from "styled-components";
 
 import { ISection } from "../assets/sections";
 import { AdminSectionItem } from "../components/AdminSectionItem";
+import { userContext } from "../contexts/userContext";
 import { defaultUserInfo, IUser } from "../interfaces/User";
 import { Container } from "../layouts/Container";
 import { Description } from "../styles/fonts/Description";
 import { Heading1 } from "../styles/fonts/Heading1";
 import { Small } from "../styles/fonts/Small";
 import { fetchUser } from "../utils/users/fetchUser";
-import { redirectNonLogin } from "../utils/users/redirectNonLogin";
+import { redirectNonAdmin } from "../utils/users/redirectNonAdmin";
 
 const ContentsList = styled.ul`
   background: #fff;
@@ -30,15 +31,19 @@ interface ParamTypes {
 
 export default function AdminSection({ value, history }: Props) {
   const { id } = useParams<ParamTypes>();
-  const [user, setUser] = useState<IUser>(defaultUserInfo);
+  const { user, setUser } = useContext(userContext);
+  const [watchedUser, setWatchedUser] = useState<IUser>(defaultUserInfo);
 
   useEffect(() => {
+    const unSub = redirectNonAdmin(history, user, setUser);
     const f = async () => {
       const fetchedUser = await fetchUser(id);
-      console.log(fetchedUser);
-      setUser(fetchedUser);
+      setWatchedUser(fetchedUser);
     };
     f();
+    return () => {
+      unSub();
+    };
   }, []);
 
   const generateMinute = () =>
@@ -61,7 +66,7 @@ export default function AdminSection({ value, history }: Props) {
         {value.contentsList.map((content, i) => (
           <AdminSectionItem
             key={value.title + i.toString()}
-            user={user}
+            user={watchedUser}
             content={content}
           />
         ))}

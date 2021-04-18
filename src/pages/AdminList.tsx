@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { Link, RouteComponentProps } from "react-router-dom";
 import { IUser } from "../interfaces/User";
 import { Container } from "../layouts/Container";
 import { fetchAllUsers } from "../utils/users/fetchAllUsers";
 
 import styled from "styled-components";
+import { redirectNonAdmin } from "../utils/users/redirectNonAdmin";
+import { userContext } from "../contexts/userContext";
 
 const Table = styled.table`
   border-collapse: collapse;
@@ -40,15 +42,20 @@ const Table = styled.table`
   }
 `;
 
-export default function AdminList() {
+export default function AdminList({ history }: RouteComponentProps) {
   const [allUsers, setAllUsers] = useState<IUser[]>([]);
+  const { user, setUser } = useContext(userContext);
 
   useEffect(() => {
+    const unSub = redirectNonAdmin(history, user, setUser);
     const f = async () => {
       const fetchedAllUsers = await fetchAllUsers();
       setAllUsers(fetchedAllUsers);
     };
     f();
+    return () => {
+      unSub();
+    };
   }, []);
 
   return (
