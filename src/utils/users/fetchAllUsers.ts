@@ -1,6 +1,11 @@
 import { instanceOfUser, IUser } from "../../interfaces/User";
 import { db } from "../firebase";
 
+const calcGrade = (dateString: string) => {
+  const dateInfo = new Date(dateString);
+  return dateInfo.getFullYear() - (dateInfo.getMonth() < 3 ? 1 : 0)
+}
+
 export const fetchAllUsers = async (): Promise<IUser[]> => {
   const users: IUser[] = [];
   const userRef = db.collection("user");
@@ -12,12 +17,14 @@ export const fetchAllUsers = async (): Promise<IUser[]> => {
   });
 
   users.sort((a, b) => {
-    if (new Date(a.birthDate) > new Date(b.birthDate)) return -1;
-    else if (new Date(a.birthDate) < new Date(b.birthDate)) return 1;
-    return 0;
+    if (calcGrade(a.birthDate) > calcGrade(b.birthDate) ) return -1;
+    else if (calcGrade(a.birthDate) < calcGrade(b.birthDate)) return 1;
+    else {
+      if(new Date(a.birthDate) > new Date(b.birthDate)) return 1;
+      else if(new Date(a.birthDate) < new Date(b.birthDate)) return -1;
+      else return 0
+    };
   });
-
-  console.log(users)
 
   return users;
 };
