@@ -4,6 +4,7 @@ import media from "styled-media-query";
 import { Link } from "react-router-dom";
 import { userContext } from "../contexts/userContext";
 import { ISection } from "../assets/sections";
+import { IUser } from "../interfaces/User";
 
 const LessonCardContainer = styled.div`
   width: 96%;
@@ -114,6 +115,7 @@ interface Props {
   useFinishedFilter: boolean;
   metaName: string;
   index: number;
+  propsUser?: IUser;
 }
 
 export default function LessonCard({
@@ -121,12 +123,14 @@ export default function LessonCard({
   useFinishedFilter,
   metaName,
   index,
+  propsUser,
 }: Props) {
   const { user } = useContext(userContext);
 
   const countComplete = () =>
     section.contentsList.reduce((cnt, cur): number => {
-      return cnt + (user.completionList.includes(cur.link) ? 1 : 0);
+      const userInfo = propsUser ?? user;
+      return cnt + (userInfo.completionList.includes(cur.link) ? 1 : 0);
     }, 0);
 
   const completeFilter = () =>
@@ -136,7 +140,11 @@ export default function LessonCard({
 
   return completeFilter() ? (
     <Link
-      to={`/${metaName}/${index + 1}`}
+      to={
+        propsUser
+          ? `/admin/${metaName}/${index + 1}/${propsUser.uid}`
+          : `/${metaName}/${index + 1}`
+      }
       style={{ textDecoration: "none", color: "rgb(88, 118, 163)" }}
     >
       <LessonCardContainer>
