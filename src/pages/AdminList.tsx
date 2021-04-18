@@ -7,6 +7,12 @@ import { fetchAllUsers } from "../utils/users/fetchAllUsers";
 import styled from "styled-components";
 import { redirectNonAdmin } from "../utils/users/redirectNonAdmin";
 import { userContext } from "../contexts/userContext";
+import { courseList } from "../assets/courses";
+import { ISection } from "../assets/sections";
+
+const AdminContainer = styled(Container)`
+  width: 92%;
+`;
 
 const Table = styled.table`
   border-collapse: collapse;
@@ -38,13 +44,30 @@ const Table = styled.table`
   tbody th {
     text-align: center;
     font-size: 0.85em;
-    padding: 16px;
+    padding: 16px 8px;
   }
 `;
 
 export default function AdminList({ history }: RouteComponentProps) {
   const [allUsers, setAllUsers] = useState<IUser[]>([]);
   const { user, setUser } = useContext(userContext);
+
+  const countContents = (sectionList: ISection[]) =>
+    sectionList.reduce((secCnt, secCur): number => {
+      return secCnt + secCur.contentsList.length;
+    }, 0);
+
+  const countComplete = (sectionList: ISection[], completionList: string[]) =>
+    sectionList.reduce((secCnt, secCur): number => {
+      return (
+        secCnt +
+        secCur.contentsList.reduce((contentCnt, contentCur): number => {
+          return (
+            contentCnt + (completionList.includes(contentCur.link) ? 1 : 0)
+          );
+        }, 0)
+      );
+    }, 0);
 
   useEffect(() => {
     const unSub = redirectNonAdmin(history, user, setUser);
@@ -59,35 +82,68 @@ export default function AdminList({ history }: RouteComponentProps) {
   }, []);
 
   return (
-    <Container>
+    <AdminContainer>
       <Table>
         <thead>
           <tr>
             <th scope={"col"}>氏名</th>
             <th scope={"col"}>ロール</th>
             <th scope={"col"}>生年月日</th>
+            {courseList.map(({ name }) => (
+              <th scope={"col"}>{name}</th>
+            ))}
             <th scope={"col"}>メールアドレス</th>
           </tr>
         </thead>
 
-        {allUsers.map(({ uid, displayName, role, birthDate, email }) => (
+        {allUsers.map((watchedUser) => (
           <tbody>
             <th>
-              <Link to={`admin/${uid}`}>
-                {displayName == "" ? "No Name" : displayName}
+              <Link to={`admin/${watchedUser.uid}`}>
+                {watchedUser.displayName == ""
+                  ? "No Name"
+                  : watchedUser.displayName}
               </Link>
             </th>
-            <th>{
-              role === "ADMIN" ? "管理者 😎"
-               : role === "MEMBER" ? "一般部員 🥳"
-               : role === "WAITING_AUTHENTICATION" ? "承認待ち 🙇‍♂️"
-               : "認証拒否 ❌"
-              }</th>
-            <th>{birthDate}</th>
-            <th>{email}</th>
+            {watchedUser.role === "ADMIN" ? (
+              <th>
+                管理者
+                <br />
+                👑
+              </th>
+            ) : watchedUser.role === "MEMBER" ? (
+              <th>
+                一般部員
+                <br />
+                🎉
+              </th>
+            ) : watchedUser.role === "WAITING_AUTHENTICATION" ? (
+              <th>
+                承認待ち
+                <br />
+                🙏
+              </th>
+            ) : (
+              <th>
+                認証拒否
+                <br />❌
+              </th>
+            )}
+            <th>{watchedUser.birthDate}</th>
+            {courseList.map(({ sections }) => (
+              <th scope={"col"}>
+                {Math.floor(
+                  (countComplete(sections, watchedUser.completionList) /
+                    countContents(sections)) *
+                    100
+                )}%<br />
+                ({countComplete(sections, watchedUser.completionList)})
+              </th>
+            ))}
+            <th>{watchedUser.email}</th>
           </tbody>
         ))}
       </Table>
-    </Container>
+    </AdminContainer>
   );
 }
