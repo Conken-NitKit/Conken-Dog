@@ -10,6 +10,7 @@ import { courseList } from "../assets/courses";
 
 import styled from "styled-components";
 import media from "styled-media-query";
+import { Container } from "../layouts/Container";
 
 const CategoryList = styled.ul`
   display: flex;
@@ -63,8 +64,10 @@ interface ParamTypes {
 
 export default function Admin() {
   const { id } = useParams<ParamTypes>();
-  const [courseIndex, setCourseIndex] = useState<number>(0);
   const [user, setUser] = useState<IUser>(defaultUserInfo);
+  const [courseIndex, setCourseIndex] = useState<number>(
+    Number(localStorage.getItem("AdminCourseIndex")) ?? 0
+  );
 
   useEffect(() => {
     const f = async () => {
@@ -73,11 +76,15 @@ export default function Admin() {
       setUser(fetchedUser);
     };
     f();
+    courseRef.current!.slickGoTo(
+      Number(localStorage.getItem("AdminCourseIndex") ?? 0)
+    );
   }, []);
 
   const courseRef = useRef<Slick | null>();
 
   const slideChangeHandle = (_: number, next: number) => {
+    localStorage.setItem("AdminCourseIndex", String(next));
     setCourseIndex(next);
   };
 
@@ -92,7 +99,7 @@ export default function Admin() {
   };
 
   return (
-    <>
+    <Container>
       <CategoryList>
         {courseList.map((course, index) => (
           <CategoryTag
@@ -131,6 +138,6 @@ export default function Admin() {
           </SectionContainer>
         ))}
       </Slick>
-    </>
+    </Container>
   );
 }
