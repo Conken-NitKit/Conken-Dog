@@ -25,7 +25,7 @@ const Table = styled.table`
   }
   thead {
     th {
-      font-size: 0.85em;
+      font-size: 0.9em;
       padding: 1em;
     }
     tr {
@@ -35,7 +35,7 @@ const Table = styled.table`
   }
   tbody th {
     text-align: center;
-    font-size: 0.8em;
+    font-size: 0.85em;
     padding: 16px;
   }
 `;
@@ -71,10 +71,10 @@ export default function AdminList() {
               </Link>
             </th>
             <th>{
-              role === "ADMIN" ? "管理者"
-               : role === "MEMBER" ? "一般部員"
-               : role === "WAITING_AUTHENTICATION" ? "承認待ち"
-               : "認証拒否"
+              role === "ADMIN" ? "管理者 😎"
+               : role === "MEMBER" ? "一般部員 🥳"
+               : role === "WAITING_AUTHENTICATION" ? "承認待ち 🙇‍♂️"
+               : "認証拒否 ❌"
               }</th>
             <th>{birthDate}</th>
             <th>{email}</th>
