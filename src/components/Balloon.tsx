@@ -103,10 +103,11 @@ export default function Ballooon({ close, history }: Props) {
             </UserLink>
           </MenuItem>
           <MenuItem>
-            <ListLink>いいねしたナレッジ</ListLink>
-          </MenuItem>
-          <MenuItem>
-            <ListLink>ブックマークしたナレッジ</ListLink>
+            {user.role === "ADMIN" && (
+              <ListLink onClick={() => history.push("/admin")}>
+                管理者画面
+              </ListLink>
+            )}
           </MenuItem>
           <MenuItem>
             <ListLink onClick={() => signOut(history)}>
