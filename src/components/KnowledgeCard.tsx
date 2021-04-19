@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import styled from "styled-components";
 import media from "styled-media-query";
 import { Small } from "../styles/fonts/Small";
@@ -11,6 +11,7 @@ import BookMarkLogo from "../assets/img/icons/book-mark.svg";
 import SelectedBookMarkLogo from "../assets/img/icons/selected-book-mark.svg";
 import { IKnowledge } from "../interfaces/Knowledge";
 import { userContext } from "../contexts/userContext";
+import KnonwledgeBalloon from "./KnowledgeBalloon";
 
 const Wrap = styled.div`
   overflow: hidden;
@@ -38,10 +39,10 @@ const KnowledgeInfo = styled.p<{ isVisited: boolean }>`
   ${media.lessThan("small")`
     font-size: 0.65rem
   `}
-  &::before{
+  &::before {
     @media (max-width: 280px) {
-    content: " " ;
-    white-space: pre;
+      content: " ";
+      white-space: pre;
     }
   }
   &::after {
@@ -153,14 +154,19 @@ export default function KnowledgeCard({
   tapBookMark,
 }: Props) {
   const { user } = useContext(userContext);
+  const [isShowVisitors, setIsShowVisitors] = useState<boolean>(false);
+  const [isShowFans, setIsShowFans] = useState<boolean>(false);
+
   return (
     <>
       <Wrap>
         <KnowledgeContainer>
-          <KnowledgeInfo isVisited={knowledge.visitors.includes(user.displayName)}>
+          <KnowledgeInfo
+            isVisited={knowledge.visitors.includes(user.displayName)}
+          >
             "{knowledge.contributorName}" が {new Date().getFullYear()}年
-        {new Date().getMonth() + 1}月{new Date().getDate()}日 に投稿
-      </KnowledgeInfo>
+            {new Date().getMonth() + 1}月{new Date().getDate()}日 に投稿
+          </KnowledgeInfo>
           <KnowledgeTitle
             href={knowledge.link}
             target={"_blank"}
@@ -183,7 +189,10 @@ export default function KnowledgeCard({
             </Small>
           </Container>
           <StatusContainer>
-            <Container>
+            <Container
+              onMouseEnter={() => setIsShowVisitors(true)}
+              onMouseLeave={() => setIsShowVisitors(false)}
+            >
               <Icon
                 src={
                   knowledge.visitors.includes(user.displayName)
@@ -200,10 +209,20 @@ export default function KnowledgeCard({
                   }
                 >
                   {knowledge.visitors.length}read
-            </ColorSpan>
+                </ColorSpan>
               </Small>
+              {isShowVisitors && knowledge.visitors.length !== 0 && (
+                <KnonwledgeBalloon
+                  knowledgeId={knowledge.uid}
+                  userList={knowledge.visitors}
+                />
+              )}
             </Container>
-            <CanClickContainer onClick={() => tapFav(knowledge.uid)}>
+            <CanClickContainer
+              onClick={() => tapFav(knowledge.uid)}
+              onMouseEnter={() => setIsShowFans(true)}
+              onMouseLeave={() => setIsShowFans(false)}
+            >
               <Icon
                 src={
                   knowledge.fans.includes(user.displayName)
@@ -220,8 +239,14 @@ export default function KnowledgeCard({
                   }
                 >
                   {knowledge.fans.length}いいね
-            </ColorSpan>
+                </ColorSpan>
               </Small>
+              {isShowFans && knowledge.fans.length !== 0 && (
+                <KnonwledgeBalloon
+                  knowledgeId={knowledge.uid}
+                  userList={knowledge.fans}
+                />
+              )}
             </CanClickContainer>
             <CanClickContainer onClick={() => tapBookMark(knowledge.uid)}>
               <Icon
@@ -240,7 +265,7 @@ export default function KnowledgeCard({
                   }
                 >
                   {knowledge.collectors.length}ブックマーク
-            </ColorSpan>
+                </ColorSpan>
               </Small>
             </CanClickContainer>
           </StatusContainer>
