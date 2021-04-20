@@ -51,7 +51,6 @@ interface Props {
 }
 
 export default function KnonwledgeBalloon({ knowledgeId, userList }: Props) {
-  const { user } = useContext(userContext);
   return (
     <Wrapper>
       <Container>

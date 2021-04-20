@@ -18,6 +18,7 @@ import { KnowledgeModal } from "../components/KnowledgeModal";
 import Ballooon from "../components/Balloon";
 import NavigationBar from "../components/NavigationBar";
 import { ResponsiveWrapper } from "../layouts/ResponsiveWrapper";
+import { addAccessLog } from "../utils/log/accessLink";
 
 const HeaderContainer = styled.div`
   display: flex;
@@ -194,6 +195,12 @@ export default function Home({ history }: RouteComponentProps) {
       unSub();
     };
   });
+
+  useEffect(() => {
+    setTimeout(() => {
+      addAccessLog(user.uid, "ホーム")
+    }, 3000)
+  }, []);
 
   return (
     <div>
