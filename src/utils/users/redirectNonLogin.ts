@@ -1,6 +1,7 @@
 import { auth, db } from "../firebase";
 import * as H from "history";
 import { defaultUserInfo, instanceOfUser, IUser } from "../../interfaces/User";
+import { addAccessLog } from "../log/accessLink";
 
 export const redirectNonLogin = (
   histry: H.History,
@@ -15,7 +16,8 @@ export const redirectNonLogin = (
         .get()
         .then((doc) => {
           const fetchedUser = doc.data();
-          instanceOfUser(fetchedUser) && setUser(fetchedUser);
+          instanceOfUser(fetchedUser) &&setUser(fetchedUser);
+          instanceOfUser(fetchedUser) && addAccessLog(fetchedUser.uid, "ConDog")
         })
         .catch((err) => console.log("Error getting documents", err));
     } else {

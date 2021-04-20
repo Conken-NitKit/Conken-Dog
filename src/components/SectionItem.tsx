@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { IContent } from "../assets/sections";
 import { userContext } from "../contexts/userContext";
 import { Description } from "../styles/fonts/Description";
+import { addAccessLog } from "../utils/log/accessLink";
 import { postUserInfo } from "../utils/users/postUserInfo";
 
 const ContentItem = styled.li`
@@ -109,7 +110,11 @@ export const SectionItem = ({ content }: Props) => {
       />
       <CheckBox htmlFor={content.title} isChecked={isChecked} />
       <Description>
-        <ContentsLink href={content.link} target={"_blank"}>
+        <ContentsLink
+          href={content.link}
+          target={"_blank"}
+          onClick={() => addAccessLog(user.uid, content.title)}
+        >
           {content.title}
         </ContentsLink>
         <br />
