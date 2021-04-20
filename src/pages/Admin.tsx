@@ -60,6 +60,40 @@ const SectionContainer = styled.div`
   `}
 `;
 
+const Table = styled.table`
+  border-collapse: collapse;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  box-shadow: 0 0 15px -6px #00000073;
+  tr {
+    background-color: #fff;
+  }
+  tbody tr:hover {
+    background-color: #fffae9;
+  }
+  th,
+  td {
+    padding: 0.35em 1em;
+    border-bottom: 1px solid #eee;
+  }
+  thead {
+    th {
+      font-size: 0.9em;
+      padding: 1em;
+    }
+    tr {
+      background-color: #30c8d6;
+      color: #fff;
+    }
+  }
+  tbody th {
+    text-align: center;
+    font-size: 0.85em;
+    padding: 16px 8px;
+  }
+`;
+
 interface ParamTypes {
   id: string;
 }
@@ -145,6 +179,30 @@ export default function Admin({ history }: RouteComponentProps) {
           </SectionContainer>
         ))}
       </Slick>
+
+      <Table>
+        <thead>
+          <tr>
+            <th scope={"col"}>時刻</th>
+            <th scope={"col"}>行動履歴</th>
+          </tr>
+        </thead>
+        {watchedUser.activityLog.map((logItem, index) => (
+          <tbody key={`log/${index}`}>
+            <tr>
+              <td>
+                {new Date(logItem.timestamp).getFullYear()}年
+                {new Date(logItem.timestamp).getMonth() + 1}月
+                {new Date(logItem.timestamp).getDate()}日
+                {" "}
+                {("00" + (new Date(logItem.timestamp).getHours().toString())).slice(-2)}:
+                {("00" + (new Date(logItem.timestamp).getMinutes().toString())).slice(-2)}
+              </td>
+              <td>{logItem.targetLink}</td>
+            </tr>
+          </tbody>
+        ))}
+      </Table>
     </Container>
   );
 }
