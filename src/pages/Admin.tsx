@@ -64,8 +64,6 @@ const Table = styled.table`
   border-collapse: collapse;
   margin: 0 auto;
   padding: 0;
-  width: 100%;
-  box-shadow: 0 0 15px -6px #00000073;
   tr {
     background-color: #fff;
   }
@@ -87,8 +85,7 @@ const Table = styled.table`
       color: #fff;
     }
   }
-  tbody th {
-    text-align: center;
+  tbody td {
     font-size: 0.85em;
     padding: 16px 8px;
   }
@@ -107,6 +104,7 @@ export default function Admin({ history }: RouteComponentProps) {
   );
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     const unSub = redirectNonAdmin(history, user, setUser);
     const f = async () => {
       console.log(id);
@@ -141,12 +139,20 @@ export default function Admin({ history }: RouteComponentProps) {
 
   return (
     <Container>
+      {watchedUser.displayName}
       <CategoryList>
+        <CategoryTag
+          key={`course/tag/0`}
+          isSelected={courseIndex === 0}
+          onClick={() => courseRef.current!.slickGoTo(0)}
+        >
+          行動ログ
+        </CategoryTag>
         {courseList.map((course, index) => (
           <CategoryTag
-            key={`course/tag/${index}`}
-            isSelected={courseIndex === index}
-            onClick={() => courseRef.current!.slickGoTo(index)}
+            key={`course/tag/${index + 1}`}
+            isSelected={courseIndex === index + 1}
+            onClick={() => courseRef.current!.slickGoTo(index + 1)}
           >
             {course.name}
           </CategoryTag>
@@ -154,6 +160,33 @@ export default function Admin({ history }: RouteComponentProps) {
       </CategoryList>
 
       <Slick ref={(slider) => (courseRef.current = slider)} {...settings}>
+        <Table>
+          <thead>
+            <tr>
+              <th scope={"col"} style={{width: "160px"}}>時刻</th>
+              <th scope={"col"} style={{width: "740px"}}>行動履歴</th>
+            </tr>
+          </thead>
+          {watchedUser.activityLog.map((logItem, index) => (
+            <tbody key={`log/${index}`}>
+              <tr>
+                <td>
+                  {new Date(logItem.timestamp).getFullYear()}年
+                  {new Date(logItem.timestamp).getMonth() + 1}月
+                  {new Date(logItem.timestamp).getDate()}日{" "}
+                  {(
+                    "00" + new Date(logItem.timestamp).getHours().toString()
+                  ).slice(-2)}
+                  :
+                  {(
+                    "00" + new Date(logItem.timestamp).getMinutes().toString()
+                  ).slice(-2)}
+                </td>
+                <td>{logItem.targetLink}</td>
+              </tr>
+            </tbody>
+          ))}
+        </Table>
         {courseList.map((course, index) => (
           <SectionContainer key={index}>
             {course.sections.map((section, index) => (
@@ -179,30 +212,6 @@ export default function Admin({ history }: RouteComponentProps) {
           </SectionContainer>
         ))}
       </Slick>
-
-      <Table>
-        <thead>
-          <tr>
-            <th scope={"col"}>時刻</th>
-            <th scope={"col"}>行動履歴</th>
-          </tr>
-        </thead>
-        {watchedUser.activityLog.map((logItem, index) => (
-          <tbody key={`log/${index}`}>
-            <tr>
-              <td>
-                {new Date(logItem.timestamp).getFullYear()}年
-                {new Date(logItem.timestamp).getMonth() + 1}月
-                {new Date(logItem.timestamp).getDate()}日
-                {" "}
-                {("00" + (new Date(logItem.timestamp).getHours().toString())).slice(-2)}:
-                {("00" + (new Date(logItem.timestamp).getMinutes().toString())).slice(-2)}
-              </td>
-              <td>{logItem.targetLink}</td>
-            </tr>
-          </tbody>
-        ))}
-      </Table>
     </Container>
   );
 }
