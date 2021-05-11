@@ -2,11 +2,11 @@ import { useContext, useEffect, useRef, useState } from "react";
 import { RouteComponentProps, useParams } from "react-router";
 import { defaultUserInfo, IUser } from "../interfaces/User";
 import { fetchUser } from "../utils/users/fetchUser";
-import Slick from "react-slick";
 import LessonCard from "../components/LessonCard";
+import { courseList } from "../assets/courses";
+import Slick from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { courseList } from "../assets/courses";
 
 import styled from "styled-components";
 import media from "styled-media-query";

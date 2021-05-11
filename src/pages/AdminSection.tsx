@@ -3,7 +3,7 @@ import { RouteComponentProps, useParams } from "react-router-dom";
 import styled from "styled-components";
 
 import { ISection } from "../assets/sections";
-import { AdminSectionItem } from "../components/AdminSectionItem";
+import { AdminSectionItem } from "../components/admin/AdminSectionItem";
 import { userContext } from "../contexts/userContext";
 import { defaultUserInfo, IUser } from "../interfaces/User";
 import { Container } from "../layouts/Container";
