@@ -88,7 +88,7 @@ export default function AdminList({ history }: RouteComponentProps) {
           <tr>
             <th scope={"col"}>氏名</th>
             <th scope={"col"}>ロール</th>
-            <th scope={"col"}>生年月日</th>
+            <th scope={"col"}>最終活動日</th>
             {courseList.map(({ name }, index) => (
               <th key={`course/${index}`} scope={"col"}>
                 {name}
@@ -132,7 +132,27 @@ export default function AdminList({ history }: RouteComponentProps) {
                   <br />❌
                 </th>
               )}
-              <th>{watchedUser.birthDate}</th>
+              <th>
+                {watchedUser.activityLog.length === 0 ? (
+                  <b style={{ color: "gray" }}>{watchedUser.birthDate}</b>
+                ) : (
+                  <b>
+                    {`${new Date(
+                      watchedUser.activityLog[0].timestamp
+                    ).getFullYear()}-${(
+                      "00" +
+                      (new Date(
+                        watchedUser.activityLog[0].timestamp
+                      ).getMonth() +
+                        1)
+                    ).slice(-2)}-${(
+                      "00" +
+                      new Date(watchedUser.activityLog[0].timestamp).getDate()
+                    ).slice(-2)}
+                    `}
+                  </b>
+                )}
+              </th>
               {courseList.map(({ sections }, index) => (
                 <th key={`users/${watchedUser.uid}/${index}`} scope={"col"}>
                   {Math.floor(

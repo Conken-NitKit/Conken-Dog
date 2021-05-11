@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
-import { IContent } from "../assets/sections";
-import { IUser } from "../interfaces/User";
-import { Description } from "../styles/fonts/Description";
+import { IContent } from "../../assets/sections";
+import { IUser } from "../../interfaces/User";
 
 const ContentItem = styled.li`
   list-style: none;
