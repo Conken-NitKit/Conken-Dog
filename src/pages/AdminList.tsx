@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, RouteComponentProps } from "react-router-dom";
-import { IUser } from "../interfaces/User";
+import { instanceOfUserRole, IUser } from "../interfaces/User";
 import { Container } from "../layouts/Container";
 import { fetchAllUsers } from "../utils/users/fetchAllUsers";
 
@@ -9,6 +9,7 @@ import { redirectNonAdmin } from "../utils/users/redirectNonAdmin";
 import { userContext } from "../contexts/userContext";
 import { courseList } from "../assets/courses";
 import { ISection } from "../assets/sections";
+import { changeRole } from "../utils/users/changeRole";
 
 const AdminContainer = styled(Container)`
   width: 92%;
@@ -81,6 +82,19 @@ export default function AdminList({ history }: RouteComponentProps) {
     };
   }, []);
 
+  const handleRoleChanged = (
+    watchedUser: IUser,
+    index: number,
+    role: string
+  ) => {
+    if (!instanceOfUserRole(role)) {
+      return;
+    }
+    const replacedUsers = allUsers;
+    replacedUsers.splice(index, 1, changeRole(watchedUser, role));
+    setAllUsers([...replacedUsers]);
+  };
+
   return (
     <AdminContainer>
       <Table>
@@ -98,7 +112,7 @@ export default function AdminList({ history }: RouteComponentProps) {
           </tr>
         </thead>
 
-        {allUsers.map((watchedUser) => (
+        {allUsers.map((watchedUser, index) => (
           <tbody key={`users/${watchedUser.uid}`}>
             <tr>
               <th>
@@ -108,30 +122,19 @@ export default function AdminList({ history }: RouteComponentProps) {
                     : watchedUser.displayName}
                 </Link>
               </th>
-              {watchedUser.role === "ADMIN" ? (
-                <th>
-                  管理者
-                  <br />
-                  👑
-                </th>
-              ) : watchedUser.role === "MEMBER" ? (
-                <th>
-                  一般部員
-                  <br />
-                  🎉
-                </th>
-              ) : watchedUser.role === "WAITING_AUTHENTICATION" ? (
-                <th>
-                  承認待ち
-                  <br />
-                  🙏
-                </th>
-              ) : (
-                <th>
-                  認証拒否
-                  <br />❌
-                </th>
-              )}
+              <th>
+                <select
+                  value={watchedUser.role}
+                  onChange={(e) =>
+                    handleRoleChanged(watchedUser, index, e.target.value)
+                  }
+                >
+                  <option value="ADMIN">管理者 👑</option>
+                  <option value="MEMBER">一般部員 🎉</option>
+                  <option value="WAITING_AUTHENTICATION">承認待ち 🙏</option>
+                  <option value="DENINED">認証拒否 ❌</option>
+                </select>
+              </th>
               <th>
                 {watchedUser.activityLog.length === 0 ? (
                   <b style={{ color: "gray" }}>{watchedUser.birthDate}</b>

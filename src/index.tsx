@@ -3,6 +3,8 @@ import ReactDOM from "react-dom";
 import { Route, BrowserRouter, RouteComponentProps } from "react-router-dom";
 import { courseList } from "./assets/courses";
 import Home from "./pages/Home";
+import Denined from "./pages/Denined";
+import Waiting from "./pages/Waiting";
 import Lnading from "./pages/Landing";
 import Courses from "./pages/Courses";
 import Knowledges from "./pages/Knowledges";
@@ -46,6 +48,8 @@ const Root = () => {
           <Route exact path="/" component={Home} />
           <Route exact path="/admin/" component={AdminList} />
           <Route exact path="/admin/:id" component={Admin} />
+          <Route exact path="/denined" component={Denined} />
+          <Route exact path="/waiting" component={Waiting} />
           <Route exact path="/admin-section/:id" component={AdminSection} />
           <Route exact path="/landing" component={Lnading} />
           <Route exact path="/courses" component={Courses} />

@@ -10,14 +10,30 @@ export const redirectNonLogin = (
 ) => {
   return auth.onAuthStateChanged(async (fetchedUser) => {
     if (fetchedUser) {
-      if (JSON.stringify(user) !== JSON.stringify(defaultUserInfo)) return;
+      // NOTE: ユーザー情報がストア上に格納されている場合
+      if (JSON.stringify(user) !== JSON.stringify(defaultUserInfo)) {
+        return;
+      }
+
+      // NOTE: ユーザー情報がストア上に格納されていない場合はサーバーからユーザー情報を取得
       const userRef = db.collection("user").doc(fetchedUser.uid);
       await userRef
         .get()
         .then((doc) => {
           const fetchedUser = doc.data();
-          instanceOfUser(fetchedUser) &&setUser(fetchedUser);
-          instanceOfUser(fetchedUser) && addAccessLog(fetchedUser.uid, "ConDog")
+          if (!instanceOfUser(fetchedUser)) {
+            histry.push("/denined");
+          } else if (
+            fetchedUser.role === "ADMIN" ||
+            fetchedUser.role === "MEMBER"
+          ) {
+            setUser(fetchedUser);
+            addAccessLog(fetchedUser.uid, "ConDog");
+          } else if (fetchedUser.role === "WAITING_AUTHENTICATION") {
+            histry.push("/waiting");
+          } else {
+            histry.push("/denined");
+          }
         })
         .catch((err) => console.log("Error getting documents", err));
     } else {
