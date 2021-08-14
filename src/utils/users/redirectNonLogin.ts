@@ -21,9 +21,19 @@ export const redirectNonLogin = (
         .get()
         .then((doc) => {
           const fetchedUser = doc.data();
-          instanceOfUser(fetchedUser) && setUser(fetchedUser);
-          instanceOfUser(fetchedUser) &&
+          if (!instanceOfUser(fetchedUser)) {
+            histry.push("/denined");
+          } else if (
+            fetchedUser.role === "ADMIN" ||
+            fetchedUser.role === "MEMBER"
+          ) {
+            setUser(fetchedUser);
             addAccessLog(fetchedUser.uid, "ConDog");
+          } else if (fetchedUser.role === "WAITING_AUTHENTICATION") {
+            histry.push("/waiting");
+          } else {
+            histry.push("/denined");
+          }
         })
         .catch((err) => console.log("Error getting documents", err));
     } else {
