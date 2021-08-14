@@ -4,6 +4,12 @@ export interface IActivityLog {
   timestamp: string;
 }
 
+export type UserRoleType =
+  | "ADMIN"
+  | "MEMBER"
+  | "WAITING_AUTHENTICATION"
+  | "DENINED";
+
 export interface IUser {
   uid: string;
   activityLog: IActivityLog[];
@@ -11,7 +17,7 @@ export interface IUser {
   completionList: string[];
   displayName: string;
   email: string;
-  role: "ADMIN" | "MEMBER" | "WAITING_AUTHENTICATION" | "DENINED";
+  role: UserRoleType;
   team: (
     | "WEB_CREATE"
     | "WEB_DESIGN"
