@@ -65,19 +65,6 @@ const Body = styled.div`
   padding-top: 128px;
 `;
 
-const LoginLink = styled.a`
-  font-family: Lato, "Hiragino Maru Gothic Pro", "Meiryo UI", Meiryo,
-    "MS PGothic", sans-serif;
-  color: white;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  background: #30c8d6;
-  border-radius: 4px;
-  margin-top: 16px;
-  padding: 16px 20px;
-`;
-
 export default function Denined({ history }: RouteComponentProps) {
   return (
     <div>
@@ -91,9 +78,6 @@ export default function Denined({ history }: RouteComponentProps) {
         <Body>
         <SubTitle>現在、ログインできない状態にあります。</SubTitle>
         <SubTitle>詳しくはコンピュータ研究部の上級生にご相談ください。</SubTitle>
-        <LoginLink onClick={() => history.push("/signin")}>
-          ログイン画面に戻る
-        </LoginLink>
         </Body>
       </ResponsiveWrapper>
       <NavigationBar />
