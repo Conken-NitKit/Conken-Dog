@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, RouteComponentProps } from "react-router-dom";
-import { IUser } from "../interfaces/User";
+import { instanceOfUserRole, IUser } from "../interfaces/User";
 import { Container } from "../layouts/Container";
 import { fetchAllUsers } from "../utils/users/fetchAllUsers";
 
@@ -9,6 +9,7 @@ import { redirectNonAdmin } from "../utils/users/redirectNonAdmin";
 import { userContext } from "../contexts/userContext";
 import { courseList } from "../assets/courses";
 import { ISection } from "../assets/sections";
+import { changeRole } from "../utils/users/changeRole";
 
 const AdminContainer = styled(Container)`
   width: 92%;
@@ -81,6 +82,13 @@ export default function AdminList({ history }: RouteComponentProps) {
     };
   }, []);
 
+  const handleRoleChanged = (watchedUser: IUser, role: string) => {
+    if(!instanceOfUserRole(role)) {
+      return;
+    }
+    console.log(changeRole(watchedUser, role), "root")
+  }
+
   return (
     <AdminContainer>
       <Table>
@@ -109,7 +117,7 @@ export default function AdminList({ history }: RouteComponentProps) {
                 </Link>
               </th>
               <th>
-              <select value={watchedUser.role} onChange={e => console.log(watchedUser, e.target.value)}>
+              <select value={watchedUser.role} onChange={e => handleRoleChanged(watchedUser, e.target.value)}>
                   <option value="ADMIN">
                     管理者 👑
                   </option>

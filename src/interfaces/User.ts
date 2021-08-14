@@ -10,6 +10,12 @@ export type UserRoleType =
   | "WAITING_AUTHENTICATION"
   | "DENINED";
 
+export const instanceOfUserRole = (arg: string): arg is UserRoleType=>
+  arg === "ADMIN" ||
+  arg === "MEMBER" ||
+  arg === "WAITING_AUTHENTICATION" ||
+  arg === "DENINED";
+
 export interface IUser {
   uid: string;
   activityLog: IActivityLog[];
