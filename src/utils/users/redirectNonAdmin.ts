@@ -9,14 +9,19 @@ export const redirectNonAdmin = (
 ) => {
   return auth.onAuthStateChanged(async (fetchedUser) => {
     if (fetchedUser) {
-      if (JSON.stringify(user) !== JSON.stringify(defaultUserInfo)) return;
+      // NOTE: ユーザー情報がストア上に格納されている場合
+      if (JSON.stringify(user) !== JSON.stringify(defaultUserInfo)) {
+        return;
+      }
+
+      // NOTE: ユーザー情報がストア上に格納されていない場合はサーバーからユーザー情報を取得
       const userRef = db.collection("user").doc(fetchedUser.uid);
       await userRef
         .get()
         .then((doc) => {
           const fetchedUser = doc.data();
-          if(instanceOfUser(fetchedUser) && fetchedUser.role === "ADMIN") {
-            setUser(fetchedUser)
+          if (instanceOfUser(fetchedUser) && fetchedUser.role === "ADMIN") {
+            setUser(fetchedUser);
           } else {
             histry.push("/");
           }
