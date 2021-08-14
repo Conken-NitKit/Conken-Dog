@@ -108,30 +108,22 @@ export default function AdminList({ history }: RouteComponentProps) {
                     : watchedUser.displayName}
                 </Link>
               </th>
-              {watchedUser.role === "ADMIN" ? (
-                <th>
-                  管理者
-                  <br />
-                  👑
-                </th>
-              ) : watchedUser.role === "MEMBER" ? (
-                <th>
-                  一般部員
-                  <br />
-                  🎉
-                </th>
-              ) : watchedUser.role === "WAITING_AUTHENTICATION" ? (
-                <th>
-                  承認待ち
-                  <br />
-                  🙏
-                </th>
-              ) : (
-                <th>
-                  認証拒否
-                  <br />❌
-                </th>
-              )}
+              <th>
+              <select value={watchedUser.role} onChange={e => console.log(watchedUser, e.target.value)}>
+                  <option value="ADMIN">
+                    管理者 👑
+                  </option>
+                  <option value="MEMBER">
+                    一般部員 🎉
+                  </option>
+                  <option selected value="WAITING_AUTHENTICATION">
+                    承認待ち 🙏
+                  </option>
+                  <option value="DENINED">
+                    認証拒否 ❌
+                  </option>
+                </select>
+              </th>
               <th>
                 {watchedUser.activityLog.length === 0 ? (
                   <b style={{ color: "gray" }}>{watchedUser.birthDate}</b>
