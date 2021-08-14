@@ -16,7 +16,7 @@ export const redirectNonLogin = (
         .get()
         .then((doc) => {
           const fetchedUser = doc.data();
-          instanceOfUser(fetchedUser) &&setUser(fetchedUser);
+          instanceOfUser(fetchedUser) && setUser(fetchedUser);
           instanceOfUser(fetchedUser) && addAccessLog(fetchedUser.uid, "ConDog")
         })
         .catch((err) => console.log("Error getting documents", err));
