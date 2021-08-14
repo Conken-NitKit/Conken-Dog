@@ -82,12 +82,18 @@ export default function AdminList({ history }: RouteComponentProps) {
     };
   }, []);
 
-  const handleRoleChanged = (watchedUser: IUser, role: string) => {
-    if(!instanceOfUserRole(role)) {
+  const handleRoleChanged = (
+    watchedUser: IUser,
+    index: number,
+    role: string
+  ) => {
+    if (!instanceOfUserRole(role)) {
       return;
     }
-    console.log(changeRole(watchedUser, role), "root")
-  }
+    const replacedUsers = allUsers;
+    replacedUsers.splice(index, 1, changeRole(watchedUser, role));
+    setAllUsers([...replacedUsers]);
+  };
 
   return (
     <AdminContainer>
@@ -106,7 +112,7 @@ export default function AdminList({ history }: RouteComponentProps) {
           </tr>
         </thead>
 
-        {allUsers.map((watchedUser) => (
+        {allUsers.map((watchedUser, index) => (
           <tbody key={`users/${watchedUser.uid}`}>
             <tr>
               <th>
@@ -117,19 +123,16 @@ export default function AdminList({ history }: RouteComponentProps) {
                 </Link>
               </th>
               <th>
-              <select value={watchedUser.role} onChange={e => handleRoleChanged(watchedUser, e.target.value)}>
-                  <option value="ADMIN">
-                    管理者 👑
-                  </option>
-                  <option value="MEMBER">
-                    一般部員 🎉
-                  </option>
-                  <option selected value="WAITING_AUTHENTICATION">
-                    承認待ち 🙏
-                  </option>
-                  <option value="DENINED">
-                    認証拒否 ❌
-                  </option>
+                <select
+                  value={watchedUser.role}
+                  onChange={(e) =>
+                    handleRoleChanged(watchedUser, index, e.target.value)
+                  }
+                >
+                  <option value="ADMIN">管理者 👑</option>
+                  <option value="MEMBER">一般部員 🎉</option>
+                  <option value="WAITING_AUTHENTICATION">承認待ち 🙏</option>
+                  <option value="DENINED">認証拒否 ❌</option>
                 </select>
               </th>
               <th>
