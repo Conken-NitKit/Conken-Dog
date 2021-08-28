@@ -17,7 +17,6 @@ export interface ICourses {
 }
 
 export const courseList: ICourses[] = [
-  OTHERS,
   WEB_CREATE_COURSE,
   WEB_DESIGN_COURSE,
   GAME_PLANING_COURSE,
@@ -25,4 +24,5 @@ export const courseList: ICourses[] = [
   GAME_DESIGN_COURSE,
   AI_COURSE,
   ILLUST_COURSE,
+  OTHERS,
 ];
