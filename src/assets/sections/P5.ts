@@ -7,12 +7,6 @@ export const P5: ISection = {
     "本レッスンでは簡単なゲーム風Webサイトの作成とゲームに開発に必要な数学的知識について学習します。",
   contentsList: [
     {
-      title: "非エンジニアでもわかる！Webサービス・アプリが動く仕組み",
-      link: "https://youtu.be/zq50JwOU_ls",
-      mediaType: ["READ_ONLY", "VIDEO"],
-      requiredTime: 20,
-    },
-    {
       title: "HTML&CSS初級編",
       link: "https://prog-8.com/html/study/1/1",
       mediaType: [],
@@ -71,48 +65,6 @@ export const P5: ISection = {
       link: "https://codeprep.jp/books/87",
       mediaType: [],
       requiredTime: 20,
-    },
-    {
-      title: "【ES6】 変数・定数・関数の「正しい」宣言方法",
-      link: "https://youtu.be/EXxIVEC72mU",
-      mediaType: ["READ_ONLY", "VIDEO"],
-      requiredTime: 30,
-    },
-    {
-      title: "頼むからエンジニアは全員『リーダブルコード』を読んでくれ",
-      link: "https://youtu.be/XZKgdM5x_ds",
-      mediaType: ["READ_ONLY", "VIDEO"],
-      requiredTime: 15,
-    },
-    {
-      title: "プログラムにマジックナンバーを使うべきでない理由を解説しよう",
-      link: "https://youtu.be/OnTtXy6x3ZU",
-      mediaType: ["READ_ONLY", "VIDEO"],
-      requiredTime: 15,
-    },
-    {
-      title: "JavaScriptのコーディングルールを決めよう",
-      link: "https://youtu.be/12gb3pCuzV4",
-      mediaType: ["READ_ONLY", "VIDEO"],
-      requiredTime: 20,
-    },
-    {
-      title: "VS Codeの使い方講座！日本語化する拡張機能のインストールも紹介！",
-      link: "https://youtu.be/csOaPNMDEwg",
-      mediaType: ["READ_ONLY", "VIDEO"],
-      requiredTime: 30,
-    },
-    {
-      title: "VS Code ショートカット",
-      link: "https://youtu.be/cNyvefTJOcM",
-      mediaType: ["READ_ONLY", "VIDEO"],
-      requiredTime: 35,
-    },
-    {
-      title: "Prettierの使い方解説",
-      link: "https://youtu.be/zoaIv5ifoPI",
-      mediaType: ["READ_ONLY", "VIDEO"],
-      requiredTime: 10,
     },
     {
       title: "コマンドライン",
