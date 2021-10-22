@@ -208,30 +208,6 @@ export const REACT: ISection = {
       requiredTime: 15,
     },
     {
-      title: "アトミックデザインのすゝめ",
-      link: "https://www.youtube.com/watch?v=Un0aoW0kNeE",
-      mediaType: ["READ_ONLY", "VIDEO"],
-      requiredTime: 25,
-    },
-    {
-      title: "頼むからエンジニアは全員『リーダブルコード』を読んでくれ",
-      link: "https://youtu.be/XZKgdM5x_ds",
-      mediaType: ["READ_ONLY", "VIDEO"],
-      requiredTime: 15,
-    },
-    {
-      title: "プログラムにマジックナンバーを使うべきでない理由を解説しよう",
-      link: "https://youtu.be/OnTtXy6x3ZU",
-      mediaType: ["READ_ONLY", "VIDEO"],
-      requiredTime: 15,
-    },
-    {
-      title: "JavaScriptのコーディングルールを決めよう",
-      link: "https://youtu.be/12gb3pCuzV4",
-      mediaType: ["READ_ONLY", "VIDEO"],
-      requiredTime: 20,
-    },
-    {
       title: "最速で学ぶTypeScript",
       link: "https://www.udemy.com/course/typescript-react-frontend/",
       mediaType: ["READ_ONLY", "VIDEO"],
