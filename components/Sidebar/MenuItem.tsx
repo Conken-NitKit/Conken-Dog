@@ -9,7 +9,10 @@ export type Props = {
 
 export const MenuItem: React.FC<Props> = ({ label, icon, onClick }) => {
   return (
-    <li className="" onClick={onClick}>
+    <li
+      className="list-none cursor-pointer select-none mx-1 px-4 py-2 text-gray-700 hover:bg-gray-100"
+      onClick={onClick}
+    >
       {icon && <span></span>}
       {label}
     </li>

@@ -1,3 +1,4 @@
+import classnames from "classnames";
 import { useToggle } from "hooks/useToggle";
 import React, { useCallback, useEffect, useRef } from "react";
 
@@ -34,7 +35,6 @@ export const SubMenu: React.FC<Props> = ({
   }, [opened]);
 
   const endTransition = useCallback(() => {
-    console.log("AAAA");
     outerRef.current.style.transitionProperty = "none";
   }, []);
 
@@ -42,22 +42,39 @@ export const SubMenu: React.FC<Props> = ({
     startTransition();
   }, [opened, startTransition]);
 
-  const handleLabelClick = () => {
+  const handleLabelClick = useCallback(() => {
     toggle();
-  };
+  }, [toggle]);
 
-  const handleTransitionEnd = (e: React.TransitionEvent) => {
-    if (e.currentTarget === outerRef.current && e.propertyName === "height") {
-      endTransition();
-    }
-  };
+  const handleTransitionEnd = useCallback(
+    (e: React.TransitionEvent) => {
+      if (e.currentTarget === outerRef.current && e.propertyName === "height") {
+        endTransition();
+      }
+    },
+    [endTransition]
+  );
 
   return (
-    <li className="">
-      {!!label && <div onClick={handleLabelClick}>{label}</div>}
+    <li className="list-none">
+      {!!label && (
+        <div
+          className="flex items-center justify-between cursor-pointer select-none mx-1 px-4 py-2 text-gray-700 hover:bg-gray-100"
+          onClick={handleLabelClick}
+        >
+          <div>{label}</div>
+          <span
+            className={classnames("transition duration-150 ease-in", {
+              "rotate-90": opened,
+            })}
+          >
+            {">"}
+          </span>
+        </div>
+      )}
       <ul
         ref={outerRef}
-        className="overflow-hidden duration-300"
+        className="pl-6 overflow-hidden duration-150"
         onTransitionEnd={handleTransitionEnd}
       >
         {children}

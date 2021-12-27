@@ -6,7 +6,7 @@ type Props = {
 
 export const Sidebar: React.FC<Props> = ({ title, children }) => {
   return (
-    <div className="">
+    <div className="h-full px-4">
       {!!title && <div>{title}</div>}
       <div className="">{children}</div>
     </div>

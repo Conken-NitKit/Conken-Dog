@@ -10,6 +10,9 @@ export const MainSidebar: React.FC = () => {
         <MenuItem label={"メンバーディレクトリ"} />
         <MenuItem label={"メンバーディレクトリ"} />
       </SubMenu>
+      <MenuItem label={"メンバーディレクトリ"} />
+      <MenuItem label={"メンバーディレクトリ"} />
+      <MenuItem label={"メンバーディレクトリ"} />
     </Sidebar>
   );
 };
