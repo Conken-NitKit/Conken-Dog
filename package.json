@@ -10,7 +10,9 @@
     "lint:fix": "yarn lint --fix",
     "format": "prettier --check .",
     "format:fix": "prettier --write .",
-    "check-types": "tsc --noEmit"
+    "lint-staged": "lint-staged",
+    "check-types": "tsc --noEmit",
+    "prepare": "husky install"
   },
   "husky": {
     "hooks": {
@@ -21,8 +23,7 @@
   "lint-staged": {
     "**/*.{js,ts,jsx,tsx}": [
       "npx eslint . --fix",
-      "npx prettier --write .",
-      "git add"
+      "npx prettier --write ."
     ]
   },
   "dependencies": {
@@ -52,8 +53,8 @@
     "eslint-plugin-react": "^7.23.2",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-tailwind": "^0.2.1",
-    "husky": "^4.0.1",
-    "lint-staged": "^11.0.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^11.2.6",
     "prettier": "^2.3.1",
     "typescript": "^4.3.2"
   }
