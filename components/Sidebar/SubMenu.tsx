@@ -59,12 +59,12 @@ export const SubMenu: React.FC<Props> = ({
     <li className="list-none">
       {!!label && (
         <div
-          className="flex items-center justify-between cursor-pointer select-none mx-1 px-4 py-2 text-gray-700 hover:bg-gray-100"
+          className="flex items-center justify-between cursor-pointer select-none px-4 py-2 rounded-lg	text-primary-regular hover:bg-secondary-regular"
           onClick={handleLabelClick}
         >
           <div>{label}</div>
           <span
-            className={classnames("transition duration-150 ease-in", {
+            className={classnames("transition-transform duration-150 ease-in", {
               "rotate-90": opened,
             })}
           >
@@ -74,10 +74,10 @@ export const SubMenu: React.FC<Props> = ({
       )}
       <ul
         ref={outerRef}
-        className="pl-6 overflow-hidden duration-150"
+        className="pl-6 overflow-hidden duration-150 space-y-2"
         onTransitionEnd={handleTransitionEnd}
       >
-        {children}
+        <div className="pt-2">{children}</div>
       </ul>
     </li>
   );

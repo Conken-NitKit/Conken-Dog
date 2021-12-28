@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import React from "react";
 
 export type Props = {
@@ -7,10 +8,16 @@ export type Props = {
   onClick?: VoidFunction;
 };
 
-export const MenuItem: React.FC<Props> = ({ label, icon, onClick }) => {
+export const MenuItem: React.FC<Props> = ({ label, icon, active, onClick }) => {
   return (
     <li
-      className="list-none cursor-pointer select-none mx-1 px-4 py-2 text-gray-700 hover:bg-gray-100"
+      className={classNames(
+        "list-none cursor-pointer select-none px-4 py-2 rounded-lg	text-primary-regular",
+        {
+          "text-primary-inverted bg-accent-primary-regular shadow-md": active,
+          "hover:bg-secondary-regular": !active,
+        }
+      )}
       onClick={onClick}
     >
       {icon && <span></span>}
