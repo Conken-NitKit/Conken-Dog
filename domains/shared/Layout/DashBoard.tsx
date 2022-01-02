@@ -1,7 +1,13 @@
+import { MenuId } from "constants/menu";
+
 import { MainSidebar } from "domains/shared/MainSidebar";
 import React, { useCallback, useRef } from "react";
 
-export const DashBoard: React.FC = ({ children }) => {
+type Props = {
+  activeMenuId?: MenuId;
+};
+
+export const DashBoard: React.FC<Props> = ({ children, activeMenuId }) => {
   const sidebarRef = useRef<HTMLDivElement>();
   const bodyRef = useRef<HTMLDivElement>();
 
@@ -33,8 +39,8 @@ export const DashBoard: React.FC = ({ children }) => {
       onTouchEnd={handleTouchEnd}
       className="flex snap-x h-screen w-screen bg-secondary-regular overflow-x-scroll"
     >
-      <div className="snap-end shrink-0 lg:shrink w-64 h-full bg-primary-regular overflow-scroll">
-        <MainSidebar />
+      <div className="snap-end shrink-0 lg:shrink w-72 h-full bg-primary-regular overflow-scroll">
+        <MainSidebar activeMenuId={activeMenuId} />
       </div>
       <div
         ref={bodyRef}
