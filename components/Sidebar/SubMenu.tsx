@@ -77,7 +77,7 @@ export const SubMenu: React.FC<Props> = ({
         className="pl-6 overflow-hidden duration-150 space-y-2"
         onTransitionEnd={handleTransitionEnd}
       >
-        <div className="pt-2">{children}</div>
+        <div className="pt-1 space-y-1">{children}</div>
       </ul>
     </li>
   );

@@ -6,17 +6,38 @@ import React from "react";
 
 type Props = {
   activeMenuId: MenuId;
+  itemClick?: VoidFunction;
 };
 
-export const MainSidebar: React.FC<Props> = ({ activeMenuId }) => {
+export const MainSidebar: React.FC<Props> = ({ activeMenuId, itemClick }) => {
   return (
     <Sidebar title={"ConDog"}>
-      <MainMenuItem menu={MENU.MEMBERS_DIRECTORY} activeMenuId={activeMenuId} />
+      <MainMenuItem
+        menu={MENU.MEMBERS_DIRECTORY}
+        activeMenuId={activeMenuId}
+        onClick={itemClick}
+      />
       <SubMenu label={"学習ロードマップ"}>
-        <MainMenuItem menu={MENU.WEB_FRONT} activeMenuId={activeMenuId} />
-        <MainMenuItem menu={MENU.SERVER_SIDE} activeMenuId={activeMenuId} />
-        <MainMenuItem menu={MENU.GAME_CLIENT} activeMenuId={activeMenuId} />
-        <MainMenuItem menu={MENU.DATA_SCIENCE} activeMenuId={activeMenuId} />
+        <MainMenuItem
+          menu={MENU.WEB_FRONT}
+          activeMenuId={activeMenuId}
+          onClick={itemClick}
+        />
+        <MainMenuItem
+          menu={MENU.SERVER_SIDE}
+          activeMenuId={activeMenuId}
+          onClick={itemClick}
+        />
+        <MainMenuItem
+          menu={MENU.GAME_CLIENT}
+          activeMenuId={activeMenuId}
+          onClick={itemClick}
+        />
+        <MainMenuItem
+          menu={MENU.DATA_SCIENCE}
+          activeMenuId={activeMenuId}
+          onClick={itemClick}
+        />
       </SubMenu>
     </Sidebar>
   );
