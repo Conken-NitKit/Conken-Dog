@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import React from "react";
+import { clamp } from "utils/clamp";
 
 type Props = {
   className?: string;
@@ -13,7 +14,7 @@ export const ProgressBar: React.FC<Props> = ({ className, progress }) => {
     >
       <div
         className="h-full bg-accent-primary-regular"
-        style={{ width: `${progress}%` }}
+        style={{ width: `${clamp(progress, 0, 100)}%` }}
       />
     </div>
   );
