@@ -40,6 +40,18 @@ module.exports = {
         a16: "rgba(245, 245, 245, .16)",
         a10: "rgba(245, 245, 245, .1)",
       },
+      lightGray: {
+        a100: "#d3d3d3",
+        a95: "rgba(211, 211, 211, .95)",
+        a90: "rgba(211, 211, 211, .9)",
+        a50: "rgba(211, 211, 211, .5)",
+        a40: "rgba(211, 211, 211, .4)",
+        a35: "rgba(211, 211, 211, .35)",
+        a32: "rgba(211, 211, 211, .32)",
+        a20: "rgba(211, 211, 211, .2)",
+        a16: "rgba(211, 211, 211, .16)",
+        a10: "rgba(211, 211, 211, .1)",
+      },
       dimGray: {
         a100: "#696969",
         a95: "rgba(105, 105, 105, .95)",
@@ -81,6 +93,7 @@ module.exports = {
       backgroundColor: (theme) => ({
         "primary-regular": theme("colors.white.a100"),
         "secondary-regular": theme("colors.whiteSmoke.a100"),
+        "tertiary-regular": theme("colors.lightGray.a100"),
         "accent-primary-regular": theme("colors.limeGreen.a100"),
       }),
       textColor: (theme) => ({
