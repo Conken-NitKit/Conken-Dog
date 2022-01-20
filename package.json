@@ -7,9 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx './'",
-    "lint:fix": "yarn lint --fix",
-    "format": "prettier --check .",
-    "format:fix": "prettier --write .",
+    "lint:fix": "npm run lint --fix",
+    "format": "prettier --check \"**/*.{js,jsx,ts,tsx}\"",
+    "format:fix": "prettier --write \"**/*.{js,jsx,ts,tsx}\"",
     "lint-staged": "lint-staged",
     "check-types": "tsc --noEmit",
     "prepare": "husky install"

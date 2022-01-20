@@ -1,34 +1,102 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## URLs
+- Production URL: https://conken-dog.netlify.app/
+- Hosing Service: https://app.netlify.com/sites/conken-dog/overview
 
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
+## プロジェクトのクローン
+```
+$ git clone git@github.com:Conken-NitKit/Conken-Dog.git
+$ npm i
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 実行
+以下コマンドを実行後に [http://localhost:3000/](http://localhost:3000/) を開いて下さい。
+```
+$ npm run dev
+```
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## リント
+以下コマンドを実行すると、該当ファイル（`.js`, `.jsx`, `.ts`, `.tsx`）に対してlintを行います。<br>
+また、`git commit` 時にも自動でlintが実行されます。
+```
+$ npm run lint
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## フォーマット
+以下コマンドを実行すると、該当ファイル（`.js`, `.jsx`, `.ts`, `.tsx`）に対してformatを行います。<br>
+また、`git commit` 時にも自動でformatが実行されます。
+```
+$ npm run format
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## コミット時のプレフィックス（接頭辞）
 
-## Learn More
+| type     | description |
+| -------- | --- |
+| feat     | 新機能 |
+| fix      | バグ修正 |
+| refactor | リファクタリングのための変更（機能追加やバグ修正を含まない） |
+| perf     | パフォーマンスの改善のための変更 |
+| test     | 不足テストの追加や既存テストの修正 |
+| style    | フォーマットの変更（コードの動作に影響しないスペース、フォーマット、セミコロンなど） |
+| chore    | 雑事（コメントアウトの修正など）|
+| docs     | ドキュメントのみの変更 |
+| revert   | コミット取り消し（git revert） |
 
-To learn more about Next.js, take a look at the following resources:
+## アーキテクチャ
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### コンポーネントのフォルダの構成
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```
+.
+├- apis // 汎用的なコンポーネントを管理するディレクトリ
+|    ├- gateways // 実際にAPI経由でデータの入出力を行う処理の実装を定義
+|    |    └- gateway-sample.ts
+|    └- infrastructures // APIを呼び出すために必要な前処理（ex.firebase用のクライアントの用意など）
+|         └- client-sample.ts
+|
+├- components // 汎用的なコンポーネントを管理するディレクトリ
+|    └- ComponentSample
+|        ├- index.ts
+|        ├- hooks.tsx
+|        └- ComponentSample.tsx
+|
+├- constants // 定数を管理するディレクトリ（ex.曜日情報、メニュー情報など）
+|    └- constantSample.ts
+|
+├- domains // ドメインを構成するコンポーネントを管理するディレクトリ
+|    └- DomainSample
+|        ├- index.ts
+|        ├- hooks.tsx
+|        └- DomainSample.tsx
+|
+├- entities // ビジネスを構築するモデルの型を管理するディレクトリ（ex.ユーザー情報など）
+|    └- entity-sample.ts // 汎用的なモデル
+|
+├- hooks // グローバルで使える便利なカスタムHooks（ex.文字の入力管理など）
+|    └- useSample.ts
+|
+├- layouts // 画面構成をここに記載
+|    └- LayoutSample
+|        ├- index.ts
+|        └- LayoutSample.tsx
+|
+├- pages // ページを構成
+|    ├- _app.tsx // 全ページで必要な共通処理を定義
+|    ├- _documents.tsx // <Html> <Head /> など共通レイアウトを定義
+|    └- DomainSample.tsx // 各ドメインをページとして定義
+|
+└- utils // グローバルで使える便利な関数（ex.文字列の加工など）
+     └- utils-sample.ts
+```
 
-## Deploy on Vercel
+#### 各コンポーネントの index.ts 内の処理
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```ts
+export { ComponentSample } from "./ComponentSample";
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+#### pages ディレクトリで定義される、 Domain ファイル内での処理
+
+```ts
+export { DomainSample } from "domains/DomainSample";
+```
