@@ -4,7 +4,7 @@
 
 ## プロジェクトのクローン
 ```
-$ git clone git@github.com:cam-inc/fensi-app-link.git
+$ git clone git@github.com:Conken-NitKit/Conken-Dog.git
 $ npm i
 ```
 
@@ -44,7 +44,7 @@ $ npm run format
 
 ## アーキテクチャ
 
-### コンポーネントのフォルダ構成
+### コンポーネントのフォルダの構成
 
 ```
 .
