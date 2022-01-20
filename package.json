@@ -8,8 +8,8 @@
     "start": "next start",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx './'",
     "lint:fix": "npm run lint --fix",
-    "format": "prettier --check .",
-    "format:fix": "prettier --write .",
+    "format": "prettier --check \"**/*.{js,jsx,ts,tsx}\"",
+    "format:fix": "prettier --write \"**/*.{js,jsx,ts,tsx}\"",
     "lint-staged": "lint-staged",
     "check-types": "tsc --noEmit",
     "prepare": "husky install"
