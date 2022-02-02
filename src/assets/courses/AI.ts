@@ -1,7 +1,6 @@
 import { ICourses } from ".";
 import logo from "../img/eye-catching/game1.svg";
 import { ATCODER } from "../sections/ATCODER";
-import { INDUSTRY_AI } from "../sections/INDUSTRY_AI";
 import { PYTHON } from "../sections/PYTHON";
 import { ML } from "../sections/ML";
 import { CHAINER1 } from "../sections/CHAINER1";
@@ -14,5 +13,5 @@ export const AI_COURSE: ICourses = {
   metaName: "ai",
   logoSVG: logo,
   description: "",
-  sections: [ATCODER, INDUSTRY_AI, PYTHON, CHAINER1, CHAINER2, ML, CHAINER3],
+  sections: [ATCODER, PYTHON, CHAINER1, CHAINER2, ML, CHAINER3],
 };
