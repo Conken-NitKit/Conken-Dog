@@ -41,15 +41,15 @@ export default function Slider() {
   const contents = [
     {
       img: industryImg,
-      link: "others/1",
+      link: "/",
     },
     {
       img: carrierImg,
-      link: "others/7",
+      link: "/",
     },
     {
       img: moneyImg,
-      link: "others/8",
+      link: "/",
     },
   ];
 
