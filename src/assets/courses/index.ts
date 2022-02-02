@@ -4,7 +4,6 @@ import { GAME_CREATE_COURSE } from "./GameCreate";
 import { GAME_DESIGN_COURSE } from "./GameDesign";
 import { GAME_PLANING_COURSE } from "./GamePlaning";
 import { ILLUST_COURSE } from "./Illust";
-import { OTHERS } from "./Others";
 import { WEB_CREATE_COURSE } from "./WebCreate";
 import { WEB_DESIGN_COURSE } from "./WebDesign";
 
@@ -24,5 +23,4 @@ export const courseList: ICourses[] = [
   GAME_DESIGN_COURSE,
   AI_COURSE,
   ILLUST_COURSE,
-  OTHERS,
 ];
