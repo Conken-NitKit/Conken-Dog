@@ -56,7 +56,7 @@ export const REACT: ISection = {
     },
     {
       title: "知っておいて損はなし！新人Webデザイナーのための「npm」入門",
-      link: "https://prog-8.com/languages/commandline",
+      link: "https://ferret-plus.com/6104",
       mediaType: ["READ_ONLY"],
       requiredTime: 15,
     },
