@@ -8,7 +8,7 @@ import logo from "../img/eye-catching/game1.svg";
 
 export const CS_COURSE: ICourses = {
   name: "C#",
-  metaName: "game-create",
+  metaName: "game-cs",
   logoSVG: logo,
   description:
     "このコースでは実際の大手ゲーム会社の開発現場でも利用されているUnityを使ってゲーム開発を行う際に必要な知識を学習します。\n" +
