@@ -18,11 +18,7 @@ export interface ICourses {
 
 export const courseList: ICourses[] = [
   WEB_CREATE_COURSE,
-  WEB_DESIGN_COURSE,
-  CS_COURSE,
-  GAME_PLANING_COURSE,
   GAME_CREATE_COURSE,
-  GAME_DESIGN_COURSE,
   AI_COURSE,
   ILLUST_COURSE,
 ];
