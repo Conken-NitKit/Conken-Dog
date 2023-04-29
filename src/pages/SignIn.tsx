@@ -10,6 +10,7 @@ import { Heading1 } from "../styles/fonts/Heading1";
 import { signIn } from "../utils/users/signIn";
 import SignInOrSignUpError from "../components/SignInOrSignUpError";
 import { redirectAlreadyLogin } from "../utils/users/redirectAlreadyLogin";
+import { sendPasswordResetEmail } from "../utils/users/password";
 
 const HeaderContainer = styled.div`
   display: flex;
@@ -274,6 +275,10 @@ export default function SignIn({ history }: RouteComponentProps) {
               onClick={() => signIn(email, password, history, setSignInError)}
             >
               ログイン
+            </SubmitBtn>
+            <SubmitBtn onClick={() => sendPasswordResetEmail(email)}>
+              メールアドレスの欄に入力したメアド宛に<br/>
+              パスワードリセットメールを送信
             </SubmitBtn>
           </FormContainer>
         </div>
