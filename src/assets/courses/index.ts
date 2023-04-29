@@ -1,6 +1,6 @@
 import { ISection } from "../sections";
 import { AI_COURSE } from "./AI";
-impoer { CS_COURSE } from "./CS"
+import { CS_COURSE } from "./CS";
 import { GAME_CREATE_COURSE } from "./GameCreate";
 import { GAME_DESIGN_COURSE } from "./GameDesign";
 import { GAME_PLANING_COURSE } from "./GamePlaning";
