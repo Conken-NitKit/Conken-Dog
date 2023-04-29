@@ -276,9 +276,8 @@ export default function SignIn({ history }: RouteComponentProps) {
             >
               ログイン
             </SubmitBtn>
-            <SubmitBtn onClick={() => sendPasswordResetEmail(email)}>
-              メールアドレスの欄に入力したメアド宛に<br/>
-              パスワードリセットメールを送信
+            <SubmitBtn onClick={() => sendPasswordResetEmail()}>
+              パスワードリセット
             </SubmitBtn>
           </FormContainer>
         </div>
